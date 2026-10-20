@@ -1,0 +1,15 @@
+{"model_id": "meta-llama/Llama-3.1-8B", "family": "tulu3_8b", "stage_ordinal": 0, "is_post_trained": 0, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT", "family": "tulu3_8b", "stage_ordinal": 1, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO", "family": "tulu3_8b", "stage_ordinal": 2, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-8B", "family": "tulu3_8b", "stage_ordinal": 3, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/OLMo-2-1124-13B", "family": "olmo2_13b", "stage_ordinal": 0, "is_post_trained": 0, "is_open_weights": 1}
+{"model_id": "allenai/OLMo-2-1124-13B-SFT", "family": "olmo2_13b", "stage_ordinal": 1, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/OLMo-2-1124-13B-DPO", "family": "olmo2_13b", "stage_ordinal": 2, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/OLMo-2-1124-13B-Instruct", "family": "olmo2_13b", "stage_ordinal": 3, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "meta-llama/Llama-3.1-70B", "family": "tulu3_70b", "stage_ordinal": 0, "is_post_trained": 0, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT", "family": "tulu3_70b", "stage_ordinal": 1, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO", "family": "tulu3_70b", "stage_ordinal": 2, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "allenai/Llama-3.1-Tulu-3-70B", "family": "tulu3_70b", "stage_ordinal": 3, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "meta-llama/Llama-3.1-70B-Instruct", "family": "tulu3_70b", "stage_ordinal": 3, "is_post_trained": 1, "is_open_weights": 1}
+{"model_id": "Qwen/Qwen2.5-72B", "family": "qwen25_72b", "stage_ordinal": 0, "is_post_trained": 0, "is_open_weights": 1}
+{"model_id": "Qwen/Qwen2.5-72B-Instruct", "family": "qwen25_72b", "stage_ordinal": 3, "is_post_trained": 1, "is_open_weights": 1}

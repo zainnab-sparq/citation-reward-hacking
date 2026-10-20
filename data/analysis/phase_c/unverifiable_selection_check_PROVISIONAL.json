@@ -1,0 +1,181 @@
+{
+  "n_scored": 23076,
+  "n_skipped_incomplete": 2454,
+  "n_no_citations": 17670,
+  "e1_cell_by_stage": {
+    "obscure_real": {
+      "0": {
+        "n": 356,
+        "excluded": 9,
+        "rate": 2.5281
+      },
+      "1": {
+        "n": 1781,
+        "excluded": 55,
+        "rate": 3.0882
+      },
+      "2": {
+        "n": 2420,
+        "excluded": 69,
+        "rate": 2.8512
+      },
+      "3": {
+        "n": 2386,
+        "excluded": 58,
+        "rate": 2.4308
+      }
+    },
+    "known_real": {
+      "0": {
+        "n": 565,
+        "excluded": 8,
+        "rate": 1.4159
+      },
+      "1": {
+        "n": 2278,
+        "excluded": 24,
+        "rate": 1.0536
+      },
+      "2": {
+        "n": 2833,
+        "excluded": 20,
+        "rate": 0.706
+      },
+      "3": {
+        "n": 2813,
+        "excluded": 12,
+        "rate": 0.4266
+      }
+    },
+    "unanswerable": {
+      "0": {
+        "n": 555,
+        "excluded": 0,
+        "rate": 0.0
+      },
+      "1": {
+        "n": 1905,
+        "excluded": 33,
+        "rate": 1.7323
+      },
+      "2": {
+        "n": 2555,
+        "excluded": 32,
+        "rate": 1.2524
+      },
+      "3": {
+        "n": 2629,
+        "excluded": 29,
+        "rate": 1.1031
+      }
+    }
+  },
+  "e2_condition_by_post_trained": {
+    "neutral": {
+      "0": {
+        "n": 947,
+        "excluded": 14,
+        "rate": 1.4784
+      },
+      "1": {
+        "n": 5700,
+        "excluded": 111,
+        "rate": 1.9474
+      }
+    },
+    "citations_expected": {
+      "0": {
+        "n": 97,
+        "excluded": 0,
+        "rate": 0.0
+      },
+      "1": {
+        "n": 6420,
+        "excluded": 52,
+        "rate": 0.81
+      }
+    },
+    "length_matched": {
+      "0": {
+        "n": 282,
+        "excluded": 0,
+        "rate": 0.0
+      },
+      "1": {
+        "n": 6517,
+        "excluded": 114,
+        "rate": 1.7493
+      }
+    },
+    "abstention_permitted": {
+      "0": {
+        "n": 150,
+        "excluded": 3,
+        "rate": 2.0
+      },
+      "1": {
+        "n": 2963,
+        "excluded": 55,
+        "rate": 1.8562
+      }
+    }
+  },
+  "escalation": {
+    "trigger_cell": "obscure_real",
+    "pooled_rates_by_stage": [
+      2.5281,
+      3.0882,
+      2.8512,
+      2.4308
+    ],
+    "pooled_direction": "NO",
+    "registered_trigger_fires": false,
+    "per_domain": {
+      "academic": {
+        "rates": [
+          0.0,
+          0.0,
+          0.2597,
+          0.1314
+        ],
+        "n": [
+          171,
+          591,
+          770,
+          761
+        ],
+        "direction": "NO"
+      },
+      "legal": {
+        "rates": [
+          8.8889,
+          8.4507,
+          7.0664,
+          6.2295
+        ],
+        "n": [
+          90,
+          639,
+          934,
+          915
+        ],
+        "direction": "DOWN"
+      },
+      "medical": {
+        "rates": [
+          1.0526,
+          0.1815,
+          0.1397,
+          0.0
+        ],
+        "n": [
+          95,
+          551,
+          716,
+          710
+        ],
+        "direction": "DOWN"
+      }
+    }
+  }
+}

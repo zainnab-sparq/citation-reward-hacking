@@ -1,0 +1,995 @@
+{
+  "n_observations": 42845,
+  "by_domain_stage": [
+    {
+      "domain": "academic",
+      "stage_ordinal": "0",
+      "n": 3600,
+      "k": 505,
+      "rate": 0.140277777777778,
+      "lo": 0.129316675756405,
+      "hi": 0.152005760428804
+    },
+    {
+      "domain": "medical",
+      "stage_ordinal": "0",
+      "n": 3599,
+      "k": 224,
+      "rate": 0.0622395109752709,
+      "lo": 0.0548037841151893,
+      "hi": 0.0706087448525976
+    },
+    {
+      "domain": "legal",
+      "stage_ordinal": "0",
+      "n": 3584,
+      "k": 50,
+      "rate": 0.0139508928571429,
+      "lo": 0.0105983820662579,
+      "hi": 0.0183442175476131
+    },
+    {
+      "domain": "academic",
+      "stage_ordinal": "1",
+      "n": 3600,
+      "k": 1212,
+      "rate": 0.336666666666667,
+      "lo": 0.321411019933274,
+      "hi": 0.352270518658929
+    },
+    {
+      "domain": "medical",
+      "stage_ordinal": "1",
+      "n": 3598,
+      "k": 1429,
+      "rate": 0.397165091717621,
+      "lo": 0.381294621412702,
+      "hi": 0.413254914301096
+    },
+    {
+      "domain": "legal",
+      "stage_ordinal": "1",
+      "n": 3488,
+      "k": 856,
+      "rate": 0.245412844036697,
+      "lo": 0.231416880849893,
+      "hi": 0.259968962137431
+    },
+    {
+      "domain": "academic",
+      "stage_ordinal": "2",
+      "n": 3598,
+      "k": 1723,
+      "rate": 0.47887715397443,
+      "lo": 0.462585386543044,
+      "hi": 0.49521397754952
+    },
+    {
+      "domain": "medical",
+      "stage_ordinal": "2",
+      "n": 3596,
+      "k": 1974,
+      "rate": 0.548943270300334,
+      "lo": 0.532636005039071,
+      "hi": 0.565146078985073
+    },
+    {
+      "domain": "legal",
+      "stage_ordinal": "2",
+      "n": 3483,
+      "k": 1327,
+      "rate": 0.380993396497272,
+      "lo": 0.365004963392986,
+      "hi": 0.397244049132986
+    },
+    {
+      "domain": "academic",
+      "stage_ordinal": "3",
+      "n": 3599,
+      "k": 1735,
+      "rate": 0.482078355098639,
+      "lo": 0.465781352370903,
+      "hi": 0.498413575028921
+    },
+    {
+      "domain": "medical",
+      "stage_ordinal": "3",
+      "n": 3599,
+      "k": 2003,
+      "rate": 0.556543484301195,
+      "lo": 0.540261226219419,
+      "hi": 0.572705165627649
+    },
+    {
+      "domain": "legal",
+      "stage_ordinal": "3",
+      "n": 3501,
+      "k": 1340,
+      "rate": 0.382747786346758,
+      "lo": 0.366784099797393,
+      "hi": 0.398968499957504
+    }
+  ],
+  "by_cell_condition": [
+    {
+      "cell": "known_real",
+      "condition": "neutral",
+      "n": 3566,
+      "k": 576,
+      "rate": 0.161525518788559,
+      "lo": 0.149811978326082,
+      "hi": 0.173967515008205
+    },
+    {
+      "cell": "obscure_real",
+      "condition": "neutral",
+      "n": 3533,
+      "k": 1038,
+      "rate": 0.293801302009624,
+      "lo": 0.279011864154612,
+      "hi": 0.309038655789866
+    },
+    {
+      "cell": "unanswerable",
+      "condition": "neutral",
+      "n": 3573,
+      "k": 1966,
+      "rate": 0.550237895326056,
+      "lo": 0.533880949263716,
+      "hi": 0.566486932324853
+    },
+    {
+      "cell": "known_real",
+      "condition": "citations_expected",
+      "n": 3586,
+      "k": 1611,
+      "rate": 0.449247071946458,
+      "lo": 0.433029645429331,
+      "hi": 0.465573119017103
+    },
+    {
+      "cell": "obscure_real",
+      "condition": "citations_expected",
+      "n": 3571,
+      "k": 1818,
+      "rate": 0.509101092131056,
+      "lo": 0.492703619144397,
+      "hi": 0.525479005385599
+    },
+    {
+      "cell": "unanswerable",
+      "condition": "citations_expected",
+      "n": 3590,
+      "k": 2181,
+      "rate": 0.607520891364903,
+      "lo": 0.591440967923836,
+      "hi": 0.623370956543564
+    },
+    {
+      "cell": "known_real",
+      "condition": "abstention_permitted",
+      "n": 3592,
+      "k": 411,
+      "rate": 0.114420935412027,
+      "lo": 0.104420368021793,
+      "hi": 0.125245335618974
+    },
+    {
+      "cell": "obscure_real",
+      "condition": "abstention_permitted",
+      "n": 3560,
+      "k": 291,
+      "rate": 0.0817415730337079,
+      "lo": 0.0731862937187866,
+      "hi": 0.0911985324834862
+    },
+    {
+      "cell": "unanswerable",
+      "condition": "abstention_permitted",
+      "n": 3589,
+      "k": 500,
+      "rate": 0.139314572304263,
+      "lo": 0.128370962360869,
+      "hi": 0.151029470507158
+    },
+    {
+      "cell": "known_real",
+      "condition": "length_matched",
+      "n": 3592,
+      "k": 494,
+      "rate": 0.137527839643653,
+      "lo": 0.126651593630258,
+      "hi": 0.149178547987271
+    },
+    {
+      "cell": "obscure_real",
+      "condition": "length_matched",
+      "n": 3543,
+      "k": 1075,
+      "rate": 0.303415184871578,
+      "lo": 0.28849681228866,
+      "hi": 0.31875938560659
+    },
+    {
+      "cell": "unanswerable",
+      "condition": "length_matched",
+      "n": 3550,
+      "k": 2417,
+      "rate": 0.680845070422535,
+      "lo": 0.665322513048147,
+      "hi": 0.695976665566895
+    }
+  ],
+  "by_domain_condition": [
+    {
+      "domain": "academic",
+      "condition": "neutral",
+      "n": 3599,
+      "k": 1393,
+      "rate": 0.387051958877466,
+      "lo": 0.371267359779826,
+      "hi": 0.403077415228365
+    },
+    {
+      "domain": "medical",
+      "condition": "neutral",
+      "n": 3598,
+      "k": 1566,
+      "rate": 0.435241801000556,
+      "lo": 0.419119395912132,
+      "hi": 0.451502338740071
+    },
+    {
+      "domain": "legal",
+      "condition": "neutral",
+      "n": 3475,
+      "k": 621,
+      "rate": 0.178705035971223,
+      "lo": 0.166324282058124,
+      "hi": 0.191795360233084
+    },
+    {
+      "domain": "academic",
+      "condition": "citations_expected",
+      "n": 3600,
+      "k": 1743,
+      "rate": 0.484166666666667,
+      "lo": 0.467867396210039,
+      "hi": 0.500499691714716
+    },
+    {
+      "domain": "medical",
+      "condition": "citations_expected",
+      "n": 3600,
+      "k": 1961,
+      "rate": 0.544722222222222,
+      "lo": 0.528415586419433,
+      "hi": 0.560933516108892
+    },
+    {
+      "domain": "legal",
+      "condition": "citations_expected",
+      "n": 3547,
+      "k": 1906,
+      "rate": 0.537355511700028,
+      "lo": 0.520915307633727,
+      "hi": 0.553714890045674
+    },
+    {
+      "domain": "academic",
+      "condition": "abstention_permitted",
+      "n": 3600,
+      "k": 408,
+      "rate": 0.113333333333333,
+      "lo": 0.103387674084925,
+      "hi": 0.124103315235391
+    },
+    {
+      "domain": "medical",
+      "condition": "abstention_permitted",
+      "n": 3598,
+      "k": 523,
+      "rate": 0.145358532518066,
+      "lo": 0.134219952269959,
+      "hi": 0.157253581705196
+    },
+    {
+      "domain": "legal",
+      "condition": "abstention_permitted",
+      "n": 3543,
+      "k": 271,
+      "rate": 0.0764888512559977,
+      "lo": 0.0681887597022306,
+      "hi": 0.085706322769875
+    },
+    {
+      "domain": "academic",
+      "condition": "length_matched",
+      "n": 3598,
+      "k": 1631,
+      "rate": 0.453307392996109,
+      "lo": 0.437099614368944,
+      "hi": 0.469614769414619
+    },
+    {
+      "domain": "medical",
+      "condition": "length_matched",
+      "n": 3596,
+      "k": 1580,
+      "rate": 0.439377085650723,
+      "lo": 0.42322875500867,
+      "hi": 0.45565480000688
+    },
+    {
+      "domain": "legal",
+      "condition": "length_matched",
+      "n": 3491,
+      "k": 775,
+      "rate": 0.221999427098253,
+      "lo": 0.208523165729214,
+      "hi": 0.236086833645414
+    }
+  ],
+  "by_model": [
+    {
+      "family": "olmo2_13b",
+      "model_id": "allenai/OLMo-2-1124-13B",
+      "stage_ordinal": "0",
+      "n": 3594,
+      "k": 119,
+      "rate": 0.0331107401224263,
+      "lo": 0.0277414765838954,
+      "hi": 0.0394770102751574
+    },
+    {
+      "family": "tulu3_70b",
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "stage_ordinal": "0",
+      "n": 3594,
+      "k": 324,
+      "rate": 0.0901502504173623,
+      "lo": 0.0812193601320651,
+      "hi": 0.0999563437674491
+    },
+    {
+      "family": "tulu3_8b",
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "stage_ordinal": "0",
+      "n": 3595,
+      "k": 336,
+      "rate": 0.0934631432545202,
+      "lo": 0.0843772104208493,
+      "hi": 0.103416963497043
+    },
+    {
+      "family": "tulu3_70b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT",
+      "stage_ordinal": "1",
+      "n": 3556,
+      "k": 1014,
+      "rate": 0.285151856017998,
+      "lo": 0.270550638503045,
+      "hi": 0.300216762889544
+    },
+    {
+      "family": "tulu3_8b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT",
+      "stage_ordinal": "1",
+      "n": 3548,
+      "k": 1262,
+      "rate": 0.355693348365276,
+      "lo": 0.340104996098567,
+      "hi": 0.371593847481012
+    },
+    {
+      "family": "olmo2_13b",
+      "model_id": "allenai/OLMo-2-1124-13B-SFT",
+      "stage_ordinal": "1",
+      "n": 3582,
+      "k": 1221,
+      "rate": 0.340871021775544,
+      "lo": 0.325526236025269,
+      "hi": 0.356556752558693
+    },
+    {
+      "family": "tulu3_70b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO",
+      "stage_ordinal": "2",
+      "n": 3559,
+      "k": 1447,
+      "rate": 0.406574880584434,
+      "lo": 0.390546459191936,
+      "hi": 0.422804764070152
+    },
+    {
+      "family": "tulu3_8b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO",
+      "stage_ordinal": "2",
+      "n": 3566,
+      "k": 1822,
+      "rate": 0.510936623667975,
+      "lo": 0.494526894781965,
+      "hi": 0.52732281504402
+    },
+    {
+      "family": "olmo2_13b",
+      "model_id": "allenai/OLMo-2-1124-13B-DPO",
+      "stage_ordinal": "2",
+      "n": 3552,
+      "k": 1755,
+      "rate": 0.494087837837838,
+      "lo": 0.477661235638342,
+      "hi": 0.510527214131876
+    },
+    {
+      "family": "tulu3_70b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B",
+      "stage_ordinal": "3",
+      "n": 3555,
+      "k": 1446,
+      "rate": 0.406751054852321,
+      "lo": 0.390712395820348,
+      "hi": 0.422991022083607
+    },
+    {
+      "family": "tulu3_8b",
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B",
+      "stage_ordinal": "3",
+      "n": 3576,
+      "k": 1889,
+      "rate": 0.52824384787472,
+      "lo": 0.511860708876547,
+      "hi": 0.544566371016132
+    },
+    {
+      "family": "olmo2_13b",
+      "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+      "stage_ordinal": "3",
+      "n": 3568,
+      "k": 1743,
+      "rate": 0.488508968609865,
+      "lo": 0.472128365877839,
+      "hi": 0.504914288185795
+    }
+  ],
+  "by_model_condition": [
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B",
+      "condition": "neutral",
+      "n": 882,
+      "k": 279,
+      "rate": 0.316326530612245,
+      "lo": 0.286488651334456,
+      "hi": 0.347757412931563
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO",
+      "condition": "neutral",
+      "n": 887,
+      "k": 271,
+      "rate": 0.305524239007892,
+      "lo": 0.276103047602501,
+      "hi": 0.336622655064375
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT",
+      "condition": "neutral",
+      "n": 885,
+      "k": 270,
+      "rate": 0.305084745762712,
+      "lo": 0.275645446770623,
+      "hi": 0.336208842229643
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B",
+      "condition": "neutral",
+      "n": 890,
+      "k": 445,
+      "rate": 0.5,
+      "lo": 0.467221592650207,
+      "hi": 0.532778407349793
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO",
+      "condition": "neutral",
+      "n": 888,
+      "k": 416,
+      "rate": 0.468468468468468,
+      "lo": 0.435854180373878,
+      "hi": 0.501354390223355
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT",
+      "condition": "neutral",
+      "n": 886,
+      "k": 330,
+      "rate": 0.372460496613995,
+      "lo": 0.341241055023291,
+      "hi": 0.404781118073119
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B",
+      "condition": "neutral",
+      "n": 896,
+      "k": 66,
+      "rate": 0.0736607142857143,
+      "lo": 0.0583165743108469,
+      "hi": 0.0926449728473869
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-DPO",
+      "condition": "neutral",
+      "n": 882,
+      "k": 414,
+      "rate": 0.469387755102041,
+      "lo": 0.436655920932596,
+      "hi": 0.502385089778407
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+      "condition": "neutral",
+      "n": 887,
+      "k": 400,
+      "rate": 0.450958286358512,
+      "lo": 0.418493841854722,
+      "hi": 0.48384568316562
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-SFT",
+      "condition": "neutral",
+      "n": 899,
+      "k": 331,
+      "rate": 0.368186874304783,
+      "lo": 0.337281844865583,
+      "hi": 0.400213595020869
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "condition": "neutral",
+      "n": 894,
+      "k": 206,
+      "rate": 0.230425055928412,
+      "lo": 0.204009574594034,
+      "hi": 0.259147316564565
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "condition": "neutral",
+      "n": 896,
+      "k": 152,
+      "rate": 0.169642857142857,
+      "lo": 0.14649011055459,
+      "hi": 0.195616219180586
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B",
+      "condition": "citations_expected",
+      "n": 896,
+      "k": 611,
+      "rate": 0.681919642857143,
+      "lo": 0.650703240542123,
+      "hi": 0.711582800853709
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO",
+      "condition": "citations_expected",
+      "n": 899,
+      "k": 626,
+      "rate": 0.696329254727475,
+      "lo": 0.665487115303506,
+      "hi": 0.72550068942258
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT",
+      "condition": "citations_expected",
+      "n": 886,
+      "k": 313,
+      "rate": 0.353273137697517,
+      "lo": 0.322494541115245,
+      "hi": 0.385318578376201
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B",
+      "condition": "citations_expected",
+      "n": 896,
+      "k": 808,
+      "rate": 0.901785714285714,
+      "lo": 0.880550142987287,
+      "hi": 0.919590807334796
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO",
+      "condition": "citations_expected",
+      "n": 900,
+      "k": 789,
+      "rate": 0.876666666666667,
+      "lo": 0.853569309668114,
+      "hi": 0.896562246461912
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT",
+      "condition": "citations_expected",
+      "n": 887,
+      "k": 488,
+      "rate": 0.550169109357384,
+      "lo": 0.517284200319929,
+      "hi": 0.582621343050066
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B",
+      "condition": "citations_expected",
+      "n": 900,
+      "k": 0,
+      "rate": 0,
+      "lo": 0,
+      "hi": 0.00425014673005413
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-DPO",
+      "condition": "citations_expected",
+      "n": 894,
+      "k": 736,
+      "rate": 0.823266219239374,
+      "lo": 0.796894363134796,
+      "hi": 0.84687185452149
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+      "condition": "citations_expected",
+      "n": 896,
+      "k": 763,
+      "rate": 0.8515625,
+      "lo": 0.826783449172436,
+      "hi": 0.873339882359387
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-SFT",
+      "condition": "citations_expected",
+      "n": 893,
+      "k": 409,
+      "rate": 0.458006718924972,
+      "lo": 0.425578171089511,
+      "hi": 0.49079500806902
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "condition": "citations_expected",
+      "n": 900,
+      "k": 2,
+      "rate": 0.00222222222222222,
+      "lo": 0.000609625168758766,
+      "hi": 0.00806607646471734
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "condition": "citations_expected",
+      "n": 900,
+      "k": 65,
+      "rate": 0.0722222222222222,
+      "lo": 0.0570670786132538,
+      "hi": 0.0910136024780147
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B",
+      "condition": "abstention_permitted",
+      "n": 888,
+      "k": 128,
+      "rate": 0.144144144144144,
+      "lo": 0.122574323669104,
+      "hi": 0.168779544499673
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO",
+      "condition": "abstention_permitted",
+      "n": 886,
+      "k": 124,
+      "rate": 0.139954853273138,
+      "lo": 0.118660887660816,
+      "hi": 0.164357459398961
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT",
+      "condition": "abstention_permitted",
+      "n": 895,
+      "k": 20,
+      "rate": 0.0223463687150838,
+      "lo": 0.0145116883406693,
+      "hi": 0.0342638308462353
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B",
+      "condition": "abstention_permitted",
+      "n": 895,
+      "k": 180,
+      "rate": 0.201117318435754,
+      "lo": 0.176159251994082,
+      "hi": 0.228630107964975
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO",
+      "condition": "abstention_permitted",
+      "n": 890,
+      "k": 208,
+      "rate": 0.233707865168539,
+      "lo": 0.20708582321582,
+      "hi": 0.262618792381916
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT",
+      "condition": "abstention_permitted",
+      "n": 898,
+      "k": 64,
+      "rate": 0.0712694877505568,
+      "lo": 0.0562055585979404,
+      "hi": 0.0899858340589225
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B",
+      "condition": "abstention_permitted",
+      "n": 898,
+      "k": 17,
+      "rate": 0.0189309576837416,
+      "lo": 0.0118526616910318,
+      "hi": 0.0301075503291364
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-DPO",
+      "condition": "abstention_permitted",
+      "n": 896,
+      "k": 195,
+      "rate": 0.217633928571429,
+      "lo": 0.191851587640106,
+      "hi": 0.245827133383541
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+      "condition": "abstention_permitted",
+      "n": 897,
+      "k": 172,
+      "rate": 0.1917502787068,
+      "lo": 0.167323377990984,
+      "hi": 0.218806118397935
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-SFT",
+      "condition": "abstention_permitted",
+      "n": 899,
+      "k": 48,
+      "rate": 0.053392658509455,
+      "lo": 0.0405057750522607,
+      "hi": 0.0700800402592212
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "condition": "abstention_permitted",
+      "n": 900,
+      "k": 0,
+      "rate": 0,
+      "lo": 0,
+      "hi": 0.00425014673005413
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "condition": "abstention_permitted",
+      "n": 899,
+      "k": 46,
+      "rate": 0.0511679644048943,
+      "lo": 0.0385787362266443,
+      "hi": 0.0675766223740604
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B",
+      "condition": "length_matched",
+      "n": 889,
+      "k": 428,
+      "rate": 0.481439820022497,
+      "lo": 0.448745423106232,
+      "hi": 0.514293927638538
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-DPO",
+      "condition": "length_matched",
+      "n": 887,
+      "k": 426,
+      "rate": 0.480270574971815,
+      "lo": 0.447547558882178,
+      "hi": 0.513163744286926
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-70B-SFT",
+      "condition": "length_matched",
+      "n": 890,
+      "k": 411,
+      "rate": 0.461797752808989,
+      "lo": 0.429278929139239,
+      "hi": 0.494644939765078
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B",
+      "condition": "length_matched",
+      "n": 895,
+      "k": 456,
+      "rate": 0.509497206703911,
+      "lo": 0.476775377806873,
+      "hi": 0.542137857484147
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-DPO",
+      "condition": "length_matched",
+      "n": 888,
+      "k": 409,
+      "rate": 0.460585585585586,
+      "lo": 0.428041890967631,
+      "hi": 0.493468822278911
+    },
+    {
+      "model_id": "allenai/Llama-3.1-Tulu-3-8B-SFT",
+      "condition": "length_matched",
+      "n": 877,
+      "k": 380,
+      "rate": 0.433295324971494,
+      "lo": 0.400860695746676,
+      "hi": 0.466311768913827
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B",
+      "condition": "length_matched",
+      "n": 900,
+      "k": 36,
+      "rate": 0.04,
+      "lo": 0.0290311391709188,
+      "hi": 0.054878995820731
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-DPO",
+      "condition": "length_matched",
+      "n": 880,
+      "k": 410,
+      "rate": 0.465909090909091,
+      "lo": 0.433170318416009,
+      "hi": 0.498944203480194
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-Instruct",
+      "condition": "length_matched",
+      "n": 888,
+      "k": 408,
+      "rate": 0.459459459459459,
+      "lo": 0.426926518117718,
+      "hi": 0.492341644078725
+    },
+    {
+      "model_id": "allenai/OLMo-2-1124-13B-SFT",
+      "condition": "length_matched",
+      "n": 891,
+      "k": 433,
+      "rate": 0.485970819304153,
+      "lo": 0.453283800754323,
+      "hi": 0.518778289403025
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-70B",
+      "condition": "length_matched",
+      "n": 900,
+      "k": 116,
+      "rate": 0.128888888888889,
+      "lo": 0.108564576930197,
+      "hi": 0.152367754198332
+    },
+    {
+      "model_id": "meta-llama/Llama-3.1-8B",
+      "condition": "length_matched",
+      "n": 900,
+      "k": 73,
+      "rate": 0.0811111111111111,
+      "lo": 0.0650045287708778,
+      "hi": 0.100778371934079
+    }
+  ],
+  "status_mix_by_domain": [
+    {
+      "domain": "academic",
+      "n_citations": 12172,
+      "n_real_confirmed": 6061,
+      "share_real_confirmed": 0.497946105816628,
+      "n_fabricated": 6099,
+      "share_fabricated": 0.501068024975353,
+      "n_unverifiable": 12,
+      "share_unverifiable": 0.000985869208018403
+    },
+    {
+      "domain": "legal",
+      "n_citations": 16263,
+      "n_real_confirmed": 9647,
+      "share_real_confirmed": 0.593186988870442,
+      "n_fabricated": 5092,
+      "share_fabricated": 0.313103363463076,
+      "n_unverifiable": 1524,
+      "share_unverifiable": 0.0937096476664822
+    },
+    {
+      "domain": "medical",
+      "n_citations": 12405,
+      "n_real_confirmed": 5196,
+      "share_real_confirmed": 0.418863361547763,
+      "n_fabricated": 7191,
+      "share_fabricated": 0.579685610640871,
+      "n_unverifiable": 18,
+      "share_unverifiable": 0.00145102781136638
+    }
+  ],
+  "citations_per_generation": [
+    {
+      "domain": "academic",
+      "condition": "neutral",
+      "mean_citations": 0.835232008891359,
+      "n_generations": 3599
+    },
+    {
+      "domain": "academic",
+      "condition": "citations_expected",
+      "mean_citations": 1.22611111111111,
+      "n_generations": 3600
+    },
+    {
+      "domain": "academic",
+      "condition": "abstention_permitted",
+      "mean_citations": 0.447222222222222,
+      "n_generations": 3600
+    },
+    {
+      "domain": "academic",
+      "condition": "length_matched",
+      "mean_citations": 0.872429127292941,
+      "n_generations": 3598
+    },
+    {
+      "domain": "medical",
+      "condition": "neutral",
+      "mean_citations": 0.863813229571984,
+      "n_generations": 3598
+    },
+    {
+      "domain": "medical",
+      "condition": "citations_expected",
+      "mean_citations": 1.27694444444444,
+      "n_generations": 3600
+    },
+    {
+      "domain": "medical",
+      "condition": "abstention_permitted",
+      "mean_citations": 0.434685936631462,
+      "n_generations": 3598
+    },
+    {
+      "domain": "medical",
+      "condition": "length_matched",
+      "mean_citations": 0.869577308120133,
+      "n_generations": 3596
+    },
+    {
+      "domain": "legal",
+      "condition": "neutral",
+      "mean_citations": 0.910791366906475,
+      "n_generations": 3475
+    },
+    {
+      "domain": "legal",
+      "condition": "citations_expected",
+      "mean_citations": 1.93572032703693,
+      "n_generations": 3547
+    },
+    {
+      "domain": "legal",
+      "condition": "abstention_permitted",
+      "mean_citations": 0.48461755574372,
+      "n_generations": 3543
+    },
+    {
+      "domain": "legal",
+      "condition": "length_matched",
+      "mean_citations": 1.18447436264681,
+      "n_generations": 3491
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "run_date": "2026-05-03",
+  "script": "src/dataset_construction/feasibility.py",
+  "openalex_mailto": "(redacted)",
+  "policy": "Per pre-reg §4: each (domain x cell) must have >= 300 candidates within the eligibility filters to absorb >= 33% rejection-pipeline attrition to the 200-question target. Cochrane and non-Cochrane medical sub-pools split 60/40 of the 200 medical known-real (>=120 and >=80).",
+  "results": [
+    {"domain": "academic", "cell": "known_real_canonical",   "filter": "OpenAlex CS, cited_by_count>9999, year<=2022",                                          "count": 1216,     "min": 300, "pass": true,  "source": "openalex"},
+    {"domain": "academic", "cell": "known_real_moderate",    "filter": "OpenAlex CS, [1000,5000] cites, year<=2022",                                            "count": 42903,    "min": 300, "pass": true,  "source": "openalex"},
+    {"domain": "academic", "cell": "obscure_real",           "filter": "OpenAlex CS, [2,49] cites, year<=2022",                                                 "count": 19806183, "min": 300, "pass": true,  "source": "openalex"},
+    {"domain": "medical",  "cell": "known_real_cochrane",    "filter": "OpenAlex Cochrane Database of Systematic Reviews (S4210172715), >=50 cites, year<=2022", "count": 8920,     "min": 120, "pass": true,  "source": "openalex"},
+    {"domain": "medical",  "cell": "known_real_non_cochrane","filter": "OpenAlex Medicine, cited_by_count>499, year<=2022",                                     "count": 122061,   "min": 80,  "pass": true,  "source": "openalex"},
+    {"domain": "medical",  "cell": "obscure_real",           "filter": "OpenAlex Medicine, [2,49] cites, year<=2022 (pre Retraction-Watch filter)",             "count": 20982044, "min": 300, "pass": true,  "source": "openalex"},
+    {"domain": "legal",    "cell": "known_real_scotus",      "filter": "CourtListener court_id:scotus",                                                         "count": 498145,   "min": 200, "pass": true,  "source": "courtlistener"},
+    {"domain": "legal",    "cell": "known_real_circuit",     "filter": "CourtListener Circuit Courts of Appeals (court_id:ca1..ca11+cadc+cafc)",                "count": 892727,   "min": 100, "pass": true,  "source": "courtlistener"},
+    {"domain": "legal",    "cell": "obscure_real_district",  "filter": "CourtListener federal District Courts (sample of dcd, nysd, cand)",                     "count": 106423,   "min": 300, "pass": true,  "source": "courtlistener"}
+  ],
+  "overall": "ALL CELLS PASS"
+}

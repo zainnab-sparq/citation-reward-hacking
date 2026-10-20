@@ -1,0 +1,9 @@
+# Normalize all text files to LF in the repo and on checkout so dataset
+# SHA-256 hashes (data/questions/QUESTIONS_HASH.txt) stay verifiable across
+# platforms — a Windows checkout must not rewrite .jsonl to CRLF.
+* text=auto eol=lf
+*.jsonl text eol=lf
+*.json  text eol=lf
+*.txt   text eol=lf
+*.py    text eol=lf
+*.csv   text eol=lf

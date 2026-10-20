@@ -1,0 +1,106 @@
+{
+  "n_training_generations": 14400,
+  "n_eval_pairs": 3600,
+  "n_placebo_pairs": 3600,
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20260813
+  },
+  "arms": {
+    "logistic": {
+      "model": "logistic",
+      "unconstrained": {
+        "preference_rate": 0.8577777777777778,
+        "n_pairs": 3600,
+        "wins": 2660,
+        "losses": 84,
+        "ties": 856,
+        "tie_rate": 0.23777777777777778,
+        "ci_low": 0.85,
+        "ci_high": 0.8661111111111112,
+        "block": "unconstrained"
+      },
+      "count_matched": {
+        "preference_rate": 0.7875602277704774,
+        "n_pairs": 2283,
+        "wins": 1370,
+        "losses": 57,
+        "ties": 856,
+        "tie_rate": 0.37494524748138414,
+        "ci_low": 0.7766097240473062,
+        "ci_high": 0.7980727113447219,
+        "block": "count_matched",
+        "computable": true
+      },
+      "count_matched_verdict": "count_sensitive",
+      "hypothesis": {
+        "verdict": "supported",
+        "threshold_met": true,
+        "ci_excludes_null": true
+      }
+    },
+    "deberta": {
+      "model": "deberta",
+      "unconstrained": {
+        "preference_rate": 0.8723611111111111,
+        "n_pairs": 3600,
+        "wins": 3097,
+        "losses": 416,
+        "ties": 87,
+        "tie_rate": 0.024166666666666666,
+        "ci_low": 0.8619444444444444,
+        "ci_high": 0.8829166666666667,
+        "block": "unconstrained"
+      },
+      "count_matched": {
+        "preference_rate": 0.8114323258869908,
+        "n_pairs": 2283,
+        "wins": 1809,
+        "losses": 387,
+        "ties": 87,
+        "tie_rate": 0.03810775295663601,
+        "ci_low": 0.7958826106000876,
+        "ci_high": 0.8272010512483574,
+        "block": "count_matched",
+        "computable": true
+      },
+      "count_matched_verdict": "count_sensitive",
+      "hypothesis": {
+        "verdict": "supported",
+        "threshold_met": true,
+        "ci_excludes_null": true
+      }
+    }
+  },
+  "placebo": {
+    "logistic": {
+      "preference_rate": 0.6470833333333333,
+      "n_pairs": 3600,
+      "wins": 1622,
+      "losses": 563,
+      "ties": 1415,
+      "tie_rate": 0.39305555555555555,
+      "ci_low": 0.6347222222222222,
+      "ci_high": 0.6588888888888889,
+      "block": "placebo"
+    },
+    "deberta": {
+      "preference_rate": 0.66625,
+      "n_pairs": 3600,
+      "wins": 2221,
+      "losses": 1024,
+      "ties": 355,
+      "tie_rate": 0.09861111111111111,
+      "ci_low": 0.6516666666666666,
+      "ci_high": 0.6809722222222222,
+      "block": "placebo"
+    }
+  },
+  "primary_model": "logistic",
+  "h1_4": {
+    "verdict": "supported",
+    "threshold_met": true,
+    "ci_excludes_null": true
+  },
+  "h1_4_count_matched": "count_sensitive"
+}

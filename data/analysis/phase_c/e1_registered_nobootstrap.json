@@ -1,0 +1,1238 @@
+{
+  "primary": {
+    "formula": ["fabricated ~ stage_ordinal * cell * domain + (1 | family/model_id) + ", "    (1 | question_id)"],
+    "n_observations": 42845,
+    "n_models": 12,
+    "n_questions": 900,
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.04463075611818,
+        "std_error": 0.332887385911099,
+        "z": -9.14612834543174,
+        "p_value": 5.90105696005865e-20,
+        "odds_ratio": 0.0476138898795938,
+        "or_ci_lo": 0.0247958731869063,
+        "or_ci_hi": 0.0914298315843638,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal",
+        "estimate": 0.860934928456865,
+        "std_error": 0.172928109471805,
+        "z": 4.97857133283029,
+        "p_value": 6.40553356050751e-07,
+        "odds_ratio": 2.36537111301743,
+        "or_ci_lo": 1.68539854654775,
+        "or_ci_hi": 3.31967801548048,
+        "p_holm": 2.56221342420301e-06,
+        "significant_holm": true
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.351197487041031,
+        "std_error": 0.150750547584139,
+        "z": 2.32965977682446,
+        "p_value": 0.0198241400527622,
+        "odds_ratio": 1.42076788145314,
+        "or_ci_lo": 1.05731411966977,
+        "or_ci_hi": 1.9091595727477,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 2.06077586306703,
+        "std_error": 0.139469002157773,
+        "z": 14.7758701301656,
+        "p_value": 2.09632266802637e-49,
+        "odds_ratio": 7.85205957062391,
+        "or_ci_lo": 5.97402940460303,
+        "or_ci_hi": 10.3204780768439,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainmedical",
+        "estimate": -0.321413958425999,
+        "std_error": 0.161270828042307,
+        "z": -1.99300742935158,
+        "p_value": 0.0462606335626141,
+        "odds_ratio": 0.725123018069239,
+        "or_ci_lo": 0.528612847074003,
+        "or_ci_hi": 0.99468522992638,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -1.3256069157633,
+        "std_error": 0.183090459136994,
+        "z": -7.24017473117722,
+        "p_value": 4.48107046485007e-13,
+        "odds_ratio": 0.26564168802705,
+        "or_ci_lo": 0.18554504029453,
+        "or_ci_hi": 0.38031470044064,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real",
+        "estimate": 0.0356949015543656,
+        "std_error": 0.0569626394350574,
+        "z": 0.6266370713924,
+        "p_value": 0.530897162192285,
+        "odds_ratio": 1.03633961264718,
+        "or_ci_lo": 0.92686271517566,
+        "or_ci_hi": 1.15874743385072,
+        "p_holm": 1,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable",
+        "estimate": -0.401871939807089,
+        "std_error": 0.0515788942801487,
+        "z": -7.79140277076003,
+        "p_value": 6.6269298395405e-15,
+        "odds_ratio": 0.669066420979373,
+        "or_ci_lo": 0.604735132121854,
+        "or_ci_hi": 0.740241226124013,
+        "p_holm": 3.31346491977025e-14,
+        "significant_holm": true
+      },
+      {
+        "term": "stage_ordinal:domainmedical",
+        "estimate": 0.0370837543415528,
+        "std_error": 0.061903863835672,
+        "z": 0.599053953077858,
+        "p_value": 0.549136906602383,
+        "odds_ratio": 1.03777993577355,
+        "or_ci_lo": 0.919205481359776,
+        "or_ci_hi": 1.17165010102091,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:domainlegal",
+        "estimate": 0.354078343170603,
+        "std_error": 0.0702391211042765,
+        "z": 5.0410417670936,
+        "p_value": 4.6300438995381e-07,
+        "odds_ratio": 1.42486681069097,
+        "or_ci_lo": 1.24161406126624,
+        "or_ci_hi": 1.63516626586698,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real:domainmedical",
+        "estimate": 0.854059986982592,
+        "std_error": 0.213641493850786,
+        "z": 3.99763160043758,
+        "p_value": 6.39794222549037e-05,
+        "odds_ratio": 2.3491650965889,
+        "or_ci_lo": 1.54547352711255,
+        "or_ci_hi": 3.57079985791929,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable:domainmedical",
+        "estimate": -0.508114928838535,
+        "std_error": 0.203744310858804,
+        "z": -2.49388523633753,
+        "p_value": 0.0126353389837654,
+        "odds_ratio": 0.601628623309704,
+        "or_ci_lo": 0.403553407201171,
+        "or_ci_hi": 0.896924654646997,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real:domainlegal",
+        "estimate": -0.321185621542767,
+        "std_error": 0.254513079688199,
+        "z": -1.26196116103835,
+        "p_value": 0.206962762286325,
+        "odds_ratio": 0.725288609303719,
+        "or_ci_lo": 0.440421924894205,
+        "or_ci_hi": 1.19440821869185,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable:domainlegal",
+        "estimate": 0.448265760178325,
+        "std_error": 0.221582999817012,
+        "z": 2.02301512547674,
+        "p_value": 0.0430715881050921,
+        "odds_ratio": 1.56559471310078,
+        "or_ci_lo": 1.01406911231776,
+        "or_ci_hi": 2.4170806268686,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainmedical",
+        "estimate": -0.0269699087790813,
+        "std_error": 0.0807974512880844,
+        "z": -0.333796528839997,
+        "p_value": 0.738533102933123,
+        "odds_ratio": 0.973390531593174,
+        "or_ci_lo": 0.830830061906852,
+        "or_ci_hi": 1.14041266732771,
+        "p_holm": 1,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainmedical",
+        "estimate": 0.52673054279143,
+        "std_error": 0.0764851799584262,
+        "z": 6.8867007056496,
+        "p_value": 5.71011791598617e-12,
+        "odds_ratio": 1.69338679248894,
+        "or_ci_lo": 1.45764532798101,
+        "or_ci_hi": 1.96725415567848,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainlegal",
+        "estimate": 0.00163804605318748,
+        "std_error": 0.0972379303243755,
+        "z": 0.0168457519377791,
+        "p_value": 0.986559670298094,
+        "odds_ratio": 1.00163938838346,
+        "or_ci_lo": 0.82783220565046,
+        "or_ci_hi": 1.21193818930114,
+        "p_holm": 1,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainlegal",
+        "estimate": 0.262822911766164,
+        "std_error": 0.0835998736107151,
+        "z": 3.14381948697681,
+        "p_value": 0.00166758271819495,
+        "odds_ratio": 1.30059637824146,
+        "or_ci_lo": 1.10403336616867,
+        "or_ci_hi": 1.5321556312786,
+        "p_holm": null,
+        "significant_holm": null
+      }
+    ],
+    "bootstrap_cis": {},
+    "profile_cis": {},
+    "directional_h1_1": {
+      "observed_rise_pp": 0.453143946132248,
+      "base_prob": 0.0445821410847574,
+      "rlhf_prob": 0.497726087217005,
+      "passes_threshold": true,
+      "by_domain": [
+        {
+          "domain": "academic",
+          "base_prob": 0.0633619576538127,
+          "rlhf_prob": 0.499114056166303,
+          "rise_pp": 0.435752098512491,
+          "passes_threshold": true
+        },
+        {
+          "domain": "medical",
+          "base_prob": 0.103327490119478,
+          "rlhf_prob": 0.636323833375814,
+          "rise_pp": 0.532996343256336,
+          "passes_threshold": true
+        },
+        {
+          "domain": "legal",
+          "base_prob": 0.0128658960571397,
+          "rlhf_prob": 0.358199560990237,
+          "rise_pp": 0.345333664933097,
+          "passes_threshold": true
+        }
+      ]
+    }
+  },
+  "co_primary_t1": {
+    "rule": "intersection-union: continuous AND binary base-vs-post must both reject",
+    "continuous_interaction_significant_holm": false,
+    "binary_base_vs_post_interaction_p": 0.513525214404977,
+    "binary_base_vs_post_significant": false,
+    "headline_t1_supported": false
+  },
+  "sensitivity_stage_as_factor": {
+    "formula": ["fabricated ~ stage_factor * cell * domain + (1 | family/model_id) + ", "    (1 | question_id)"],
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.60231175876041,
+        "std_error": 0.258823427272307,
+        "z": -13.9180281967692,
+        "p_value": 4.92298953336458e-44,
+        "odds_ratio": 0.0272606295484374,
+        "or_ci_lo": 0.0164143987863435,
+        "or_ci_hi": 0.0452737826739911
+      },
+      {
+        "term": "stage_factorSFT",
+        "estimate": 2.09518699567058,
+        "std_error": 0.327955724235489,
+        "z": 6.3886276129339,
+        "p_value": 1.6738110999984e-10,
+        "odds_ratio": 8.12696053456715,
+        "or_ci_lo": 4.27338215568002,
+        "or_ci_hi": 15.4555537333875
+      },
+      {
+        "term": "stage_factorDPO",
+        "estimate": 2.66260125102633,
+        "std_error": 0.326489613691753,
+        "z": 8.15524028749092,
+        "p_value": 3.48486323639727e-16,
+        "odds_ratio": 14.3335257453041,
+        "or_ci_lo": 7.55865577516611,
+        "or_ci_hi": 27.1807536157815
+      },
+      {
+        "term": "stage_factorRLHF",
+        "estimate": 2.65815831949024,
+        "std_error": 0.326496900151343,
+        "z": 8.1414504035355,
+        "p_value": 3.90570528062878e-16,
+        "odds_ratio": 14.2699841317902,
+        "or_ci_lo": 7.52504020990504,
+        "or_ci_hi": 27.060645716352
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.290178245884418,
+        "std_error": 0.223705175221202,
+        "z": 1.29714587781658,
+        "p_value": 0.194580998648308,
+        "odds_ratio": 1.33666572195651,
+        "or_ci_lo": 0.86219325414319,
+        "or_ci_hi": 2.0722445271612
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 2.60895120826621,
+        "std_error": 0.188685794811236,
+        "z": 13.8269614354183,
+        "p_value": 1.75269064634478e-43,
+        "odds_ratio": 13.58479575633,
+        "or_ci_lo": 9.38519873889618,
+        "or_ci_hi": 19.6635874077299
+      },
+      {
+        "term": "domainmedical",
+        "estimate": -0.329367379853207,
+        "std_error": 0.251103251856402,
+        "z": -1.31168106114994,
+        "p_value": 0.189627769485754,
+        "odds_ratio": 0.719378682959649,
+        "or_ci_lo": 0.43976239473591,
+        "or_ci_hi": 1.17678477216665
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -1.10757999551248,
+        "std_error": 0.331763174533408,
+        "z": -3.33846575066743,
+        "p_value": 0.000842424148006153,
+        "odds_ratio": 0.330357461036941,
+        "or_ci_lo": 0.172419663644378,
+        "or_ci_hi": 0.632967549965017
+      },
+      {
+        "term": "stage_factorSFT:cellobscure_real",
+        "estimate": 0.0533174193731863,
+        "std_error": 0.227867925743589,
+        "z": 0.233983871135871,
+        "p_value": 0.81499750011104,
+        "odds_ratio": 1.05476439464156,
+        "or_ci_lo": 0.674829300448213,
+        "or_ci_hi": 1.64860643641977
+      },
+      {
+        "term": "stage_factorDPO:cellobscure_real",
+        "estimate": 0.240587298792676,
+        "std_error": 0.224289308353296,
+        "z": 1.07266503499002,
+        "p_value": 0.283421433660522,
+        "odds_ratio": 1.27199597269505,
+        "or_ci_lo": 0.819540331128728,
+        "or_ci_hi": 1.97424543136766
+      },
+      {
+        "term": "stage_factorRLHF:cellobscure_real",
+        "estimate": 0.108081688324225,
+        "std_error": 0.224402379342693,
+        "z": 0.481642345508151,
+        "p_value": 0.630060039242981,
+        "odds_ratio": 1.11413875379701,
+        "or_ci_lo": 0.717674688110104,
+        "or_ci_hi": 1.72962093170814
+      },
+      {
+        "term": "stage_factorSFT:cellunanswerable",
+        "estimate": -1.46438847646019,
+        "std_error": 0.191060447038798,
+        "z": -7.66452972949879,
+        "p_value": 1.79487630122129e-14,
+        "odds_ratio": 0.231219344324541,
+        "or_ci_lo": 0.158998569838884,
+        "or_ci_hi": 0.336244440714437
+      },
+      {
+        "term": "stage_factorDPO:cellunanswerable",
+        "estimate": -1.5465269669681,
+        "std_error": 0.188426250404167,
+        "z": -8.20759827068073,
+        "p_value": 2.2565675313118e-16,
+        "odds_ratio": 0.212986399597106,
+        "or_ci_lo": 0.147218760537864,
+        "or_ci_hi": 0.30813468506054
+      },
+      {
+        "term": "stage_factorRLHF:cellunanswerable",
+        "estimate": -1.45285177532833,
+        "std_error": 0.188510212872943,
+        "z": -7.70701890993869,
+        "p_value": 1.28790723229655e-14,
+        "odds_ratio": 0.233902299263193,
+        "or_ci_lo": 0.161649478119219,
+        "or_ci_hi": 0.338450122061382
+      },
+      {
+        "term": "stage_factorSFT:domainmedical",
+        "estimate": 0.026023482205309,
+        "std_error": 0.257909033861884,
+        "z": 0.1009017862447,
+        "p_value": 0.919628425128686,
+        "odds_ratio": 1.02636504950528,
+        "or_ci_lo": 0.619112093001777,
+        "or_ci_hi": 1.70150967289046
+      },
+      {
+        "term": "stage_factorDPO:domainmedical",
+        "estimate": 0.118242705859389,
+        "std_error": 0.252886981427982,
+        "z": 0.467571344288685,
+        "p_value": 0.640091161199386,
+        "odds_ratio": 1.12551724785099,
+        "or_ci_lo": 0.685637189186717,
+        "or_ci_hi": 1.84760846580199
+      },
+      {
+        "term": "stage_factorRLHF:domainmedical",
+        "estimate": 0.0998371796740459,
+        "std_error": 0.252948918163421,
+        "z": 0.394693048695093,
+        "p_value": 0.693069433487641,
+        "odds_ratio": 1.10499098843503,
+        "or_ci_lo": 0.673051391894016,
+        "or_ci_hi": 1.8141335107957
+      },
+      {
+        "term": "stage_factorSFT:domainlegal",
+        "estimate": -0.0557957543570437,
+        "std_error": 0.3470875809729,
+        "z": -0.160754107653884,
+        "p_value": 0.872287071817333,
+        "odds_ratio": 0.945732277862678,
+        "or_ci_lo": 0.478990309461558,
+        "or_ci_hi": 1.86728107797578
+      },
+      {
+        "term": "stage_factorDPO:domainlegal",
+        "estimate": 0.645809601062431,
+        "std_error": 0.334123980686667,
+        "z": 1.93284420871321,
+        "p_value": 0.0532553924575738,
+        "odds_ratio": 1.9075307432077,
+        "or_ci_lo": 0.990979563013512,
+        "or_ci_hi": 3.67179472926518
+      },
+      {
+        "term": "stage_factorRLHF:domainlegal",
+        "estimate": 0.77738748907675,
+        "std_error": 0.333581882023012,
+        "z": 2.33042479514257,
+        "p_value": 0.0197837105410219,
+        "odds_ratio": 2.17578058340389,
+        "or_ci_lo": 1.13153940893612,
+        "or_ci_hi": 4.18369975427396
+      },
+      {
+        "term": "cellobscure_real:domainmedical",
+        "estimate": 0.407043413517949,
+        "std_error": 0.329041141824981,
+        "z": 1.2370593271721,
+        "p_value": 0.216065058140798,
+        "odds_ratio": 1.50236932738395,
+        "or_ci_lo": 0.788308810898303,
+        "or_ci_hi": 2.86323527615028
+      },
+      {
+        "term": "cellunanswerable:domainmedical",
+        "estimate": -1.13280652828381,
+        "std_error": 0.292084996178289,
+        "z": -3.87834549225646,
+        "p_value": 0.000105169288228738,
+        "odds_ratio": 0.322127925464205,
+        "or_ci_lo": 0.181721024335477,
+        "or_ci_hi": 0.571020335942575
+      },
+      {
+        "term": "cellobscure_real:domainlegal",
+        "estimate": 0.134702282766643,
+        "std_error": 0.43401261263538,
+        "z": 0.310364903795568,
+        "p_value": 0.756283479976456,
+        "odds_ratio": 1.14419608674469,
+        "or_ci_lo": 0.488729160558617,
+        "or_ci_hi": 2.67875295884836
+      },
+      {
+        "term": "cellunanswerable:domainlegal",
+        "estimate": -2.39393969867521,
+        "std_error": 0.429341077821341,
+        "z": -5.5758459237655,
+        "p_value": 2.46329881378226e-08,
+        "odds_ratio": 0.0912694007028985,
+        "or_ci_lo": 0.03934317556376,
+        "or_ci_hi": 0.211729312270851
+      },
+      {
+        "term": "stage_factorSFT:cellobscure_real:domainmedical",
+        "estimate": 0.679099106950753,
+        "std_error": 0.33486580909478,
+        "z": 2.02797385850325,
+        "p_value": 0.0425629161058959,
+        "odds_ratio": 1.97210028026869,
+        "or_ci_lo": 1.02303549309087,
+        "or_ci_hi": 3.80160760961047
+      },
+      {
+        "term": "stage_factorDPO:cellobscure_real:domainmedical",
+        "estimate": 0.24467175653041,
+        "std_error": 0.330028638298401,
+        "z": 0.741365227550906,
+        "p_value": 0.4584720220767,
+        "odds_ratio": 1.27720201117256,
+        "or_ci_lo": 0.668865364222322,
+        "or_ci_hi": 2.43882411109723
+      },
+      {
+        "term": "stage_factorRLHF:cellobscure_real:domainmedical",
+        "estimate": 0.386722907765404,
+        "std_error": 0.330137938288626,
+        "z": 1.17139796101625,
+        "p_value": 0.241438851476774,
+        "odds_ratio": 1.4721485138307,
+        "or_ci_lo": 0.770792894205852,
+        "or_ci_hi": 2.81167777111753
+      },
+      {
+        "term": "stage_factorSFT:cellunanswerable:domainmedical",
+        "estimate": 1.71297284600616,
+        "std_error": 0.296798698927858,
+        "z": 5.77149715343775,
+        "p_value": 7.8570286622752e-09,
+        "odds_ratio": 5.54542268486463,
+        "or_ci_lo": 3.09955355142102,
+        "or_ci_hi": 9.92133616782096
+      },
+      {
+        "term": "stage_factorDPO:cellunanswerable:domainmedical",
+        "estimate": 1.85623083913243,
+        "std_error": 0.293125772436427,
+        "z": 6.33254054634522,
+        "p_value": 2.4115688412026e-10,
+        "odds_ratio": 6.39957024653696,
+        "or_ci_lo": 3.60281283063523,
+        "or_ci_hi": 11.3673680164896
+      },
+      {
+        "term": "stage_factorRLHF:cellunanswerable:domainmedical",
+        "estimate": 1.90137171976736,
+        "std_error": 0.29347475560443,
+        "z": 6.47882546439596,
+        "p_value": 9.24393562949605e-11,
+        "odds_ratio": 6.69507190886538,
+        "or_ci_lo": 3.76659634878206,
+        "or_ci_hi": 11.900395931561
+      },
+      {
+        "term": "stage_factorSFT:cellobscure_real:domainlegal",
+        "estimate": -0.752865419974482,
+        "std_error": 0.46089618859895,
+        "z": -1.6334815487693,
+        "p_value": 0.102367758235146,
+        "odds_ratio": 0.471014961548498,
+        "or_ci_lo": 0.190861861610343,
+        "or_ci_hi": 1.16238567585317
+      },
+      {
+        "term": "stage_factorDPO:cellobscure_real:domainlegal",
+        "estimate": -0.417567954954014,
+        "std_error": 0.436809339049809,
+        "z": -0.955950154047414,
+        "p_value": 0.339097418309193,
+        "odds_ratio": 0.658646732018841,
+        "or_ci_lo": 0.27979487667062,
+        "or_ci_hi": 1.55047698786063
+      },
+      {
+        "term": "stage_factorRLHF:cellobscure_real:domainlegal",
+        "estimate": -0.443848382524316,
+        "std_error": 0.436488463712237,
+        "z": -1.01686165712029,
+        "p_value": 0.309219245856948,
+        "odds_ratio": 0.641562685568495,
+        "or_ci_lo": 0.27270898235773,
+        "or_ci_hi": 1.50931104635906
+      },
+      {
+        "term": "stage_factorSFT:cellunanswerable:domainlegal",
+        "estimate": 4.34592579985227,
+        "std_error": 0.440891121457835,
+        "z": 9.85714065976694,
+        "p_value": 6.3841539290529e-23,
+        "odds_ratio": 77.1634423244093,
+        "or_ci_lo": 32.5180422252383,
+        "or_ci_hi": 183.104406781636
+      },
+      {
+        "term": "stage_factorDPO:cellunanswerable:domainlegal",
+        "estimate": 3.45632408250443,
+        "std_error": 0.431115576490254,
+        "z": 8.0171635426459,
+        "p_value": 1.08214997644781e-15,
+        "odds_ratio": 31.7002346322604,
+        "or_ci_lo": 13.6174639018749,
+        "or_ci_hi": 73.7953030741648
+      },
+      {
+        "term": "stage_factorRLHF:cellunanswerable:domainlegal",
+        "estimate": 3.17612552623112,
+        "std_error": 0.43061625367755,
+        "z": 7.37576786548665,
+        "p_value": 1.63400508816386e-13,
+        "odds_ratio": 23.9537652928107,
+        "or_ci_lo": 10.2998896116802,
+        "or_ci_hi": 55.7076719591621
+      }
+    ]
+  },
+  "sensitivity_extended_re": {
+    "formula": ["fabricated ~ stage_ordinal * cell * domain + (1 + stage_ordinal + ", "    cell | family) + (1 + cell | model_id) + (1 | question_id)"],
+    "is_singular": true,
+    "converged": true,
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.02826268206633,
+        "std_error": 0.325968903830685,
+        "z": -9.29003548031462,
+        "p_value": 1.54236903277923e-20,
+        "odds_ratio": 0.0483996507078122,
+        "or_ci_lo": 0.0255491816128287,
+        "or_ci_hi": 0.0916869363620636,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal",
+        "estimate": 0.843944267515191,
+        "std_error": 0.231247940474209,
+        "z": 3.64952122723581,
+        "p_value": 0.000262729529613049,
+        "odds_ratio": 2.32552138965942,
+        "or_ci_lo": 1.4780248456263,
+        "or_ci_hi": 3.65897078778258,
+        "p_holm": 0.0010509181184522,
+        "significant_holm": true
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.23558828062946,
+        "std_error": 0.239237802044151,
+        "z": 0.984745214244957,
+        "p_value": 0.324749237436997,
+        "odds_ratio": 1.26565310897858,
+        "or_ci_lo": 0.791908681368672,
+        "or_ci_hi": 2.02280620222345,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 2.0516901412661,
+        "std_error": 0.206394003974119,
+        "z": 9.9406479924842,
+        "p_value": 2.77019203072736e-23,
+        "odds_ratio": 7.78104105757652,
+        "or_ci_lo": 5.19224064153703,
+        "or_ci_hi": 11.6605920487092,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainmedical",
+        "estimate": -0.324588055977108,
+        "std_error": 0.162372612908094,
+        "z": -1.99903204218825,
+        "p_value": 0.0456048870737762,
+        "odds_ratio": 0.722825055780879,
+        "or_ci_lo": 0.525800966070958,
+        "or_ci_hi": 0.993676495440523,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -1.34184243908522,
+        "std_error": 0.184580578027949,
+        "z": -7.26968380650558,
+        "p_value": 3.60329923506192e-13,
+        "odds_ratio": 0.261363678041687,
+        "or_ci_lo": 0.182024547565734,
+        "or_ci_hi": 0.375284394951234,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real",
+        "estimate": 0.0979708489904431,
+        "std_error": 0.0637658494107395,
+        "z": 1.53641565031741,
+        "p_value": 0.124436470787485,
+        "odds_ratio": 1.10293063309845,
+        "or_ci_lo": 0.973353533216921,
+        "or_ci_hi": 1.2497576059611,
+        "p_holm": 0.373309412362456,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable",
+        "estimate": -0.388181976982263,
+        "std_error": 0.0687134351082112,
+        "z": -5.64928789211231,
+        "p_value": 1.61113841242404e-08,
+        "odds_ratio": 0.678288899065489,
+        "or_ci_lo": 0.59282393179053,
+        "or_ci_hi": 0.776074996172789,
+        "p_holm": 8.05569206212019e-08,
+        "significant_holm": true
+      },
+      {
+        "term": "stage_ordinal:domainmedical",
+        "estimate": 0.0366869383012684,
+        "std_error": 0.0623140281791565,
+        "z": 0.588742846085817,
+        "p_value": 0.556033791105705,
+        "odds_ratio": 1.0373682097439,
+        "or_ci_lo": 0.918102432207108,
+        "or_ci_hi": 1.17212716668254,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:domainlegal",
+        "estimate": 0.3572144702269,
+        "std_error": 0.0708498742584383,
+        "z": 5.04185044738249,
+        "p_value": 4.61051561498494e-07,
+        "odds_ratio": 1.42934238836951,
+        "or_ci_lo": 1.24402397715447,
+        "or_ci_hi": 1.64226711117173,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real:domainmedical",
+        "estimate": 0.873188516663826,
+        "std_error": 0.215856835783169,
+        "z": 4.04522059028493,
+        "p_value": 5.22738788980283e-05,
+        "odds_ratio": 2.39453370489188,
+        "or_ci_lo": 1.56849552046991,
+        "or_ci_hi": 3.65559964248125,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable:domainmedical",
+        "estimate": -0.498882205932027,
+        "std_error": 0.204768931296356,
+        "z": -2.43631786704014,
+        "p_value": 0.0148376395040468,
+        "odds_ratio": 0.607209015146312,
+        "or_ci_lo": 0.406479437135753,
+        "or_ci_hi": 0.907063812804428,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real:domainlegal",
+        "estimate": -0.373069130764352,
+        "std_error": 0.257534357333916,
+        "z": -1.44861887410477,
+        "p_value": 0.14744404733533,
+        "odds_ratio": 0.688617626535576,
+        "or_ci_lo": 0.415685133504866,
+        "or_ci_hi": 1.140753414916,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable:domainlegal",
+        "estimate": 0.470882011761136,
+        "std_error": 0.223092980228832,
+        "z": 2.11069846876464,
+        "p_value": 0.034798237698902,
+        "odds_ratio": 1.60140602945008,
+        "or_ci_lo": 1.03419961148106,
+        "or_ci_hi": 2.47969661048944,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainmedical",
+        "estimate": -0.0359286599340134,
+        "std_error": 0.0816012397300298,
+        "z": -0.440295515765202,
+        "p_value": 0.65972308810497,
+        "odds_ratio": 0.964709113440094,
+        "or_ci_lo": 0.822123911886985,
+        "or_ci_hi": 1.13202360386071,
+        "p_holm": 1,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainmedical",
+        "estimate": 0.528661067341738,
+        "std_error": 0.0768546207407821,
+        "z": 6.87871545322987,
+        "p_value": 6.03946563905669e-12,
+        "odds_ratio": 1.69665907485944,
+        "or_ci_lo": 1.4594049419672,
+        "or_ci_hi": 1.97248339615913,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainlegal",
+        "estimate": 0.0320096281684961,
+        "std_error": 0.098455563556665,
+        "z": 0.325117515071389,
+        "p_value": 0.745092133324903,
+        "odds_ratio": 1.03252744660549,
+        "or_ci_lo": 0.851326352920348,
+        "or_ci_hi": 1.25229640118213,
+        "p_holm": 1,
+        "significant_holm": false
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainlegal",
+        "estimate": 0.261448783989801,
+        "std_error": 0.0842185795159168,
+        "z": 3.10440742995895,
+        "p_value": 0.00190660579758304,
+        "odds_ratio": 1.29881041998073,
+        "or_ci_lo": 1.10118117737478,
+        "or_ci_hi": 1.53190822882762,
+        "p_holm": null,
+        "significant_holm": null
+      }
+    ]
+  },
+  "sensitivity_citation_covariate": {
+    "formula": ["fabricated ~ stage_ordinal * cell * domain + verbosity + (1 | ", "    family/model_id) + (1 | question_id)"],
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.12547413518821,
+        "std_error": 0.345976310456005,
+        "z": -9.03378075530304,
+        "p_value": 1.65840787202717e-19,
+        "odds_ratio": 0.0439161065149374,
+        "or_ci_lo": 0.0222909337119546,
+        "or_ci_hi": 0.0865205754210737
+      },
+      {
+        "term": "stage_ordinal",
+        "estimate": 0.6310430113791,
+        "std_error": 0.17921595030269,
+        "z": 3.52113196572788,
+        "p_value": 0.000429708707064887,
+        "odds_ratio": 1.87956997011988,
+        "or_ci_lo": 1.32284696182784,
+        "or_ci_hi": 2.67059106194343
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.391307576540362,
+        "std_error": 0.156515931012619,
+        "z": 2.50011340065321,
+        "p_value": 0.0124153557735785,
+        "odds_ratio": 1.47891332250849,
+        "or_ci_lo": 1.08821853620756,
+        "or_ci_hi": 2.00987627275257
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 1.969551587009,
+        "std_error": 0.145819434313435,
+        "z": 13.5067838953175,
+        "p_value": 1.4261685249218e-41,
+        "odds_ratio": 7.16746178466632,
+        "or_ci_lo": 5.38571860565139,
+        "or_ci_hi": 9.53865439251607
+      },
+      {
+        "term": "domainmedical",
+        "estimate": -0.511493981104543,
+        "std_error": 0.165550044868406,
+        "z": -3.08966380233316,
+        "p_value": 0.00200383177189455,
+        "odds_ratio": 0.599599119577477,
+        "or_ci_lo": 0.433455514811578,
+        "or_ci_hi": 0.829425608656446
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -1.24256452473792,
+        "std_error": 0.186757484998304,
+        "z": -6.65335863111031,
+        "p_value": 2.86478980435608e-11,
+        "odds_ratio": 0.288643035749628,
+        "or_ci_lo": 0.200167158467229,
+        "or_ci_hi": 0.416226131822725
+      },
+      {
+        "term": "verbosity",
+        "estimate": 1.63542193003836,
+        "std_error": 0.0443217739900876,
+        "z": 36.8988373616119,
+        "p_value": 4.82376078794981e-298,
+        "odds_ratio": 5.13162272608662,
+        "or_ci_lo": 4.704656906264,
+        "or_ci_hi": 5.5973373462849
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real",
+        "estimate": -0.0179719752882011,
+        "std_error": 0.0577387409764519,
+        "z": -0.311263719718634,
+        "p_value": 0.755600145740196,
+        "odds_ratio": 0.982188557523863,
+        "or_ci_lo": 0.877096877450678,
+        "or_ci_hi": 1.09987207494654
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable",
+        "estimate": -0.381730686879086,
+        "std_error": 0.0525787919014251,
+        "z": -7.26016466096741,
+        "p_value": 3.86619388302494e-13,
+        "odds_ratio": 0.682678882830931,
+        "or_ci_lo": 0.615830678771849,
+        "or_ci_hi": 0.756783435980703
+      },
+      {
+        "term": "stage_ordinal:domainmedical",
+        "estimate": 0.0412196190212746,
+        "std_error": 0.0620331171787665,
+        "z": 0.66447763542961,
+        "p_value": 0.506384658297285,
+        "odds_ratio": 1.04208094121263,
+        "or_ci_lo": 0.922781263829429,
+        "or_ci_hi": 1.17680400611094
+      },
+      {
+        "term": "stage_ordinal:domainlegal",
+        "estimate": 0.287117794057139,
+        "std_error": 0.0703666883869184,
+        "z": 4.08030846184479,
+        "p_value": 4.4975976841518e-05,
+        "odds_ratio": 1.33258117437396,
+        "or_ci_lo": 1.1609070266536,
+        "or_ci_hi": 1.52964237921333
+      },
+      {
+        "term": "cellobscure_real:domainmedical",
+        "estimate": 1.02668657373672,
+        "std_error": 0.221588417690754,
+        "z": 4.63330432355696,
+        "p_value": 3.59874910286299e-06,
+        "odds_ratio": 2.7918000687905,
+        "or_ci_lo": 1.80828929175437,
+        "or_ci_hi": 4.31023269320856
+      },
+      {
+        "term": "cellunanswerable:domainmedical",
+        "estimate": 0.0143023314118994,
+        "std_error": 0.213749861161742,
+        "z": 0.066911535446926,
+        "p_value": 0.946652129662301,
+        "odds_ratio": 1.01440509910853,
+        "or_ci_lo": 0.667217167124763,
+        "or_ci_hi": 1.54225304113761
+      },
+      {
+        "term": "cellobscure_real:domainlegal",
+        "estimate": -0.350487163414612,
+        "std_error": 0.260703056824177,
+        "z": -1.34439222801667,
+        "p_value": 0.178821585716041,
+        "odds_ratio": 0.704344875070288,
+        "or_ci_lo": 0.422546505755032,
+        "or_ci_hi": 1.17407598046826
+      },
+      {
+        "term": "cellunanswerable:domainlegal",
+        "estimate": 1.18013905087495,
+        "std_error": 0.233467671642423,
+        "z": 5.05482854466649,
+        "p_value": 4.30777590012597e-07,
+        "odds_ratio": 3.25482675793334,
+        "or_ci_lo": 2.05968039540131,
+        "or_ci_hi": 5.14346655326335
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainmedical",
+        "estimate": -0.0498536426398754,
+        "std_error": 0.0818184070929788,
+        "z": -0.609320621253619,
+        "p_value": 0.542311941225797,
+        "odds_ratio": 0.951368654116548,
+        "or_ci_lo": 0.810410172393558,
+        "or_ci_hi": 1.1168447125513
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainmedical",
+        "estimate": 0.347113215236586,
+        "std_error": 0.0783935553652567,
+        "z": 4.4278284562971,
+        "p_value": 9.51865560189398e-06,
+        "odds_ratio": 1.4149769132484,
+        "or_ci_lo": 1.21344651485092,
+        "or_ci_hi": 1.64997767971005
+      },
+      {
+        "term": "stage_ordinal:cellobscure_real:domainlegal",
+        "estimate": 0.0562738926516705,
+        "std_error": 0.0979545151963019,
+        "z": 0.574490032837149,
+        "p_value": 0.565636243400467,
+        "odds_ratio": 1.05788739164323,
+        "or_ci_lo": 0.873092799494725,
+        "or_ci_hi": 1.28179471190849
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainlegal",
+        "estimate": -0.0968304976454132,
+        "std_error": 0.0865433282166572,
+        "z": -1.11886727308433,
+        "p_value": 0.263196766615177,
+        "odds_ratio": 0.907709852051486,
+        "or_ci_lo": 0.766092542364656,
+        "or_ci_hi": 1.07550606480012
+      }
+    ]
+  },
+  "status_split": {
+    "overall_fabricated_rate": 0.301552106430155,
+    "overall_misgrounded_rate": 0,
+    "overall_combined_rate": 0.301552106430155,
+    "overall_abstention_rate": 0.412416851441242,
+    "mean_citations_per_generation": 0.944054148675458,
+    "by_cell_stage": [
+      {
+        "cell": "known_real",
+        "stage_ordinal": 0,
+        "any_fabricated": 0.0261692650334076,
+        "any_misgrounded": 0,
+        "fabricated": 0.0261692650334076
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 0,
+        "any_fabricated": 0.038707880813144,
+        "any_misgrounded": 0,
+        "fabricated": 0.038707880813144
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 0,
+        "any_fabricated": 0.132777777777778,
+        "any_misgrounded": 0,
+        "fabricated": 0.132777777777778
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 1,
+        "any_fabricated": 0.150447427293065,
+        "any_misgrounded": 0,
+        "fabricated": 0.150447427293065
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 1,
+        "any_fabricated": 0.247742663656885,
+        "any_misgrounded": 0,
+        "fabricated": 0.247742663656885
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 1,
+        "any_fabricated": 0.496634885025238,
+        "any_misgrounded": 0,
+        "fabricated": 0.496634885025238
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 2,
+        "any_fabricated": 0.262011173184358,
+        "any_misgrounded": 0,
+        "fabricated": 0.262011173184358
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 2,
+        "any_fabricated": 0.392523364485981,
+        "any_misgrounded": 0,
+        "fabricated": 0.392523364485981
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 2,
+        "any_fabricated": 0.609927089175547,
+        "any_misgrounded": 0,
+        "fabricated": 0.609927089175547
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 3,
+        "any_fabricated": 0.267279821627648,
+        "any_misgrounded": 0,
+        "fabricated": 0.267279821627648
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 3,
+        "any_fabricated": 0.380118610561988,
+        "any_misgrounded": 0,
+        "fabricated": 0.380118610561988
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 3,
+        "any_fabricated": 0.621288515406162,
+        "any_misgrounded": 0,
+        "fabricated": 0.621288515406162
+      }
+    ],
+    "abstention_by_cell_stage": [
+      {
+        "cell": "known_real",
+        "stage_ordinal": 0,
+        "abstention_rate": 0.833518930957684
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 0,
+        "abstention_rate": 0.891116680590365
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 0,
+        "abstention_rate": 0.826111111111111
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 1,
+        "abstention_rate": 0.315436241610738
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 1,
+        "abstention_rate": 0.461343115124153
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 1,
+        "abstention_rate": 0.405496354458777
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 2,
+        "abstention_rate": 0.147206703910615
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 2,
+        "abstention_rate": 0.261399037099972
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 2,
+        "abstention_rate": 0.198822209758833
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 3,
+        "abstention_rate": 0.148272017837235
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 3,
+        "abstention_rate": 0.261508048573849
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 3,
+        "abstention_rate": 0.189355742296919
+      }
+    ],
+    "abstention_placebo": {
+      "by_stage": [
+        {
+          "cell": "known_real",
+          "stage_ordinal": 0,
+          "abstention_rate": 0.833518930957684
+        },
+        {
+          "cell": "known_real",
+          "stage_ordinal": 1,
+          "abstention_rate": 0.315436241610738
+        },
+        {
+          "cell": "known_real",
+          "stage_ordinal": 2,
+          "abstention_rate": 0.147206703910615
+        },
+        {
+          "cell": "known_real",
+          "stage_ordinal": 3,
+          "abstention_rate": 0.148272017837235
+        }
+      ],
+      "slope_base_to_max_pp": -0.685246913120448,
+      "note": "Known-real abstention by stage. A decline comparable to the obscure-real cell supports the global-abstention-threshold alternative and qualifies the T1 reward-hacking reading."
+    }
+  },
+  "metadata": {
+    "alpha": 0.05,
+    "directional_threshold_pp": 0.1,
+    "primary_interaction_term": "stage_ordinal:cellobscure_real",
+    "bootstrap_nsim": 0,
+    "unverifiable_as_fabricated": false,
+    "r_version": "R version 4.6.0 (2026-04-24 ucrt)",
+    "lme4_version": "2.0.1",
+    "timestamp_utc": "2026-09-05T06:53:45Z"
+  }
+}

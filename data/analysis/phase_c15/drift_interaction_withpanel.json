@@ -1,0 +1,740 @@
+{
+  "metadata": {
+    "analysis": "phase_c_drift_interaction",
+    "status": "EXPLORATORY / ROBUSTNESS. Not a member of the registered m=5 confirmatory family.",
+    "specification": "docs/drift_interaction_prespec.md (locked before any fit)",
+    "era_boundaries": {
+      "early_end_row": 16500,
+      "degraded_end_row": 24000,
+      "basis": "grounding metrics, set before this test was specified, not tuned to the outcome"
+    },
+    "unit": "generation with >=1 judged citation; generations with no judged citation carry no era and are drift-immune",
+    "n_generations_with_era": 21166,
+    "n_mixed_era_dropped": 1,
+    "alpha": 0.05
+  },
+  "exclusions": {
+    "by_era": [
+      {
+        "era": "EARLY",
+        "n": 10938,
+        "n_excluded": 110,
+        "exclusion_rate": 0.0100566831230572
+      },
+      {
+        "era": "DEGRADED",
+        "n": 4952,
+        "n_excluded": 225,
+        "exclusion_rate": 0.0454361873990307
+      },
+      {
+        "era": "RECOVERED",
+        "n": 5276,
+        "n_excluded": 20,
+        "exclusion_rate": 0.00379075056861259
+      }
+    ],
+    "by_cell_stage": [
+      {
+        "cell": "known_real",
+        "stage_ordinal": 0,
+        "n": 398,
+        "n_excluded": 8,
+        "exclusion_rate": 0.0201005025125628
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 1,
+        "n": 1673,
+        "n_excluded": 24,
+        "exclusion_rate": 0.0143454871488344
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 2,
+        "n": 2215,
+        "n_excluded": 20,
+        "exclusion_rate": 0.0090293453724605
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 3,
+        "n": 2228,
+        "n_excluded": 12,
+        "exclusion_rate": 0.00538599640933573
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 0,
+        "n": 313,
+        "n_excluded": 9,
+        "exclusion_rate": 0.0287539936102236
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 1,
+        "n": 1673,
+        "n_excluded": 56,
+        "exclusion_rate": 0.0334728033472803
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 2,
+        "n": 2340,
+        "n_excluded": 69,
+        "exclusion_rate": 0.0294871794871795
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 3,
+        "n": 2312,
+        "n_excluded": 59,
+        "exclusion_rate": 0.0255190311418685
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 0,
+        "n": 574,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 1,
+        "n": 2030,
+        "n_excluded": 34,
+        "exclusion_rate": 0.0167487684729064
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 2,
+        "n": 2696,
+        "n_excluded": 34,
+        "exclusion_rate": 0.0126112759643917
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 3,
+        "n": 2714,
+        "n_excluded": 30,
+        "exclusion_rate": 0.0110537951363301
+      }
+    ],
+    "by_condition_post": [
+      {
+        "condition": "neutral",
+        "is_post_trained": 0,
+        "n": 813,
+        "n_excluded": 14,
+        "exclusion_rate": 0.017220172201722
+      },
+      {
+        "condition": "neutral",
+        "is_post_trained": 1,
+        "n": 5262,
+        "n_excluded": 114,
+        "exclusion_rate": 0.0216647662485747
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 0,
+        "n": 87,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 1,
+        "n": 5616,
+        "n_excluded": 53,
+        "exclusion_rate": 0.00943732193732194
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 0,
+        "n": 97,
+        "n_excluded": 3,
+        "exclusion_rate": 0.0309278350515464
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 1,
+        "n": 2634,
+        "n_excluded": 56,
+        "exclusion_rate": 0.0212604403948367
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 0,
+        "n": 288,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 1,
+        "n": 6369,
+        "n_excluded": 115,
+        "exclusion_rate": 0.0180562097660543
+      }
+    ],
+    "monotone_in_stage_within_obscure_real": false,
+    "monotone_in_condition_within_obscure_real": false,
+    "note": "Pre-reg §5: a rate monotone in stage or condition within obscure_real promotes Sensitivity #1 to co-primary. Sensitivity #1 is reported regardless."
+  },
+  "counts": {
+    "n_modeled": 20811,
+    "n_open_weights": 20811,
+    "era_by_condition": [
+      {
+        "era": "EARLY",
+        "condition": "neutral",
+        "Freq": 3130
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "neutral",
+        "Freq": 1377
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "neutral",
+        "Freq": 1440
+      },
+      {
+        "era": "EARLY",
+        "condition": "citations_expected",
+        "Freq": 2931
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "citations_expected",
+        "Freq": 1296
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "citations_expected",
+        "Freq": 1423
+      },
+      {
+        "era": "EARLY",
+        "condition": "abstention_permitted",
+        "Freq": 1395
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "abstention_permitted",
+        "Freq": 566
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "abstention_permitted",
+        "Freq": 711
+      },
+      {
+        "era": "EARLY",
+        "condition": "length_matched",
+        "Freq": 3372
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "length_matched",
+        "Freq": 1488
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "length_matched",
+        "Freq": 1682
+      }
+    ]
+  },
+  "d1_condition_era": {
+    "label": "D1 condition:era",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id) + condition:era",
+    "interaction_term": "condition:era",
+    "n_observations": 20811,
+    "chisq": 10.0739226440928,
+    "df": 6,
+    "p_value": 0.121573297076341,
+    "significant": false,
+    "aic_null": 16084.186237119,
+    "aic_alt": 16086.1123144749,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -2.64836013117544,
+        "std_error": 0.81959042577325,
+        "p_value": 0.00123219276107572
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": 10.5698934279075,
+        "std_error": 233.706266955854,
+        "p_value": 0.963926168428789
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.17940012708826,
+        "std_error": 0.541469013598083,
+        "p_value": 0.0293949542830648
+      },
+      {
+        "term": "conditioncitations_expected:eraDEGRADED",
+        "estimate": 0.251594970051676,
+        "std_error": 0.149725876685436,
+        "p_value": 0.0928852211116347
+      },
+      {
+        "term": "conditionabstention_permitted:eraDEGRADED",
+        "estimate": 0.0958944866885405,
+        "std_error": 0.165746256098128,
+        "p_value": 0.562884746327307
+      },
+      {
+        "term": "conditionlength_matched:eraDEGRADED",
+        "estimate": 0.339566244030625,
+        "std_error": 0.140847825218611,
+        "p_value": 0.015914381184706
+      },
+      {
+        "term": "conditioncitations_expected:eraRECOVERED",
+        "estimate": 0.321122415235612,
+        "std_error": 0.143299172429752,
+        "p_value": 0.0250310613882571
+      },
+      {
+        "term": "conditionabstention_permitted:eraRECOVERED",
+        "estimate": 0.197990208355938,
+        "std_error": 0.156416461083514,
+        "p_value": 0.205588697310134
+      },
+      {
+        "term": "conditionlength_matched:eraRECOVERED",
+        "estimate": 0.259551138806236,
+        "std_error": 0.135475089719535,
+        "p_value": 0.0553830746659148
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": 1.20489346032272,
+        "std_error": 0.835142616945764,
+        "p_value": 0.149093793831185
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": -12.6537986623287,
+        "std_error": 233.706318758267,
+        "p_value": 0.956820423960253
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.195513125774523,
+        "std_error": 0.559919609310214,
+        "p_value": 0.726953648342362
+      }
+    ]
+  },
+  "d2_stage_era": {
+    "label": "D2 stage_ordinal:era",
+    "fitted": true,
+    "null_formula": "fabricated ~ stage_ordinal * cell * domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ stage_ordinal * cell * domain + era + (1 | family/model_id) + (1 | question_id) + stage_ordinal:era",
+    "interaction_term": "stage_ordinal:era",
+    "n_observations": 20811,
+    "chisq": 0.366308546450455,
+    "df": 2,
+    "p_value": 0.832639691817365,
+    "significant": false,
+    "aic_null": 19081.1545427544,
+    "aic_alt": 19084.788234208,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "stage_ordinal:cellunanswerable",
+        "estimate": -0.130284938852675,
+        "std_error": 0.0946746453756309,
+        "p_value": 0.168780345728848
+      },
+      {
+        "term": "stage_ordinal:eraDEGRADED",
+        "estimate": -0.000310227202779912,
+        "std_error": 0.0525827426474803,
+        "p_value": 0.99529267499135
+      },
+      {
+        "term": "stage_ordinal:eraRECOVERED",
+        "estimate": -0.0294869131208368,
+        "std_error": 0.0506190714193415,
+        "p_value": 0.560212594408068
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainmedical",
+        "estimate": -0.0210672472589079,
+        "std_error": 0.128107664606666,
+        "p_value": 0.869377262525389
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainlegal",
+        "estimate": -0.694037128224486,
+        "std_error": 0.127122926650792,
+        "p_value": 4.77276198456035e-08
+      }
+    ]
+  },
+  "d3_condition_grounding": {
+    "label": "D3 condition:grounding_c",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + grounding_c + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + grounding_c + (1 | family/model_id) + (1 | question_id) + condition:grounding_c",
+    "interaction_term": "condition:grounding_c",
+    "n_observations": 20811,
+    "chisq": 23.9704213621771,
+    "df": 3,
+    "p_value": 2.53376961433377e-05,
+    "significant": true,
+    "aic_null": 12763.3843429471,
+    "aic_alt": 12745.4139215849,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:grounding_c",
+        "estimate": 0.0334670268884502,
+        "std_error": 0.0889955829223192,
+        "p_value": 0.706877737288328
+      },
+      {
+        "term": "conditionabstention_permitted:grounding_c",
+        "estimate": 0.415751013896013,
+        "std_error": 0.101751230494344,
+        "p_value": 4.38957655312022e-05
+      },
+      {
+        "term": "conditionlength_matched:grounding_c",
+        "estimate": -0.0566256305651515,
+        "std_error": 0.0801124771780146,
+        "p_value": 0.479674236633731
+      }
+    ]
+  },
+  "d1_sensitivity1": {
+    "label": "D1 condition:era (Sensitivity #1)",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id) + condition:era",
+    "interaction_term": "condition:era",
+    "n_observations": 21166,
+    "chisq": 10.4183074533357,
+    "df": 6,
+    "p_value": 0.108105849277835,
+    "significant": false,
+    "aic_null": 16461.0120180741,
+    "aic_alt": 16462.5937106208,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -2.45407607458971,
+        "std_error": 0.812918562469941,
+        "p_value": 0.00253739348455762
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": 10.674942047265,
+        "std_error": 232.18386040488,
+        "p_value": 0.96332918363952
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.39001731030638,
+        "std_error": 0.540392525651223,
+        "p_value": 0.010104387771531
+      },
+      {
+        "term": "conditioncitations_expected:eraDEGRADED",
+        "estimate": -0.131660326519877,
+        "std_error": 0.151545575874949,
+        "p_value": 0.384965448836204
+      },
+      {
+        "term": "conditionabstention_permitted:eraDEGRADED",
+        "estimate": 0.0434942619469052,
+        "std_error": 0.157680891654196,
+        "p_value": 0.782673079532699
+      },
+      {
+        "term": "conditionlength_matched:eraDEGRADED",
+        "estimate": 0.287058423936525,
+        "std_error": 0.136650207403787,
+        "p_value": 0.0356690235439158
+      },
+      {
+        "term": "conditioncitations_expected:eraRECOVERED",
+        "estimate": 0.0986654347183708,
+        "std_error": 0.142600484720101,
+        "p_value": 0.488999428881559
+      },
+      {
+        "term": "conditionabstention_permitted:eraRECOVERED",
+        "estimate": 0.190152568233954,
+        "std_error": 0.151847041324838,
+        "p_value": 0.210473718411578
+      },
+      {
+        "term": "conditionlength_matched:eraRECOVERED",
+        "estimate": 0.0921120793927609,
+        "std_error": 0.132457479976952,
+        "p_value": 0.486799231467492
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": 1.12051131022928,
+        "std_error": 0.830303059643728,
+        "p_value": 0.177169720423565
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": -12.7518738784638,
+        "std_error": 232.183911073421,
+        "p_value": 0.956201053965548
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.073612688608164,
+        "std_error": 0.55960381459061,
+        "p_value": 0.89534474957168
+      }
+    ]
+  },
+  "robustness_panel": {
+    "note": "EXPLORATORY. Re-estimates of the registered condition contrasts under restrictions. Run only alongside or after the one-shot confirmatory fit, never before it.",
+    "by_era": {
+      "EARLY": {
+        "n": 10828,
+        "fitted": true,
+        "health": {
+          "is_singular": false,
+          "converged": true,
+          "messages": []
+        },
+        "condition_contrasts": [
+          {
+            "contrast": "citations_expected - neutral",
+            "log_or": 2.15020668961916,
+            "std_error": 0.0932987879022038,
+            "odds_ratio": 8.58663298167836,
+            "or_ci_lo": 7.15165948463923,
+            "or_ci_hi": 10.3095325106584,
+            "p_value": 2.2250738585072e-308,
+            "p_underflow": true,
+            "separation_flag": false,
+            "significant": true
+          },
+          {
+            "contrast": "abstention_permitted - neutral",
+            "log_or": -0.369879834042239,
+            "std_error": 10.9759437712024,
+            "odds_ratio": 0.690817338377007,
+            "or_ci_lo": 3.13778334017126e-10,
+            "or_ci_hi": 1520909964.98262,
+            "p_value": 0.999576251183441,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": false
+          },
+          {
+            "contrast": "length_matched - neutral",
+            "log_or": 0.0236237771343084,
+            "std_error": 0.080505643944783,
+            "odds_ratio": 1.02390502893373,
+            "or_ci_lo": 0.874446306451032,
+            "or_ci_hi": 1.19890895592054,
+            "p_value": 0.96499660976945,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": false
+          }
+        ]
+      },
+      "DEGRADED": {
+        "n": 4727,
+        "fitted": true,
+        "health": {
+          "is_singular": false,
+          "converged": true,
+          "messages": []
+        },
+        "condition_contrasts": [
+          {
+            "contrast": "citations_expected - neutral",
+            "log_or": 2.20815644319551,
+            "std_error": 9.5581172189326,
+            "odds_ratio": 9.09892653334144,
+            "or_ci_lo": 6.6543560013946e-08,
+            "or_ci_hi": 1244154416.17181,
+            "p_value": 0.978637942179772,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": false
+          },
+          {
+            "contrast": "abstention_permitted - neutral",
+            "log_or": -0.140123305517371,
+            "std_error": 30.9240502490239,
+            "odds_ratio": 0.869251045340508,
+            "or_ci_lo": 4.13567047286913e-27,
+            "or_ci_hi": 1.82702510942892e+26,
+            "p_value": 0.99999243775754,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": false
+          },
+          {
+            "contrast": "length_matched - neutral",
+            "log_or": 0.354352110240136,
+            "std_error": 0.127278646027066,
+            "odds_ratio": 1.42525694570283,
+            "or_ci_lo": 1.1105890475397,
+            "or_ci_hi": 1.82908103206515,
+            "p_value": 0.0152334952399671,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": true
+          }
+        ]
+      },
+      "RECOVERED": {
+        "n": 5256,
+        "fitted": true,
+        "health": {
+          "is_singular": false,
+          "converged": true,
+          "messages": []
+        },
+        "condition_contrasts": [
+          {
+            "contrast": "citations_expected - neutral",
+            "log_or": 2.60576052394879,
+            "std_error": 8.83015918209113,
+            "odds_ratio": 13.541520037847,
+            "or_ci_lo": 4.12498424445317e-07,
+            "or_ci_hi": 444541734.145996,
+            "p_value": 0.925353726789002,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": false
+          },
+          {
+            "contrast": "abstention_permitted - neutral",
+            "log_or": null,
+            "std_error": null,
+            "odds_ratio": null,
+            "or_ci_lo": null,
+            "or_ci_hi": null,
+            "p_value": 2.2250738585072e-308,
+            "p_underflow": true,
+            "separation_flag": true,
+            "significant": false
+          },
+          {
+            "contrast": "length_matched - neutral",
+            "log_or": 0.3346523942828,
+            "std_error": 0.118622149426115,
+            "odds_ratio": 1.39745453759886,
+            "or_ci_lo": 1.1075576255013,
+            "or_ci_hi": 1.76323031839695,
+            "p_value": 0.00934928710718941,
+            "p_underflow": false,
+            "separation_flag": false,
+            "significant": true
+          }
+        ]
+      }
+    },
+    "zero_effort_dropped": {
+      "n_before": 20811,
+      "n_after": 19639,
+      "condition_contrasts": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 2.1021488841655,
+          "std_error": 0.0693310950211654,
+          "odds_ratio": 8.18373693377243,
+          "or_ci_lo": 7.14392564092774,
+          "or_ci_hi": 9.37489464020982,
+          "p_value": 2.2250738585072e-308,
+          "p_underflow": true,
+          "separation_flag": false,
+          "significant": true
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -0.290303158857719,
+          "std_error": 6.06692572320859,
+          "odds_ratio": 0.748036759231362,
+          "or_ci_lo": 5.12561995602648e-06,
+          "or_ci_hi": 109169.036713979,
+          "p_value": 0.999140444931562,
+          "p_underflow": false,
+          "separation_flag": false,
+          "significant": false
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 0.163576837481969,
+          "std_error": 0.0593092255800869,
+          "odds_ratio": 1.17771584443086,
+          "or_ci_lo": 1.04847097795752,
+          "or_ci_hi": 1.32289270698313,
+          "p_value": 0.0164709434846857,
+          "p_underflow": false,
+          "separation_flag": false,
+          "significant": true
+        }
+      ]
+    }
+  },
+  "interpretation": {
+    "if_null": "Non-differential misclassification supported: registered contrasts stand; drift reported in limitations with the three-era table.",
+    "if_significant": "Registered estimands are NOT adjusted and remain primary. Add an era-stratified robustness panel and state that this test detects differentiality but does not identify the direction of bias, because eras contain different items. Only the paired re-judge sub-study, which holds the item fixed, can attribute the difference to the instrument.",
+    "power_caveat": "A non-significant interaction bounds the evidence; it does not prove non-differentiality. See counts$era_by_condition for achieved n."
+  }
+}

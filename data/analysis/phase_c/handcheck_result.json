@@ -1,0 +1,157 @@
+{
+  "n_sampled": 150,
+  "n_labelled": 150,
+  "n_unlabelled": 0,
+  "overall": {
+    "unweighted_accuracy": 0.7466666666666667,
+    "unweighted_ci": [
+      0.6715059067359275,
+      0.8095087727091548
+    ],
+    "weighted_accuracy": 0.7192322132650243
+  },
+  "baseline": {
+    "baseline_label": "REAL",
+    "baseline_weighted_accuracy": 0.5463832592480974,
+    "pipeline_weighted_accuracy": 0.7192322132650243,
+    "judge_right_baseline_wrong": 57,
+    "judge_wrong_baseline_right": 21,
+    "mcnemar_p": 5.5711164864691095e-05
+  },
+  "per_class": {
+    "REAL": {
+      "label": "REAL",
+      "support": 76,
+      "n_predicted": 65,
+      "recall": 0.7236842105263158,
+      "recall_ci": [
+        0.6142463460107743,
+        0.8115975764600853
+      ],
+      "precision": 0.8461538461538461,
+      "precision_ci": [
+        0.7394468036002149,
+        0.914229059330115
+      ],
+      "weighted_recall": 0.7628952077856506
+    },
+    "FABRICATED": {
+      "label": "FABRICATED",
+      "support": 73,
+      "n_predicted": 73,
+      "recall": 0.7808219178082192,
+      "recall_ci": [
+        0.673227338877521,
+        0.8603387936404931
+      ],
+      "precision": 0.7808219178082192,
+      "precision_ci": [
+        0.673227338877521,
+        0.8603387936404931
+      ],
+      "weighted_recall": 0.6738590334354465
+    },
+    "UNVERIFIABLE": {
+      "label": "UNVERIFIABLE",
+      "support": 1,
+      "n_predicted": 12,
+      "recall": 0.0,
+      "recall_ci": [
+        0.0,
+        0.7934506856227626
+      ],
+      "precision": 0.0,
+      "precision_ci": [
+        0.0,
+        0.2424940066552408
+      ],
+      "weighted_recall": 0.0
+    }
+  },
+  "by_stratum": {
+    "judge_FABRICATED": {
+      "n": 60,
+      "n_correct": 48,
+      "accuracy": 0.8,
+      "accuracy_ci": [
+        0.6821819419437212,
+        0.881714946771025
+      ]
+    },
+    "judge_REAL_rescue": {
+      "n": 45,
+      "n_correct": 43,
+      "accuracy": 0.9555555555555556,
+      "accuracy_ci": [
+        0.8517248923056439,
+        0.9877258732932802
+      ]
+    },
+    "judge_UNVERIFIABLE": {
+      "n": 13,
+      "n_correct": 6,
+      "accuracy": 0.46153846153846156,
+      "accuracy_ci": [
+        0.23206067809538308,
+        0.7085620428549398
+      ]
+    },
+    "never_judged": {
+      "n": 12,
+      "n_correct": 3,
+      "accuracy": 0.25,
+      "accuracy_ci": [
+        0.08894166839405476,
+        0.5323053349335656
+      ]
+    },
+    "verifier_REAL_trusted": {
+      "n": 20,
+      "n_correct": 12,
+      "accuracy": 0.6,
+      "accuracy_ci": [
+        0.38658150076225317,
+        0.7811934676271829
+      ]
+    }
+  },
+  "by_era": {
+    "(none)": {
+      "n": 32,
+      "n_correct": 15,
+      "accuracy": 0.46875,
+      "accuracy_ci": [
+        0.3086938710806884,
+        0.6355048288102536
+      ]
+    },
+    "DEGRADED": {
+      "n": 30,
+      "n_correct": 22,
+      "accuracy": 0.7333333333333333,
+      "accuracy_ci": [
+        0.555520383048111,
+        0.8581733668040368
+      ]
+    },
+    "EARLY": {
+      "n": 71,
+      "n_correct": 61,
+      "accuracy": 0.8591549295774648,
+      "accuracy_ci": [
+        0.759782507165242,
+        0.9216579778764282
+      ]
+    },
+    "RECOVERED": {
+      "n": 17,
+      "n_correct": 14,
+      "accuracy": 0.8235294117647058,
+      "accuracy_ci": [
+        0.5897054143116588,
+        0.9380887336237901
+      ]
+    }
+  },
+  "note": "Population-level numbers are design weighted; per-class and per-stratum numbers are unweighted and conditional. The sample is fabrication-enriched, so unweighted overall accuracy is NOT a corpus estimate."
+}

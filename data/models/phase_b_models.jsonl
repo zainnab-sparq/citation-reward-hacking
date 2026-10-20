@@ -1,0 +1,3 @@
+{"model_id": "claude-haiku-4-5-20251001", "family": "anthropic", "is_post_trained": 1, "is_open_weights": 0, "phase_b_role": "step1_haiku_full_900q", "pin_kind": "dated_build", "alias": "claude-haiku-4-5"}
+{"model_id": "claude-opus-4-7", "family": "anthropic", "is_post_trained": 1, "is_open_weights": 0, "phase_b_role": "step3_opus_full_900q", "pin_kind": "alias", "alias_resolution_audit": "data/models/phase_b_snapshot_resolution.jsonl"}
+{"model_id": "claude-sonnet-4-6", "family": "anthropic", "is_post_trained": 1, "is_open_weights": 0, "phase_b_role": "step3_sonnet_full_900q", "pin_kind": "alias", "alias_resolution_audit": "data/models/phase_b_snapshot_resolution.jsonl"}

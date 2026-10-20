@@ -1,0 +1,223 @@
+% ARGUES: the mechanistic half of the thesis chain.
+% DRAWS FROM: PRE_REGISTRATION_OSF.md §2 (H1.3, H1.4), §5 (procedure),
+%             §6 (E3 guardrails, E4 model-choice and confound rules).
+% GATED ON: implementation. Scope decided 2026-08-12: both get built, so the §2
+%           single-publication commitment holds and no scope deviation is declared.
+%
+% Build order and why: E4 first, because it trains on the Phase C generations
+% that already exist and needs no new model inference. E3 second, because it
+% needs activation capture and must clear the pre-registered probe sanity gate
+% before it touches any citation data. E3 ran 2026-09-05/06 on the registered
+% 8B scale-check arm (4-bit, local GPU); the 70B primary is uncollected.
+% Numbers: data/analysis/phase_c/e3_results.json (src/e3/run_e3.py).
+
+\section{Mechanistic experiments}
+
+\subsection{E3: internal-state probe}
+
+\guide{H1.3: a linear probe on hidden states at the answer-token positions
+separates real from fabricated citations at AUROC of at least 0.70 on
+Tülu-3-70B-Instruct.
+
+The null interpretation is pre-registered and unusually specific, so it cannot
+be softened after the fact: a null is a cross-task probe-transfer failure or
+non-linear decodability, not evidence that no internal fabrication signal
+exists. Wen et al. is the precedent for that reading and the footnote scoping
+the parallel to probe non-transfer is required.
+
+Pre-declared null title: \emph{Citation-Fabrication Signal Not Linearly
+Decodable by a General-Truthfulness Probe: A Cross-Task Transfer Limitation}.
+
+The guardrails in pre-reg §6 on probe decodability versus knowledge apply to
+every sentence in this subsection.}
+
+\label{sec:e3}
+
+E3 was run on the registered scale-check arm, Tülu-3-8B, and not on the
+registered primary, Tülu-3-70B-Instruct. The reason is compute: the study's
+remaining budget was zero dollars, the local GPU holds 12~GB, and a 70B model
+does not fit it at any precision that preserves the hidden states. The 8B
+checkpoint was loaded in 4-bit NF4 quantization for the same reason, so the
+activations read here come from a quantized copy of the weights that generated
+the Phase C answers, not the bf16 weights themselves. Both facts are recorded in
+Appendix~\ref{app:deviations}. H1.3 as registered, on the 70B primary, is
+therefore untested; what follows is the registered procedure applied to the
+registered scale-check model.
+
+\paragraph{Procedure.}
+The probe is a logistic regression on standardized mean-pooled hidden states.
+It was trained on 4{,}026 true/false statements built from TruthfulQA and SciQ,
+one true and one false statement per source question, with 502 held out for
+validation; no probe statement overlaps any citation-elicitation question. The
+layer was chosen on that validation split alone, never on citation data: layer
+14 of 33, where the probe separates true from false statements at AUROC
+$0.947$. The registered sanity gate asks the probe to reproduce the published
+performance of \citet{orgad2024} before it touches citations. They report
+exact-answer-token probe AUCs of $0.83$ to $0.95$ across TriviaQA, Winobias and
+Math on 7B and 8B instruction-tuned models; our $0.947$ is on a different
+benchmark and a different model, so it matches their published range rather
+than reproducing any one figure, and the gate is passed in that sense only.
+The citation set is
+every verified citation in Tülu-3-8B's own Phase C generations whose raw span
+could be located in the answer text: 4{,}587 citations, 2{,}363 fabricated and
+2{,}224 real. Span location succeeded for $95.49\%$ of real and $94.14\%$ of
+fabricated citations, so the two classes are lost at nearly the same rate. The
+230 UNVERIFIABLE citations are in neither class and were excluded. No Phase C
+citation carries the MISGROUNDED label, so the registered ``fabricated plus
+misgrounded'' class is FABRICATED alone. Each citation's hidden states are the
+layer-14 states mean-pooled over its own tokens, read in the exact prompt the
+generation was produced under.
+
+\paragraph{The cross-task probe does not transfer.}
+Applied to the citation activations, the truthfulness probe scores AUROC
+$0.434$. This is not a layer-choice artifact: across all 33 layers the citation
+AUROC never exceeds $0.528$, while the same probes climb from $0.58$ to $0.95$ on
+their own validation split, so the probe learns its own task and transfers
+nowhere. Twenty label-shuffled refits, the registered leak control, span
+$0.398$ to $0.625$ with mean $0.500$, and 30\% of them sit at least as far from
+$0.5$ as the observed $0.434$. The cross-task probe is indistinguishable from a
+probe that never saw a label. This is the pre-declared null, and it carries the
+pre-declared reading: a cross-task transfer failure of a general-truthfulness
+probe, not evidence that no fabrication signal is represented.\footnote{The
+parallel to \citet{wen2024} is scoped to probe non-transfer: their probe for
+intended sophistry did not generalize to the unintended case. It is not a claim
+that the internal signal is absent.}
+
+\paragraph{The within-domain probe does.}
+The registered secondary check trains the same probe class on citation
+activations and evaluates it on citations from disjoint questions, split by
+question so no question straddles the boundary (2{,}294 training and 2{,}293
+test citations). It scores AUROC $0.886$. The pre-committed agreement rule then
+fires: the within-domain probe exceeds the cross-task probe by $0.453$, far past
+the $0.10$ margin, so the cross-task result is downgraded to ``may be partly
+reading task format'' and the within-domain probe becomes the headline E3
+estimate. Against the registered threshold of $0.70$, \textbf{H1.3 is met by the
+headline estimate on the scale-check arm}.
+
+\paragraph{Difficulty deconfound.}
+The registered guardrail requires the fabrication probe to out-perform a probe
+trained on a per-question difficulty proxy before the signal may be called
+fabrication rather than difficulty. The proxy is the registered one, the base
+model's log-probability of producing any citation for the item, estimated from
+Llama-3.1-8B's own Phase C generations: four draws per question, one per prompt
+condition, passed through the same extractor as everything else, smoothed as
+$\log((k + \tfrac12)/(n + 1))$. Four draws give five distinct levels, which is
+coarse for a quantity the registration calls continuous, and we say so rather
+than dress it up. A ridge regression from the same layer-14 states to the proxy,
+scored as a fabricated-versus-real classifier on the same held-out citations in
+whichever orientation is larger, reaches $0.522$; the raw proxy with no hidden
+states at all reaches $0.504$. On the registered high-difficulty cells,
+obscure-but-real and unanswerable (1{,}461 held-out citations), the fabrication
+probe scores $0.895$ against $0.530$ for the difficulty probe and $0.572$ for the
+raw proxy. Item difficulty as proxied here barely predicts which citations are
+fabricated, and the hidden states carry essentially none of it, so the
+within-domain signal is reported as fabrication-decodability.
+
+\paragraph{What this licenses.}
+On Tülu-3-8B, a fabrication-correlated signal is linearly decodable at the
+answer tokens from disjoint questions, and it is not item difficulty. That is
+the whole claim. It does not say the model represents or knows that a citation
+is fake; the guardrails in pre-registration §6 forbid that sentence, and the
+design cannot support it. It does not transfer from general truthfulness, which
+is the registered primary probe and the registered null. And it is a result on
+the 8B scale-check arm read from quantized weights, with the 70B primary and the
+Llama-3.1-70B-Instruct cross-pipeline check both uncollected.
+
+\subsection{E4: naive-judge cross-family}
+
+\guide{H1.4: a citation-reviewer preference model trained only on surface
+features (count, format, plausible author and venue density, explicitly not
+existence) prefers post-trained over base outputs at least 60\% of the time on
+cross-family transfer, training on Tülu-3 and evaluating on OLMo-2.
+
+This is the plausibility argument for the reward proxy, and the pre-registration
+is emphatic that it is not causal identification. Keep that label on it.
+
+Pre-declared null title: \emph{Naive Citation-Quality Proxies Do Not Prefer
+Post-Trained Outputs: A Null on the Plausible-Proxy Hypothesis for Citations}.}
+
+The preference model was trained on 14{,}400 Tülu-3 generations, 7{,}200 of them
+post-trained, and evaluated on 3{,}600 held-out OLMo-2 base-versus-Instruct
+pairs. Training and evaluation families are disjoint, so every number below is
+cross-family transfer.
+
+\paragraph{The registered test.}
+The four-feature hand-coded logistic prefers the post-trained output in
+$85.78\%$ of pairs, bootstrap CI $[85.00, 86.61]$. The DeBERTa-v3-base arm
+reaches $87.24\%$, $[86.19, 88.29]$. DeBERTa leads by $1.46$ points, inside the
+pre-registered 5-point band, so the model-choice rule of §5 makes the
+\emph{logistic} the primary reported model. \textbf{H1.4 is supported}: the rate
+clears the registered 60\% threshold and the CI lower bound of $85.00\%$ sits far
+above chance. Under the registered count-matched ($\pm 1$) control the logistic
+falls to $78.76\%$, $[77.66, 79.81]$, whose lower bound lies between 50\% and the
+unconstrained lower bound. By the registered rule that is a
+\emph{count-sensitive} plausible-proxy preference: the citation-count confound is
+weakened, not excluded.
+
+\paragraph{Both registered controls turned out weaker than their names suggest.}
+Neither problem is visible from the registered numbers alone, and both were
+found by inspecting the control rather than the result. First, the $\pm 1$ window
+is permissive on this corpus. Base checkpoints average $0.09$ citations per
+generation and final checkpoints $1.31$, so a $\pm 1$ window still admits the
+0-against-1 comparison, which is the dominant contrast in the data. The control
+removes the large count gaps and leaves precisely the one carrying the effect.
+Second, the placebo is not direction-free as specified. It pairs SFT against DPO,
+which differ in stage, and citation surface is still rising across the cascade
+(citation count $0.758 \to 1.329$, format conformity $0.454 \to 0.636$,
+plausible-author density $0.291 \to 0.407$, plausible-venue density
+$0.385 \to 0.528$). Its observed rate of $64.71\%$ is therefore ambiguous between
+a spurious directional bias in the judge and the judge correctly reading a real
+increase. As specified, it cannot separate the two.
+
+\paragraph{Holding citation count exactly equal resolves both.}
+Restricting to pairs whose citation counts are identical removes the count
+channel entirely, so any residual preference must come from the other three
+features. This tier is post-hoc and is labeled as such in the artifact; the
+registered control remains the $\pm 1$ window reported above.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{E4 preference rate by count-matching tier, logistic arm. The registered
+control is the $\pm 1$ tier; the exact-match tier is a post-hoc diagnostic.}
+\label{tab:e4count}
+\begin{tabular}{@{}l l l@{}}
+\toprule
+Tier & Primary (base vs Instruct) & Placebo (SFT vs DPO) \\
+\midrule
+All pairs                  & 0.8578 $[0.8500, 0.8661]$, $n = 3600$ & 0.6471 $[0.6347, 0.6589]$, $n = 3600$ \\
+Within $\pm 1$ (registered) & 0.7876 $[0.7766, 0.7981]$, $n = 2283$ & 0.5808 $[0.5683, 0.5932]$, $n = 2914$ \\
+\textbf{Exactly equal}     & \textbf{0.5155} $[0.5083, 0.5238]$, $n = 904$ & \textbf{0.5035} $[0.4923, 0.5146]$, $n = 1882$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two readings follow, and they point the same way. The placebo comes out clean
+once counts are equal: $50.35\%$ with a CI straddling $0.50$. The judge carries
+no directional bias of its own, and its entire placebo signal was the real
+SFT-to-DPO citation increase. The control passes once it is asked a question it
+can answer. The primary preference, meanwhile, nearly vanishes: $51.55\%$ on 904
+pairs of which 856 are ties, leaving only 48 pairs decided at all, 38 for the
+post-trained side and 10 for base.
+
+\paragraph{What this licenses, and what it does not.}
+The naive judge's preference for post-trained output is almost entirely
+\emph{cites more}, not \emph{cites in a more plausible-looking way}. Format
+conformity, author-name plausibility and venue plausibility add close to nothing
+once quantity is held fixed. This does not weaken E4's role in the argument: E4
+exists to show that a plausible reward proxy would reward the post-trained
+behavior, and citation quantity is an entirely ordinary thing for a reward model
+to reward. A proxy keying on ``did it cite sources'' prefers post-trained output
+at 86\%, and that is the mechanism the paper points at. It does change what may
+be claimed. The stronger reading, that a naive judge is fooled by
+fabricated-looking scholarly apparatus, is \textbf{not supported} here, and we do
+not claim it. E4 supports ``quantity is rewarded,'' not ``surface plausibility is
+rewarded.''
+
+Two limitations belong with this result. The exact-count tier is post-hoc, added
+after the $\pm 1$ window proved permissive on this data; the registered control
+is the $\pm 1$ result and it stands as the registered one. And the DeBERTa arm
+has no exact-match number, because the fine-tuned weights were not persisted and
+retraining would produce a second version of a one-shot registered quantity.
+Since the logistic is the primary model, that gap sits in the secondary check
+only.

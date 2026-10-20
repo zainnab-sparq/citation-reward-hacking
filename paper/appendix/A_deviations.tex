@@ -1,0 +1,391 @@
+% ARGUES: every departure from the pre-registration, declared, with dates and reasons.
+% DRAWS FROM: PRE_REGISTRATION_OSF.md §11 amendments 1 to 13, plus the decision docs.
+% GATED ON: the 15-model a-priori power result for the #13 subsection (one slot).
+%
+% This appendix is the paper's main credibility asset. Several amendments correct
+% the author's own preferred reading, and those are the ones worth showing in full.
+
+\section{Deviations from the pre-registration}
+\label{app:deviations}
+
+Table~\ref{tab:amendments} lists every amendment to the pre-registration in the
+order it was recorded. The final column is the one a skeptical reader should
+read first: it states what evidence existed at the moment each amendment was
+written, because an amendment recorded before the relevant numbers exist and one
+recorded after are not the same kind of object. The wording of that column is
+each amendment's own stated trigger, not a later characterization of it.
+
+Three amendments touch the interpretation of a registered result rather than an
+instrument or an interface, and those are the ones worth scrutiny: \#10, \#12
+and \#13. All three state their epistemic status in the pre-registration
+itself. The first two were recorded before the one-shot confirmatory fit; the
+third was recorded after it, discloses a scope reduction the fit inherited, and
+is the one whose timing a reader should weigh most carefully. All three are
+discussed in full below.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\caption{Amendments to the pre-registration (§11), in the order recorded.}
+\label{tab:amendments}
+\begin{tabular}{@{}r l p{0.44\textwidth} p{0.26\textwidth}@{}}
+\toprule
+\# & Date & What changed & Evidence in hand when recorded \\
+\midrule
+1 & 2026-05-25 & Legal known-real pre-2023 cutoff enforced & Round-3 design panel; no generations collected \\
+2 & 2026-06-04 & Anthropic snapshot pinned under alias-only model ids & Phase B pre-spend audit \\
+3 & 2026-06-04 & Verification matcher and extractor abstention guard tightened & Phase B Step 0 dress rehearsal \\
+4 & 2026-06-04 & Verifier recall and cross-domain scope fixed & Step 0 hand-check evidence pass \\
+5 & 2026-06-06 & Phase H LLM-judge brought forward into the Phase B pipeline & Step 0 §8 A.5 hand-check gate had failed \\
+6 & 2026-06-06 & Phase B cut to Haiku only; extractor swapped; judge restricted to fire on non-REAL verifier labels; subagent dispatch carve-out & Post-gate-clear cost reconciliation \\
+7 & 2026-06-07 & Batch API \texttt{custom\_id} compact-code encoding & Pre-submit rejection by the API \\
+8 & 2026-06-07 & Legal citations: \texttt{title} made optional at extraction load & Extraction-load failure on 34 legal citations \\
+9 & 2026-06-08 & Judge dispatch moved off \texttt{claude -p} to Max-OAuth workflow dispatch & Discovery that the subprocess billed the paid API \\
+10 & 2026-06-15 & Pre-committed reading of the \texttt{citations\_expected} vs \texttt{length\_matched} contrast extended to the negative-delta case, with the contrast operationally pinned & Exploratory Phase B result in a different model population; \textbf{no Phase C number on this contrast existed} \\
+11 & 2026-06-15 & Phase C open-weights checkpoints added to the \texttt{BatchKey} code table & Mechanical extension of \#7; no outcome data \\
+12 & 2026-08-11 & Verifier-REAL trust step recorded as failing on Phase C; corrective re-judge of at-risk citations & Blind hand-check of the Phase C corpus; \textbf{recorded before the confirmatory fit} \\
+13 & 2026-09-06 & Open-weights roster disclosed as 12 of the 23 registered checkpoints; a-priori power re-measured on the roster that ran; three registered checkpoints collected under a pre-committed rule; grouping rule for the shared Llama-3.1-70B base fixed & E1 confirmatory null already in hand; \textbf{collection rule timestamped before any new generation, grouping rule before any new checkpoint was judged} \\
+14 & 2026-10-01 & Registered parametric-bootstrap percentile CIs not computed; Wald CIs reported, profile-CI escalation kept on the Wald bound & Measured bootstrap cost on the 12-model frame; \textbf{filed before the 15-model fit} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Amendment \#10: the directional reversal, and the rescue that was rejected}
+
+Section 5 of the pre-registration committed an interpretation for the
+\texttt{citations\_expected} versus \texttt{length\_matched} contrast, but it
+enumerated only two of the three possible signs: $\Delta \geq +5$pp and
+$|\Delta| < 5$pp. The negative case was simply unspecified. That omission became
+urgent when the exploratory Phase B analysis, a single closed-API model and not
+the registered confirmatory fit, came back with the ordering \emph{reversed}:
+\texttt{length\_matched} at an odds ratio of 6.25 $[4.25, 9.19]$ against neutral
+and \texttt{citations\_expected} at only 2.79 $[1.93, 4.04]$. On that evidence
+the most likely Phase C outcome was the one case the pre-registration had no
+rule for.
+
+\paragraph{The first draft was unfalsifiable, and two review passes caught it.}
+This is the part worth showing. The initial draft of the amendment supplied a
+reading under which the thesis survived in all three bins: a positive delta
+confirmed the citation-specific cue, a null delta left it open pending more
+data, and a negative delta was to be reported as evidence of a
+\emph{broader} reward-hacking mechanism. Written that way, no possible value of
+$\Delta$ could have counted against the claim, which is the definition of an
+unfalsifiable rule and precisely what pre-registration exists to prevent. Two
+adversarial review passes over the draft rejected it. The locked version makes
+$\Delta \leq -5$pp an explicit \textbf{loss} for T2's citation-specific reading:
+the verbosity alternative the control was designed to test is reported as not
+ruled out and possibly dominant, and whether a demand for a longer answer
+constitutes reward hacking at the level the thesis chain requires is reported as
+a competing hypothesis this design cannot adjudicate. The $|\Delta| < 5$pp bin
+was likewise rewritten so that ``unresolved'' denotes ``not supported'' rather
+than ``still supported pending more data''.
+
+\paragraph{Why the contrast is pinned to a specific computation.}
+The amendment also had to fix \emph{how} $\Delta$ is computed, because the rule
+is bin-ambiguous without it. On the Phase B data the model-based
+\texttt{emmeans} marginal probability contrast is about $-2.0$pp, which falls in
+the $|\Delta| < 5$pp bin, while the raw unconditional rate gap on the same data
+is about $-7.0$pp, which falls in the $\Delta \leq -5$pp bin. The same
+observations land in different bins under different definitions of the same
+symbol, so the canonical one was fixed in advance: the \texttt{emmeans} marginal
+probability-scale contrast with proportional weights over cells and domains,
+evaluated at the \texttt{is\_post\_trained = 1} margin of the joint E2 model
+rather than on a subset refit. The restriction to post-trained checkpoints is
+itself pre-specified, because base checkpoints do not follow the prompt
+conditions at all and the question is only defined where the cue is read.
+
+\paragraph{The rule did not fire.}
+Phase C reversed the Phase B prior decisively and under both pipelines:
+$\Delta = +28.35$pp corrected and $+12.64$pp registered, both far inside the
+$\Delta \geq +5$pp bin and neither close enough to a boundary to engage the
+ambiguity rule. The negative bin, which is the part of this amendment that took
+the most work to get right, was never needed. We report it as a rule that was
+fixed in advance and did not fire, which is not the same thing as a rule that
+was never needed: it was written when the available evidence pointed the other
+way.
+
+\subsection{Amendment \#12: the verifier-REAL trust step}
+
+This amendment was not chosen; it was triggered by the pre-registration's own
+rule. Amendment \#6(c) restricted the judge to fire only on verifier-FABRICATED
+and verifier-UNVERIFIABLE citations, accepting verifier-REAL at face value, and
+committed that if the disagreement rate on verifier-REAL citations exceeded
+8\%, a sub-amendment would be recorded. That trust step was validated at
+production scale on Phase B, where the registered sub-study put the
+disagreement rate at 4.3\% with a design-based 95\% CI of $[1.7, 7.0]$,
+clearing the gate. On the Phase C corpus a blind hand-check found 8 of 20
+verifier-REAL citations were fabricated: 40.0\%, Wilson 95\% CI
+$[21.9, 61.3]$. Even the lower bound is roughly three times the registered
+gate, so the rule fires.
+
+\paragraph{Why the failure was corrected rather than only disclosed.}
+The registered outcome is generation-level, so a missed fabrication changes a
+result only when it is the sole bad citation in its generation. Of 25,530
+citing generations, 12,920 were already scored fabricated and could not flip,
+leaving 5,251 at risk. What made disclosure alone inadequate is not the level of
+the error but its \emph{differential} exposure across the conditions being
+contrasted. The at-risk share and mean trusted-citation load run
+\texttt{citations\_expected} 26.4\% and 1.64, \texttt{abstention\_permitted}
+23.5\% and 1.18, \texttt{neutral} 18.9\% and 1.10, \texttt{length\_matched}
+14.6\% and 1.09. Amendment \#10 pins its bin boundaries at $\pm 5$pp on exactly
+the \texttt{citations\_expected} minus \texttt{length\_matched} difference, and
+a differential bias of that size could manufacture a bin verdict by itself.
+Exposure by stage is by contrast nearly flat, 19.7\% to 22.7\%, so E1 is not
+materially implicated. Leaving this to a disclosure would have rested the
+paper's most consequential pre-committed directional call on an artifact.
+
+\paragraph{The corrective run.}
+Only verifier-REAL citations inside at-risk generations were re-judged: 6,852 of
+8,860, or 77.3\%, sitting in 5,251 generations. Prompts came from the registered
+renderer, so the instrument is byte-identical to the deployed judge and only the
+population differs. The count is 6,852 and not the 6,784 an earlier draft
+carried; that planning figure was derived at 28,266 of 31,980 judgments and was
+restated upward at the completed judge, along with at-risk generations
+5,194 to 5,251. All 6,852 were re-judged with no duplicates and no error rows.
+The verdicts on citations the structured verifier had called REAL were REAL
+4,828 (70.5\%), FABRICATED 1,836 (26.8\%) and UNVERIFIABLE 188 (2.7\%), so
+29.5\% of verifier-REAL labels did not survive. That 29.5\% is a net figure over
+two opposing corrections, demotions where a wrong identifier resolves to a
+different real work against rescues where a wrong venue or a dead DOI still
+leaves one real work uniquely identified, and it is reported as a
+misclassification matrix rather than as a scalar. The 188 UNVERIFIABLE
+re-judgments leave the verifier's REAL label standing, matching the main combine
+rule, so 6,664 of the 6,852 are applied and no generation moves into or out of
+the excluded set. At the generation level the correction moves 1,458 of 25,530
+citing generations, 5.71\%, every one from clean to fabricated, taking the
+absolute fabrication rate from 50.61\% to 56.32\%.
+
+\paragraph{What it did to the registered conclusion, and what it did not.}
+Both pipelines are reported side by side throughout: the registered \#6(c)
+pipeline with the correction withheld, and the corrected pipeline. They agree on
+the amendment \#10 bin, $\Delta = +28.35$pp corrected against $+12.64$pp
+registered, both in the same bin with neither interval near a boundary. The
+withheld-correction pipeline is the conservative one, so the finding does not
+depend on the correction having been applied, and the trust-step failure does
+not reach the registered conclusion. The residual limitation is stated rather
+than argued away: this replaces blind verifier trust with the judge's own
+verdict, and the same hand-check puts the judge at 80.0\% precision
+$[68.2, 88.2]$ on FABRICATED. The corrected outcome therefore carries roughly
+20\% residual error on that stratum rather than none. It is a substantial
+improvement on 40\% blind trust, not an elimination of error. Why Phase C
+differs from Phase B is not established. The two studies measure the same
+quantity on different corpora, and open-weights models may produce a different
+mix of failure modes, including real identifiers attached to different real
+works; that is a hypothesis, not a finding.
+
+\subsection{Amendment \#13: the roster that ran was smaller than the roster registered}
+
+This amendment is a disclosure first and a repair second. The pre-registration
+enumerates 23 open-weights checkpoints across six families and states that the
+E1 and E2 power figures it reports, 97.5\% and 95.5\% at nominal $\alpha$, are
+computed on exactly that roster. Phase C collected twelve checkpoints across
+three families: the Tülu-3 8B and 70B cascades and the OLMo-2-13B cascade, each
+complete at four stages. The 405B anchor and the entire cross-family
+base-to-Instruct breadth arm were never collected, for reasons of compute, and
+the reduction was never recorded as a deviation. Amendment \#11 registered the
+twelve checkpoints as join codes, which is where the number first appears, but
+it is an interface amendment and did not propagate to the power section. The
+reduction was found on 2026-09-04, after the confirmatory fit, by reading the
+registered roster back against the registry the fit had used.
+
+\paragraph{What the reduction does to the power figures.}
+The registered figures describe a design that did not run. We therefore
+re-measured a-priori power on the roster that did, reusing the registered
+simulation unchanged and reading the roster from the confirmatory registry
+rather than retyping it, with the interaction pinned to the same declared
+effect the registered run pinned. Nothing in the result depends on the observed
+estimate; observed power for a null would be circular and is not reported. On
+the twelve-model roster E1 has 73.0\% $[66.3, 79.0]$ power at nominal $\alpha$
+and 54.0\% at the Holm floor, against 97.5\% and 90.0\% registered; E2 has
+73.0\% and 51.0\%, against 95.5\% and 85.0\%. All four fail the 80\% gate the
+pre-registration set for itself. The two nominal figures coincide because both
+are 146 rejections in 200 simulations; the Holm-floor figures show the runs are
+distinct. The consequence falls on E1, whose registered result is a null: a
+design that would miss the registered effect roughly 27\% of the time at nominal
+$\alpha$ and 46\% at the Holm floor cannot support ``post-training does not
+raise fabrication selectively.'' The null is uninformative, which is a weaker
+statement than the pre-registration expected to make and weaker in the
+direction that costs a claim. Low power does not rescue T1; the registered
+conclusion stays ``not supported.'' E2 rejects decisively and is unaffected in
+kind.
+
+\paragraph{The repair, and the rule that governs it.}
+A ladder of intermediate rosters, powered the same way, showed that collecting
+registered-but-uncollected checkpoints moves E1 across the gate: adding
+Llama-3.1-70B-Instruct alone reaches 80.0\%, adding the Qwen2.5-72B pair as
+well reaches 91.0\%, and no reachable roster repairs the Holm floor. Before any
+new generation existed we committed the rule in the repository: collect
+exactly those three checkpoints, all of them in the registered roster; stop on
+the registered 80\% power gate and not on significance, with the E1 estimate
+never consulted; change no hypothesis, estimand, Holm family, specification or
+coding; and report either outcome, an informative null or a supported T1,
+without re-opening collection. The honest sequence is that E1 returned a null,
+the reduction was then discovered, realized power failed the gate, and only then
+were three registered checkpoints collected. Every step after the null is a
+repair toward the registered design with the effect pinned a priori; what would
+make it illegitimate is choosing the roster by looking at the E1 estimate, and
+the rule forecloses that. The three were generated on 2026-09-06 through the
+same code path and frozen question set as the twelve, 3,600 generations each
+with no errors, and extracted with the same pinned extractor.
+
+\paragraph{The ladder double-counted a base, and the grouping rule that fixes it.}
+The registered roster lists Llama-3.1-70B twice, as the Tülu-3-70B stage-0
+base and as the base of the Llama breadth pair, and the ladder mirrored that by
+adding it as a second family. In the data it is one checkpoint with one set of
+generations, so the ladder's 14- and 16-model rungs were simulated on a
+structure the real data cannot carry without duplicating 3,600 observations. We
+fixed the grouping before any of the three new checkpoints was judged: family
+is the shared base model, so Llama-3.1-70B-Instruct joins the Tülu-3-70B family
+as a sibling post-trained checkpoint and the Qwen pair is its own family. The
+roster is fifteen checkpoints in four families with no duplicated rows, and the
+nested random intercept keeps its registered meaning. The a-priori power on
+that roster, not the ladder's figures, is what the gate is measured against.
+For E1 it is 83.0\% $[77.1, 87.9]$ at nominal $\alpha$ and 69.0\% at the Holm
+floor, from 200 simulations with the effect pinned as before and no errors or
+warnings: the roster clears the registered gate by three points rather than the
+eleven the double-counted ladder suggested, and the Holm floor stays unrepaired,
+as the rule anticipated. Collection is closed under that rule. For E2 the
+figure is 83.5\% $[77.6, 88.4]$ at nominal $\alpha$ and 66.5\% at the Holm
+floor, again from 200 simulations with no errors or warnings, so both
+confirmatory interactions clear the nominal gate and neither clears the Holm
+floor.
+
+\paragraph{What is reported.}
+Both fits. The twelve-model confirmatory result in Section~\ref{sec:results}
+stands as the registered one-shot fit on the roster that ran, read against its
+realized power. The fifteen-model refit, same specification, both pipelines,
+with Wald intervals as described in the next subsection, is reported beside it
+and read against the fifteen-model power; Section~\ref{sec:refit15} gives the
+result. In short, E1's registered interaction is null again at 83\% power, with
+a slightly negative point estimate, and the headline T1 claim stays unsupported;
+E2's interaction holds at Holm-adjusted $p = 3 \times 10^{-31}$. The same reading of the registered roster found that
+the closed-API block was never collected either, so the secondary hypothesis
+H1.2b is untested rather than unsupported, as Section~\ref{sec:results}
+already states. The generalization claim narrows accordingly, to the base
+models and post-training recipes actually run.
+
+\subsection{Amendment \#14: Wald intervals in place of the bootstrap}
+
+The pre-registration asks for parametric-bootstrap percentile intervals from
+10,000 resamples on the target interaction terms, reported alongside Wald
+intervals and p-values. We report the Wald intervals and not the bootstrap. Each
+resample refits the full confirmatory model, and we measured what that costs on
+the twelve-model frame with a chunked, resumable run: about 10 to 12 hours per
+400 resamples for an E1 job and about 85 hours per 400 for an E2 job, at four
+workers. Across the four registered jobs (E1 and E2, each under both pipelines
+of amendment \#12) that comes to about 19,200 worker-hours, roughly 17,150 of
+them in E2, before the larger fifteen-model frame. Adding cores did not help in
+proportion, because repeated refits on a frame this size are limited by memory
+bandwidth. When the run stopped it had banked most of the E1 resamples and very
+few of the E2 ones. We do not pool those partial chunks, because an interval
+whose resample count was set by when the run stopped is not the registered
+estimator.
+
+No registered decision depends on the bootstrap. The Holm-adjusted p-values,
+the directional checks and the amendment \#10 bin all come from the fitted
+models. The registration chose percentile intervals because the interaction
+estimates are close to symmetric on the logit scale at this sample size, which
+is also when Wald and percentile intervals agree. The one case where the
+interval method could change a directional call, a bound within 2pp of the
+10pp threshold, already triggers a profile-likelihood interval; we keep that
+rule and apply it to the Wald bound. This amendment was filed before the
+fifteen-model fit was run.
+
+\subsection{Sensitivity \#1 elevated to co-primary}
+
+The registered escalation trigger is monotonicity of the pooled obscure-real
+exclusion rate across stages. Pooled, the rates are 2.25\%, 2.85\%, 2.58\% and
+2.21\%, which is not monotone, so the literal trigger returns false. We ran the
+sensitivity as co-primary anyway, and recorded the decision before the
+confirmatory fit.
+
+The reason is that the pooled test masks the domain that motivated the check.
+Legal alone \emph{is} monotone decreasing across all four stages, 7.84\%,
+7.72\%, 6.24\% and 5.55\%, at roughly thirty times the academic rate, and the
+pooled $n$ drowns it out. The re-coding is also unusually cheap in inferential
+terms: recoding UNVERIFIABLE as fabricated excludes no generation at all, so it
+dissolves the non-ignorable-missingness question rather than arguing about it,
+and the analysis frame goes from 42,845 to 43,200 rows. The costs are
+asymmetric. Running a sensitivity that turns out to be unnecessary costs a
+paragraph; omitting one that turns out to be necessary is not recoverable after
+a one-shot confirmatory fit.
+
+This is a conservative deviation in the strict sense: it adds an analysis and
+changes no registered estimand, test, hypothesis family or GLMM specification.
+Both halves of it have to be stated together. Reporting only that the
+sensitivity was elevated would imply the registered trigger fired, and reporting
+only that the trigger returned false would imply the escalation was unmotivated.
+Neither is accurate. The full argument is in
+\texttt{docs/legal\_domain\_holdout\_decision.md}.
+
+\subsection{Legal domain retained in the primary analysis}
+
+We expected to hold the legal domain out of the primary analysis and did not.
+The decision was written before the confirmatory fit and is recorded in full in
+\texttt{docs/legal\_domain\_holdout\_decision.md}; the grounds, in order of
+weight, are these.
+
+First, removing legal would delete a registered test. The E1 confirmatory family
+enumerates \texttt{stage\_ordinal:cellobscure\_real:domainlegal} as member 5 of
+five. A holdout would not be a robustness choice, it would be the silent removal
+of a pre-registered hypothesis, and it would be made at exactly the moment the
+result was about to be read.
+
+Second, the rationale that pointed toward a holdout was obsolete. It came from
+our own earlier Phase B work, where legal per-generation exclusion ran 63.9\% to
+90.7\% and correlated with condition at 26.8 points. Those figures describe a
+verifier-only pipeline. Phase C has a judge layer, and under the combined label
+legal exclusion falls to roughly 2 to 6\% with a condition-correlation near 3
+points. The residual is real and is disclosed in
+Section~\ref{sec:limitations}, but it is no longer disqualifying on its own. It
+also matters that the Phase B precedent was an analysis choice made at the time
+and never registered, so it cannot license removing a registered family member
+now.
+
+Third, the pre-registration already contains its own remedy for informative
+exclusion, and it is not a holdout. It is the sensitivity \#1 escalation
+described above, which is domain-agnostic, excludes nothing, and was run as
+co-primary. Using the registered remedy is preferable to inventing an
+unregistered one after the fact.
+
+% Scope decision made 2026-08-12: build E3 and E4, so the §2 single-publication
+% commitment is met and no scope deviation is declared. E3 was built and run
+% 2026-09-05/06 on the registered scale-check arm; the deviations that entails
+% are recorded below.
+
+\subsection{E3 run on the registered scale-check arm, from quantized weights}
+
+The pre-registration names three probe targets for E3: Tülu-3-70B-Instruct as
+the primary, Tülu-3-8B as a scale check, and Llama-3.1-70B-Instruct as a
+cross-pipeline check. Only the scale check was run. H1.3 is stated on the 70B
+primary, so the registered hypothesis is untested and the reported result is
+the registered procedure on the registered secondary model. The decision was
+made on 2026-09-05, before any E3 number existed, and the reason is compute
+rather than outcome: the study's remaining budget was zero dollars and the local
+GPU holds 12~GB.
+
+Two further departures follow from the same constraint, one specification
+fills a gap the registration left open, and one departure comes from the data.
+First, the 8B checkpoint was loaded in 4-bit NF4 quantization, because 8B
+in bf16 does not fit 12~GB; the hidden states are therefore read from a
+quantized copy of the weights that produced the Phase C generations. Second, the
+registered difficulty proxy, the base model's log-probability of producing any
+citation for the item, was estimated from Llama-3.1-8B's existing Phase C
+generations, four draws per question, rather than from a dedicated scoring
+pass, which leaves it with five distinct levels; the draw count is stored beside
+every value. Third, the layer was selected on the probe set's own validation
+split and the full 33-layer sweep is reported, so no layer was chosen on
+citation data. Fourth, the registered positive class is ``fabricated plus
+misgrounded,'' and no Phase C citation carries the MISGROUNDED label, so the
+class is FABRICATED alone; UNVERIFIABLE citations are excluded from both
+classes.
+
+On timing: the probe, the cross-task and within-domain estimates, the layer
+sweep and the agreement rule were implemented and run on 2026-09-05. The
+deconfound's implementation, the proxy construction and the orientation rule
+under which the difficulty probe is scored in whichever direction is larger,
+was written on 2026-09-06, after the within-domain AUROC of $0.886$ was known
+and before the deconfound itself was run. The orientation rule is conservative
+for the fabrication claim, and the proxy's definition is the registered one; we
+record the order anyway, because a guardrail written after its target number is
+known is not the same object as one written before.

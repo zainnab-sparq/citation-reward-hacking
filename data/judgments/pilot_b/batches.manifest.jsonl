@@ -1,0 +1,2 @@
+{"batch_id": "msgbatch_011zianZJ5WDQwWjqTAuwpry", "model_id": "__judge__:claude-sonnet-4-6", "output_path": "data\\judgments\\pilot_b\\claude-sonnet-4-6.jsonl", "request_count": 50, "submitted_at": "2026-06-06T15:04:11Z", "ended_at": null, "final_status": null}
+{"batch_id": "msgbatch_011zianZJ5WDQwWjqTAuwpry", "model_id": "__judge__:claude-sonnet-4-6", "output_path": "data\\judgments\\pilot_b\\claude-sonnet-4-6.jsonl", "request_count": 50, "submitted_at": "2026-06-06T15:04:11Z", "ended_at": "2026-06-06T15:14:15Z", "final_status": "ended"}

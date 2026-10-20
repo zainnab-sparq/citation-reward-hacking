@@ -1,0 +1,552 @@
+{
+  "metadata": {
+    "analysis": "phase_c_drift_interaction",
+    "status": "EXPLORATORY / ROBUSTNESS. Not a member of the registered m=5 confirmatory family.",
+    "specification": "docs/drift_interaction_prespec.md (locked before any fit)",
+    "era_boundaries": {
+      "early_end_row": 16500,
+      "degraded_end_row": 24000,
+      "basis": "grounding metrics, set before this test was specified, not tuned to the outcome"
+    },
+    "unit": "generation with >=1 judged citation; generations with no judged citation carry no era and are drift-immune",
+    "n_generations_with_era": 18713,
+    "n_mixed_era_dropped": 1,
+    "alpha": 0.05
+  },
+  "exclusions": {
+    "by_era": [
+      {
+        "era": "EARLY",
+        "n": 10938,
+        "n_excluded": 110,
+        "exclusion_rate": 0.0101
+      },
+      {
+        "era": "DEGRADED",
+        "n": 4952,
+        "n_excluded": 225,
+        "exclusion_rate": 0.0454
+      },
+      {
+        "era": "RECOVERED",
+        "n": 2823,
+        "n_excluded": 14,
+        "exclusion_rate": 0.005
+      }
+    ],
+    "by_cell_stage": [
+      {
+        "cell": "known_real",
+        "stage_ordinal": 0,
+        "n": 357,
+        "n_excluded": 8,
+        "exclusion_rate": 0.0224
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 1,
+        "n": 1479,
+        "n_excluded": 24,
+        "exclusion_rate": 0.0162
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 2,
+        "n": 1975,
+        "n_excluded": 20,
+        "exclusion_rate": 0.0101
+      },
+      {
+        "cell": "known_real",
+        "stage_ordinal": 3,
+        "n": 1974,
+        "n_excluded": 12,
+        "exclusion_rate": 0.0061
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 0,
+        "n": 269,
+        "n_excluded": 9,
+        "exclusion_rate": 0.0335
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 1,
+        "n": 1489,
+        "n_excluded": 55,
+        "exclusion_rate": 0.0369
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 2,
+        "n": 2083,
+        "n_excluded": 69,
+        "exclusion_rate": 0.0331
+      },
+      {
+        "cell": "obscure_real",
+        "stage_ordinal": 3,
+        "n": 2024,
+        "n_excluded": 58,
+        "exclusion_rate": 0.0287
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 0,
+        "n": 503,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 1,
+        "n": 1781,
+        "n_excluded": 33,
+        "exclusion_rate": 0.0185
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 2,
+        "n": 2360,
+        "n_excluded": 32,
+        "exclusion_rate": 0.0136
+      },
+      {
+        "cell": "unanswerable",
+        "stage_ordinal": 3,
+        "n": 2419,
+        "n_excluded": 29,
+        "exclusion_rate": 0.012
+      }
+    ],
+    "by_condition_post": [
+      {
+        "condition": "neutral",
+        "is_post_trained": 0,
+        "n": 725,
+        "n_excluded": 14,
+        "exclusion_rate": 0.0193
+      },
+      {
+        "condition": "neutral",
+        "is_post_trained": 1,
+        "n": 4688,
+        "n_excluded": 111,
+        "exclusion_rate": 0.0237
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 0,
+        "n": 76,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 1,
+        "n": 4955,
+        "n_excluded": 52,
+        "exclusion_rate": 0.0105
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 0,
+        "n": 81,
+        "n_excluded": 3,
+        "exclusion_rate": 0.037
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 1,
+        "n": 2315,
+        "n_excluded": 55,
+        "exclusion_rate": 0.0238
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 0,
+        "n": 247,
+        "n_excluded": 0,
+        "exclusion_rate": 0
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 1,
+        "n": 5626,
+        "n_excluded": 114,
+        "exclusion_rate": 0.0203
+      }
+    ],
+    "monotone_in_stage_within_obscure_real": false,
+    "monotone_in_condition_within_obscure_real": false,
+    "note": "Pre-reg §5: a rate monotone in stage or condition within obscure_real promotes Sensitivity #1 to co-primary. Sensitivity #1 is reported regardless."
+  },
+  "counts": {
+    "n_modeled": 18364,
+    "n_open_weights": 18364,
+    "era_by_condition": [
+      {
+        "era": "EARLY",
+        "condition": "neutral",
+        "Freq": 3130
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "neutral",
+        "Freq": 1377
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "neutral",
+        "Freq": 781
+      },
+      {
+        "era": "EARLY",
+        "condition": "citations_expected",
+        "Freq": 2931
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "citations_expected",
+        "Freq": 1296
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "citations_expected",
+        "Freq": 752
+      },
+      {
+        "era": "EARLY",
+        "condition": "abstention_permitted",
+        "Freq": 1395
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "abstention_permitted",
+        "Freq": 566
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "abstention_permitted",
+        "Freq": 377
+      },
+      {
+        "era": "EARLY",
+        "condition": "length_matched",
+        "Freq": 3372
+      },
+      {
+        "era": "DEGRADED",
+        "condition": "length_matched",
+        "Freq": 1488
+      },
+      {
+        "era": "RECOVERED",
+        "condition": "length_matched",
+        "Freq": 899
+      }
+    ]
+  },
+  "d1_condition_era": {
+    "label": "D1 condition:era",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id) + condition:era",
+    "interaction_term": "condition:era",
+    "n_observations": 18364,
+    "chisq": 13.2186,
+    "df": 6,
+    "p_value": 0.0397,
+    "significant": true,
+    "aic_null": 14922.6443,
+    "aic_alt": 14921.4258,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -1.9542,
+        "std_error": 0.8976,
+        "p_value": 0.0295
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": 10.7534,
+        "std_error": 229.3183,
+        "p_value": 0.9626
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.4416,
+        "std_error": 0.5617,
+        "p_value": 0.0103
+      },
+      {
+        "term": "conditioncitations_expected:eraDEGRADED",
+        "estimate": 0.2105,
+        "std_error": 0.143,
+        "p_value": 0.141
+      },
+      {
+        "term": "conditionabstention_permitted:eraDEGRADED",
+        "estimate": 0.1087,
+        "std_error": 0.1629,
+        "p_value": 0.5044
+      },
+      {
+        "term": "conditionlength_matched:eraDEGRADED",
+        "estimate": 0.3258,
+        "std_error": 0.1382,
+        "p_value": 0.0184
+      },
+      {
+        "term": "conditioncitations_expected:eraRECOVERED",
+        "estimate": 0.4936,
+        "std_error": 0.1755,
+        "p_value": 0.0049
+      },
+      {
+        "term": "conditionabstention_permitted:eraRECOVERED",
+        "estimate": 0.1666,
+        "std_error": 0.1948,
+        "p_value": 0.3925
+      },
+      {
+        "term": "conditionlength_matched:eraRECOVERED",
+        "estimate": 0.4122,
+        "std_error": 0.1684,
+        "p_value": 0.0144
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": 0.6368,
+        "std_error": 0.912,
+        "p_value": 0.485
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": -12.7609,
+        "std_error": 229.3183,
+        "p_value": 0.9556
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.4346,
+        "std_error": 0.5817,
+        "p_value": 0.455
+      }
+    ]
+  },
+  "d2_stage_era": {
+    "label": "D2 stage_ordinal:era",
+    "fitted": true,
+    "null_formula": "fabricated ~ stage_ordinal * cell * domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ stage_ordinal * cell * domain + era + (1 | family/model_id) + (1 | question_id) + stage_ordinal:era",
+    "interaction_term": "stage_ordinal:era",
+    "n_observations": 18364,
+    "chisq": 0.1754,
+    "df": 2,
+    "p_value": 0.9161,
+    "significant": false,
+    "aic_null": 17023.4393,
+    "aic_alt": 17027.2639,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "stage_ordinal:cellunanswerable",
+        "estimate": -0.1321,
+        "std_error": 0.0992,
+        "p_value": 0.1829
+      },
+      {
+        "term": "stage_ordinal:eraDEGRADED",
+        "estimate": 0.004,
+        "std_error": 0.0526,
+        "p_value": 0.9399
+      },
+      {
+        "term": "stage_ordinal:eraRECOVERED",
+        "estimate": 0.0272,
+        "std_error": 0.0643,
+        "p_value": 0.6727
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainmedical",
+        "estimate": -0.0557,
+        "std_error": 0.1354,
+        "p_value": 0.6808
+      },
+      {
+        "term": "stage_ordinal:cellunanswerable:domainlegal",
+        "estimate": -0.7235,
+        "std_error": 0.1345,
+        "p_value": 7.4537e-08
+      }
+    ]
+  },
+  "d3_condition_grounding": {
+    "label": "D3 condition:grounding_c",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + grounding_c + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + grounding_c + (1 | family/model_id) + (1 | question_id) + condition:grounding_c",
+    "interaction_term": "condition:grounding_c",
+    "n_observations": 18364,
+    "chisq": 20.039,
+    "df": 3,
+    "p_value": 0.0002,
+    "significant": true,
+    "aic_null": 11953.6037,
+    "aic_alt": 11939.5647,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:grounding_c",
+        "estimate": -0.0242,
+        "std_error": 0.0885,
+        "p_value": 0.7846
+      },
+      {
+        "term": "conditionabstention_permitted:grounding_c",
+        "estimate": 0.403,
+        "std_error": 0.106,
+        "p_value": 0.0001
+      },
+      {
+        "term": "conditionlength_matched:grounding_c",
+        "estimate": -0.0181,
+        "std_error": 0.0828,
+        "p_value": 0.8265
+      }
+    ]
+  },
+  "d1_sensitivity1": {
+    "label": "D1 condition:era (Sensitivity #1)",
+    "fitted": true,
+    "null_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id)",
+    "alt_formula": "fabricated ~ condition * is_post_trained * cell + domain + era + (1 | family/model_id) + (1 | question_id) + condition:era",
+    "interaction_term": "condition:era",
+    "n_observations": 18713,
+    "chisq": 10.5249,
+    "df": 6,
+    "p_value": 0.1042,
+    "significant": false,
+    "aic_null": 15281.6125,
+    "aic_alt": 15283.0875,
+    "null_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "alt_health": {
+      "is_singular": false,
+      "converged": true,
+      "messages": []
+    },
+    "interaction_coefficients": [
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -1.768,
+        "std_error": 0.8985,
+        "p_value": 0.0491
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": 10.8818,
+        "std_error": 231.9448,
+        "p_value": 0.9626
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.6355,
+        "std_error": 0.56,
+        "p_value": 0.0035
+      },
+      {
+        "term": "conditioncitations_expected:eraDEGRADED",
+        "estimate": -0.1326,
+        "std_error": 0.1438,
+        "p_value": 0.3567
+      },
+      {
+        "term": "conditionabstention_permitted:eraDEGRADED",
+        "estimate": 0.063,
+        "std_error": 0.1548,
+        "p_value": 0.6843
+      },
+      {
+        "term": "conditionlength_matched:eraDEGRADED",
+        "estimate": 0.2786,
+        "std_error": 0.1341,
+        "p_value": 0.0378
+      },
+      {
+        "term": "conditioncitations_expected:eraRECOVERED",
+        "estimate": 0.2183,
+        "std_error": 0.1737,
+        "p_value": 0.2089
+      },
+      {
+        "term": "conditionabstention_permitted:eraRECOVERED",
+        "estimate": 0.163,
+        "std_error": 0.1893,
+        "p_value": 0.389
+      },
+      {
+        "term": "conditionlength_matched:eraRECOVERED",
+        "estimate": 0.2201,
+        "std_error": 0.1649,
+        "p_value": 0.1819
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": 0.506,
+        "std_error": 0.9142,
+        "p_value": 0.5799
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": -12.8898,
+        "std_error": 231.9449,
+        "p_value": 0.9557
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.2457,
+        "std_error": 0.5812,
+        "p_value": 0.6725
+      }
+    ]
+  },
+  "interpretation": {
+    "if_null": "Non-differential misclassification supported: registered contrasts stand; drift reported in limitations with the three-era table.",
+    "if_significant": "Registered estimands are NOT adjusted and remain primary. Add an era-stratified robustness panel and state that this test detects differentiality but does not identify the direction of bias, because eras contain different items. Only the paired re-judge sub-study, which holds the item fixed, can attribute the difference to the instrument.",
+    "power_caveat": "A non-significant interaction bounds the evidence; it does not prove non-differentiality. See counts$era_by_condition for achieved n."
+  }
+}

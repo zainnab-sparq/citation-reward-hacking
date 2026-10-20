@@ -1,0 +1,1085 @@
+{
+  "primary_open_weights": {
+    "formula": ["fabricated ~ condition * is_post_trained * cell + domain + (1 | ", "    family/model_id) + (1 | question_id)"],
+    "n_observations": 42845,
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.0619125065265,
+        "std_error": 0.338066225139474,
+        "z": -9.05713815470109,
+        "p_value": 1.33917930856248e-19,
+        "odds_ratio": 0.0467981078923489,
+        "or_ci_lo": 0.0241249155522211,
+        "or_ci_hi": 0.090780127191048,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": -2.28117192555738,
+        "std_error": 0.409061769131322,
+        "z": -5.57659526677754,
+        "p_value": 2.45271618786948e-08,
+        "odds_ratio": 0.102164407451192,
+        "or_ci_lo": 0.0458253310753355,
+        "or_ci_hi": 0.227768483171332,
+        "p_holm": 9.81086475147793e-08,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -1.56529324722091,
+        "std_error": 0.308205170796325,
+        "z": -5.07873778748288,
+        "p_value": 3.79950673284471e-07,
+        "odds_ratio": 0.209026707683766,
+        "or_ci_lo": 0.114250224773055,
+        "or_ci_hi": 0.382425195328098,
+        "p_holm": 1.13985201985341e-06,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": -1.49290584615304,
+        "std_error": 0.300256833023384,
+        "z": -4.97209615887999,
+        "p_value": 6.62328371532421e-07,
+        "odds_ratio": 0.224718707871156,
+        "or_ci_lo": 0.12475562876709,
+        "or_ci_hi": 0.404779312695854,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained",
+        "estimate": 1.15132543653847,
+        "std_error": 0.378064412100217,
+        "z": 3.04531555917323,
+        "p_value": 0.00232436294320446,
+        "odds_ratio": 3.16238166932212,
+        "or_ci_lo": 1.50731934504053,
+        "or_ci_hi": 6.63473062650546,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.468585438148108,
+        "std_error": 0.197643486918863,
+        "z": 2.37086202764917,
+        "p_value": 0.0177466544617139,
+        "odds_ratio": 1.59773250249623,
+        "or_ci_lo": 1.08460007221636,
+        "or_ci_hi": 2.35363173479822,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 1.91648609316756,
+        "std_error": 0.177342808318091,
+        "z": 10.8066750004886,
+        "p_value": 3.20061531288434e-27,
+        "odds_ratio": 6.79703231847319,
+        "or_ci_lo": 4.80136655304961,
+        "or_ci_hi": 9.62218731436472,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 0.203666769779886,
+        "std_error": 0.0762229394077787,
+        "z": 2.67198787349706,
+        "p_value": 0.00754033732876665,
+        "odds_ratio": 1.22588958193058,
+        "or_ci_lo": 1.05577231764323,
+        "or_ci_hi": 1.4234179490902,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -0.461532682606217,
+        "std_error": 0.0769508378045934,
+        "z": -5.99776033339909,
+        "p_value": 2.00057485639008e-09,
+        "odds_ratio": 0.630316829144443,
+        "or_ci_lo": 0.542073567540762,
+        "or_ci_hi": 0.732925065697524,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained",
+        "estimate": 4.01698415564431,
+        "std_error": 0.415496736988507,
+        "z": 9.66790782704852,
+        "p_value": 4.12729075729683e-22,
+        "odds_ratio": 55.533373016339,
+        "or_ci_lo": 24.5970253637206,
+        "or_ci_hi": 125.379206345842,
+        "p_holm": 2.06364537864841e-21,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained",
+        "estimate": 1.27870091232627,
+        "std_error": 0.319428512231072,
+        "z": 4.00308946560559,
+        "p_value": 6.25206457575863e-05,
+        "odds_ratio": 3.59197040881755,
+        "or_ci_lo": 1.92059019631545,
+        "or_ci_hi": 6.71785758490966,
+        "p_holm": 0.000125041291515173,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained",
+        "estimate": 1.60122437179579,
+        "std_error": 0.310586455084829,
+        "z": 5.15548680755718,
+        "p_value": 2.52972852785317e-07,
+        "odds_ratio": 4.95910049162631,
+        "or_ci_lo": 2.69793348961047,
+        "or_ci_hi": 9.11537581662141,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": -1.12094609844554,
+        "std_error": 0.663185734357547,
+        "z": -1.69024458816419,
+        "p_value": 0.0909811712729475,
+        "odds_ratio": 0.325971247797388,
+        "or_ci_lo": 0.0888535071150466,
+        "or_ci_hi": 1.19587012196384,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": 0.403314232693282,
+        "std_error": 0.376163899834487,
+        "z": 1.07217686989831,
+        "p_value": 0.283640597363017,
+        "odds_ratio": 1.49677715409017,
+        "or_ci_lo": 0.716087105806662,
+        "or_ci_hi": 3.12858845081781,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": -0.972705917038723,
+        "std_error": 0.45718597198374,
+        "z": -2.12759353227338,
+        "p_value": 0.0333707989449316,
+        "odds_ratio": 0.378058657421117,
+        "or_ci_lo": 0.154312740035278,
+        "or_ci_hi": 0.926225199671666,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": 0.260241987841861,
+        "std_error": 0.445261169764433,
+        "z": 0.584470431094504,
+        "p_value": 0.558903853338363,
+        "odds_ratio": 1.29724396595444,
+        "or_ci_lo": 0.542019191980865,
+        "or_ci_hi": 3.1047644291987,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -2.73079575487329,
+        "std_error": 0.556348910331586,
+        "z": -4.90842294136198,
+        "p_value": 9.18116900744669e-07,
+        "odds_ratio": 0.0651674117443344,
+        "or_ci_lo": 0.0219010744447005,
+        "or_ci_hi": 0.193907909138367,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.25931200340092,
+        "std_error": 0.321896493337902,
+        "z": 3.91216440521765,
+        "p_value": 9.14726029573609e-05,
+        "odds_ratio": 3.52299684354075,
+        "or_ci_lo": 1.87462093261028,
+        "or_ci_hi": 6.62080879589661,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained:cellobscure_real",
+        "estimate": 0.651273815465545,
+        "std_error": 0.198485242314324,
+        "z": 3.28122034601535,
+        "p_value": 0.0010335896370689,
+        "odds_ratio": 1.91798242929073,
+        "or_ci_lo": 1.29985132048186,
+        "or_ci_hi": 2.83005951611779,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained:cellunanswerable",
+        "estimate": 0.65410336581216,
+        "std_error": 0.177805599867015,
+        "z": 3.67875571017661,
+        "p_value": 0.000234374627246689,
+        "odds_ratio": 1.9234171424095,
+        "or_ci_lo": 1.35745387428752,
+        "or_ci_hi": 2.72534748604737,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellobscure_real",
+        "estimate": 0.517123204832089,
+        "std_error": 0.670261539389358,
+        "z": 0.771524508631682,
+        "p_value": 0.440396101078744,
+        "odds_ratio": 1.67719575420312,
+        "or_ci_lo": 0.450874940108027,
+        "or_ci_hi": 6.23894864780689,
+        "p_holm": 0.440396101078744,
+        "significant_holm": false
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellobscure_real",
+        "estimate": -2.09337513917269,
+        "std_error": 0.395041142072139,
+        "z": -5.29913195418622,
+        "p_value": 1.16354524456813e-07,
+        "odds_ratio": 0.123270378223267,
+        "or_ci_lo": 0.0568328059725181,
+        "or_ci_hi": 0.267373498233665,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellobscure_real",
+        "estimate": 1.1739852489909,
+        "std_error": 0.468488169786212,
+        "z": 2.50590158877785,
+        "p_value": 0.0122139609399638,
+        "odds_ratio": 3.23485870164394,
+        "or_ci_lo": 1.29144960080689,
+        "or_ci_hi": 8.10276360228342,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": -1.69204201056299,
+        "std_error": 0.45530373242327,
+        "z": -3.7162928613772,
+        "p_value": 0.000202167237096799,
+        "odds_ratio": 0.184143117619608,
+        "or_ci_lo": 0.075439751992741,
+        "or_ci_hi": 0.449480371700209,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": 0.674945434617587,
+        "std_error": 0.566759437673154,
+        "z": 1.19088521470166,
+        "p_value": 0.233698649611156,
+        "odds_ratio": 1.96392581068323,
+        "or_ci_lo": 0.64669361025377,
+        "or_ci_hi": 5.96419158734882,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.138456435410694,
+        "std_error": 0.338721324062692,
+        "z": -0.408762087222674,
+        "p_value": 0.682714265211727,
+        "odds_ratio": 0.870701182182298,
+        "or_ci_lo": 0.448279646051261,
+        "or_ci_hi": 1.69117771759586,
+        "p_holm": null,
+        "significant_holm": null
+      }
+    ],
+    "bootstrap_cis": {},
+    "profile_cis": {},
+    "directional_h1_2": {
+      "p_neutral_base": 0.0868399841117911,
+      "p_neutral_post": 0.317259931383016,
+      "p_cite_base": 0.00723964403507114,
+      "p_cite_post": 0.572211179541731,
+      "delta_base": -0.0796003400767199,
+      "delta_post": 0.254951248158714,
+      "interaction_delta_pp": 0.334551588235434,
+      "passes_threshold": true,
+      "by_domain": [
+        {
+          "domain": "academic",
+          "interaction_delta_pp": 0.342963825234447,
+          "passes_threshold": true
+        },
+        {
+          "domain": "medical",
+          "interaction_delta_pp": 0.361242655160956,
+          "passes_threshold": true
+        },
+        {
+          "domain": "legal",
+          "interaction_delta_pp": 0.293211909014998,
+          "passes_threshold": true
+        }
+      ]
+    },
+    "amendment10_contrast": {
+      "delta_pp": 0.126380112933376,
+      "ci_lo_pp": 0.107476013851429,
+      "ci_hi_pp": 0.145284212015324,
+      "bin": "citation_cue_supported",
+      "p_citations_expected": 0.572846653721529,
+      "p_length_matched": 0.446466540788152,
+      "p_neutral": 0.317741803234965,
+      "odds_ratio_ordering": {
+        "citations_expected_vs_neutral": 2.87957884101697,
+        "length_matched_vs_neutral": 1.73188657593134
+      },
+      "secondary_all_open_weights": {
+        "share_post_trained": 0.748325358851675,
+        "delta_pp": 0.0905929149436568,
+        "ci_lo_pp": 0.0761480003715231,
+        "ci_hi_pp": 0.10503782951579
+      }
+    }
+  },
+  "sensitivity_extended_re": {
+    "formula": ["fabricated ~ condition * is_post_trained * cell + domain + (1 + ", "    condition + cell | family) + (1 + condition + cell | model_id) + ", "    (1 | question_id)"],
+    "is_singular": true,
+    "converged": true,
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.07170794860977,
+        "std_error": 0.37385189263963,
+        "z": -8.21637661620909,
+        "p_value": 2.09744054990924e-16,
+        "odds_ratio": 0.0463419375793057,
+        "or_ci_lo": 0.0222715724060825,
+        "or_ci_hi": 0.096426742550865,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": -3.09984058022825,
+        "std_error": 0.697317333817841,
+        "z": -4.44538007288087,
+        "p_value": 8.7736614521892e-06,
+        "odds_ratio": 0.0450563846996066,
+        "or_ci_lo": 0.0114867918288685,
+        "or_ci_hi": 0.176731487123931,
+        "p_holm": 3.50946458087568e-05,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -2.64027105640631,
+        "std_error": 0.850642237556594,
+        "z": -3.10385605115294,
+        "p_value": 0.00191016242907413,
+        "odds_ratio": 0.071341929248386,
+        "or_ci_lo": 0.0134671861794434,
+        "or_ci_hi": 0.37793127688772,
+        "p_holm": 0.0057304872872224,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": -1.49837232671291,
+        "std_error": 0.38375021919454,
+        "z": -3.90455106412153,
+        "p_value": 9.44004589943242e-05,
+        "odds_ratio": 0.223493638881712,
+        "or_ci_lo": 0.105345596813718,
+        "or_ci_hi": 0.474148024515105,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained",
+        "estimate": 1.10992221411328,
+        "std_error": 0.341622114776779,
+        "z": 3.24897647460123,
+        "p_value": 0.00115821056449281,
+        "odds_ratio": 3.034122373357,
+        "or_ci_lo": 1.55325879587263,
+        "or_ci_hi": 5.92682854973539,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.412236235184894,
+        "std_error": 0.277607747751895,
+        "z": 1.48495940233383,
+        "p_value": 0.137554578742235,
+        "odds_ratio": 1.510191154479,
+        "or_ci_lo": 0.876459350961088,
+        "or_ci_hi": 2.60214842886407,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 1.90266591368118,
+        "std_error": 0.253113887156421,
+        "z": 7.51703486148652,
+        "p_value": 5.60324803708107e-14,
+        "odds_ratio": 6.70374223951682,
+        "or_ci_lo": 4.08193773560628,
+        "or_ci_hi": 11.0095162946446,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 0.206866247060518,
+        "std_error": 0.0787958299713496,
+        "z": 2.6253451119905,
+        "p_value": 0.00865611816785416,
+        "odds_ratio": 1.22981806899788,
+        "or_ci_lo": 1.05382800973519,
+        "or_ci_hi": 1.43519859869137,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -0.47615688905406,
+        "std_error": 0.0795799160628097,
+        "z": -5.98338013674513,
+        "p_value": 2.18553885698033e-09,
+        "odds_ratio": 0.621166020452954,
+        "or_ci_lo": 0.531458237843185,
+        "or_ci_hi": 0.726016077069841,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained",
+        "estimate": 4.8207794497616,
+        "std_error": 0.716985606889951,
+        "z": 6.72367674251171,
+        "p_value": 1.7719531283551e-11,
+        "odds_ratio": 124.06175300706,
+        "or_ci_lo": 30.4325720192688,
+        "or_ci_hi": 505.751487236756,
+        "p_holm": 8.8597656417755e-11,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained",
+        "estimate": 2.22522535382714,
+        "std_error": 0.900365014390825,
+        "z": 2.4714702573519,
+        "p_value": 0.0134558743917264,
+        "odds_ratio": 9.2555683466548,
+        "or_ci_lo": 1.58493334478449,
+        "or_ci_hi": 54.0499357285252,
+        "p_holm": 0.0269117487834528,
+        "significant_holm": true
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained",
+        "estimate": 1.69476300367124,
+        "std_error": 0.349126919179804,
+        "z": 4.85428911541027,
+        "p_value": 1.20819362655438e-06,
+        "odds_ratio": 5.44535528306452,
+        "or_ci_lo": 2.7469379430379,
+        "or_ci_hi": 10.7945264049198,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": -1.01746457943023,
+        "std_error": 0.665140304441114,
+        "z": -1.5296991817165,
+        "p_value": 0.126091206284505,
+        "odds_ratio": 0.361510359998487,
+        "or_ci_lo": 0.0981640106814862,
+        "or_ci_hi": 1.33134067647548,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": 0.616206459684235,
+        "std_error": 0.38258718387078,
+        "z": 1.61063016656711,
+        "p_value": 0.107260354701291,
+        "odds_ratio": 1.85188948234607,
+        "or_ci_lo": 0.874895663324645,
+        "or_ci_hi": 3.91988987783039,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": -1.01478844051875,
+        "std_error": 0.463263499657998,
+        "z": -2.19052103450394,
+        "p_value": 0.0284864710040278,
+        "odds_ratio": 0.362479107613218,
+        "or_ci_lo": 0.146201683717031,
+        "or_ci_hi": 0.898697608095802,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": 0.441116787091016,
+        "std_error": 0.455902138801084,
+        "z": 0.967569023148368,
+        "p_value": 0.333259654025397,
+        "odds_ratio": 1.55444223052828,
+        "or_ci_lo": 0.636077425124761,
+        "or_ci_hi": 3.79873668300019,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -2.61921670522563,
+        "std_error": 0.566261454057636,
+        "z": -4.62545470198831,
+        "p_value": 3.737774919188e-06,
+        "odds_ratio": 0.072859911269404,
+        "or_ci_lo": 0.0240151893074723,
+        "or_ci_hi": 0.221050377834568,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.25908739027289,
+        "std_error": 0.325158309973438,
+        "z": 3.8722288548484,
+        "p_value": 0.000107844618776774,
+        "odds_ratio": 3.52220562106247,
+        "or_ci_lo": 1.86225629325506,
+        "or_ci_hi": 6.66177501022677,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained:cellobscure_real",
+        "estimate": 0.775138797925394,
+        "std_error": 0.206636814268973,
+        "z": 3.75121345471586,
+        "p_value": 0.00017598079682668,
+        "odds_ratio": 2.17089342177662,
+        "or_ci_lo": 1.44793453756571,
+        "or_ci_hi": 3.25482825807594,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "is_post_trained:cellunanswerable",
+        "estimate": 0.731313388895366,
+        "std_error": 0.223397256160037,
+        "z": 3.27360058698066,
+        "p_value": 0.00106186589629757,
+        "odds_ratio": 2.07780778603209,
+        "or_ci_lo": 1.34106330779388,
+        "or_ci_hi": 3.21930006630165,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellobscure_real",
+        "estimate": 0.405575234767639,
+        "std_error": 0.672780222408894,
+        "z": 0.602834657230967,
+        "p_value": 0.546618688588364,
+        "odds_ratio": 1.50016519908546,
+        "or_ci_lo": 0.401298487521059,
+        "or_ci_hi": 5.60803415544647,
+        "p_holm": 0.546618688588364,
+        "significant_holm": false
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellobscure_real",
+        "estimate": -2.33420902657802,
+        "std_error": 0.401692809085001,
+        "z": -5.81093057626551,
+        "p_value": 6.21265249445372e-09,
+        "odds_ratio": 0.0968870873372984,
+        "or_ci_lo": 0.0440904327180911,
+        "or_ci_hi": 0.212905773747455,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellobscure_real",
+        "estimate": 1.12729033786763,
+        "std_error": 0.474372171836954,
+        "z": 2.37638378638932,
+        "p_value": 0.0174832677383929,
+        "odds_ratio": 3.08727967124491,
+        "or_ci_lo": 1.21839932159548,
+        "or_ci_hi": 7.82280127667909,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": -1.76013175103429,
+        "std_error": 0.466873001376327,
+        "z": -3.77004398593509,
+        "p_value": 0.00016321877833285,
+        "odds_ratio": 0.172022198227439,
+        "or_ci_lo": 0.068894011601546,
+        "or_ci_hi": 0.429524076114857,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": 0.549655290925208,
+        "std_error": 0.577007660889623,
+        "z": 0.952596175374442,
+        "p_value": 0.340794715798101,
+        "odds_ratio": 1.73265565278772,
+        "or_ci_lo": 0.559193929827689,
+        "or_ci_hi": 5.3686126601237,
+        "p_holm": null,
+        "significant_holm": null
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": -0.285908647141625,
+        "std_error": 0.341952100600084,
+        "z": -0.836107298770473,
+        "p_value": 0.403094542672801,
+        "odds_ratio": 0.751331249069111,
+        "or_ci_lo": 0.384380454960229,
+        "or_ci_hi": 1.46859352119284,
+        "p_holm": null,
+        "significant_holm": null
+      }
+    ]
+  },
+  "sensitivity_citation_covariate": {
+    "formula": ["fabricated ~ condition * is_post_trained * cell + domain + verbosity + ", "    (1 | family/model_id) + (1 | question_id)"],
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -3.91558964935014,
+        "std_error": 0.269701551422044,
+        "z": -14.5182318333157,
+        "p_value": 9.28751284585423e-48,
+        "odds_ratio": 0.0199287941799466,
+        "or_ci_lo": 0.0117465584788419,
+        "or_ci_hi": 0.0338104848481399
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": 0.0767009248260976,
+        "std_error": 0.453396735112915,
+        "z": 0.169169557003969,
+        "p_value": 0.865663274630461,
+        "odds_ratio": 1.07971911091867,
+        "or_ci_lo": 0.443995724232501,
+        "or_ci_hi": 2.62568600294115
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -1.26118895578897,
+        "std_error": 0.317589766564529,
+        "z": -3.97112592584974,
+        "p_value": 7.15337536775746e-05,
+        "odds_ratio": 0.283316974812382,
+        "or_ci_lo": 0.152033641021542,
+        "or_ci_hi": 0.527965440263753
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": -0.31506003803032,
+        "std_error": 0.313818946500241,
+        "z": -1.00395480114863,
+        "p_value": 0.315400400186065,
+        "odds_ratio": 0.729745060497756,
+        "or_ci_lo": 0.394500894671435,
+        "or_ci_hi": 1.34987742870493
+      },
+      {
+        "term": "is_post_trained",
+        "estimate": 1.5317136335059,
+        "std_error": 0.291276580625972,
+        "z": 5.25862268162499,
+        "p_value": 1.45138344066945e-07,
+        "odds_ratio": 4.62609746944356,
+        "or_ci_lo": 2.61384423830741,
+        "or_ci_hi": 8.18747249095843
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": 0.570013382511741,
+        "std_error": 0.205709053869413,
+        "z": 2.77096886009496,
+        "p_value": 0.00558897715210998,
+        "odds_ratio": 1.76829071544665,
+        "or_ci_lo": 1.18155461963154,
+        "or_ci_hi": 2.64638807413739
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 3.1274513520787,
+        "std_error": 0.192734176741894,
+        "z": 16.226760634503,
+        "p_value": 3.26227427587028e-59,
+        "odds_ratio": 22.815756049137,
+        "or_ci_lo": 15.6379289625492,
+        "or_ci_hi": 33.2882138894738
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 0.177593883185981,
+        "std_error": 0.0812659694539158,
+        "z": 2.18534134742207,
+        "p_value": 0.028863827878807,
+        "odds_ratio": 1.19434018110048,
+        "or_ci_lo": 1.01848426755861,
+        "or_ci_hi": 1.40056013983451
+      },
+      {
+        "term": "domainlegal",
+        "estimate": -0.402200357727505,
+        "std_error": 0.0823022728497553,
+        "z": -4.88686817266555,
+        "p_value": 1.02452644002577e-06,
+        "odds_ratio": 0.668846723655019,
+        "or_ci_lo": 0.569207720913185,
+        "or_ci_hi": 0.785927392246817
+      },
+      {
+        "term": "verbosity",
+        "estimate": 1.68870102262804,
+        "std_error": 0.0535843360864348,
+        "z": 31.5148258980771,
+        "p_value": 5.44213141236481e-218,
+        "odds_ratio": 5.41244549260765,
+        "or_ci_lo": 4.87284353000348,
+        "or_ci_hi": 6.01180112393799
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained",
+        "estimate": 1.58415802508493,
+        "std_error": 0.459440751658118,
+        "z": 3.4480137414187,
+        "p_value": 0.000564725305576084,
+        "odds_ratio": 4.8751848666013,
+        "or_ci_lo": 1.98113655719296,
+        "or_ci_hi": 11.9968648285477
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained",
+        "estimate": 0.993273936303588,
+        "std_error": 0.328823018186883,
+        "z": 3.02069466359278,
+        "p_value": 0.00252195537751359,
+        "odds_ratio": 2.70005984155506,
+        "or_ci_lo": 1.41735529020487,
+        "or_ci_hi": 5.14361021429185
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained",
+        "estimate": -0.181391388762037,
+        "std_error": 0.325602720140198,
+        "z": -0.55709420573616,
+        "p_value": 0.577463066187151,
+        "odds_ratio": 0.834108833976971,
+        "or_ci_lo": 0.440625049310569,
+        "or_ci_hi": 1.57897865318147
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": -0.503274436841482,
+        "std_error": 0.739585331960658,
+        "z": -0.680481906675042,
+        "p_value": 0.496199374438577,
+        "odds_ratio": 0.60454786142049,
+        "or_ci_lo": 0.141871288565631,
+        "or_ci_hi": 2.57612460169497
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": 0.340600993942658,
+        "std_error": 0.387271031305299,
+        "z": 0.879489986107817,
+        "p_value": 0.379135660328627,
+        "odds_ratio": 1.40579220933523,
+        "or_ci_lo": 0.658075061015346,
+        "or_ci_hi": 3.003079516155
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": -0.807328645652057,
+        "std_error": 0.476911041564644,
+        "z": -1.69282858917123,
+        "p_value": 0.0904880991761046,
+        "odds_ratio": 0.446048028450104,
+        "or_ci_lo": 0.175159706800043,
+        "or_ci_hi": 1.13587107057304
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -0.236840221104136,
+        "std_error": 0.502248287002891,
+        "z": -0.47156003760103,
+        "p_value": 0.637240856649487,
+        "odds_ratio": 0.789117362246187,
+        "or_ci_lo": 0.294867618288235,
+        "or_ci_hi": 2.11181619403756
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -3.64854805409026,
+        "std_error": 0.568962153302038,
+        "z": -6.41263752415778,
+        "p_value": 1.43023304007303e-10,
+        "odds_ratio": 0.0260288939016985,
+        "or_ci_lo": 0.00853403167048133,
+        "or_ci_hi": 0.0793884231868178
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 0.379355223556101,
+        "std_error": 0.343423063978876,
+        "z": 1.10462943042007,
+        "p_value": 0.269320193191513,
+        "odds_ratio": 1.46134204667402,
+        "or_ci_lo": 0.745469085855191,
+        "or_ci_hi": 2.86466684923302
+      },
+      {
+        "term": "is_post_trained:cellobscure_real",
+        "estimate": 0.513562692928365,
+        "std_error": 0.205436663140244,
+        "z": 2.49985900801833,
+        "p_value": 0.0124242742223834,
+        "odds_ratio": 1.67123469725999,
+        "or_ci_lo": 1.11729907431537,
+        "or_ci_hi": 2.49980106269857
+      },
+      {
+        "term": "is_post_trained:cellunanswerable",
+        "estimate": -0.551532050537874,
+        "std_error": 0.191631668158284,
+        "z": -2.87808406532432,
+        "p_value": 0.00400098504353975,
+        "odds_ratio": 0.576066570869711,
+        "or_ci_lo": 0.395690389420527,
+        "or_ci_hi": 0.838667561675109
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellobscure_real",
+        "estimate": -0.0598462651221105,
+        "std_error": 0.746205384410041,
+        "z": -0.0802007950792605,
+        "p_value": 0.936077557818871,
+        "odds_ratio": 0.941909326769416,
+        "or_ci_lo": 0.218191547520664,
+        "or_ci_hi": 4.06612075461444
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellobscure_real",
+        "estimate": -2.073175902638,
+        "std_error": 0.406279374054893,
+        "z": -5.10283325965224,
+        "p_value": 3.3460579689977e-07,
+        "odds_ratio": 0.125785663652344,
+        "or_ci_lo": 0.0567290505858174,
+        "or_ci_hi": 0.278905305431222
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellobscure_real",
+        "estimate": 1.01712511104897,
+        "std_error": 0.488017848346569,
+        "z": 2.0841965401369,
+        "p_value": 0.0371422933471639,
+        "odds_ratio": 2.76523358621256,
+        "or_ci_lo": 1.06250327533186,
+        "or_ci_hi": 7.19669949622474
+      },
+      {
+        "term": "conditioncitations_expected:is_post_trained:cellunanswerable",
+        "estimate": -1.26702779008119,
+        "std_error": 0.511635432388157,
+        "z": -2.47642698271912,
+        "p_value": 0.0132704766272231,
+        "odds_ratio": 0.281667553977744,
+        "or_ci_lo": 0.103331314157159,
+        "or_ci_hi": 0.767788657397117
+      },
+      {
+        "term": "conditionabstention_permitted:is_post_trained:cellunanswerable",
+        "estimate": 1.47779552714167,
+        "std_error": 0.579234541621164,
+        "z": 2.5512904030302,
+        "p_value": 0.0107324856781447,
+        "odds_ratio": 4.38327221775807,
+        "or_ci_lo": 1.40848785685036,
+        "or_ci_hi": 13.6409236625822
+      },
+      {
+        "term": "conditionlength_matched:is_post_trained:cellunanswerable",
+        "estimate": 0.694937009633441,
+        "std_error": 0.359587146947228,
+        "z": 1.93259691157824,
+        "p_value": 0.0532858731930944,
+        "odds_ratio": 2.00358286354719,
+        "or_ci_lo": 0.990207415009932,
+        "or_ci_hi": 4.05404386015398
+      }
+    ]
+  },
+  "secondary_closed_api": {
+    "formula": null,
+    "coefficients": {},
+    "directional_h1_2b": {}
+  },
+  "status_split": {
+    "overall_fabricated_rate": 0.301552106430155,
+    "overall_misgrounded_rate": 0,
+    "overall_combined_rate": 0.301552106430155,
+    "overall_abstention_rate": 0.412416851441242,
+    "mean_citations_per_generation": 0.944054148675458,
+    "by_condition_is_post_trained": [
+      {
+        "condition": "neutral",
+        "is_post_trained": 0,
+        "any_fabricated": 0.141474311243485,
+        "any_misgrounded": 0,
+        "fabricated": 0.141474311243485
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 0,
+        "any_fabricated": 0.0207407407407407,
+        "any_misgrounded": 0,
+        "fabricated": 0.0207407407407407
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 0,
+        "any_fabricated": 0.0196514645902855,
+        "any_misgrounded": 0,
+        "fabricated": 0.0196514645902855
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 0,
+        "any_fabricated": 0.0822222222222222,
+        "any_misgrounded": 0,
+        "fabricated": 0.0822222222222222
+      },
+      {
+        "condition": "neutral",
+        "is_post_trained": 1,
+        "any_fabricated": 0.372151264713248,
+        "any_misgrounded": 0,
+        "fabricated": 0.372151264713248
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 1,
+        "any_fabricated": 0.558096184913632,
+        "any_misgrounded": 0,
+        "fabricated": 0.558096184913632
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 1,
+        "any_fabricated": 0.131029338637494,
+        "any_misgrounded": 0,
+        "fabricated": 0.131029338637494
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 1,
+        "any_fabricated": 0.462366938008766,
+        "any_misgrounded": 0,
+        "fabricated": 0.462366938008766
+      }
+    ],
+    "abstention_by_condition_is_post_trained": [
+      {
+        "condition": "neutral",
+        "is_post_trained": 0,
+        "abstention_rate": 0.6198808637379
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 0,
+        "abstention_rate": 0.96
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 0,
+        "abstention_rate": 0.939562476826103
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 0,
+        "abstention_rate": 0.88037037037037
+      },
+      {
+        "condition": "neutral",
+        "is_post_trained": 1,
+        "abstention_rate": 0.228524918607563
+      },
+      {
+        "condition": "citations_expected",
+        "is_post_trained": 1,
+        "abstention_rate": 0.126631042624581
+      },
+      {
+        "condition": "abstention_permitted",
+        "is_post_trained": 1,
+        "abstention_rate": 0.598955743411238
+      },
+      {
+        "condition": "length_matched",
+        "is_post_trained": 1,
+        "abstention_rate": 0.105197244834064
+      }
+    ]
+  },
+  "metadata": {
+    "alpha": 0.05,
+    "directional_threshold_pp": 0.1,
+    "reference_condition": "neutral",
+    "bootstrap_nsim": 0,
+    "unverifiable_as_fabricated": false,
+    "amendment10_computed": true,
+    "r_version": "R version 4.6.0 (2026-04-24 ucrt)",
+    "lme4_version": "2.0.1",
+    "timestamp_utc": "2026-09-05T04:43:43Z"
+  }
+}

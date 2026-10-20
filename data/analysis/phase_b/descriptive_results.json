@@ -1,0 +1,2129 @@
+{
+  "status_academic_medical": {
+    "formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -5.7374,
+        "std_error": 0.3174,
+        "z": -18.0791,
+        "p_value": 4.6583e-73,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0032,
+        "or_ci_lo": 0.0017,
+        "or_ci_hi": 0.006
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": 0.6879,
+        "std_error": 0.2742,
+        "z": 2.5087,
+        "p_value": 0.0121,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.9895,
+        "or_ci_lo": 1.1624,
+        "or_ci_hi": 3.4053
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -6.9342,
+        "std_error": 2.3495,
+        "z": -2.9513,
+        "p_value": 0.0032,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.001,
+        "or_ci_lo": 9.7409e-06,
+        "or_ci_hi": 0.0974
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 1.0431,
+        "std_error": 0.2928,
+        "z": 3.5627,
+        "p_value": 0.0004,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.8381,
+        "or_ci_lo": 1.5988,
+        "or_ci_hi": 5.038
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -1.7568,
+        "std_error": 0.4805,
+        "z": -3.6565,
+        "p_value": 0.0003,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1726,
+        "or_ci_lo": 0.0673,
+        "or_ci_hi": 0.4426
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": -0.7353,
+        "std_error": 0.4275,
+        "z": -1.72,
+        "p_value": 0.0854,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.4793,
+        "or_ci_lo": 0.2074,
+        "or_ci_hi": 1.108
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.9658,
+        "std_error": 0.2331,
+        "z": 12.7216,
+        "p_value": 4.4832e-37,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 19.4099,
+        "or_ci_lo": 12.2909,
+        "or_ci_hi": 30.6523
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 0.9136,
+        "std_error": 0.4697,
+        "z": 1.9451,
+        "p_value": 0.0518,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.4933,
+        "or_ci_lo": 0.9931,
+        "or_ci_hi": 6.26
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": -16.814,
+        "std_error": 43456.1851,
+        "z": -0.0004,
+        "p_value": 0.9997,
+        "p_underflow": false,
+        "separation_flag": true,
+        "odds_ratio": 4.9862e-08,
+        "or_ci_lo": 0,
+        "or_ci_hi": null
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": 1.0244,
+        "std_error": 0.4941,
+        "z": 2.0731,
+        "p_value": 0.0382,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.7853,
+        "or_ci_lo": 1.0575,
+        "or_ci_hi": 7.3361
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": 0.1045,
+        "std_error": 0.4122,
+        "z": 0.2536,
+        "p_value": 0.7998,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.1102,
+        "or_ci_lo": 0.495,
+        "or_ci_hi": 2.4902
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -0.2149,
+        "std_error": 3.773,
+        "z": -0.057,
+        "p_value": 0.9546,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.8066,
+        "or_ci_lo": 0.0005,
+        "or_ci_hi": 1313.1008
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.3453,
+        "std_error": 0.4359,
+        "z": 3.0861,
+        "p_value": 0.002,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 3.8395,
+        "or_ci_lo": 1.6338,
+        "or_ci_hi": 9.023
+      }
+    ],
+    "coefficients_intercept_only": [
+      {
+        "term": "(Intercept)",
+        "estimate": -4.4935,
+        "std_error": 0.2106,
+        "z": -21.338,
+        "p_value": 5.0413e-101,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0112,
+        "or_ci_lo": 0.0074,
+        "or_ci_hi": 0.0169
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": 0.1246,
+        "std_error": 0.158,
+        "z": 0.7886,
+        "p_value": 0.4304,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.1327,
+        "or_ci_lo": 0.831,
+        "or_ci_hi": 1.5439
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -2.9049,
+        "std_error": 0.3933,
+        "z": -7.3863,
+        "p_value": 1.5103e-13,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0548,
+        "or_ci_lo": 0.0253,
+        "or_ci_hi": 0.1184
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 0.5082,
+        "std_error": 0.1512,
+        "z": 3.3602,
+        "p_value": 0.0008,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.6623,
+        "or_ci_lo": 1.2359,
+        "or_ci_hi": 2.2358
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -1.2276,
+        "std_error": 0.2778,
+        "z": -4.4188,
+        "p_value": 9.927e-06,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.293,
+        "or_ci_lo": 0.17,
+        "or_ci_hi": 0.5051
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": -0.5893,
+        "std_error": 0.2541,
+        "z": -2.3188,
+        "p_value": 0.0204,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.5547,
+        "or_ci_lo": 0.3371,
+        "or_ci_hi": 0.9128
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.7359,
+        "std_error": 0.1915,
+        "z": 14.2866,
+        "p_value": 2.651e-46,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 15.4236,
+        "or_ci_lo": 10.5969,
+        "or_ci_hi": 22.4486
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 0.4854,
+        "std_error": 0.2616,
+        "z": 1.8556,
+        "p_value": 0.0635,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.6248,
+        "or_ci_lo": 0.9731,
+        "or_ci_hi": 2.7131
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": -15.1244,
+        "std_error": 922.558,
+        "z": -0.0164,
+        "p_value": 0.9869,
+        "p_underflow": false,
+        "separation_flag": true,
+        "odds_ratio": 2.7012e-07,
+        "or_ci_lo": 0,
+        "or_ci_hi": null
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": 0.4666,
+        "std_error": 0.2525,
+        "z": 1.8476,
+        "p_value": 0.0647,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.5945,
+        "or_ci_lo": 0.972,
+        "or_ci_hi": 2.6157
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -0.3203,
+        "std_error": 0.2349,
+        "z": -1.3637,
+        "p_value": 0.1727,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.7259,
+        "or_ci_lo": 0.4581,
+        "or_ci_hi": 1.1503
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -0.2021,
+        "std_error": 0.562,
+        "z": -0.3596,
+        "p_value": 0.7192,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.817,
+        "or_ci_lo": 0.2716,
+        "or_ci_hi": 2.458
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.0517,
+        "std_error": 0.219,
+        "z": 4.803,
+        "p_value": 1.563e-06,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.8625,
+        "or_ci_lo": 1.8637,
+        "or_ci_hi": 4.3968
+      }
+    ],
+    "condition_effects": {
+      "marginal": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 1.0273,
+          "std_error": 0.1883,
+          "z": 5.4552,
+          "p_value": 1.466e-07,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 2.7934,
+          "or_ci_lo": 1.9313,
+          "or_ci_hi": 4.0404,
+          "significant": true
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -12.6105,
+          "std_error": 14485.3951,
+          "z": -0.0009,
+          "p_value": 1,
+          "p_underflow": false,
+          "separation_flag": true,
+          "odds_ratio": 3.3369e-06,
+          "or_ci_lo": 0,
+          "or_ci_hi": null,
+          "significant": false
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 1.833,
+          "std_error": 0.1967,
+          "z": 9.3188,
+          "p_value": 2.0428e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 6.2528,
+          "or_ci_lo": 4.2525,
+          "or_ci_hi": 9.1941,
+          "significant": true
+        }
+      ],
+      "by_cell": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 0.6879,
+          "std_error": 0.2742,
+          "z": 2.5087,
+          "p_value": 0.0336,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 1.9895,
+          "or_ci_lo": 1.1624,
+          "or_ci_hi": 3.4053,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -6.9342,
+          "std_error": 2.3495,
+          "z": -2.9513,
+          "p_value": 0.0091,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.001,
+          "or_ci_lo": 9.7409e-06,
+          "or_ci_hi": 0.0974,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 1.0431,
+          "std_error": 0.2928,
+          "z": 3.5627,
+          "p_value": 0.0011,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 2.8381,
+          "or_ci_lo": 1.5988,
+          "or_ci_hi": 5.038,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 1.6015,
+          "std_error": 0.3823,
+          "z": 4.1888,
+          "p_value": 0.0001,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 4.9604,
+          "or_ci_lo": 2.3447,
+          "or_ci_hi": 10.4944,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -23.7482,
+          "std_error": 43456.185,
+          "z": -0.0005,
+          "p_value": 1,
+          "p_underflow": false,
+          "separation_flag": true,
+          "odds_ratio": 4.8562e-11,
+          "or_ci_lo": 0,
+          "or_ci_hi": null,
+          "significant": false,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.0675,
+          "std_error": 0.398,
+          "z": 5.1951,
+          "p_value": 6.1292e-07,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 7.9049,
+          "or_ci_lo": 3.6237,
+          "or_ci_hi": 17.2443,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 0.7924,
+          "std_error": 0.309,
+          "z": 2.5642,
+          "p_value": 0.0288,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 2.2087,
+          "or_ci_lo": 1.2053,
+          "or_ci_hi": 4.0476,
+          "significant": true,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -7.1491,
+          "std_error": 2.9522,
+          "z": -2.4216,
+          "p_value": 0.0425,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0008,
+          "or_ci_lo": 2.4115e-06,
+          "or_ci_hi": 0.2559,
+          "significant": true,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.3885,
+          "std_error": 0.3228,
+          "z": 7.3983,
+          "p_value": 4.2755e-13,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 10.8969,
+          "or_ci_lo": 5.7876,
+          "or_ci_hi": 20.5168,
+          "significant": true,
+          "cell": "unanswerable"
+        }
+      ]
+    },
+    "condition_contrasts": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.017,
+        "rise_pp_vs_neutral": 0.0108
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 2.0646e-08,
+        "rise_pp_vs_neutral": -0.0061
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.0372,
+        "rise_pp_vs_neutral": 0.0311
+      }
+    ],
+    "condition_contrasts_proportional": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.017,
+        "rise_pp_vs_neutral": 0.0108
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 2.0646e-08,
+        "rise_pp_vs_neutral": -0.0061
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.0372,
+        "rise_pp_vs_neutral": 0.0311
+      }
+    ],
+    "neutral_prob": 0.0061,
+    "neutral_prob_proportional": 0.0061,
+    "observed_rates": [
+      {
+        "condition": "abstention_permitted",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.0053,
+        "conditional_fabrication_rate": 0.0403,
+        "abstention_rate_all_gens": 0.8677,
+        "mean_citations_when_citing": 1.4207
+      },
+      {
+        "condition": "citations_expected",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.0987,
+        "conditional_fabrication_rate": 0.2521,
+        "abstention_rate_all_gens": 0.6087,
+        "mean_citations_when_citing": 2.0511
+      },
+      {
+        "condition": "length_matched",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.169,
+        "conditional_fabrication_rate": 0.3423,
+        "abstention_rate_all_gens": 0.5063,
+        "mean_citations_when_citing": 1.6354
+      },
+      {
+        "condition": "neutral",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.0897,
+        "conditional_fabrication_rate": 0.2671,
+        "abstention_rate_all_gens": 0.6643,
+        "mean_citations_when_citing": 1.6157
+      }
+    ],
+    "exclusion_table": [
+      {
+        "domain": "academic",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "legal",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 0,
+        "n_excluded": 1500
+      },
+      {
+        "domain": "legal",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 0,
+        "n_excluded": 1500
+      },
+      {
+        "domain": "legal",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 0,
+        "n_excluded": 1500
+      },
+      {
+        "domain": "legal",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 0,
+        "n_excluded": 1500
+      },
+      {
+        "domain": "medical",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      }
+    ],
+    "re_robustness": {
+      "maximal_formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+      "maximal_singular": false,
+      "maximal_converged": true,
+      "intercept_only_used": false,
+      "note": "maximal RE fit cleanly and is the primary; intercept-only SEs shown for contrast are anti-conservative",
+      "condition_se_intercept_only": {
+        "conditioncitations_expected": 0.158,
+        "conditionabstention_permitted": 0.3933,
+        "conditionlength_matched": 0.1512
+      },
+      "condition_se_maximal": {
+        "conditioncitations_expected": 0.2742,
+        "conditionabstention_permitted": 2.3495,
+        "conditionlength_matched": 0.2928
+      }
+    },
+    "metadata": {
+      "analysis": "phase_b_descriptive (exploratory, Haiku-only)",
+      "alpha": 0.05,
+      "multiplicity": "no correction applied: exploratory. Treat all contrasts as signals motivating Phase C; a confirmatory single term would need ~p<0.0036 (Bonferroni/14).",
+      "reference_condition": "neutral",
+      "status_col": "status",
+      "primary_model": "maximal",
+      "ci_method": "asymptotic Wald (z); abstention sits near the probability boundary, interpret its CI cautiously",
+      "domains_in_fit": ["academic", "medical"],
+      "n_observations": 12000,
+      "n_generations_total": 12000,
+      "n_questions": 600,
+      "converged": true,
+      "is_singular": false,
+      "r_version": "R version 4.6.0 (2026-04-24 ucrt)",
+      "lme4_version": "2.0.1",
+      "timestamp_utc": "2026-06-14T11:59:08Z"
+    }
+  },
+  "status_all_domains": {
+    "formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -7.5025,
+        "std_error": 0.3414,
+        "z": -21.9768,
+        "p_value": 4.8027e-107,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0006,
+        "or_ci_lo": 0.0003,
+        "or_ci_hi": 0.0011
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": 3.3032,
+        "std_error": 0.3041,
+        "z": 10.8619,
+        "p_value": 1.7512e-27,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 27.1995,
+        "or_ci_lo": 14.9866,
+        "or_ci_hi": 49.365
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -4.4284,
+        "std_error": 1.3645,
+        "z": -3.2454,
+        "p_value": 0.0012,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0119,
+        "or_ci_lo": 0.0008,
+        "or_ci_hi": 0.1731
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 0.9067,
+        "std_error": 0.2839,
+        "z": 3.1942,
+        "p_value": 0.0014,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.4762,
+        "or_ci_lo": 1.4196,
+        "or_ci_hi": 4.3194
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -1.8815,
+        "std_error": 0.5105,
+        "z": -3.6857,
+        "p_value": 0.0002,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1524,
+        "or_ci_lo": 0.056,
+        "or_ci_hi": 0.4144
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 0.7841,
+        "std_error": 0.3976,
+        "z": 1.972,
+        "p_value": 0.0486,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.1904,
+        "or_ci_lo": 1.0048,
+        "or_ci_hi": 4.7751
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.7904,
+        "std_error": 0.23,
+        "z": 12.133,
+        "p_value": 7.064e-34,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 16.2875,
+        "or_ci_lo": 10.3775,
+        "or_ci_hi": 25.5633
+      },
+      {
+        "term": "domainlegal",
+        "estimate": 3.6235,
+        "std_error": 0.229,
+        "z": 15.823,
+        "p_value": 2.1587e-56,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 37.4703,
+        "or_ci_lo": 23.9198,
+        "or_ci_hi": 58.6972
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 1.2117,
+        "std_error": 0.5209,
+        "z": 2.3259,
+        "p_value": 0.02,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 3.3591,
+        "or_ci_lo": 1.21,
+        "or_ci_hi": 9.3248
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": 0.4012,
+        "std_error": 3.055,
+        "z": 0.1313,
+        "p_value": 0.8955,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.4935,
+        "or_ci_lo": 0.0037,
+        "or_ci_hi": 595.1587
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": 1.0241,
+        "std_error": 0.4912,
+        "z": 2.0848,
+        "p_value": 0.0371,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.7846,
+        "or_ci_lo": 1.0633,
+        "or_ci_hi": 7.2929
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -1.6167,
+        "std_error": 0.41,
+        "z": -3.9436,
+        "p_value": 0.0001,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1986,
+        "or_ci_lo": 0.0889,
+        "or_ci_hi": 0.4434
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -0.2106,
+        "std_error": 1.6876,
+        "z": -0.1248,
+        "p_value": 0.9007,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.8101,
+        "or_ci_lo": 0.0297,
+        "or_ci_hi": 22.1332
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.8417,
+        "std_error": 0.3727,
+        "z": 4.9417,
+        "p_value": 7.7457e-07,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 6.3074,
+        "or_ci_lo": 3.0382,
+        "or_ci_hi": 13.0944
+      }
+    ],
+    "coefficients_intercept_only": [
+      {
+        "term": "(Intercept)",
+        "estimate": -5.2482,
+        "std_error": 0.1889,
+        "z": -27.79,
+        "p_value": 5.7255e-170,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0053,
+        "or_ci_lo": 0.0036,
+        "or_ci_hi": 0.0076
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": 1.7196,
+        "std_error": 0.1287,
+        "z": 13.3652,
+        "p_value": 9.6554e-41,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 5.5823,
+        "or_ci_lo": 4.3381,
+        "or_ci_hi": 7.1834
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -2.5642,
+        "std_error": 0.3539,
+        "z": -7.2456,
+        "p_value": 4.3047e-13,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.077,
+        "or_ci_lo": 0.0385,
+        "or_ci_hi": 0.154
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 0.4946,
+        "std_error": 0.1413,
+        "z": 3.5013,
+        "p_value": 0.0005,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.6398,
+        "or_ci_lo": 1.2433,
+        "or_ci_hi": 2.1629
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -0.9876,
+        "std_error": 0.2272,
+        "z": -4.3469,
+        "p_value": 0,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.3725,
+        "or_ci_lo": 0.2386,
+        "or_ci_hi": 0.5814
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": 0.5546,
+        "std_error": 0.1886,
+        "z": 2.9416,
+        "p_value": 0.0033,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.7413,
+        "or_ci_lo": 1.2033,
+        "or_ci_hi": 2.5199
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.6117,
+        "std_error": 0.1702,
+        "z": 15.3435,
+        "p_value": 3.9162e-53,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 13.6218,
+        "or_ci_lo": 9.7577,
+        "or_ci_hi": 19.016
+      },
+      {
+        "term": "domainlegal",
+        "estimate": 2.8868,
+        "std_error": 0.1694,
+        "z": 17.0455,
+        "p_value": 3.7778e-65,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 17.935,
+        "or_ci_lo": 12.869,
+        "or_ci_hi": 24.9953
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 0.3932,
+        "std_error": 0.2124,
+        "z": 1.8518,
+        "p_value": 0.0641,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.4818,
+        "or_ci_lo": 0.9773,
+        "or_ci_hi": 2.2467
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": -1.1041,
+        "std_error": 0.8519,
+        "z": -1.296,
+        "p_value": 0.195,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.3315,
+        "or_ci_lo": 0.0624,
+        "or_ci_hi": 1.7605
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": 0.3267,
+        "std_error": 0.2311,
+        "z": 1.4137,
+        "p_value": 0.1575,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.3864,
+        "or_ci_lo": 0.8814,
+        "or_ci_hi": 2.1808
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -1.6308,
+        "std_error": 0.1746,
+        "z": -9.3418,
+        "p_value": 9.4747e-21,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1958,
+        "or_ci_lo": 0.1391,
+        "or_ci_hi": 0.2757
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -0.2479,
+        "std_error": 0.4291,
+        "z": -0.5776,
+        "p_value": 0.5635,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.7805,
+        "or_ci_lo": 0.3366,
+        "or_ci_hi": 1.8098
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.232,
+        "std_error": 0.181,
+        "z": 6.8073,
+        "p_value": 9.9461e-12,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 3.428,
+        "or_ci_lo": 2.4043,
+        "or_ci_hi": 4.8875
+      }
+    ],
+    "condition_effects": {
+      "marginal": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 3.1717,
+          "std_error": 0.1972,
+          "z": 16.0848,
+          "p_value": 2.2251e-308,
+          "p_underflow": true,
+          "separation_flag": false,
+          "odds_ratio": 23.8469,
+          "or_ci_lo": 16.2028,
+          "or_ci_hi": 35.0974,
+          "significant": true
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -4.3644,
+          "std_error": 1.0719,
+          "z": -4.0718,
+          "p_value": 0.0001,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0127,
+          "or_ci_lo": 0.0016,
+          "or_ci_hi": 0.104,
+          "significant": true
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 1.859,
+          "std_error": 0.1829,
+          "z": 10.1644,
+          "p_value": 1.8652e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 6.4171,
+          "or_ci_lo": 4.484,
+          "or_ci_hi": 9.1836,
+          "significant": true
+        }
+      ],
+      "by_cell": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 3.3032,
+          "std_error": 0.3041,
+          "z": 10.8619,
+          "p_value": 1.9651e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 27.1995,
+          "or_ci_lo": 14.9866,
+          "or_ci_hi": 49.365,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -4.4284,
+          "std_error": 1.3645,
+          "z": -3.2454,
+          "p_value": 0.0034,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0119,
+          "or_ci_lo": 0.0008,
+          "or_ci_hi": 0.1731,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 0.9067,
+          "std_error": 0.2839,
+          "z": 3.1942,
+          "p_value": 0.0041,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 2.4762,
+          "or_ci_lo": 1.4196,
+          "or_ci_hi": 4.3194,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 4.5149,
+          "std_error": 0.4235,
+          "z": 10.662,
+          "p_value": 1.8097e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 91.3648,
+          "or_ci_lo": 39.8413,
+          "or_ci_hi": 209.5194,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -4.0273,
+          "std_error": 2.7332,
+          "z": -1.4735,
+          "p_value": 0.3242,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0178,
+          "or_ci_lo": 0.0001,
+          "or_ci_hi": 3.7795,
+          "significant": false,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 1.9309,
+          "std_error": 0.4014,
+          "z": 4.8097,
+          "p_value": 4.5215e-06,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 6.8954,
+          "or_ci_lo": 3.1394,
+          "or_ci_hi": 15.1451,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 1.6865,
+          "std_error": 0.276,
+          "z": 6.1107,
+          "p_value": 2.9756e-09,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 5.4005,
+          "or_ci_lo": 3.1442,
+          "or_ci_hi": 9.276,
+          "significant": true,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -4.639,
+          "std_error": 0.9927,
+          "z": -4.6733,
+          "p_value": 8.8619e-06,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0097,
+          "or_ci_lo": 0.0014,
+          "or_ci_hi": 0.0676,
+          "significant": true,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.7485,
+          "std_error": 0.2415,
+          "z": 11.3788,
+          "p_value": 2.2251e-308,
+          "p_underflow": true,
+          "separation_flag": false,
+          "odds_ratio": 15.6185,
+          "or_ci_lo": 9.7284,
+          "or_ci_hi": 25.075,
+          "significant": true,
+          "cell": "unanswerable"
+        }
+      ]
+    },
+    "condition_contrasts": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.0716,
+        "rise_pp_vs_neutral": 0.0684
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 0,
+        "rise_pp_vs_neutral": -0.0032
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.0205,
+        "rise_pp_vs_neutral": 0.0172
+      }
+    ],
+    "condition_contrasts_proportional": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.0709,
+        "rise_pp_vs_neutral": 0.0677
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 0,
+        "rise_pp_vs_neutral": -0.0032
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.0201,
+        "rise_pp_vs_neutral": 0.0169
+      }
+    ],
+    "neutral_prob": 0.0032,
+    "neutral_prob_proportional": 0.0032,
+    "observed_rates": [
+      {
+        "condition": "abstention_permitted",
+        "n_total": 4500,
+        "n_modeled": 4492,
+        "n_excluded": 8,
+        "fabrication_rate_all_gens": 0.0078,
+        "conditional_fabrication_rate": 0.0571,
+        "abstention_rate_all_gens": 0.862,
+        "mean_citations_when_citing": 1.3246
+      },
+      {
+        "condition": "citations_expected",
+        "n_total": 4500,
+        "n_modeled": 4478,
+        "n_excluded": 22,
+        "fabrication_rate_all_gens": 0.1956,
+        "conditional_fabrication_rate": 0.4183,
+        "abstention_rate_all_gens": 0.5276,
+        "mean_citations_when_citing": 2.2752
+      },
+      {
+        "condition": "length_matched",
+        "n_total": 4500,
+        "n_modeled": 4449,
+        "n_excluded": 51,
+        "fabrication_rate_all_gens": 0.1764,
+        "conditional_fabrication_rate": 0.2797,
+        "abstention_rate_all_gens": 0.3578,
+        "mean_citations_when_citing": 1.8535
+      },
+      {
+        "condition": "neutral",
+        "n_total": 4500,
+        "n_modeled": 4441,
+        "n_excluded": 59,
+        "fabrication_rate_all_gens": 0.0856,
+        "conditional_fabrication_rate": 0.1844,
+        "abstention_rate_all_gens": 0.5229,
+        "mean_citations_when_citing": 1.3879
+      }
+    ],
+    "exclusion_table": [
+      {
+        "domain": "academic",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "legal",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1492,
+        "n_excluded": 8
+      },
+      {
+        "domain": "legal",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1478,
+        "n_excluded": 22
+      },
+      {
+        "domain": "legal",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1449,
+        "n_excluded": 51
+      },
+      {
+        "domain": "legal",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1441,
+        "n_excluded": 59
+      },
+      {
+        "domain": "medical",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      }
+    ],
+    "re_robustness": {
+      "maximal_formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+      "maximal_singular": false,
+      "maximal_converged": true,
+      "intercept_only_used": false,
+      "note": "maximal RE fit cleanly and is the primary; intercept-only SEs shown for contrast are anti-conservative",
+      "condition_se_intercept_only": {
+        "conditioncitations_expected": 0.1287,
+        "conditionabstention_permitted": 0.3539,
+        "conditionlength_matched": 0.1413
+      },
+      "condition_se_maximal": {
+        "conditioncitations_expected": 0.3041,
+        "conditionabstention_permitted": 1.3645,
+        "conditionlength_matched": 0.2839
+      }
+    },
+    "metadata": {
+      "analysis": "phase_b_descriptive (exploratory, Haiku-only)",
+      "alpha": 0.05,
+      "multiplicity": "no correction applied: exploratory. Treat all contrasts as signals motivating Phase C; a confirmatory single term would need ~p<0.0036 (Bonferroni/14).",
+      "reference_condition": "neutral",
+      "status_col": "status",
+      "primary_model": "maximal",
+      "ci_method": "asymptotic Wald (z); abstention sits near the probability boundary, interpret its CI cautiously",
+      "domains_in_fit": ["academic", "medical", "legal"],
+      "n_observations": 17860,
+      "n_generations_total": 18000,
+      "n_questions": 900,
+      "converged": true,
+      "is_singular": false,
+      "r_version": "R version 4.6.0 (2026-04-24 ucrt)",
+      "lme4_version": "2.0.1",
+      "timestamp_utc": "2026-06-14T12:00:26Z"
+    }
+  },
+  "verifier_status": {
+    "formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+    "coefficients": [
+      {
+        "term": "(Intercept)",
+        "estimate": -2.5217,
+        "std_error": 0.3215,
+        "z": -7.8436,
+        "p_value": 4.3781e-15,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0803,
+        "or_ci_lo": 0.0428,
+        "or_ci_hi": 0.1508
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": -0.1869,
+        "std_error": 0.2487,
+        "z": -0.7513,
+        "p_value": 0.4525,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.8296,
+        "or_ci_lo": 0.5095,
+        "or_ci_hi": 1.3507
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -3.7852,
+        "std_error": 0.3758,
+        "z": -10.0712,
+        "p_value": 7.4044e-24,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0227,
+        "or_ci_lo": 0.0109,
+        "or_ci_hi": 0.0474
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 1.51,
+        "std_error": 0.2354,
+        "z": 6.4152,
+        "p_value": 1.4063e-10,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 4.5266,
+        "or_ci_lo": 2.8538,
+        "or_ci_hi": 7.1799
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -3.9113,
+        "std_error": 0.4852,
+        "z": -8.0608,
+        "p_value": 7.5822e-16,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.02,
+        "or_ci_lo": 0.0077,
+        "or_ci_hi": 0.0518
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": -2.4532,
+        "std_error": 0.4615,
+        "z": -5.3159,
+        "p_value": 1.0613e-07,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.086,
+        "or_ci_lo": 0.0348,
+        "or_ci_hi": 0.2125
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.3751,
+        "std_error": 0.2285,
+        "z": 10.3938,
+        "p_value": 2.6459e-25,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 10.7519,
+        "or_ci_lo": 6.8703,
+        "or_ci_hi": 16.8265
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 1.5163,
+        "std_error": 0.424,
+        "z": 3.5762,
+        "p_value": 0.0003,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 4.5552,
+        "or_ci_lo": 1.9843,
+        "or_ci_hi": 10.4571
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": -0.2816,
+        "std_error": 0.757,
+        "z": -0.3719,
+        "p_value": 0.7099,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.7546,
+        "or_ci_lo": 0.1711,
+        "or_ci_hi": 3.3272
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": 0.8448,
+        "std_error": 0.397,
+        "z": 2.128,
+        "p_value": 0.0333,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.3274,
+        "or_ci_lo": 1.069,
+        "or_ci_hi": 5.0673
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": 0.7666,
+        "std_error": 0.3915,
+        "z": 1.9582,
+        "p_value": 0.0502,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.1525,
+        "or_ci_lo": 0.9993,
+        "or_ci_hi": 4.6366
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": 0.1552,
+        "std_error": 0.5775,
+        "z": 0.2687,
+        "p_value": 0.7881,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.1679,
+        "or_ci_lo": 0.3765,
+        "or_ci_hi": 3.6223
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 1.3748,
+        "std_error": 0.3828,
+        "z": 3.5916,
+        "p_value": 0.0003,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 3.9541,
+        "or_ci_lo": 1.8674,
+        "or_ci_hi": 8.3727
+      }
+    ],
+    "coefficients_intercept_only": [
+      {
+        "term": "(Intercept)",
+        "estimate": -1.8785,
+        "std_error": 0.2083,
+        "z": -9.0188,
+        "p_value": 1.9021e-19,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1528,
+        "or_ci_lo": 0.1016,
+        "or_ci_hi": 0.2299
+      },
+      {
+        "term": "conditioncitations_expected",
+        "estimate": -0.348,
+        "std_error": 0.1162,
+        "z": -2.9945,
+        "p_value": 0.0027,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.7061,
+        "or_ci_lo": 0.5623,
+        "or_ci_hi": 0.8867
+      },
+      {
+        "term": "conditionabstention_permitted",
+        "estimate": -1.9593,
+        "std_error": 0.1453,
+        "z": -13.4886,
+        "p_value": 1.8262e-41,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.141,
+        "or_ci_lo": 0.106,
+        "or_ci_hi": 0.1874
+      },
+      {
+        "term": "conditionlength_matched",
+        "estimate": 1.0148,
+        "std_error": 0.1133,
+        "z": 8.9593,
+        "p_value": 3.2679e-19,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 2.7588,
+        "or_ci_lo": 2.2096,
+        "or_ci_hi": 3.4446
+      },
+      {
+        "term": "cellobscure_real",
+        "estimate": -2.6396,
+        "std_error": 0.2808,
+        "z": -9.3992,
+        "p_value": 5.5005e-21,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.0714,
+        "or_ci_lo": 0.0412,
+        "or_ci_hi": 0.1238
+      },
+      {
+        "term": "cellunanswerable",
+        "estimate": -1.6703,
+        "std_error": 0.2698,
+        "z": -6.1904,
+        "p_value": 6.0009e-10,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.1882,
+        "or_ci_lo": 0.1109,
+        "or_ci_hi": 0.3194
+      },
+      {
+        "term": "domainmedical",
+        "estimate": 2.0761,
+        "std_error": 0.2056,
+        "z": 10.0983,
+        "p_value": 5.6202e-24,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 7.9731,
+        "or_ci_lo": 5.3288,
+        "or_ci_hi": 11.9295
+      },
+      {
+        "term": "conditioncitations_expected:cellobscure_real",
+        "estimate": 0.6689,
+        "std_error": 0.2011,
+        "z": 3.3263,
+        "p_value": 0.0009,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.952,
+        "or_ci_lo": 1.3162,
+        "or_ci_hi": 2.895
+      },
+      {
+        "term": "conditionabstention_permitted:cellobscure_real",
+        "estimate": -0.2505,
+        "std_error": 0.3061,
+        "z": -0.8183,
+        "p_value": 0.4132,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.7784,
+        "or_ci_lo": 0.4272,
+        "or_ci_hi": 1.4183
+      },
+      {
+        "term": "conditionlength_matched:cellobscure_real",
+        "estimate": -0.0667,
+        "std_error": 0.1942,
+        "z": -0.3435,
+        "p_value": 0.7312,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.9355,
+        "or_ci_lo": 0.6393,
+        "or_ci_hi": 1.3688
+      },
+      {
+        "term": "conditioncitations_expected:cellunanswerable",
+        "estimate": -0.0541,
+        "std_error": 0.1854,
+        "z": -0.2918,
+        "p_value": 0.7704,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.9473,
+        "or_ci_lo": 0.6587,
+        "or_ci_hi": 1.3625
+      },
+      {
+        "term": "conditionabstention_permitted:cellunanswerable",
+        "estimate": -0.0067,
+        "std_error": 0.2246,
+        "z": -0.0297,
+        "p_value": 0.9763,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 0.9934,
+        "or_ci_lo": 0.6396,
+        "or_ci_hi": 1.5428
+      },
+      {
+        "term": "conditionlength_matched:cellunanswerable",
+        "estimate": 0.6403,
+        "std_error": 0.1872,
+        "z": 3.42,
+        "p_value": 0.0006,
+        "p_underflow": false,
+        "separation_flag": false,
+        "odds_ratio": 1.897,
+        "or_ci_lo": 1.3143,
+        "or_ci_hi": 2.7379
+      }
+    ],
+    "condition_effects": {
+      "marginal": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 0.5741,
+          "std_error": 0.174,
+          "z": 3.3001,
+          "p_value": 0.0028,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 1.7756,
+          "or_ci_lo": 1.2626,
+          "or_ci_hi": 2.497,
+          "significant": true
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -3.8273,
+          "std_error": 0.2916,
+          "z": -13.1248,
+          "p_value": 2.2251e-308,
+          "p_underflow": true,
+          "separation_flag": false,
+          "odds_ratio": 0.0218,
+          "or_ci_lo": 0.0123,
+          "or_ci_hi": 0.0386,
+          "significant": true
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.2498,
+          "std_error": 0.1662,
+          "z": 13.5352,
+          "p_value": 2.2251e-308,
+          "p_underflow": true,
+          "separation_flag": false,
+          "odds_ratio": 9.4858,
+          "or_ci_lo": 6.8484,
+          "or_ci_hi": 13.139,
+          "significant": true
+        }
+      ],
+      "by_cell": [
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": -0.1869,
+          "std_error": 0.2487,
+          "z": -0.7513,
+          "p_value": 0.7672,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.8296,
+          "or_ci_lo": 0.5095,
+          "or_ci_hi": 1.3507,
+          "significant": false,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -3.7852,
+          "std_error": 0.3758,
+          "z": -10.0712,
+          "p_value": 2.2093e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0227,
+          "or_ci_lo": 0.0109,
+          "or_ci_hi": 0.0474,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 1.51,
+          "std_error": 0.2354,
+          "z": 6.4152,
+          "p_value": 4.2185e-10,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 4.5266,
+          "or_ci_lo": 2.8538,
+          "or_ci_hi": 7.1799,
+          "significant": true,
+          "cell": "known_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 1.3294,
+          "std_error": 0.3436,
+          "z": 3.8693,
+          "p_value": 0.0003,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 3.7788,
+          "or_ci_lo": 1.9271,
+          "or_ci_hi": 7.41,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -4.0667,
+          "std_error": 0.6571,
+          "z": -6.1889,
+          "p_value": 1.8176e-09,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0171,
+          "or_ci_lo": 0.0047,
+          "or_ci_hi": 0.0621,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.3547,
+          "std_error": 0.3197,
+          "z": 7.3654,
+          "p_value": 5.4357e-13,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 10.5352,
+          "or_ci_lo": 5.63,
+          "or_ci_hi": 19.7138,
+          "significant": true,
+          "cell": "obscure_real"
+        },
+        {
+          "contrast": "citations_expected - neutral",
+          "log_or": 0.5798,
+          "std_error": 0.3026,
+          "z": 1.9157,
+          "p_value": 0.1419,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 1.7857,
+          "or_ci_lo": 0.9867,
+          "or_ci_hi": 3.2316,
+          "significant": false,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "abstention_permitted - neutral",
+          "log_or": -3.63,
+          "std_error": 0.4385,
+          "z": -8.2783,
+          "p_value": 2.2315e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 0.0265,
+          "or_ci_lo": 0.0112,
+          "or_ci_hi": 0.0626,
+          "significant": true,
+          "cell": "unanswerable"
+        },
+        {
+          "contrast": "length_matched - neutral",
+          "log_or": 2.8847,
+          "std_error": 0.3018,
+          "z": 9.5577,
+          "p_value": 1.5654e-14,
+          "p_underflow": false,
+          "separation_flag": false,
+          "odds_ratio": 17.8985,
+          "or_ci_lo": 9.9062,
+          "or_ci_hi": 32.339,
+          "significant": true,
+          "cell": "unanswerable"
+        }
+      ]
+    },
+    "condition_contrasts": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.0531,
+        "rise_pp_vs_neutral": 0.0225
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 0.0007,
+        "rise_pp_vs_neutral": -0.0299
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.2304,
+        "rise_pp_vs_neutral": 0.1998
+      }
+    ],
+    "condition_contrasts_proportional": [
+      {
+        "condition": "citations_expected",
+        "prob": 0.0531,
+        "rise_pp_vs_neutral": 0.0225
+      },
+      {
+        "condition": "abstention_permitted",
+        "prob": 0.0007,
+        "rise_pp_vs_neutral": -0.0299
+      },
+      {
+        "condition": "length_matched",
+        "prob": 0.2304,
+        "rise_pp_vs_neutral": 0.1998
+      }
+    ],
+    "neutral_prob": 0.0306,
+    "neutral_prob_proportional": 0.0306,
+    "observed_rates": [
+      {
+        "condition": "abstention_permitted",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.0883,
+        "conditional_fabrication_rate": 0.6675,
+        "abstention_rate_all_gens": 0.8677,
+        "mean_citations_when_citing": 1.4207
+      },
+      {
+        "condition": "citations_expected",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.2253,
+        "conditional_fabrication_rate": 0.5758,
+        "abstention_rate_all_gens": 0.6087,
+        "mean_citations_when_citing": 2.0511
+      },
+      {
+        "condition": "length_matched",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.382,
+        "conditional_fabrication_rate": 0.7738,
+        "abstention_rate_all_gens": 0.5063,
+        "mean_citations_when_citing": 1.6354
+      },
+      {
+        "condition": "neutral",
+        "n_total": 3000,
+        "n_modeled": 3000,
+        "n_excluded": 0,
+        "fabrication_rate_all_gens": 0.2467,
+        "conditional_fabrication_rate": 0.7349,
+        "abstention_rate_all_gens": 0.6643,
+        "mean_citations_when_citing": 1.6157
+      }
+    ],
+    "exclusion_table": [
+      {
+        "domain": "academic",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "academic",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "legal",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1303,
+        "n_excluded": 197
+      },
+      {
+        "domain": "legal",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 766,
+        "n_excluded": 734
+      },
+      {
+        "domain": "legal",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 231,
+        "n_excluded": 1269
+      },
+      {
+        "domain": "legal",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 475,
+        "n_excluded": 1025
+      },
+      {
+        "domain": "medical",
+        "condition": "abstention_permitted",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "citations_expected",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "length_matched",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      },
+      {
+        "domain": "medical",
+        "condition": "neutral",
+        "n_total": 1500,
+        "n_modeled": 1500,
+        "n_excluded": 0
+      }
+    ],
+    "re_robustness": {
+      "maximal_formula": "fabricated ~ condition * cell + domain + (1 + condition | question_id)",
+      "maximal_singular": false,
+      "maximal_converged": true,
+      "intercept_only_used": false,
+      "note": "maximal RE fit cleanly and is the primary; intercept-only SEs shown for contrast are anti-conservative",
+      "condition_se_intercept_only": {
+        "conditioncitations_expected": 0.1162,
+        "conditionabstention_permitted": 0.1453,
+        "conditionlength_matched": 0.1133
+      },
+      "condition_se_maximal": {
+        "conditioncitations_expected": 0.2487,
+        "conditionabstention_permitted": 0.3758,
+        "conditionlength_matched": 0.2354
+      }
+    },
+    "metadata": {
+      "analysis": "phase_b_descriptive (exploratory, Haiku-only)",
+      "alpha": 0.05,
+      "multiplicity": "no correction applied: exploratory. Treat all contrasts as signals motivating Phase C; a confirmatory single term would need ~p<0.0036 (Bonferroni/14).",
+      "reference_condition": "neutral",
+      "status_col": "verifier_status",
+      "primary_model": "maximal",
+      "ci_method": "asymptotic Wald (z); abstention sits near the probability boundary, interpret its CI cautiously",
+      "domains_in_fit": ["academic", "medical"],
+      "n_observations": 12000,
+      "n_generations_total": 12000,
+      "n_questions": 600,
+      "converged": true,
+      "is_singular": false,
+      "r_version": "R version 4.6.0 (2026-04-24 ucrt)",
+      "lme4_version": "2.0.1",
+      "timestamp_utc": "2026-06-14T12:02:24Z"
+    }
+  },
+  "divergence_academic_medical": {
+    "scope": "academic+medical only (good verification coverage; legal excluded to remove CourtListener-indexing confound)",
+    "citations_expected_marginal_j2a": {
+      "contrast": "citations_expected - neutral",
+      "log_or": 1.0273,
+      "std_error": 0.1883,
+      "z": 5.4552,
+      "p_value": 1.466e-07,
+      "p_underflow": false,
+      "separation_flag": false,
+      "odds_ratio": 2.7934,
+      "or_ci_lo": 1.9313,
+      "or_ci_hi": 4.0404,
+      "significant": true
+    },
+    "citations_expected_marginal_verifier": {
+      "contrast": "citations_expected - neutral",
+      "log_or": 0.5741,
+      "std_error": 0.174,
+      "z": 3.3001,
+      "p_value": 0.0028,
+      "p_underflow": false,
+      "separation_flag": false,
+      "odds_ratio": 1.7756,
+      "or_ci_lo": 1.2626,
+      "or_ci_hi": 2.497,
+      "significant": true
+    },
+    "legal_inflation": {
+      "or_all_domains": 23.8469,
+      "or_academic_medical": 2.7934,
+      "note": "The all-domain citations_expected OR shrinks sharply on legal removal, confirming the all-domain figure is legal-UNVERIFIABLE-inflated and must not be the headline."
+    },
+    "ci_overlap_caveat": "The J2a vs verifier marginal CIs OVERLAP; the J2a>verifier gap is directional only, not a formal difference. Both scorings independently place the effect in obscure_real. The judge adds resolution, not the whole signal.",
+    "length_matched_reversal": "PAPER-STAGE FLAG: length_matched marginal OR EXCEEDS citations_expected in this Haiku pilot, reversing the pre-reg §5 directional assumption (citations_expected was the presumed high-fabrication arm). Unexplained; needs an explicit appendix note or §11 amendment, and Phase C re-examination on the open-weights roster."
+  }
+}

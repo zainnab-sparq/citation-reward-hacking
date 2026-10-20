@@ -1,0 +1,300 @@
+{
+  "f1": [
+    {
+      "cell": "known_real",
+      "stage_ordinal": 0,
+      "n": 3592,
+      "k": 110,
+      "rate": 0.0306236080178174,
+      "lo": 0.025471289405158,
+      "hi": 0.0367788018138542,
+      "stage": "Base"
+    },
+    {
+      "cell": "known_real",
+      "stage_ordinal": 1,
+      "n": 3576,
+      "k": 681,
+      "rate": 0.190436241610738,
+      "lo": 0.177901902117245,
+      "hi": 0.203634954900619,
+      "stage": "SFT"
+    },
+    {
+      "cell": "known_real",
+      "stage_ordinal": 2,
+      "n": 3580,
+      "k": 1148,
+      "rate": 0.320670391061453,
+      "lo": 0.305580697210316,
+      "hi": 0.33614452563966,
+      "stage": "DPO"
+    },
+    {
+      "cell": "known_real",
+      "stage_ordinal": 3,
+      "n": 3588,
+      "k": 1153,
+      "rate": 0.321348940914158,
+      "lo": 0.306266625986296,
+      "hi": 0.336813388903638,
+      "stage": "RLHF"
+    },
+    {
+      "cell": "obscure_real",
+      "stage_ordinal": 0,
+      "n": 3591,
+      "k": 153,
+      "rate": 0.0426065162907268,
+      "lo": 0.03647497849953,
+      "hi": 0.0497155982950136,
+      "stage": "Base"
+    },
+    {
+      "cell": "obscure_real",
+      "stage_ordinal": 1,
+      "n": 3544,
+      "k": 970,
+      "rate": 0.273702031602709,
+      "lo": 0.259273920772529,
+      "hi": 0.288620194954623,
+      "stage": "SFT"
+    },
+    {
+      "cell": "obscure_real",
+      "stage_ordinal": 2,
+      "n": 3531,
+      "k": 1553,
+      "rate": 0.439818748229963,
+      "lo": 0.423520968332264,
+      "hi": 0.456247331052289,
+      "stage": "DPO"
+    },
+    {
+      "cell": "obscure_real",
+      "stage_ordinal": 3,
+      "n": 3541,
+      "k": 1546,
+      "rate": 0.43659983055634,
+      "lo": 0.420341633400024,
+      "hi": 0.452995438168369,
+      "stage": "RLHF"
+    },
+    {
+      "cell": "unanswerable",
+      "stage_ordinal": 0,
+      "n": 3600,
+      "k": 516,
+      "rate": 0.143333333333333,
+      "lo": 0.132266707112796,
+      "hi": 0.155160326139566,
+      "stage": "Base"
+    },
+    {
+      "cell": "unanswerable",
+      "stage_ordinal": 1,
+      "n": 3566,
+      "k": 1846,
+      "rate": 0.517666853617499,
+      "lo": 0.501256193333191,
+      "hi": 0.534039491770322,
+      "stage": "SFT"
+    },
+    {
+      "cell": "unanswerable",
+      "stage_ordinal": 2,
+      "n": 3566,
+      "k": 2323,
+      "rate": 0.651430173864274,
+      "lo": 0.635634807686935,
+      "hi": 0.66689963605746,
+      "stage": "DPO"
+    },
+    {
+      "cell": "unanswerable",
+      "stage_ordinal": 3,
+      "n": 3570,
+      "k": 2379,
+      "rate": 0.666386554621849,
+      "lo": 0.650748245842243,
+      "hi": 0.68166717148632,
+      "stage": "RLHF"
+    }
+  ],
+  "f2": [
+    {
+      "condition": "neutral",
+      "is_post_trained": 0,
+      "n": 2686,
+      "k": 424,
+      "rate": 0.157855547282204,
+      "lo": 0.14455682342314,
+      "hi": 0.172131528608643,
+      "status": "Base"
+    },
+    {
+      "condition": "neutral",
+      "is_post_trained": 1,
+      "n": 7986,
+      "k": 3156,
+      "rate": 0.39519158527423,
+      "lo": 0.38452193248265,
+      "hi": 0.405962020343232,
+      "status": "Post-trained"
+    },
+    {
+      "condition": "citations_expected",
+      "is_post_trained": 0,
+      "n": 2700,
+      "k": 67,
+      "rate": 0.0248148148148148,
+      "lo": 0.0195876971594622,
+      "hi": 0.0313921627620641,
+      "status": "Base"
+    },
+    {
+      "condition": "citations_expected",
+      "is_post_trained": 1,
+      "n": 8047,
+      "k": 5543,
+      "rate": 0.688828134708587,
+      "lo": 0.678624563071171,
+      "hi": 0.698851507665559,
+      "status": "Post-trained"
+    },
+    {
+      "condition": "abstention_permitted",
+      "is_post_trained": 0,
+      "n": 2697,
+      "k": 63,
+      "rate": 0.0233592880978865,
+      "lo": 0.0183006857279461,
+      "hi": 0.0297737609955534,
+      "status": "Base"
+    },
+    {
+      "condition": "abstention_permitted",
+      "is_post_trained": 1,
+      "n": 8044,
+      "k": 1139,
+      "rate": 0.141596220785679,
+      "lo": 0.134148444860676,
+      "hi": 0.149386148917849,
+      "status": "Post-trained"
+    },
+    {
+      "condition": "length_matched",
+      "is_post_trained": 0,
+      "n": 2700,
+      "k": 225,
+      "rate": 0.0833333333333333,
+      "lo": 0.0734907856925244,
+      "hi": 0.094359831931573,
+      "status": "Base"
+    },
+    {
+      "condition": "length_matched",
+      "is_post_trained": 1,
+      "n": 7985,
+      "k": 3761,
+      "rate": 0.471008140262993,
+      "lo": 0.460076338186461,
+      "hi": 0.48196782398817,
+      "status": "Post-trained"
+    }
+  ],
+  "f3_grounding": [
+    {
+      "era": "EARLY",
+      "n_judged": 16500,
+      "n_effort_recorded": 16500,
+      "n_missing_effort": 0,
+      "n_zero_effort": 269,
+      "zero_effort_share": 0.0163030303030303,
+      "mean_effort": 2.02763636363636
+    },
+    {
+      "era": "DEGRADED",
+      "n_judged": 7500,
+      "n_effort_recorded": 7500,
+      "n_missing_effort": 0,
+      "n_zero_effort": 969,
+      "zero_effort_share": 0.1292,
+      "mean_effort": 1.65933333333333
+    },
+    {
+      "era": "RECOVERED",
+      "n_judged": 7980,
+      "n_effort_recorded": 7980,
+      "n_missing_effort": 0,
+      "n_zero_effort": 90,
+      "zero_effort_share": 0.0112781954887218,
+      "mean_effort": 2.0937343358396
+    }
+  ],
+  "f3_verdict": [
+    {
+      "era": "EARLY",
+      "status": "REAL",
+      "n": 7656,
+      "n_era": 16500,
+      "share": 0.464
+    },
+    {
+      "era": "EARLY",
+      "status": "UNVERIFIABLE",
+      "n": 2760,
+      "n_era": 16500,
+      "share": 0.167272727272727
+    },
+    {
+      "era": "EARLY",
+      "status": "FABRICATED",
+      "n": 6084,
+      "n_era": 16500,
+      "share": 0.368727272727273
+    },
+    {
+      "era": "DEGRADED",
+      "status": "REAL",
+      "n": 2781,
+      "n_era": 7500,
+      "share": 0.3708
+    },
+    {
+      "era": "DEGRADED",
+      "status": "UNVERIFIABLE",
+      "n": 1037,
+      "n_era": 7500,
+      "share": 0.138266666666667
+    },
+    {
+      "era": "DEGRADED",
+      "status": "FABRICATED",
+      "n": 3682,
+      "n_era": 7500,
+      "share": 0.490933333333333
+    },
+    {
+      "era": "RECOVERED",
+      "status": "REAL",
+      "n": 3443,
+      "n_era": 7980,
+      "share": 0.431453634085213
+    },
+    {
+      "era": "RECOVERED",
+      "status": "UNVERIFIABLE",
+      "n": 563,
+      "n_era": 7980,
+      "share": 0.0705513784461153
+    },
+    {
+      "era": "RECOVERED",
+      "status": "FABRICATED",
+      "n": 3974,
+      "n_era": 7980,
+      "share": 0.497994987468672
+    }
+  ]
+}

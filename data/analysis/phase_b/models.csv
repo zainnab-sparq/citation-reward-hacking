@@ -1,0 +1,4 @@
+model_id,family,is_post_trained,is_open_weights
+claude-haiku-4-5-20251001,anthropic,1,0
+claude-opus-4-7,anthropic,1,0
+claude-sonnet-4-6,anthropic,1,0

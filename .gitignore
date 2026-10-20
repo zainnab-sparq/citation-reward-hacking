@@ -1,0 +1,113 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.key
+credentials.json
+api_keys.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# uv / venv
+.venv/
+venv/
+env/
+uv.lock
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_meta
+
+# Data — large + generated artifacts (kept local; do not commit)
+# 62 MB Retraction Watch DB snapshot (regenerable from the dated download)
+data/external/
+# generated citation-extraction outputs
+data/extractions/
+data/generations/**/*.jsonl
+data/generations/*.parquet
+data/activations/
+data/verifications/cache/
+# pilot verification caches (generated)
+data/verifications/*.jsonl
+data/verifications/**/*.jsonl
+# Phase B confidence + verification + aggregation artifacts (regenerable from the batch pipeline)
+data/confidences/
+# Analysis frames ship with generations gzipped; the unpacked copy stays local
+# (scripts/unpack_analysis_inputs.py). The pilot and stale drift frames are not shipped.
+data/analysis_inputs/**/generations.jsonl
+data/analysis_inputs/pilot_b/
+data/analysis_inputs/phase_c_drift/
+# Phase B R-input CSV carrying full output_text (~28 MB, regenerable from
+# generations.jsonl via src/analysis/aggregate.py). The small aggregation
+# outputs (rate tables, batch_equivalence.json, verifications.csv) ARE committed.
+data/analysis/**/generations.csv
+# Hand-check artifacts (regenerable from verifications + extractions + generations)
+data/handcheck/
+# Parametric-bootstrap chunk files. Intermediate resample matrices that exist so
+# a multi-day §6 bootstrap can resume after an interruption; the pooled CIs land
+# in the committed results JSON. Binary, large, and regenerable by rerunning.
+data/analysis/phase_c/boot_chunks/
+
+# Keep the question set, schemas, and small index files
+!data/questions/*.jsonl
+!data/questions/*.json
+!data/verifications/.gitkeep
+# pre-reg §8 HARD legal-unanswerable cross-check gate audit record (committed deliberately)
+!data/verifications/legal_unanswerable_crosscheck.jsonl
+!data/generations/.gitkeep
+# Phase C open-weights confirmatory generations (committed deliberately: 12 pinned
+# checkpoints x 900 q x 4 conditions = 43,200, the registered E1/E2 inputs)
+!data/generations/phase_c/*.jsonl
+!data/activations/.gitkeep
+
+# Model weights / HuggingFace cache
+*.safetensors
+*.bin
+*.gguf
+hf_cache/
+.cache/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code tooling (agent defs + local runtime state; not a research artifact)
+.claude/
+.mcp.json
+
+# Logs
+*.log
+logs/
+
+# renv — commit renv.lock (the reproducibility manifest); never the machine-local
+# library, which is large and Dropbox-syncs poorly. Created only if someone runs
+# renv::restore()/init(); the current pin is lockfile-only (no renv/ dir).
+renv/library/
+renv/local/
+renv/cellar/
+renv/lock/
+renv/python/
+renv/sandbox/
+renv/staging/
+
+# OSF upload staging — local drag-and-drop convenience copies, not a source artifact
+osf_upload/
+
+# Playwright MCP runtime output (page snapshots / screenshots), not a source artifact
+.playwright-mcp/

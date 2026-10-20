@@ -1,0 +1,76 @@
+{
+  "note": "POST-HOC diagnostic, not a registered estimand. Logistic arm only.",
+  "model": "logistic",
+  "tiers": {
+    "primary": {
+      "all": {
+        "preference_rate": 0.8577777777777778,
+        "n_pairs": 3600,
+        "wins": 2660,
+        "losses": 84,
+        "ties": 856,
+        "tie_rate": 0.23777777777777778,
+        "ci_low": 0.85,
+        "ci_high": 0.8661111111111112,
+        "computable": true
+      },
+      "within_one": {
+        "preference_rate": 0.7875602277704774,
+        "n_pairs": 2283,
+        "wins": 1370,
+        "losses": 57,
+        "ties": 856,
+        "tie_rate": 0.37494524748138414,
+        "ci_low": 0.7766097240473062,
+        "ci_high": 0.7980727113447219,
+        "computable": true
+      },
+      "exact_count_match": {
+        "preference_rate": 0.5154867256637168,
+        "n_pairs": 904,
+        "wins": 38,
+        "losses": 10,
+        "ties": 856,
+        "tie_rate": 0.9469026548672567,
+        "ci_low": 0.5082964601769911,
+        "ci_high": 0.5237831858407079,
+        "computable": true
+      }
+    },
+    "placebo": {
+      "all": {
+        "preference_rate": 0.6470833333333333,
+        "n_pairs": 3600,
+        "wins": 1622,
+        "losses": 563,
+        "ties": 1415,
+        "tie_rate": 0.39305555555555555,
+        "ci_low": 0.6347222222222222,
+        "ci_high": 0.6588888888888889,
+        "computable": true
+      },
+      "within_one": {
+        "preference_rate": 0.5808167467398765,
+        "n_pairs": 2914,
+        "wins": 985,
+        "losses": 514,
+        "ties": 1415,
+        "tie_rate": 0.48558682223747424,
+        "ci_low": 0.5682910089224433,
+        "ci_high": 0.5931708991077557,
+        "computable": true
+      },
+      "exact_count_match": {
+        "preference_rate": 0.5034537725823592,
+        "n_pairs": 1882,
+        "wins": 240,
+        "losses": 227,
+        "ties": 1415,
+        "tie_rate": 0.7518597236981934,
+        "ci_low": 0.49229543039319873,
+        "ci_high": 0.5146121147715197,
+        "computable": true
+      }
+    }
+  }
+}

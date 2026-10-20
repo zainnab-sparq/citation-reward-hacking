@@ -1,0 +1,277 @@
+% ARGUES: what the four experiments jointly license, and no more.
+% DRAWS FROM: results, once they exist.
+% GATED ON: the confirmatory fit.
+
+\section{Discussion}
+\label{sec:discussion}
+
+% REFRAMED 2026-08-31 after the confirmatory fit. The chain below previously led
+% with E1 and asserted a differential cascade. E1's registered interaction did
+% not reject. Do not restore the old ordering, and do not restate E1's main
+% effect as though it were the hypothesis that was tested.
+
+\guide{The thesis chain, reordered to match what the experiments returned, and
+stated as a chain so a reader can see which link is weakest.
+
+E2 carries the paper. A prompt cue moves fabrication within a fixed policy, and
+it raises fabrication in post-trained checkpoints far more than in base ones.
+On the original twelve it drives the base models down; the fifteen-model refit
+adds a base model that goes up, so lead with the post-trained rise and the
+interaction, not with the base fall. That is the strongest and cleanest result
+and it should lead.
+
+E1 is a large main effect whose registered interaction did not reject. Post-
+training raises fabrication enormously, and it does not raise it preferentially
+in the cell where capability is held roughly constant, which is what H1.1
+predicted. Report the null as a null. The honest sentence is that post-training
+raises fabrication across the board rather than selectively where fabrication is
+most tempting, and the co-primary intersection-union rule therefore returns a
+loss for the headline T1 claim.
+
+E3 asks whether the signal is internally represented. E4 asks whether a
+plausible surface proxy prefers the higher-fabricating policy, and its answer is
+qualified by the count-matched control: the preference is largely ``cites
+more.''
+
+One interpretive paragraph, clearly labeled as interpretation rather than
+result. A broad rise rather than a targeted one is what
+\citet{qi2026rewardseeker} report for reward-seeking induced deliberately: the
+disposition generalized well outside the environments that produced it instead
+of firing only where it had been trained. Our E1 null is consistent with a
+general disposition rather than a strategy that activates on detecting a hard
+question. This is a reading of a null result against an external parallel and
+carries no evidential weight; write it as such or cut it.
+
+The negative stage-by-unanswerable interaction wants the same treatment. A
+ceiling reading is available, since fabrication on unanswerable items starts
+high and has less room to climb, but the design does not test it.
+
+Keep the boundary paragraph, and keep it early. This design does not identify
+the reward signal that produced the behavior. It shows that fabrication moves
+with post-training stage and with a prompt cue, and that a surface proxy would
+reward it. Inferring that RLHF specifically caused it requires an assumption the
+design does not test, and the E1 null makes the tempting causal story weaker
+rather than stronger. A reviewer will look for that overreach first.
+
+Write the boundary paragraph early rather than at the end. This design does not
+identify the reward signal that produced the behavior. It shows that fabrication
+moves with post-training stage and with a prompt cue, and that a surface proxy
+would reward it. Inferring that RLHF specifically caused it requires an
+assumption the design does not test. A reviewer will look for that
+overreach first.
+
+If the dose-response convergence with the concurrent solution-hacking work
+holds, it is worth a short paragraph: two designs, different constructs, same
+gradient with difficulty.
+
+Practical implication, kept to what follows from the data: evaluation and
+training setups that reward citation presence without checking citation
+existence select for exactly this behavior, and the E4 proxy is a direct
+demonstration if it lands.}
+
+\paragraph{What this design cannot do, first.}
+This study does not identify the reward signal that produced the behavior. It
+shows that citation fabrication moves with post-training stage, that a prompt cue
+raises it in post-trained checkpoints far more than in base ones, and that a
+naive surface proxy would reward the post-trained policy.
+Concluding that RLHF specifically caused any of it requires an assumption the
+design does not test: we observe checkpoints along a training pipeline, not an
+intervention on the reward. The E1 null makes that causal story weaker rather
+than stronger, because the effect we can measure is a broad rise rather than the
+targeted one the reward-hacking account predicted. We state this at the top
+rather than at the end because every paragraph below inherits it.
+
+\paragraph{E2 carries the paper.}
+The clearest result is that a prompt cue moves fabrication within a fixed policy,
+and moves the two populations in opposite directions. Asking for citations drives
+base checkpoints \emph{down} (9.04\% to 0.77\%) and post-trained checkpoints
+\emph{up} (34.18\% to 73.70\%), a 47.8-point interaction that holds in all three
+domains and survives under both analysis pipelines. Because the weights are fixed
+while the prompt changes, this is not a claim about what training did; it is a
+demonstration that the disposition is elicitable, and that whatever post-training
+installed, it responds to being asked for sources by producing more of them
+whether or not they exist.
+
+The fifteen-checkpoint refit (Section~\ref{sec:refit15}) keeps the interaction,
+41.5 points with Holm-adjusted $p = 3 \times 10^{-31}$, and keeps the post-trained
+rise almost unchanged, 35.16\% to 74.91\%. What it does not keep is the base-side
+fall as a general statement. Three of the four base checkpoints fabricate less
+when asked for citations, but the Qwen2.5-72B base goes from 47.8\% to 71.7\%,
+responding to the cue the way post-trained checkpoints do. A model released as a
+base checkpoint is not guaranteed to behave like one, and we do not know what in
+that checkpoint's training produces this. What holds on both rosters is the
+post-trained rise and the interaction, and that is the claim we make. One
+qualification belongs beside it. Adding citation count as a covariate shrinks
+the fifteen-model interaction from an odds ratio of 6.75 to 2.28, so a good part
+of the cue effect runs through post-trained checkpoints citing more, the same
+quantity E4 finds a naive proxy rewarding. That adjusted figure is not a direct
+effect. Citation count is itself moved by the cue, so the covariate sits on the
+causal path, and the outcome counts a generation as fabricating if any one of its
+citations is fabricated, so more citations raise it mechanically. The adjusted
+odds ratio says how much of the interaction survives holding count fixed; it does
+not split the effect into a count part and a propensity part. The interaction
+stays above one after adjustment on both pipelines (2.28 corrected, 1.48
+registered).
+
+The de-confounding control sharpens this. A reasonable objection is that
+\texttt{citations\_expected} simply asks for a longer answer, and longer answers
+afford more citation slots. The length-matched control answers it: the
+citation-specific cue exceeds the pure length demand by 28.35 points on the
+corrected pipeline and 12.64 on the registered one, both far inside the
+pre-committed ``citation cue drives it'' bin. That rule was fixed before any
+Phase C number existed and was written to accommodate the \emph{opposite} result,
+since the exploratory pilot had pointed the other way. It did not fire.
+
+\paragraph{E1 is a large main effect whose registered interaction did not reject.}
+Post-training raises fabrication enormously: 4.78\% at base to 56.66\% at the
+final stage, an odds ratio of 2.41 per stage. But H1.1 predicted something more
+specific, that the rise would concentrate in the obscure-but-real cell where
+capability is roughly held constant and fabrication is most tempting. It did not.
+The registered interaction is 0.084 with a Holm-adjusted $p$ of 0.360, and the
+co-primary binary contrast does not reject either, so the intersection-union rule
+returns a loss for the headline T1 claim under both pipelines. We report that as a
+null, not as a trend, and not as a smaller version of the predicted effect.
+
+\textbf{That null is uninformative rather than informative, and the reason is a
+design shortfall we have to declare.} The pre-registration's power figures for E1
+(97.5\% at $\alpha = 0.05$, 90.0\% at the Holm floor) were computed on a
+23-checkpoint roster across six families. The study ran twelve checkpoints across
+three, having not collected the 405B anchor or the cross-family breadth arm.
+Re-running the registered power machinery on the roster that was actually fitted,
+with the effect pinned to the same pre-registered declared value so the
+calculation stays a-priori rather than a restatement of the $p$-value, gives
+\textbf{73.0\% $[66.28, 79.02]$ at $\alpha = 0.05$ and 54.0\% at the Holm floor}.
+Both fail the pre-registered 80\% gate. So the design as run would miss an effect
+of the registered size roughly a quarter of the time at nominal $\alpha$, and
+close to half the time at the threshold this interaction actually faces as the
+second member of its Holm family. The same recomputation for E2 gives 73.0\% and
+51.0\%, against registered figures of 95.5\% and 85.0\%. That bears on none of
+the E2 conclusions, because power governs how a failure to reject should be read
+and E2 rejects at Holm $p = 2 \times 10^{-34}$; we report it because the
+registered figure describes a roster we did not run.
+
+The correct reading is therefore not that post-training fails to raise fabrication
+selectively, but that \textbf{this experiment was not powered to settle the
+question at the effect size it registered}. We flag two things that reading must
+not be stretched into. It does not rescue T1: low power explains how a null can
+arise, it is not evidence for the effect, and the registered conclusion remains
+``not supported.'' And it is not a claim about power at the observed estimate,
+which would be a circular restatement of the same $p$-value. What we can say
+positively is the main effect, which is large and unambiguous, and which no
+amount of power discussion changes: post-training raises fabrication across the
+board.
+
+The fifteen-checkpoint refit moves this reading. Collecting three registered
+checkpoints under the pre-committed rule of amendment \#13 lifts a-priori power
+for the E1 interaction to 83.0\% at nominal $\alpha$, above the registered gate,
+though still not at the Holm floor (69.0\%). On that roster the interaction is
+null again, Holm-adjusted $p = 0.192$, and its point estimate turns slightly
+negative ($\mathrm{OR} = 0.93$). Its 95\% interval, $[0.86, 1.01]$ (registered
+$[0.85, 1.02]$), is the more useful number: whatever positive interaction the
+data still allow is at most one or two percent in odds per stage. The
+stage-as-factor sensitivity puts every stage-by-obscure-real term below one. Amendment \#13 fixed in advance that a null
+at adequate power would be reported as evidence against selective concentration,
+and we do so with the qualifier the Holm floor requires: at the nominal level the
+fifteen-model design was powered for the registered effect and did not find it,
+and the direction it did find is the opposite one. The binary base-versus-post
+contrast does reject on fifteen checkpoints, but the intersection-union rule
+needs both components, so T1 remains unsupported.
+
+Two further features of E1 are worth naming and not over-reading. Treating stage
+as a factor shows most of the movement is already present at SFT, with DPO and
+RLHF indistinguishable from each other, so the cascade is not a story about the
+final preference-optimization step. And the stage-by-unanswerable interaction is
+negative. A ceiling reading is available, since fabrication on unanswerable items
+starts high and has less room to climb, but the design does not test it and we do
+not assert it.
+
+\paragraph{An interpretation, labeled as one.}
+A broad rise rather than a targeted one is what \citet{qi2026rewardseeker} report
+for reward-seeking induced deliberately: the disposition generalized well outside
+the environments that produced it, instead of firing only where it had been
+trained. Our E1 null is consistent with a general disposition rather than a
+strategy that activates on detecting a hard question. This is a reading of a null
+result against an external parallel. It carries no evidential weight and nothing
+later depends on it.
+
+\paragraph{E4 shows the proxy would reward it, and shows exactly which feature.}
+A preference model trained only on surface citation features prefers post-trained
+output 85.8\% of the time on cross-family transfer, which is the plausibility
+argument the thesis needs: a reward signal that keys on citation presence would
+select for the higher-fabricating policy. The count-matched diagnostic tells us
+which feature carries it. Holding citation count exactly equal collapses the
+preference to 51.6\%, while the placebo lands at 50.3\% with an interval
+straddling chance. So the proxy is reading \emph{quantity}, not plausibility of
+apparatus. We therefore claim that citation count is rewarded, and we do not
+claim that a naive judge is fooled by fabricated-looking scholarly detail.
+Quantity is an entirely ordinary thing for a reward model to key on, which is
+what makes the mechanism plausible rather than exotic.
+
+\paragraph{What the numbers will and will not support.}
+The base-versus-post-trained \emph{contrast} is robust: it holds under both
+pipelines, in every domain, and under the UNVERIFIABLE-as-fabricated recoding
+that excludes no generation at all. The \emph{absolute} rates are not. They rest
+on an LLM judge measured at 80\% precision and 0.781 recall on FABRICATED, so a
+reader should treat ``56.66\% of final-stage generations contain a fabricated
+citation'' as an estimate with real measurement error, and treat the direction
+and size of the differences as the durable finding. All human labels are the
+author's, so there is no inter-annotator reliability and no Cohen's $\kappa$.
+Nothing here is proven; a pre-registered study with one instrument and one
+annotator does not prove things.
+
+Two scope limits deserve stating in the same breath, because both cut against
+the tempting summary. The closed-API block is empty, so \textbf{no claim about
+frontier closed models follows from this study} and H1.2b is untested rather than
+unsupported. And base models are not the honest comparators a casual reading
+imagines: the three original base checkpoints cite \emph{less}, not more
+accurately, and under the citation cue they mostly stop citing altogether. Their
+column is a floor produced partly by non-compliance with the instruction, not a
+demonstration of restraint. The fourth base checkpoint, Qwen2.5-72B, cites
+heavily and fabricates at post-trained rates, which is a second reason not to
+treat ``base'' as a behavioral category.
+
+\paragraph{Practical implication.}
+The narrow version, which is all the data supports, is this: an evaluation or
+training setup that rewards citation presence without checking citation existence
+selects for exactly the behavior measured here. E4 is a direct demonstration that
+a plausible proxy does so, and it identifies count as the operative feature.
+Checking existence is cheap relative to the alternative, and the failure it
+prevents is the one that survives review.
+
+\subsection{Future work}
+
+Four things this study sets up and does not deliver.
+
+\textbf{A second annotator.} Every human label here is the author's, so the
+obvious next step is an independent annotator on a subset and a Cohen's $\kappa$.
+We note one design constraint learned the hard way: the annotator has to be able
+to judge whether a Federal Reporter citation resolves to a real case. An
+annotator who cannot would produce a low $\kappa$ measuring their unfamiliarity
+rather than the protocol's ambiguity, which is worse than reporting no $\kappa$
+at all, because it reads as evidence that the dividing rules are unclear when
+they are not.
+
+\textbf{A design powered for the interaction.} The registered roster was reduced
+before collection, and the realized design reached 73\% power for the E1 effect
+at nominal $\alpha$ and 54\% at the Holm floor; the fifteen-checkpoint refit
+reached 83\% and 69\%. Settling the question at the Holm floor needs the breadth
+the registration called for: more families carrying both base and post-trained
+checkpoints, and enough of them that the family-level random effect is estimated
+from more than four levels.
+
+\textbf{Retrieval-augmented settings.} It is tempting to assume retrieval
+dissolves this problem. \citet{magesh2024} report that retrieval-based legal
+research tools still hallucinate between 17\% and 33\% of the time, so the
+assumption needs testing rather than granting. The design here transfers
+directly: the same question set, the same conditions, with retrieval in the loop.
+
+\textbf{Whether the signal is internally represented, and whether that is
+usable.} E3 (Section~\ref{sec:e3}) ran on the 8B scale-check arm only. There, a
+fabrication-correlated signal is linearly decodable at the answer tokens from
+disjoint questions, and it survives the registered difficulty deconfound; the
+general-truthfulness probe, the registered primary, does not transfer at all.
+Three things remain open. The 70B primary is uncollected, so whether the
+within-domain result holds at the registered scale is unknown. The activations
+were read from 4-bit weights. And decodability is detection, not intervention:
+whether the signal can be steered, rather than merely read, is the more useful
+question and this design does not ask it.

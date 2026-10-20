@@ -1,0 +1,50 @@
+{"domain": "academic", "id": "academic_known_real_0081", "question": "What paper by Foster (2005) is a seminal study on Globus Toolkit Version 4: Software for Service-Oriented Systems?"}
+{"domain": "academic", "id": "academic_known_real_0014", "question": "What paper describes the CLUSTAL_X multiple sequence alignment program?"}
+{"domain": "academic", "id": "academic_known_real_0003", "question": "What review paper surveyed methods for handling missing data in psychological research?"}
+{"domain": "academic", "id": "academic_known_real_0094", "question": "What paper by Trajtenberg (1997) is a seminal study on University Versus Corporate Patents: A Window On The Basicness Of Invention?"}
+{"domain": "academic", "id": "academic_known_real_0035", "question": "What paper describes Cytoscape as a software environment for biomolecular interaction network visualization?"}
+{"domain": "academic", "id": "academic_known_real_0031", "question": "What paper describes the PRISMA-P guidelines for reporting systematic review protocols?"}
+{"domain": "academic", "id": "academic_obscure_real_0128", "question": "What paper by Raj (2021) proposed State-of-the-art review on laser cladding process as an in-situ repair technique?"}
+{"domain": "academic", "id": "academic_obscure_real_0117", "question": "What paper analyzed spatial–temporal variations of urban green space in the Wuhan metropolitan area?"}
+{"domain": "academic", "id": "academic_obscure_real_0194", "question": "What paper by Nowak (2005) proposed Overview of Global Optimization Methods?"}
+{"domain": "academic", "id": "academic_obscure_real_0113", "question": "What paper presented a prototype supply current monitor for testing analogue circuits?"}
+{"domain": "academic", "id": "academic_obscure_real_0186", "question": "What paper by Steffensen (2004) proposed Synthesis and Manipulation of Orthogonally Protected Dendrimers: Building Blocks?"}
+{"domain": "academic", "id": "academic_obscure_real_0169", "question": "What paper by Sun (2000) proposed Supplementing Neural Reinforcement Learning with Symbolic Methods?"}
+{"domain": "academic", "id": "academic_unanswerable_0211", "question": "Cite the 2017 NeurIPS paper by Bogdanov and Cheng on hypernetworks for weight generation in continual learning scenarios."}
+{"domain": "academic", "id": "academic_unanswerable_0275", "question": "Cite the 2022 ICML paper by Osei and Fujimoto on offline policy gradient with importance-weighted corrections for distributional shift."}
+{"domain": "academic", "id": "academic_unanswerable_0254", "question": "Cite the 2019 ACL paper by Amara and Kobayashi on aspect-level opinion mining with dual-channel attention networks."}
+{"domain": "academic", "id": "academic_unanswerable_0204", "question": "Cite the 2022 CVPR paper by Nkosi and Yamada on video object segmentation with cross-frame attention propagation."}
+{"domain": "academic", "id": "academic_unanswerable_0203", "question": "Cite the 2017 EMNLP paper by Castaño and Watanabe on discourse coherence modeling with hierarchical recurrent networks."}
+{"domain": "medical", "id": "medical_known_real_0611", "question": "What does the Cochrane Review on adding long-acting beta-2 agonists to inhaled steroids as first-line therapy for steroid-naive asthma conclude?"}
+{"domain": "medical", "id": "medical_known_real_0627", "question": "Cite the Cochrane systematic review on fixed-dose combination therapy for prevention of cardiovascular disease."}
+{"domain": "medical", "id": "medical_known_real_0629", "question": "Cite the Cochrane systematic review on second-generation antipsychotics for major depressive disorder and dysthymia."}
+{"domain": "medical", "id": "medical_known_real_0664", "question": "What study examined fear of COVID-19, positivity, and the mediating roles of intolerance of uncertainty, depression, anxiety, and stress?"}
+{"domain": "medical", "id": "medical_known_real_0677", "question": "Cite the review on the biological response of cancer cells to radiation treatment."}
+{"domain": "medical", "id": "medical_known_real_0603", "question": "What does the Cochrane Review on ovarian suppression as adjuvant treatment for hormone receptor-positive early breast cancer conclude?"}
+{"domain": "medical", "id": "medical_obscure_real_0771", "question": "What study examined nocturnal intragastric therapy in type I glycogen storage disease and its effect on hormonal and amino acid metabolism?"}
+{"domain": "medical", "id": "medical_obscure_real_0725", "question": "Cite the retrospective mortality study examining suicide by health professionals in Australia from 2001 to 2012."}
+{"domain": "medical", "id": "medical_obscure_real_0791", "question": "What study examined the hepatoprotective effect of ethanolic extract of Lavandula officinalis in alloxan-induced diabetic rats?"}
+{"domain": "medical", "id": "medical_obscure_real_0783", "question": "Cite the proof-of-concept study evaluating a technology-enhanced intervention for older women with HIV infection."}
+{"domain": "medical", "id": "medical_obscure_real_0789", "question": "What paper examined the medical merry-go-round from an anthropological perspective?"}
+{"domain": "medical", "id": "medical_unanswerable_0869", "question": "What 2020 Lancet RCT demonstrated that prophylactic oral amoxicillin-clavulanate reduces post-procedural infection after flexible cystoscopy in patients with recurrent UTI?"}
+{"domain": "medical", "id": "medical_unanswerable_0853", "question": "What 2018 NEJM RCT showed that macitentan plus tadalafil reduces clinical worsening events in newly diagnosed pulmonary arterial hypertension?"}
+{"domain": "medical", "id": "medical_unanswerable_0828", "question": "What 2020 JAMA Neurology RCT found that amantadine reduces fatigue severity and improves quality of life in patients with relapsing-remitting MS?"}
+{"domain": "medical", "id": "medical_unanswerable_0857", "question": "Cite the 2022 Lancet Haematology RCT showing that ivosidenib plus azacitidine extends overall survival versus azacitidine alone in IDH1-mutated untreated AML."}
+{"domain": "medical", "id": "medical_unanswerable_0875", "question": "Cite the 2019 NEJM RCT demonstrating that sodium-glucose cotransporter-2 inhibitor dapagliflozin reduces hospitalizations and death in patients with heart failure and reduced ejection fraction regardless of diabetes status."}
+{"domain": "medical", "id": "medical_unanswerable_0835", "question": "What 2019 Annals of Internal Medicine RCT demonstrated that cognitive rehabilitation reduces cognitive fatigue in patients with mild traumatic brain injury at 6 months?"}
+{"domain": "legal", "id": "legal_known_real_0300", "question": "Cite the First Circuit decision in Air-Con, Inc. v. Daikin Applied Latin Am., LLC, 21 F.4th 168 (2021)."}
+{"domain": "legal", "id": "legal_known_real_0397", "question": "Cite the Supreme Court ruling in Minnesota Voters Alliance v. Mansky, 585 U.S. 1 (2018)."}
+{"domain": "legal", "id": "legal_known_real_0320", "question": "Cite the First Circuit decision in Zampierollo-Rheinfeldt v. Ingersoll-Rand de PR, Inc., 999 F.3d 37 (2021)."}
+{"domain": "legal", "id": "legal_known_real_0389", "question": "Cite the Supreme Court ruling in Lorenzo v. SEC. & Exch. Comm'n, 587 U.S. 71 (2019)."}
+{"domain": "legal", "id": "legal_known_real_0354", "question": "Cite the Supreme Court ruling in Currier v. Virginia, 585 U.S. 493 (2018)."}
+{"domain": "legal", "id": "legal_known_real_0343", "question": "Cite the Federal Circuit decision in Uniloc USA, Inc. v. Lg Electronics USA, Inc., 957 F.3d 1303 (2020)."}
+{"domain": "legal", "id": "legal_obscure_real_0435", "question": "Cite the D.D.C. decision in United States v. Cross, 389 F. Supp. 3d 140 (2019)."}
+{"domain": "legal", "id": "legal_obscure_real_0419", "question": "Cite the E.D. Va. decision in Ayala v. United States, 386 F. Supp. 3d 635 (2019)."}
+{"domain": "legal", "id": "legal_obscure_real_0427", "question": "Cite the N.D. Cal. decision in Stiner v. Brookdale Senior Living, Inc., 383 F. Supp. 3d 949 (2019)."}
+{"domain": "legal", "id": "legal_obscure_real_0497", "question": "Cite the N.D. Ill. decision in Daniel v. Advocate Health Care Network, 278 F. Supp. 3d 1056 (2017)."}
+{"domain": "legal", "id": "legal_obscure_real_0443", "question": "Cite the N.D. Cal. decision in E. Bay Sanctuary Covenant v. Barr, 391 F. Supp. 3d 974 (2019)."}
+{"domain": "legal", "id": "legal_unanswerable_0513", "question": "What did the D.C. Circuit hold in Apex Industrial Corp. v. Northstar Distributing LLC, 997 F.4th 6120 (D.C. Cir. 2019), on Robinson-Patman Act damages calculations when price discrimination affects only secondary-line competitors?"}
+{"domain": "legal", "id": "legal_unanswerable_0511", "question": "What was the Ninth Circuit's holding in Hernandez v. Acme Logistics, Inc., 999 F.4th 8847 (9th Cir. 2021), on whether warehouse dispatch supervisors qualify as exempt administrative employees under the FLSA?"}
+{"domain": "legal", "id": "legal_unanswerable_0548", "question": "How did the Third Circuit resolve Mwamba v. Lehigh Valley Hospital, 914 F.4th 8787 (3d Cir. 2018), on whether a hospital's failure to provide a Swahili interpreter during informed consent constitutes a violation of Title VI of the Civil Rights Act?"}
+{"domain": "legal", "id": "legal_unanswerable_0512", "question": "How did the Fifth Circuit decide Tran v. Gulf Coast Offshore Drilling, Inc., 998 F.4th 7234 (5th Cir. 2022), on Jones Act seaman status for offshore platform workers who rotate between vessels and fixed platforms?"}
+{"domain": "legal", "id": "legal_unanswerable_0545", "question": "What did the Federal Circuit hold in MedDevice Partners LLC v. Abbott Laboratories, 927 F.4th 3230 (Fed. Cir. 2019), on whether a medical device patent's means-plus-function claim is adequately disclosed when the corresponding structure is identified only by a generic software algorithm?"}

@@ -1,0 +1,41 @@
+{
+  "negligible_relative_sd_threshold": 0.001,
+  "blocks": {
+    "status_academic_medical": {
+      "scoring": "status_academic_medical",
+      "grouping_factor": "question_id",
+      "n_dimensions": 4,
+      "sdev": [7.696, 3.4882, 2.0546, 1.0401],
+      "relative_sdev": [1, 0.4532, 0.267, 0.1351],
+      "cumulative_variance": [0.7722, 0.9309, 0.9859, 1],
+      "n_unsupported_dimensions": 0,
+      "is_singular_flag": false,
+      "re_sd_by_term": [2.7628, 2.113, 7.6433, 2.4863],
+      "smallest_re_term": "conditioncitations_expected"
+    },
+    "status_all_domains": {
+      "scoring": "status_all_domains",
+      "grouping_factor": "question_id",
+      "n_dimensions": 4,
+      "sdev": [6.2606, 3.5462, 2.3575, 0.9579],
+      "relative_sdev": [1, 0.5664, 0.3766, 0.153],
+      "cumulative_variance": [0.6729, 0.8888, 0.9842, 1],
+      "n_unsupported_dimensions": 0,
+      "is_singular_flag": false,
+      "re_sd_by_term": [3.3119, 3.2355, 5.5426, 2.4673],
+      "smallest_re_term": "conditionlength_matched"
+    },
+    "verifier_status": {
+      "scoring": "verifier_status",
+      "grouping_factor": "question_id",
+      "n_dimensions": 4,
+      "sdev": [4.6877, 3.001, 1.9158, 1.3585],
+      "relative_sdev": [1, 0.6402, 0.4087, 0.2898],
+      "cumulative_variance": [0.6021, 0.8489, 0.9494, 1],
+      "n_unsupported_dimensions": 0,
+      "is_singular_flag": false,
+      "re_sd_by_term": [3.8002, 2.6406, 3.0114, 2.4523],
+      "smallest_re_term": "conditionlength_matched"
+    }
+  }
+}

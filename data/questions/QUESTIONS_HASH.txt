@@ -1,0 +1,15 @@
+# Original freeze 2026-05-03 (IMMUTABLE historical record; do not modify).
+frozen_900q.jsonl: 6c8dd0d3b6424fadf86c87295345495ef58abeeb6db0a447362bbe042fe2c614
+release_50q_researcher.jsonl: 96fa2c137159b62a28d8e766b9df0daff91597dea41bc91484eab4d2cc4f9ff0
+release_50q_public.jsonl: d19770149a46832ab510ca483d9f1768a890ed395752652c933095e672333631
+
+# Amendment 2026-05-25 (round-3 panel): pre-2023 cutoff enforced on the legal
+# known-real cell. 45 opinions dated >=2023 (24x2023, 16x2024, 5x2025) replaced
+# by same-tier (34 Circuit, 11 SCOTUS) pre-2023 federal opinions from the original
+# candidate pool (citeCount>=50), seeded draw (42). Slot IDs preserved; original
+# content retained in metadata.original_expected_citation. Produced by
+# src/dataset_construction/amend_legal_cutoff.py. This amended set is the operative
+# dataset for all reported analyses.
+frozen_900q_legal_amended.jsonl: b656f033c11675abfdb23ddc965ee83e2bf01851ee297f325e61e606d017a785
+release_50q_researcher_amended.jsonl: adf8cb029b6231075168d373aed333b5548cfb97b9fe0a81961846ff33dc0bf8
+release_50q_public_amended.jsonl: e6cb1b46b95156c818ca0acaa0979ae2392c47af77e01c7d14bf6010b854d433

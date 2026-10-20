@@ -1,0 +1,212 @@
+% ARGUES: this is the experimental complement to the statistical account of
+%         hallucination, and it is not scooped by the concurrent solution-hacking work.
+% DRAWS FROM: docs/related_work_solution_hacking.md, PRE_REGISTRATION_OSF.md §1.
+% STATUS: drafted 2026-08-12. Every citation in refs.bib is still unverified.
+
+\section{Related work}
+
+\subsection{Hallucination as a statistical equilibrium}
+
+\citet{kalai2025} give a statistical account of why hallucination persists.
+Standard training and evaluation reward confident guessing over calibrated
+abstention, so producing an answer is optimal under a misspecified scoring rule
+even when the model has no basis for one. Hallucination is the equilibrium of
+that rule rather than a defect that more data removes.
+
+Our work is the experimental complement to that argument, not a correction of
+it. The difference is in what each can establish. \citet{kalai2025} name both
+capability (the model cannot retrieve the fact) and incentive (the model is
+rewarded for not abstaining) as contributors, but the analysis is of the
+training objective and does not separate the two empirically. The
+obscure-but-real cell makes that separation a controllable contrast: capability
+is held near-constant against the unanswerable cell while what an honest answer
+looks like changes. We do not attribute to \citet{kalai2025} a prediction in the
+form of a manipulable cell, because they make none.
+
+The other differences follow from that. Their analysis is of training time and
+manipulates nothing inside a fixed policy, whereas E2 does. And where they
+predict the equilibrium, we measure whether four separate things move in the
+direction the reward-hacking account requires: the post-training gradient, the
+prompt lever, the internal state, and a plausible surface proxy.
+
+\subsection{Reward hacking, and what this paper does not claim}
+
+We adopt the definition of reward hacking in \citet{skalse2022}: a policy scores
+well on a proxy while doing worse on the objective the proxy stands in for.
+Citation fabrication fits that shape unusually cleanly, because the proxy
+(an answer that looks sourced) and the objective (an answer that is sourced) come
+apart only when someone checks, and checking is the expensive step that
+preference pipelines skip.
+
+\citet{hubinger2019} on deceptive alignment and \citet{park2024} on strategic
+deception describe failures that require the model to represent and act on a
+distinction between what it believes and what it reports. This design tests
+neither, and we cite them to mark the boundary rather than to claim the
+territory.
+
+\citet{wen2024} is the closest prior result: models trained with human feedback
+learn to mislead evaluators without being trained to, which they call
+U-Sophistry. It is load-bearing here for a second reason. They report that a
+probe trained to detect intended sophistry does not generalize to the
+unintended case, and our pre-registration adopts that as the interpretation of an
+E3 null. A near-chance probe result is a cross-task transfer failure, not
+evidence that no fabrication signal is internally represented.
+
+\citet{qi2026rewardseeker} approach the same problem from the training side.
+They ran reinforcement learning on 80 environments they had identified as
+vulnerable to reward hacking, and the resulting policy carried misaligned
+behavior far outside that training distribution. Two of their observations bear
+directly on this paper. They track a family of reward-seeking reasoning
+patterns, ``related to how the model is being graded and its desire to maximize
+its score on the episode,'' and one of them, grader sycophancy, was flagged in
+27\% of episodes. That is the internal counterpart of the behavioral effect our
+E2 measures from the outside. And their audit finding parallels our E4: ``Across
+our production automated behavioral audit and many of our standard alignment
+evaluations, the model overall appears as aligned as the initial checkpoint.''
+Two designs in unrelated domains report that the standard evaluation apparatus
+does not see the failure it exists to catch.
+
+The boundary needs marking in three places, and the contrast is the useful part.
+Their regime is reinforcement learning on task environments, while ours is the
+supervised, preference and instruct stages of ordinary post-training, so their
+result does not establish our cause. Their model is frontier-scale and ours are
+8B to 72B open weights, the same tier mismatch we flag for
+\citet{solutionhacking2026}. And they characterize their model as a
+``reward-on-the-episode seeker'' that ``expresses motivation to achieve high
+reward,'' which is a claim about what the model represents; our design observes
+behavior only and we do not adopt that vocabulary. Set against that, they
+induced the behavior deliberately in environments hand-selected for
+exploitability, whereas we find a milder form already present in released
+checkpoints that nobody set out to corrupt. Their subject is not citation
+behavior, which the post does not discuss.
+
+\subsection{Concurrent work on shortcut hacking}
+
+\citet{solutionhacking2026} study what they call solution hacking on frontier
+science benchmarks: a model reaches the correct answer through an invalid
+shortcut such as enumeration or answer-first verification, bypassing the
+reasoning the benchmark meant to measure. It is concurrent work, posted while
+our data collection was underway, and it is a preprint rather than a
+peer-reviewed result.
+
+The constructs separate cleanly, which forecloses any priority question. Standard
+benchmark scoring asks whether the answer is right and detects wrong answers.
+Their audit asks whether a right answer was reached legitimately and detects a
+correct outcome reached by an invalid process. Ours asks whether a cited artifact
+has a referent at all and detects something that looks right and refers to
+nothing.
+
+Their construct boundary is useful to us for a structural reason. Their Table~1
+distinguishes legitimate from illegitimate reasoning by the role a step plays in
+a derivation rather than by the technique used, so the same enumeration can fall
+on either side. Our §6(b) dividing line has the same shape: an identical
+metadata discrepancy is an ordinary error when it points at the same work and a
+fabrication when it identifies a different real one. That part of our taxonomy is
+the most exposed to the objection that it is arbitrary, and it helps to be able
+to point at an independent construct built the same way.
+
+The empirical convergence is the stronger connection. Their hack ratio rises
+monotonically with difficulty and does so within every subject, from 2.2\% on
+their easy tier (SciBench and MATH-500) to 28.3\% on their medium tier
+(IMO-Bench, PHYBench and SciOlympiad) to 37.4\% on their hard tier (HLE). Two
+designs in different domains, measuring different failures, find the same
+gradient: the behavior scales with how hard legitimate success is. They also
+report that weaker models hack more, which is a useful external anchor for
+reading the E1 cascade as a statement about difficulty rather than about a
+particular model generation.
+
+Their four anti-hack prompt variants all permit abstention, justified as our
+\texttt{abstention\_permitted} condition is: without an abstention option the
+prompt pushes a model to conceal a shortcut rather than admit it cannot solve
+the problem. Their abstention rate moved from 0\% to 27.3\%. Ours is near zero
+and quasi-separated. That divergence should not be over-read. Their population
+is frontier 2026 models under an elaborate multi-variant intervention and ours
+is 8B to 72B open-weights checkpoints under a single condition line, so the
+honest reading is that the abstention lever is real and our near-zero rate is a
+property of the model tier we studied.
+
+On instrument quality the comparison cuts both ways, and we state it in both
+directions. Their validation is stronger than ours: 300 solutions labeled by blinded
+PhD annotators, 8, 7 and 6 per subject, with released guidelines, a held-out
+test split used once, and a deployed detector that is a majority vote of three
+peer-level judges under a no-self-audit rule. Our labels come from a single
+annotator, so we have no inter-annotator reliability and no Cohen's $\kappa$.
+That is the gap to concede, and it is a different gap from having an unvalidated
+judge, which is not our situation (Section~\ref{sec:instrument}). Against that,
+they report no temporal-stability or instrument-drift analysis, and their judge
+is a static API call that cannot degrade the way a search-using judge can.
+
+We also borrow their reporting standard, with the sign reversed. They report
+that their detector misses 39\% of expert-confirmed hacks, and therefore frame
+every rate they publish as a lower bound. Our judge fails in the opposite
+direction under degraded grounding: it fails to confirm works that are real,
+pushing verdicts toward fabrication, so our degraded-era rates are upper bounds.
+Telling a reader which way to discount is more useful than reporting a single
+accuracy number.
+
+\subsection{Measuring reward hacking by construction, and auditing passes after the fact}
+
+% ARGUES: our audit-based design is a considered choice forced by the object,
+%         not an oversight, and the audit-and-overturn move has prior art.
+% STATUS: drafted 2026-08-27. Citation metadata for the three new entries was
+%         confirmed at the arXiv abstract pages. The quantitative figures below
+%         (219 flaws, 16\%) come from those abstracts and still need a full-text
+%         read before the first external compile.
+
+Two recent lines of work bear on whether a claim like ours can be measured at
+all, and we position against both rather than around them.
+
+\citet{roth2026hackverifiable} argue that studying reward hacking by inspecting
+trajectories after the fact is unreliable, and propose the alternative of
+embedding detectable hacking opportunities directly into environments so that
+exploitation becomes deterministically verifiable. We cannot take that route,
+and the reason is a property of the object rather than a shortfall of effort. A
+citation hack cannot be planted, because the opportunity is intrinsic: any model
+asked to support a claim can emit a well-formed reference, and nothing has to be
+placed in the environment for it to do so. Nor can the check be made local.
+Deciding whether a reference has a referent is an open-world lookup against the
+published literature, not a predicate evaluable inside a sandbox. The
+obscure-but-real cell is the closest substitute the domain admits, since it
+holds capability roughly fixed while changing what an honest answer looks like,
+but it plants no exploit and yields no deterministic verifier.
+
+\citet{qi2026rewardseeker} take the by-construction route one level up, building
+the vulnerable training environments rather than the vulnerable task and reading
+the disposition that results. That is available at the training level precisely
+because the exploit can be placed there, which is the move the citation object
+denies us at the task level.
+
+The consequence is that our detection is an audit, and audits have an error rate
+that a constructed verifier does not. We treat that as a cost to be measured
+rather than assumed away, which is what Section~\ref{sec:instrument} reports.
+
+That same audit-and-overturn structure has precedent, in a different domain.
+\citet{wang2026benchjack} red-team ten agent benchmarks and surface 219 distinct
+flaws across eight recurring classes, and build working exploits that pass tasks
+without solving them. \citet{zhong2026hardening} audit 1,968 tasks across five
+benchmarks with hand-written
+verifiers and find 16\% exploitable, then close the loop by hardening the
+verifiers themselves. Both establish the pattern we also rely on: a pipeline's
+own passing verdicts are evidence about the pipeline, and re-checking them
+recovers a non-trivial fraction that should not have passed.
+
+The differences are what make our instance a separate contribution rather than
+an application. The object differs, since theirs is a benchmark task with a
+grading harness and ours is a generated citation with no harness at all. The
+mechanism differs, since theirs is automated red-teaming against a verifier we
+could inspect and ours is a language-model judge doing live web lookups, which
+introduces a failure mode their verifiers do not have and cannot have: the
+instrument's own grounding can degrade over time. And the remedy differs. They
+patch the verifier so the exploit stops working; we cannot patch a model we did
+not train, so we re-judge and report the correction, including its direction.
+
+Industry practice has converged on the same move. The Artificial Analysis Coding
+Agent Index began, in version 1.4 of August 2026, zeroing Terminal-Bench
+attempts found to be reward hacking, stating that ``Flagged attempts are scored
+zero'' and counting among its criteria the retrieval of a reference solution
+from an external source by web search or fetch
+\citep{artificialanalysis2026codingagents}. Treating a solution found on the open
+web as a hack is a contamination argument as much as a reward-hacking one, and it
+applies directly to the release of our own question set, which we take up in
+Section~\ref{sec:limitations}. They publish no rates, so we cite the practice
+and not a number.

@@ -1,0 +1,192 @@
+% ARGUES: the limits, stated before a reviewer states them.
+% DRAWS FROM: docs/legal_domain_holdout_decision.md, PRE_REGISTRATION_OSF.md §10,
+%             the judge-validation artifacts.
+% STATUS: drafted 2026-08-12, figures re-run at the complete 31,980 judgments on
+%         2026-08-30. The argument does not depend on their exact values.
+
+\section{Limitations}
+\label{sec:limitations}
+
+\subsection{Ground truth comes from one annotator}
+
+Every hand-labeled citation used to validate the judge was labeled by one
+person, the lead author. The labeling was blind to the judge's verdict, but
+blindness is not independence: there is no second annotator, no
+inter-annotator reliability, and no Cohen's $\kappa$. The pre-registration
+anticipated a two-annotator protocol with a $\kappa \geq 0.7$ gate for the
+misgrounded labels, and that gate does not bind on the analysis we report
+because the misgrounded status was never emitted by the judge
+(Appendix~\ref{app:deviations}).
+
+Concurrent work on a comparable task used multiple blinded PhD annotators per
+subject with released guidelines and a held-out split. Ours is the weaker
+protocol and we do not argue otherwise. What it would take to close the gap is
+concrete rather than open-ended: a second annotator relabeling the existing
+hand-checked samples, which changes no registered estimand.
+
+\subsection{The judge cannot reach case law}
+
+The judge has web search and fetch, but no CourtListener access, which the
+verifier does have. Legal citations are therefore judged against weaker
+evidence than academic or medical ones, and the judge's behavior on them is
+anomalous in exactly the way that predicts. Over all 31,980 judged citations,
+legal ones come back REAL 57.49\% of the time against 33.69\% for academic and
+27.19\% for medical, on lower mean verification effort (1.72 against 2.04 and
+2.31). Legal judgments are also the ones most often settled at a single lookup:
+48.50\% resolve after one, against 31.83\% and 23.10\%, and 90.23\% of those
+single-lookup legal judgments return REAL.
+
+The concern this raises is specific. A single search on a case citation is
+likely to confirm that the case caption exists without confirming that the
+reporter citation attached to it is correct, and a real caption carrying the
+wrong reporter citation is precisely the failure the §6(b) dividing line
+classifies as fabricated. If that is happening at scale, legal fabrication is
+under-counted. We disclose this as unresolved. It is not repaired by anything in
+this paper.
+
+It did not, however, change the analysis, and the reason is worth stating
+because the opposite decision was the one we expected to make. Holding the legal
+domain out of the primary analysis would delete a registered test: the E1 family
+enumerates the three-way interaction of stage, obscure-real cell and legal
+domain as member 5 of five. A precedent from our own earlier work pointed toward
+a holdout, but that was an analysis choice made at the time and never
+registered, so it does not license removing a registered family member now. The
+judge stage also removed the original motivation for a holdout, cutting the
+legal unverifiable-exclusion rate from a range of 63.9 to 90.7\% down to
+\prov{2.3 to 5.6\%}. The full argument, written before the confirmatory fit,
+is in Appendix~\ref{app:deviations}.
+
+\subsection{Verification reach differs by domain, and the exclusion rule turns that into missing data}
+
+The case-law gap above is one instance of a general limit: the judge can only
+adjudicate what it can retrieve, and retrieval depends on publisher access
+policy rather than on the citation. Medical citations point disproportionately
+at gated venues, and the judge's own reasoning records being refused by them.
+Section~\ref{sec:instrument} reports the measured rates, their limits, and why
+the blocked-access share is a lower bound.
+
+What makes this more than a nuisance is the outcome coding. A generation that
+cited only UNVERIFIABLE sources is excluded as NA from the primary analysis, and
+sensitivity~\#1 re-codes UNVERIFIABLE as fabricated. Refused access therefore
+does not become a wrong label; it becomes \emph{missing data}. The two
+quantities involved are not the same and we keep them apart: what
+Section~\ref{sec:instrument} measures is the per-citation UNVERIFIABLE rate,
+which differs by domain, whereas the quantity the registered check governs is
+the per-generation exclusion rate, the share of generations whose citations
+were all UNVERIFIABLE. The first is an indicator for the second, not a
+substitute, and the second is much the smaller of the two, because a generation survives if even one of its citations resolves.
+
+Measured across all 25,530 citing generations, the per-generation exclusion rate is 0.03\% for academic, 3.90\% for legal and 0.10\% for medical. Inside the obscure-but-real cell, where the two registered domain terms live, it is 0.12\%, 6.41\% and 0.13\%. Legal sits roughly two orders of magnitude above the other two domains and is the only one carrying enough missingness to move an estimate. That is the same asymmetry the case-law limitation above describes, now measured on the quantity the analysis actually uses.
+
+The pre-registration anticipated exactly this hazard
+and pre-committed a selection check with an escalation rule, reporting the
+exclusion rate stratified by cell $\times$ stage for E1 and by condition
+$\times$ post-training status for E2, and elevating the UNVERIFIABLE-as-
+fabricated sensitivity to co-primary if that rate is monotone in the
+obscure-but-real cell.
+
+The gap we must disclose is that the registered check is not stratified by
+domain, and domain is the axis along which access policy actually varies. This
+matters because domain is not merely a nuisance factor here: the E1 confirmatory
+model is a full \texttt{stage\_ordinal * cell * domain}, and two of the five
+members of the E1 Holm family are the domain-specific three-way terms on the
+obscure-but-real cell. Those two registered tests are the ones most exposed to
+differential reach, because they compare precisely the strata whose venues
+differ most in whether they answer a request.
+
+We therefore report the exclusion rate stratified by domain alongside the
+registered strata, and record the addition in the deviation table
+(Appendix~\ref{app:deviations}) as an extension of the pre-committed selection
+check rather than a replacement for it. The registered escalation rule is
+applied as written and is not re-tuned to this result.
+
+We cannot sign the resulting bias. A citation the judge could not reach may be a
+real work behind a paywall, which makes the exclusion drop a true negative, or
+an obscure item that is hard to find because it does not exist, which makes it
+drop a true positive. The two possibilities push the domain contrasts in
+opposite directions, so the honest statement is that the missingness is
+plausibly non-ignorable on the domain terms, with the direction unidentified,
+and that sensitivity~\#1 bounds one side of it.
+
+\subsection{The measuring instrument changed during collection}
+
+The judge became less evidence-grounded partway through data collection and its
+verdicts shifted toward fabrication. We detected this, specified a test for
+whether the shift is differential with respect to the experimental conditions
+before fitting any model, ran that test, and ran a paired re-judge sub-study to
+measure the misclassification directly. Section~\ref{sec:instrument} reports all
+of it.
+
+What that section reports includes two limits. The sub-study is underpowered at
+roughly 62 items per condition cell, so its result is an absence of detectable
+differentiality and not a demonstration that none exists. And the
+differentiality tests establish that something differs between eras without
+identifying the direction of the resulting bias, because the eras contain
+different items.
+
+\subsection{Scope}
+
+The findings are bounded by how the question set was built. Legal means US
+federal case law, with state courts excluded for a coverage reason that would
+otherwise contaminate the unanswerable cell. Academic means English-language,
+OpenAlex-indexed literature. Medical means a Cochrane-skewed pool that
+over-represents several specialties and the systematic-review genre, and whose
+obscure-but-real cell was filtered against a retraction database with
+incomplete coverage, so a residual risk of retracted papers in that cell is
+disclosed rather than claimed eliminated.
+
+The primary tests use open-weights models between 8B and 70B parameters. The
+near-zero abstention rate we observe is plausibly a property of that tier, and
+concurrent work reports much larger abstention movement in frontier models, so
+nothing here should be read as evidence that the abstention lever does not work
+in general.
+
+\subsection{What the design cannot identify}
+
+The design does not identify the reward signal that produced the behavior. It
+can show that fabrication moves with post-training stage and with a prompt cue,
+and that a surface-feature proxy would prefer the higher-fabricating policy.
+Concluding that preference optimization specifically caused the behavior
+requires an assumption the design does not test, and we do not make it.
+
+Nor does anything here support a claim of deception. We test neither deceptive
+alignment nor strategic deception, and a fabricated citation is consistent with a
+model that has no representation of the difference between a real and an invented
+reference.
+
+\section{Ethics and disclosures}
+
+This work generates fabricated legal and medical citations at scale and retains
+them. The fabricated content is confined to the released research artifacts,
+carries the labels that identify it as fabricated, and is not presented anywhere
+as a reference list.
+
+Data release balances two goods that pull against each other. Releasing the full
+frozen question set makes the work reproducible and makes the set a benchmark
+others can use, but a published benchmark also enters future training corpora,
+and a question set that models have trained on no longer measures what this one
+measures. The release therefore separates the full set, held for review and
+reproduction, from smaller researcher and public subsets, and the split is a
+contamination decision rather than an arbitrary one.
+
+The lead author is a paid consumer subscriber and a paid API customer of
+Anthropic at standard rates, with no funding, employment, or other affiliation
+with any model vendor. No vendor reviewed this paper before submission, and
+arXiv posting precedes any private sharing. The within-vendor version comparison
+was pre-registered specifically so that its framing could not be chosen after
+the fact.
+
+This work was self-funded by the author. It received no grant, no institutional
+support, and no funding or compute credits from any model vendor or cloud
+provider.
+
+How the compute was billed affects nothing scientific, but it is invisible
+unless stated, so we state it. The open-weights generations behind E1 and E2
+were run on rented cloud GPUs paid for by the author. The Claude generations of
+Phase B and the citation extraction for every phase went through the paid
+Anthropic API at standard rates. The judge layer ran on a consumer subscription
+under a registered amendment, and one earlier judge run was split across two
+dispatch paths that produced statistically non-exchangeable verdict
+distributions; that split is quantified and handled by the stratum-split
+sensitivity analysis the amendment specifies. The E3 probe and all statistical
+analysis ran on the author's own workstation.

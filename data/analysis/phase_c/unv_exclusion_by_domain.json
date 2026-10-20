@@ -1,0 +1,74 @@
+{
+  "n_scored": 25530,
+  "n_skipped_incomplete": 0,
+  "by_domain": {
+    "academic": {
+      "n": 8695,
+      "excluded": 3,
+      "rate": 0.0345
+    },
+    "legal": {
+      "n": 8829,
+      "excluded": 344,
+      "rate": 3.8963
+    },
+    "medical": {
+      "n": 8006,
+      "excluded": 8,
+      "rate": 0.0999
+    }
+  },
+  "by_domain_cell": {
+    "academic": {
+      "known_real": {
+        "n": 3622,
+        "excluded": 0,
+        "rate": 0.0
+      },
+      "obscure_real": {
+        "n": 2507,
+        "excluded": 3,
+        "rate": 0.1197
+      },
+      "unanswerable": {
+        "n": 2566,
+        "excluded": 0,
+        "rate": 0.0
+      }
+    },
+    "legal": {
+      "known_real": {
+        "n": 2909,
+        "excluded": 62,
+        "rate": 2.1313
+      },
+      "obscure_real": {
+        "n": 2917,
+        "excluded": 187,
+        "rate": 6.4107
+      },
+      "unanswerable": {
+        "n": 3003,
+        "excluded": 95,
+        "rate": 3.1635
+      }
+    },
+    "medical": {
+      "known_real": {
+        "n": 2688,
+        "excluded": 2,
+        "rate": 0.0744
+      },
+      "obscure_real": {
+        "n": 2292,
+        "excluded": 3,
+        "rate": 0.1309
+      },
+      "unanswerable": {
+        "n": 3026,
+        "excluded": 3,
+        "rate": 0.0991
+      }
+    }
+  }
+}

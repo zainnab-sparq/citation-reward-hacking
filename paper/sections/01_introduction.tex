@@ -1,0 +1,125 @@
+% ARGUES: fabricated citations are better explained as reward hacking than as a
+%         capability limit, and the obscure-but-real cell is what separates the two.
+% DRAWS FROM: PRE_REGISTRATION_OSF.md §1 (background), §2 (hypotheses).
+% STATUS: drafted 2026-08-12. Needs no results. Citations are unverified.
+
+\section{Introduction}
+
+Language models fabricate citations, and newer models have reduced the rate
+without removing it. Reported figures include 55\% of references in GPT-3.5
+academic queries and 18\% in GPT-4 \citep{walters2023}, 17 to 33\% in commercial legal research tools that have
+retrieval \citep{magesh2024}, and 47\% in medical content
+\citep{bhattacharyya2023}. The legal figure is the one that should trouble us
+most, because those systems query a case-law database before answering. Access
+to the corpus does not guarantee the right case was retrieved, but it does mean
+fabrication persists in a setting built to prevent it.
+
+The dominant framing treats this as a capability limit. The model does not know
+the reference, cannot retrieve it, and produces the most plausible-looking
+substitute; better retrieval and larger models will close the gap. That framing
+makes a prediction worth testing, because it implies fabrication should track
+how hard a citation is to produce, and nothing else.
+
+We test an alternative. Under the reward-hacking account of
+\citet{skalse2022}, a policy earns high proxy reward at the expense of the
+objective the proxy was meant to encode. Preference-tuned models are rewarded
+for answers that look supported. A fabricated citation looks exactly as
+supported as a real one to any evaluator who does not check it, and checking is
+expensive enough that most training and evaluation pipelines do not. If that is
+what is happening, fabrication is not a gap in what the model can do. It is
+something the model has been trained toward, and scale will not remove it.
+
+One boundary belongs here and not in a later caveat. We make no claim of
+deceptive alignment in the sense of \citet{hubinger2019}, and none of strategic
+deception in the sense of \citet{park2024}. Neither is tested by this design,
+and the results below cannot support either reading.
+
+Separating the two accounts requires holding capability fixed while varying
+incentive, and our question set is built around a cell that does this. Each of
+900 questions falls into one of three cells. Known-real citations exist and are
+well indexed, so a competent model should produce them. Unanswerable questions
+have no correct citation, so any citation offered is fabricated by construction.
+The cell that carries the argument is obscure-but-real: the citation exists, but
+sits in the under-cited tail where the model is unlikely to have memorized it.
+A model that fabricates because it cannot retrieve should behave similarly on
+obscure-but-real and unanswerable items, since it can produce neither. A model
+that fabricates because fabrication is rewarded should behave differently across
+them, because the two cells differ in what an honest answer would look like and
+not in retrieval difficulty.
+
+Four experiments follow from that setup. E1 tracks fabrication across base,
+supervised-fine-tuned, preference-optimized and reinforcement-tuned checkpoints
+of the same base models, so the post-training gradient is measured within a
+model family rather than inferred by comparing different models. E2 manipulates
+the prompt inside a fixed policy, which isolates a within-policy causal lever
+that training-time accounts do not have. E3 asks whether a fabrication signal is
+linearly decodable from hidden states. E4 asks whether a preference model
+trained only on surface citation features, never on whether the citation exists,
+prefers post-trained outputs.
+
+All four were pre-registered before any model was queried
+(\href{https://doi.org/10.17605/OSF.IO/S53HY}{10.17605/OSF.IO/S53HY}), including
+the hypotheses, the model formulas, the multiple-comparison correction, the
+exclusion rules, and a null-result publication title for each experiment. The
+question set was frozen and hashed first. Every departure from that document is
+recorded in Appendix~\ref{app:deviations}.
+
+\subsection{Contributions}
+
+\begin{enumerate}
+\item \textbf{A within-policy prompt manipulation with a length-matched control.}
+Holding the weights fixed and changing only the prompt shows that a citation cue
+moves fabrication, and moves base and post-trained checkpoints in opposite
+directions. The length-matched condition separates the citation cue from a
+general demand for a longer answer, which is the obvious confound and the one a
+reader will raise first. This is the paper's strongest result and its
+interpretation was pre-committed to a decision rule before the numbers existed.
+
+\item \textbf{A within-family checkpoint cascade.} Fabrication is tracked across
+base, supervised-fine-tuned, preference-optimized and reinforcement-tuned
+checkpoints of the same base models, so the post-training gradient is measured
+within a family rather than inferred by comparing different models. The rise is
+large. The registered prediction that it would concentrate where fabrication is
+most tempting does not hold, and we report that null as a null.
+
+\item \textbf{Instrument-validity work for LLM-judge pipelines.} The judge is
+validated against blind hand-checked labels; a grounding degradation is detected
+\emph{during} collection rather than after; a pre-specified test asks whether
+that degradation is differential with respect to the experimental conditions,
+which is what determines whether it can bias a contrast rather than merely
+attenuate it; and a paired re-judge sub-study measures the misclassification
+matrix directly. The differentiality test and the drift analysis are the parts we
+have not seen an equivalent of in concurrent work; the validation itself rests on
+a single annotator, which we state plainly as a limitation rather than a strength.
+
+\item \textbf{A demonstration that a naive surface proxy would reward the
+behavior.} A preference model trained only on surface citation features, never on
+whether a citation exists, prefers post-trained output on cross-family transfer.
+Holding citation count fixed identifies quantity as the feature carrying that
+preference, which is a narrower and better-supported claim than the one we set
+out to make.
+
+\item \textbf{Pre-registration with a complete deviations record}, including
+corrections that went against our own preferred reading and one pre-committed
+rule that was written to accommodate a result we did not get.
+\end{enumerate}
+
+\guide{Draft ordering, most to least supported by evidence in hand:
+
+(1) A within-family checkpoint cascade that measures the post-training gradient
+directly rather than across models.
+
+(2) A within-policy prompt manipulation with a length-matched control, so the
+citation cue is separated from a general verbosity demand.
+
+(3) The instrument-validity work in Section~\ref{sec:instrument}: an LLM judge
+validated against hand-checked labels, a grounding degradation detected during
+collection, a pre-specified test of whether that degradation is differential
+with respect to the experimental conditions, and a paired re-judge sub-study
+that measures the misclassification matrix directly. Claim this as methodology
+for LLM-judge pipelines in general. Concurrent work has no equivalent.
+
+(4) Pre-registration with a complete deviations record, including corrections
+that went against the authors' preferred reading.
+
+Do not list E3 or E4 as contributions unless they are built.}

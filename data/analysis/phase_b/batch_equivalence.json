@@ -1,0 +1,1292 @@
+{
+  "n_judgments": 10693,
+  "n_attributed": 10693,
+  "n_subprocess": 3821,
+  "n_workflow": 6872,
+  "overall_chi_square": {
+    "chi2": 28.532055640357758,
+    "p": 6.372984159592228e-07,
+    "dof": 2,
+    "n": 10693,
+    "n_excluded": 0,
+    "statuses": [
+      "REAL",
+      "FABRICATED",
+      "UNVERIFIABLE"
+    ],
+    "table": {
+      "subprocess": {
+        "REAL": 2627,
+        "FABRICATED": 816,
+        "UNVERIFIABLE": 378
+      },
+      "workflow": {
+        "REAL": 4816,
+        "FABRICATED": 1220,
+        "UNVERIFIABLE": 836
+      }
+    }
+  },
+  "n_strata": 36,
+  "n_strata_comparable": 36,
+  "max_abs_delta_across_strata": 0.2857142857142857,
+  "gap_summary": {
+    "weighted_mean_max_gap": 0.06185036053615405,
+    "min_arm_n": 30,
+    "well_powered": {
+      "n_strata": 25,
+      "mean_max_gap": 0.07131785672530845,
+      "max_gap": 0.22356854359705391,
+      "max_gap_stratum": {
+        "condition": "citations_expected",
+        "cell": "obscure_real",
+        "domain": "medical"
+      }
+    }
+  },
+  "search_count": {
+    "overall": {
+      "subprocess": {
+        "n": 3821,
+        "mean": 1.9473959696414551,
+        "median": 2.0
+      },
+      "workflow": {
+        "n": 6872,
+        "mean": 1.6821885913853318,
+        "median": 1.0
+      },
+      "delta_mean": -0.2652073782561233
+    },
+    "per_stratum": [
+      {
+        "condition": "abstention_permitted",
+        "cell": "known_real",
+        "domain": "academic",
+        "n_subprocess": 44,
+        "n_workflow": 83,
+        "mean_subprocess": 1.1818181818181819,
+        "mean_workflow": 1.1204819277108433,
+        "delta_mean": -0.06133625410733856
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "known_real",
+        "domain": "legal",
+        "n_subprocess": 43,
+        "n_workflow": 98,
+        "mean_subprocess": 1.4186046511627908,
+        "mean_workflow": 1.0612244897959184,
+        "delta_mean": -0.35738016136687234
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "known_real",
+        "domain": "medical",
+        "n_subprocess": 29,
+        "n_workflow": 50,
+        "mean_subprocess": 1.6206896551724137,
+        "mean_workflow": 1.24,
+        "delta_mean": -0.3806896551724137
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "obscure_real",
+        "domain": "academic",
+        "n_subprocess": 6,
+        "n_workflow": 19,
+        "mean_subprocess": 1.6666666666666667,
+        "mean_workflow": 1.0526315789473684,
+        "delta_mean": -0.6140350877192984
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "obscure_real",
+        "domain": "legal",
+        "n_subprocess": 4,
+        "n_workflow": 7,
+        "mean_subprocess": 2.25,
+        "mean_workflow": 2.0,
+        "delta_mean": -0.25
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "obscure_real",
+        "domain": "medical",
+        "n_subprocess": 2,
+        "n_workflow": 11,
+        "mean_subprocess": 1.0,
+        "mean_workflow": 1.0,
+        "delta_mean": 0.0
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "unanswerable",
+        "domain": "academic",
+        "n_subprocess": 8,
+        "n_workflow": 14,
+        "mean_subprocess": 1.0,
+        "mean_workflow": 1.0,
+        "delta_mean": 0.0
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "unanswerable",
+        "domain": "legal",
+        "n_subprocess": 25,
+        "n_workflow": 55,
+        "mean_subprocess": 1.56,
+        "mean_workflow": 1.6181818181818182,
+        "delta_mean": 0.05818181818181811
+      },
+      {
+        "condition": "abstention_permitted",
+        "cell": "unanswerable",
+        "domain": "medical",
+        "n_subprocess": 34,
+        "n_workflow": 52,
+        "mean_subprocess": 1.4705882352941178,
+        "mean_workflow": 1.2692307692307692,
+        "delta_mean": -0.2013574660633486
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "known_real",
+        "domain": "academic",
+        "n_subprocess": 77,
+        "n_workflow": 163,
+        "mean_subprocess": 1.4545454545454546,
+        "mean_workflow": 1.2822085889570551,
+        "delta_mean": -0.17233686558839945
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "known_real",
+        "domain": "legal",
+        "n_subprocess": 393,
+        "n_workflow": 632,
+        "mean_subprocess": 2.346055979643766,
+        "mean_workflow": 2.017405063291139,
+        "delta_mean": -0.3286509163526268
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "known_real",
+        "domain": "medical",
+        "n_subprocess": 60,
+        "n_workflow": 151,
+        "mean_subprocess": 2.2,
+        "mean_workflow": 1.966887417218543,
+        "delta_mean": -0.23311258278145708
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "obscure_real",
+        "domain": "academic",
+        "n_subprocess": 15,
+        "n_workflow": 34,
+        "mean_subprocess": 1.8,
+        "mean_workflow": 1.7058823529411764,
+        "delta_mean": -0.09411764705882364
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "obscure_real",
+        "domain": "legal",
+        "n_subprocess": 223,
+        "n_workflow": 537,
+        "mean_subprocess": 2.4260089686098656,
+        "mean_workflow": 2.0819366852886407,
+        "delta_mean": -0.34407228332122486
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "obscure_real",
+        "domain": "medical",
+        "n_subprocess": 69,
+        "n_workflow": 122,
+        "mean_subprocess": 2.579710144927536,
+        "mean_workflow": 2.19672131147541,
+        "delta_mean": -0.3829888334521261
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "unanswerable",
+        "domain": "academic",
+        "n_subprocess": 25,
+        "n_workflow": 46,
+        "mean_subprocess": 1.28,
+        "mean_workflow": 1.2391304347826086,
+        "delta_mean": -0.04086956521739138
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "unanswerable",
+        "domain": "legal",
+        "n_subprocess": 171,
+        "n_workflow": 321,
+        "mean_subprocess": 2.3859649122807016,
+        "mean_workflow": 2.0031152647975077,
+        "delta_mean": -0.38284964748319394
+      },
+      {
+        "condition": "citations_expected",
+        "cell": "unanswerable",
+        "domain": "medical",
+        "n_subprocess": 95,
+        "n_workflow": 111,
+        "mean_subprocess": 2.3473684210526318,
+        "mean_workflow": 2.1171171171171173,
+        "delta_mean": -0.23025130393551452
+      },
+      {
+        "condition": "length_matched",
+        "cell": "known_real",
+        "domain": "academic",
+        "n_subprocess": 142,
+        "n_workflow": 219,
+        "mean_subprocess": 1.6338028169014085,
+        "mean_workflow": 1.3515981735159817,
+        "delta_mean": -0.28220464338542683
+      },
+      {
+        "condition": "length_matched",
+        "cell": "known_real",
+        "domain": "legal",
+        "n_subprocess": 351,
+        "n_workflow": 599,
+        "mean_subprocess": 1.413105413105413,
+        "mean_workflow": 1.0651085141903172,
+        "delta_mean": -0.3479968989150959
+      },
+      {
+        "condition": "length_matched",
+        "cell": "known_real",
+        "domain": "medical",
+        "n_subprocess": 173,
+        "n_workflow": 267,
+        "mean_subprocess": 1.9421965317919074,
+        "mean_workflow": 1.7677902621722847,
+        "delta_mean": -0.1744062696196227
+      },
+      {
+        "condition": "length_matched",
+        "cell": "obscure_real",
+        "domain": "academic",
+        "n_subprocess": 50,
+        "n_workflow": 75,
+        "mean_subprocess": 1.88,
+        "mean_workflow": 1.8133333333333332,
+        "delta_mean": -0.06666666666666665
+      },
+      {
+        "condition": "length_matched",
+        "cell": "obscure_real",
+        "domain": "legal",
+        "n_subprocess": 337,
+        "n_workflow": 603,
+        "mean_subprocess": 1.5578635014836795,
+        "mean_workflow": 1.24212271973466,
+        "delta_mean": -0.31574078174901943
+      },
+      {
+        "condition": "length_matched",
+        "cell": "obscure_real",
+        "domain": "medical",
+        "n_subprocess": 77,
+        "n_workflow": 112,
+        "mean_subprocess": 2.2857142857142856,
+        "mean_workflow": 2.125,
+        "delta_mean": -0.1607142857142856
+      },
+      {
+        "condition": "length_matched",
+        "cell": "unanswerable",
+        "domain": "academic",
+        "n_subprocess": 13,
+        "n_workflow": 36,
+        "mean_subprocess": 1.4615384615384615,
+        "mean_workflow": 1.0555555555555556,
+        "delta_mean": -0.4059829059829059
+      },
+      {
+        "condition": "length_matched",
+        "cell": "unanswerable",
+        "domain": "legal",
+        "n_subprocess": 282,
+        "n_workflow": 617,
+        "mean_subprocess": 2.00709219858156,
+        "mean_workflow": 1.8557536466774716,
+        "delta_mean": -0.15133855190408863
+      },
+      {
+        "condition": "length_matched",
+        "cell": "unanswerable",
+        "domain": "medical",
+        "n_subprocess": 204,
+        "n_workflow": 371,
+        "mean_subprocess": 2.4705882352941178,
+        "mean_workflow": 2.358490566037736,
+        "delta_mean": -0.11209766925638176
+      },
+      {
+        "condition": "neutral",
+        "cell": "known_real",
+        "domain": "academic",
+        "n_subprocess": 73,
+        "n_workflow": 137,
+        "mean_subprocess": 1.452054794520548,
+        "mean_workflow": 1.2919708029197081,
+        "delta_mean": -0.16008399160083986
+      },
+      {
+        "condition": "neutral",
+        "cell": "known_real",
+        "domain": "legal",
+        "n_subprocess": 193,
+        "n_workflow": 308,
+        "mean_subprocess": 1.5233160621761659,
+        "mean_workflow": 1.1136363636363635,
+        "delta_mean": -0.40967969853980235
+      },
+      {
+        "condition": "neutral",
+        "cell": "known_real",
+        "domain": "medical",
+        "n_subprocess": 100,
+        "n_workflow": 237,
+        "mean_subprocess": 2.03,
+        "mean_workflow": 1.7130801687763713,
+        "delta_mean": -0.31691983122362855
+      },
+      {
+        "condition": "neutral",
+        "cell": "obscure_real",
+        "domain": "academic",
+        "n_subprocess": 23,
+        "n_workflow": 24,
+        "mean_subprocess": 1.826086956521739,
+        "mean_workflow": 1.75,
+        "delta_mean": -0.07608695652173902
+      },
+      {
+        "condition": "neutral",
+        "cell": "obscure_real",
+        "domain": "legal",
+        "n_subprocess": 173,
+        "n_workflow": 252,
+        "mean_subprocess": 2.0578034682080926,
+        "mean_workflow": 1.4642857142857142,
+        "delta_mean": -0.5935177539223784
+      },
+      {
+        "condition": "neutral",
+        "cell": "obscure_real",
+        "domain": "medical",
+        "n_subprocess": 74,
+        "n_workflow": 100,
+        "mean_subprocess": 2.0135135135135136,
+        "mean_workflow": 2.0,
+        "delta_mean": -0.013513513513513598
+      },
+      {
+        "condition": "neutral",
+        "cell": "unanswerable",
+        "domain": "academic",
+        "n_subprocess": 7,
+        "n_workflow": 10,
+        "mean_subprocess": 1.0,
+        "mean_workflow": 1.0,
+        "delta_mean": 0.0
+      },
+      {
+        "condition": "neutral",
+        "cell": "unanswerable",
+        "domain": "legal",
+        "n_subprocess": 110,
+        "n_workflow": 197,
+        "mean_subprocess": 2.0,
+        "mean_workflow": 1.9390862944162437,
+        "delta_mean": -0.060913705583756306
+      },
+      {
+        "condition": "neutral",
+        "cell": "unanswerable",
+        "domain": "medical",
+        "n_subprocess": 116,
+        "n_workflow": 202,
+        "mean_subprocess": 2.2672413793103448,
+        "mean_workflow": 2.0346534653465347,
+        "delta_mean": -0.23258791396381007
+      }
+    ],
+    "n_skipped_no_count": 0
+  },
+  "per_stratum": [
+    {
+      "condition": "abstention_permitted",
+      "cell": "known_real",
+      "domain": "academic",
+      "n_subprocess": 44,
+      "n_workflow": 83,
+      "prop_subprocess": {
+        "REAL": 0.9545454545454546,
+        "FABRICATED": 0.022727272727272728,
+        "UNVERIFIABLE": 0.022727272727272728
+      },
+      "prop_workflow": {
+        "REAL": 0.963855421686747,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.03614457831325301
+      },
+      "abs_deltas": {
+        "REAL": 0.009309967141292397,
+        "FABRICATED": 0.022727272727272728,
+        "UNVERIFIABLE": 0.013417305585980283
+      },
+      "max_abs_delta": 0.022727272727272728,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "known_real",
+      "domain": "legal",
+      "n_subprocess": 43,
+      "n_workflow": 98,
+      "prop_subprocess": {
+        "REAL": 0.9534883720930233,
+        "FABRICATED": 0.046511627906976744,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.046511627906976716,
+        "FABRICATED": 0.046511627906976744,
+        "UNVERIFIABLE": 0.0
+      },
+      "max_abs_delta": 0.046511627906976744,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "known_real",
+      "domain": "medical",
+      "n_subprocess": 29,
+      "n_workflow": 50,
+      "prop_subprocess": {
+        "REAL": 0.8620689655172413,
+        "FABRICATED": 0.10344827586206896,
+        "UNVERIFIABLE": 0.034482758620689655
+      },
+      "prop_workflow": {
+        "REAL": 0.98,
+        "FABRICATED": 0.02,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.11793103448275866,
+        "FABRICATED": 0.08344827586206896,
+        "UNVERIFIABLE": 0.034482758620689655
+      },
+      "max_abs_delta": 0.11793103448275866,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "obscure_real",
+      "domain": "academic",
+      "n_subprocess": 6,
+      "n_workflow": 19,
+      "prop_subprocess": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "max_abs_delta": 0.0,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "obscure_real",
+      "domain": "legal",
+      "n_subprocess": 4,
+      "n_workflow": 7,
+      "prop_subprocess": {
+        "REAL": 0.75,
+        "FABRICATED": 0.25,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 0.5714285714285714,
+        "FABRICATED": 0.14285714285714285,
+        "UNVERIFIABLE": 0.2857142857142857
+      },
+      "abs_deltas": {
+        "REAL": 0.1785714285714286,
+        "FABRICATED": 0.10714285714285715,
+        "UNVERIFIABLE": 0.2857142857142857
+      },
+      "max_abs_delta": 0.2857142857142857,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "obscure_real",
+      "domain": "medical",
+      "n_subprocess": 2,
+      "n_workflow": 11,
+      "prop_subprocess": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "max_abs_delta": 0.0,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "unanswerable",
+      "domain": "academic",
+      "n_subprocess": 8,
+      "n_workflow": 14,
+      "prop_subprocess": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "max_abs_delta": 0.0,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "unanswerable",
+      "domain": "legal",
+      "n_subprocess": 25,
+      "n_workflow": 55,
+      "prop_subprocess": {
+        "REAL": 0.76,
+        "FABRICATED": 0.2,
+        "UNVERIFIABLE": 0.04
+      },
+      "prop_workflow": {
+        "REAL": 0.6909090909090909,
+        "FABRICATED": 0.2,
+        "UNVERIFIABLE": 0.10909090909090909
+      },
+      "abs_deltas": {
+        "REAL": 0.06909090909090909,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.06909090909090909
+      },
+      "max_abs_delta": 0.06909090909090909,
+      "insufficient": false
+    },
+    {
+      "condition": "abstention_permitted",
+      "cell": "unanswerable",
+      "domain": "medical",
+      "n_subprocess": 34,
+      "n_workflow": 52,
+      "prop_subprocess": {
+        "REAL": 0.8823529411764706,
+        "FABRICATED": 0.058823529411764705,
+        "UNVERIFIABLE": 0.058823529411764705
+      },
+      "prop_workflow": {
+        "REAL": 0.9230769230769231,
+        "FABRICATED": 0.038461538461538464,
+        "UNVERIFIABLE": 0.038461538461538464
+      },
+      "abs_deltas": {
+        "REAL": 0.040723981900452566,
+        "FABRICATED": 0.02036199095022624,
+        "UNVERIFIABLE": 0.02036199095022624
+      },
+      "max_abs_delta": 0.040723981900452566,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "known_real",
+      "domain": "academic",
+      "n_subprocess": 77,
+      "n_workflow": 163,
+      "prop_subprocess": {
+        "REAL": 0.9090909090909091,
+        "FABRICATED": 0.09090909090909091,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 0.8711656441717791,
+        "FABRICATED": 0.1165644171779141,
+        "UNVERIFIABLE": 0.012269938650306749
+      },
+      "abs_deltas": {
+        "REAL": 0.03792526491912995,
+        "FABRICATED": 0.025655326268823192,
+        "UNVERIFIABLE": 0.012269938650306749
+      },
+      "max_abs_delta": 0.03792526491912995,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "known_real",
+      "domain": "legal",
+      "n_subprocess": 393,
+      "n_workflow": 632,
+      "prop_subprocess": {
+        "REAL": 0.44274809160305345,
+        "FABRICATED": 0.4402035623409669,
+        "UNVERIFIABLE": 0.11704834605597965
+      },
+      "prop_workflow": {
+        "REAL": 0.47310126582278483,
+        "FABRICATED": 0.2927215189873418,
+        "UNVERIFIABLE": 0.23417721518987342
+      },
+      "abs_deltas": {
+        "REAL": 0.030353174219731383,
+        "FABRICATED": 0.14748204335362514,
+        "UNVERIFIABLE": 0.11712886913389377
+      },
+      "max_abs_delta": 0.14748204335362514,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "known_real",
+      "domain": "medical",
+      "n_subprocess": 60,
+      "n_workflow": 151,
+      "prop_subprocess": {
+        "REAL": 0.45,
+        "FABRICATED": 0.38333333333333336,
+        "UNVERIFIABLE": 0.16666666666666666
+      },
+      "prop_workflow": {
+        "REAL": 0.543046357615894,
+        "FABRICATED": 0.2119205298013245,
+        "UNVERIFIABLE": 0.24503311258278146
+      },
+      "abs_deltas": {
+        "REAL": 0.09304635761589403,
+        "FABRICATED": 0.17141280353200886,
+        "UNVERIFIABLE": 0.0783664459161148
+      },
+      "max_abs_delta": 0.17141280353200886,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "obscure_real",
+      "domain": "academic",
+      "n_subprocess": 15,
+      "n_workflow": 34,
+      "prop_subprocess": {
+        "REAL": 0.8,
+        "FABRICATED": 0.13333333333333333,
+        "UNVERIFIABLE": 0.06666666666666667
+      },
+      "prop_workflow": {
+        "REAL": 0.7941176470588235,
+        "FABRICATED": 0.08823529411764706,
+        "UNVERIFIABLE": 0.11764705882352941
+      },
+      "abs_deltas": {
+        "REAL": 0.005882352941176561,
+        "FABRICATED": 0.04509803921568627,
+        "UNVERIFIABLE": 0.050980392156862744
+      },
+      "max_abs_delta": 0.050980392156862744,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "obscure_real",
+      "domain": "legal",
+      "n_subprocess": 223,
+      "n_workflow": 537,
+      "prop_subprocess": {
+        "REAL": 0.4977578475336323,
+        "FABRICATED": 0.38565022421524664,
+        "UNVERIFIABLE": 0.11659192825112108
+      },
+      "prop_workflow": {
+        "REAL": 0.515828677839851,
+        "FABRICATED": 0.2942271880819367,
+        "UNVERIFIABLE": 0.18994413407821228
+      },
+      "abs_deltas": {
+        "REAL": 0.0180708303062187,
+        "FABRICATED": 0.09142303613330993,
+        "UNVERIFIABLE": 0.0733522058270912
+      },
+      "max_abs_delta": 0.09142303613330993,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "obscure_real",
+      "domain": "medical",
+      "n_subprocess": 69,
+      "n_workflow": 122,
+      "prop_subprocess": {
+        "REAL": 0.2753623188405797,
+        "FABRICATED": 0.42028985507246375,
+        "UNVERIFIABLE": 0.30434782608695654
+      },
+      "prop_workflow": {
+        "REAL": 0.39344262295081966,
+        "FABRICATED": 0.19672131147540983,
+        "UNVERIFIABLE": 0.4098360655737705
+      },
+      "abs_deltas": {
+        "REAL": 0.11808030411023995,
+        "FABRICATED": 0.22356854359705391,
+        "UNVERIFIABLE": 0.10548823948681396
+      },
+      "max_abs_delta": 0.22356854359705391,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "unanswerable",
+      "domain": "academic",
+      "n_subprocess": 25,
+      "n_workflow": 46,
+      "prop_subprocess": {
+        "REAL": 0.96,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.04
+      },
+      "prop_workflow": {
+        "REAL": 0.9130434782608695,
+        "FABRICATED": 0.06521739130434782,
+        "UNVERIFIABLE": 0.021739130434782608
+      },
+      "abs_deltas": {
+        "REAL": 0.04695652173913045,
+        "FABRICATED": 0.06521739130434782,
+        "UNVERIFIABLE": 0.018260869565217393
+      },
+      "max_abs_delta": 0.06521739130434782,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "unanswerable",
+      "domain": "legal",
+      "n_subprocess": 171,
+      "n_workflow": 321,
+      "prop_subprocess": {
+        "REAL": 0.3567251461988304,
+        "FABRICATED": 0.42105263157894735,
+        "UNVERIFIABLE": 0.2222222222222222
+      },
+      "prop_workflow": {
+        "REAL": 0.4984423676012461,
+        "FABRICATED": 0.32398753894080995,
+        "UNVERIFIABLE": 0.17757009345794392
+      },
+      "abs_deltas": {
+        "REAL": 0.14171722140241572,
+        "FABRICATED": 0.0970650926381374,
+        "UNVERIFIABLE": 0.04465212876427829
+      },
+      "max_abs_delta": 0.14171722140241572,
+      "insufficient": false
+    },
+    {
+      "condition": "citations_expected",
+      "cell": "unanswerable",
+      "domain": "medical",
+      "n_subprocess": 95,
+      "n_workflow": 111,
+      "prop_subprocess": {
+        "REAL": 0.4,
+        "FABRICATED": 0.49473684210526314,
+        "UNVERIFIABLE": 0.10526315789473684
+      },
+      "prop_workflow": {
+        "REAL": 0.5225225225225225,
+        "FABRICATED": 0.32432432432432434,
+        "UNVERIFIABLE": 0.15315315315315314
+      },
+      "abs_deltas": {
+        "REAL": 0.12252252252252249,
+        "FABRICATED": 0.1704125177809388,
+        "UNVERIFIABLE": 0.04788999525841631
+      },
+      "max_abs_delta": 0.1704125177809388,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "known_real",
+      "domain": "academic",
+      "n_subprocess": 142,
+      "n_workflow": 219,
+      "prop_subprocess": {
+        "REAL": 0.8309859154929577,
+        "FABRICATED": 0.11267605633802817,
+        "UNVERIFIABLE": 0.056338028169014086
+      },
+      "prop_workflow": {
+        "REAL": 0.863013698630137,
+        "FABRICATED": 0.0867579908675799,
+        "UNVERIFIABLE": 0.0502283105022831
+      },
+      "abs_deltas": {
+        "REAL": 0.032027783137179244,
+        "FABRICATED": 0.025918065470448268,
+        "UNVERIFIABLE": 0.0061097176667309835
+      },
+      "max_abs_delta": 0.032027783137179244,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "known_real",
+      "domain": "legal",
+      "n_subprocess": 351,
+      "n_workflow": 599,
+      "prop_subprocess": {
+        "REAL": 0.9743589743589743,
+        "FABRICATED": 0.011396011396011397,
+        "UNVERIFIABLE": 0.014245014245014245
+      },
+      "prop_workflow": {
+        "REAL": 0.9816360601001669,
+        "FABRICATED": 0.008347245409015025,
+        "UNVERIFIABLE": 0.01001669449081803
+      },
+      "abs_deltas": {
+        "REAL": 0.007277085741192568,
+        "FABRICATED": 0.003048765986996372,
+        "UNVERIFIABLE": 0.004228319754196215
+      },
+      "max_abs_delta": 0.007277085741192568,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "known_real",
+      "domain": "medical",
+      "n_subprocess": 173,
+      "n_workflow": 267,
+      "prop_subprocess": {
+        "REAL": 0.7283236994219653,
+        "FABRICATED": 0.2023121387283237,
+        "UNVERIFIABLE": 0.06936416184971098
+      },
+      "prop_workflow": {
+        "REAL": 0.7265917602996255,
+        "FABRICATED": 0.18726591760299627,
+        "UNVERIFIABLE": 0.08614232209737828
+      },
+      "abs_deltas": {
+        "REAL": 0.0017319391223398206,
+        "FABRICATED": 0.015046221125327441,
+        "UNVERIFIABLE": 0.016778160247667304
+      },
+      "max_abs_delta": 0.016778160247667304,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "obscure_real",
+      "domain": "academic",
+      "n_subprocess": 50,
+      "n_workflow": 75,
+      "prop_subprocess": {
+        "REAL": 0.7,
+        "FABRICATED": 0.12,
+        "UNVERIFIABLE": 0.18
+      },
+      "prop_workflow": {
+        "REAL": 0.6133333333333333,
+        "FABRICATED": 0.18666666666666668,
+        "UNVERIFIABLE": 0.2
+      },
+      "abs_deltas": {
+        "REAL": 0.08666666666666667,
+        "FABRICATED": 0.06666666666666668,
+        "UNVERIFIABLE": 0.020000000000000018
+      },
+      "max_abs_delta": 0.08666666666666667,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "obscure_real",
+      "domain": "legal",
+      "n_subprocess": 337,
+      "n_workflow": 603,
+      "prop_subprocess": {
+        "REAL": 0.9614243323442137,
+        "FABRICATED": 0.008902077151335312,
+        "UNVERIFIABLE": 0.02967359050445104
+      },
+      "prop_workflow": {
+        "REAL": 0.9651741293532339,
+        "FABRICATED": 0.006633499170812604,
+        "UNVERIFIABLE": 0.028192371475953566
+      },
+      "abs_deltas": {
+        "REAL": 0.003749797009020228,
+        "FABRICATED": 0.002268577980522708,
+        "UNVERIFIABLE": 0.0014812190284974741
+      },
+      "max_abs_delta": 0.003749797009020228,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "obscure_real",
+      "domain": "medical",
+      "n_subprocess": 77,
+      "n_workflow": 112,
+      "prop_subprocess": {
+        "REAL": 0.42857142857142855,
+        "FABRICATED": 0.18181818181818182,
+        "UNVERIFIABLE": 0.38961038961038963
+      },
+      "prop_workflow": {
+        "REAL": 0.35714285714285715,
+        "FABRICATED": 0.3482142857142857,
+        "UNVERIFIABLE": 0.29464285714285715
+      },
+      "abs_deltas": {
+        "REAL": 0.0714285714285714,
+        "FABRICATED": 0.16639610389610388,
+        "UNVERIFIABLE": 0.09496753246753248
+      },
+      "max_abs_delta": 0.16639610389610388,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "unanswerable",
+      "domain": "academic",
+      "n_subprocess": 13,
+      "n_workflow": 36,
+      "prop_subprocess": {
+        "REAL": 0.9230769230769231,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.07692307692307693
+      },
+      "prop_workflow": {
+        "REAL": 0.9722222222222222,
+        "FABRICATED": 0.027777777777777776,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.04914529914529908,
+        "FABRICATED": 0.027777777777777776,
+        "UNVERIFIABLE": 0.07692307692307693
+      },
+      "max_abs_delta": 0.07692307692307693,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "unanswerable",
+      "domain": "legal",
+      "n_subprocess": 282,
+      "n_workflow": 617,
+      "prop_subprocess": {
+        "REAL": 0.5460992907801419,
+        "FABRICATED": 0.31560283687943264,
+        "UNVERIFIABLE": 0.13829787234042554
+      },
+      "prop_workflow": {
+        "REAL": 0.5494327390599676,
+        "FABRICATED": 0.3095623987034036,
+        "UNVERIFIABLE": 0.14100486223662884
+      },
+      "abs_deltas": {
+        "REAL": 0.0033334482798257348,
+        "FABRICATED": 0.0060404381760290615,
+        "UNVERIFIABLE": 0.002706989896203299
+      },
+      "max_abs_delta": 0.0060404381760290615,
+      "insufficient": false
+    },
+    {
+      "condition": "length_matched",
+      "cell": "unanswerable",
+      "domain": "medical",
+      "n_subprocess": 204,
+      "n_workflow": 371,
+      "prop_subprocess": {
+        "REAL": 0.46568627450980393,
+        "FABRICATED": 0.4117647058823529,
+        "UNVERIFIABLE": 0.12254901960784313
+      },
+      "prop_workflow": {
+        "REAL": 0.4743935309973046,
+        "FABRICATED": 0.353099730458221,
+        "UNVERIFIABLE": 0.1725067385444744
+      },
+      "abs_deltas": {
+        "REAL": 0.008707256487500648,
+        "FABRICATED": 0.058664975424131904,
+        "UNVERIFIABLE": 0.04995771893663127
+      },
+      "max_abs_delta": 0.058664975424131904,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "known_real",
+      "domain": "academic",
+      "n_subprocess": 73,
+      "n_workflow": 137,
+      "prop_subprocess": {
+        "REAL": 0.9178082191780822,
+        "FABRICATED": 0.0410958904109589,
+        "UNVERIFIABLE": 0.0410958904109589
+      },
+      "prop_workflow": {
+        "REAL": 0.8832116788321168,
+        "FABRICATED": 0.08029197080291971,
+        "UNVERIFIABLE": 0.0364963503649635
+      },
+      "abs_deltas": {
+        "REAL": 0.034596540345965376,
+        "FABRICATED": 0.039196080391960805,
+        "UNVERIFIABLE": 0.004599540045995401
+      },
+      "max_abs_delta": 0.039196080391960805,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "known_real",
+      "domain": "legal",
+      "n_subprocess": 193,
+      "n_workflow": 308,
+      "prop_subprocess": {
+        "REAL": 0.9740932642487047,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.025906735751295335
+      },
+      "prop_workflow": {
+        "REAL": 0.974025974025974,
+        "FABRICATED": 0.003246753246753247,
+        "UNVERIFIABLE": 0.022727272727272728
+      },
+      "abs_deltas": {
+        "REAL": 6.729022273066487e-05,
+        "FABRICATED": 0.003246753246753247,
+        "UNVERIFIABLE": 0.0031794630240226072
+      },
+      "max_abs_delta": 0.003246753246753247,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "known_real",
+      "domain": "medical",
+      "n_subprocess": 100,
+      "n_workflow": 237,
+      "prop_subprocess": {
+        "REAL": 0.64,
+        "FABRICATED": 0.2,
+        "UNVERIFIABLE": 0.16
+      },
+      "prop_workflow": {
+        "REAL": 0.7215189873417721,
+        "FABRICATED": 0.14345991561181434,
+        "UNVERIFIABLE": 0.1350210970464135
+      },
+      "abs_deltas": {
+        "REAL": 0.0815189873417721,
+        "FABRICATED": 0.05654008438818567,
+        "UNVERIFIABLE": 0.024978902953586513
+      },
+      "max_abs_delta": 0.0815189873417721,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "obscure_real",
+      "domain": "academic",
+      "n_subprocess": 23,
+      "n_workflow": 24,
+      "prop_subprocess": {
+        "REAL": 0.782608695652174,
+        "FABRICATED": 0.043478260869565216,
+        "UNVERIFIABLE": 0.17391304347826086
+      },
+      "prop_workflow": {
+        "REAL": 0.6666666666666666,
+        "FABRICATED": 0.16666666666666666,
+        "UNVERIFIABLE": 0.16666666666666666
+      },
+      "abs_deltas": {
+        "REAL": 0.11594202898550732,
+        "FABRICATED": 0.12318840579710144,
+        "UNVERIFIABLE": 0.007246376811594207
+      },
+      "max_abs_delta": 0.12318840579710144,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "obscure_real",
+      "domain": "legal",
+      "n_subprocess": 173,
+      "n_workflow": 252,
+      "prop_subprocess": {
+        "REAL": 0.9248554913294798,
+        "FABRICATED": 0.011560693641618497,
+        "UNVERIFIABLE": 0.06358381502890173
+      },
+      "prop_workflow": {
+        "REAL": 0.9404761904761905,
+        "FABRICATED": 0.003968253968253968,
+        "UNVERIFIABLE": 0.05555555555555555
+      },
+      "abs_deltas": {
+        "REAL": 0.015620699146710715,
+        "FABRICATED": 0.0075924396733645285,
+        "UNVERIFIABLE": 0.008028259473346178
+      },
+      "max_abs_delta": 0.015620699146710715,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "obscure_real",
+      "domain": "medical",
+      "n_subprocess": 74,
+      "n_workflow": 100,
+      "prop_subprocess": {
+        "REAL": 0.581081081081081,
+        "FABRICATED": 0.10810810810810811,
+        "UNVERIFIABLE": 0.3108108108108108
+      },
+      "prop_workflow": {
+        "REAL": 0.53,
+        "FABRICATED": 0.1,
+        "UNVERIFIABLE": 0.37
+      },
+      "abs_deltas": {
+        "REAL": 0.051081081081081,
+        "FABRICATED": 0.008108108108108109,
+        "UNVERIFIABLE": 0.059189189189189195
+      },
+      "max_abs_delta": 0.059189189189189195,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "unanswerable",
+      "domain": "academic",
+      "n_subprocess": 7,
+      "n_workflow": 10,
+      "prop_subprocess": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "prop_workflow": {
+        "REAL": 1.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "abs_deltas": {
+        "REAL": 0.0,
+        "FABRICATED": 0.0,
+        "UNVERIFIABLE": 0.0
+      },
+      "max_abs_delta": 0.0,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "unanswerable",
+      "domain": "legal",
+      "n_subprocess": 110,
+      "n_workflow": 197,
+      "prop_subprocess": {
+        "REAL": 0.5363636363636364,
+        "FABRICATED": 0.36363636363636365,
+        "UNVERIFIABLE": 0.1
+      },
+      "prop_workflow": {
+        "REAL": 0.48223350253807107,
+        "FABRICATED": 0.3604060913705584,
+        "UNVERIFIABLE": 0.15736040609137056
+      },
+      "abs_deltas": {
+        "REAL": 0.05413013382556531,
+        "FABRICATED": 0.003230272265805245,
+        "UNVERIFIABLE": 0.05736040609137055
+      },
+      "max_abs_delta": 0.05736040609137055,
+      "insufficient": false
+    },
+    {
+      "condition": "neutral",
+      "cell": "unanswerable",
+      "domain": "medical",
+      "n_subprocess": 116,
+      "n_workflow": 202,
+      "prop_subprocess": {
+        "REAL": 0.603448275862069,
+        "FABRICATED": 0.3275862068965517,
+        "UNVERIFIABLE": 0.06896551724137931
+      },
+      "prop_workflow": {
+        "REAL": 0.6336633663366337,
+        "FABRICATED": 0.2722772277227723,
+        "UNVERIFIABLE": 0.09405940594059406
+      },
+      "abs_deltas": {
+        "REAL": 0.03021509047456472,
+        "FABRICATED": 0.055308979173779416,
+        "UNVERIFIABLE": 0.02509388869921475
+      },
+      "max_abs_delta": 0.055308979173779416,
+      "insufficient": false
+    }
+  ],
+  "caveat": "Path assignment is not randomized (subprocess judged whatever cleared before the billing halt); within-stratum residual confounding is possible. Sensitivity check, not a randomized equivalence trial."
+}

@@ -1,0 +1,30 @@
+{
+  "n_scored": 25530,
+  "by_era": {
+    "EARLY": {
+      "n": 10938,
+      "excluded": 110,
+      "rate": 1.0057
+    },
+    "DEGRADED": {
+      "n": 4952,
+      "excluded": 225,
+      "rate": 4.5436
+    },
+    "RECOVERED": {
+      "n": 5276,
+      "excluded": 20,
+      "rate": 0.3791
+    },
+    "MIXED": {
+      "n": 1,
+      "excluded": 0,
+      "rate": 0.0
+    },
+    "NO_JUDGED_CITATION": {
+      "n": 4363,
+      "excluded": 0,
+      "rate": 0.0
+    }
+  }
+}

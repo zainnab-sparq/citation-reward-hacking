@@ -1,0 +1,128 @@
+{
+  "n": 200,
+  "n_judged": 200,
+  "n_missing": 0,
+  "raw_fab_rate": 0.045,
+  "raw_fab_ci": [
+    0.023852543001492997,
+    0.08329670400181957
+  ],
+  "reweighted_fab_rate": 0.043160228368939804,
+  "reweighted_ci": [
+    0.01651106001232591,
+    0.0698093967255537
+  ],
+  "raw_unv_rate": 0.01,
+  "gate_threshold": 0.08,
+  "exceeds_threshold": false,
+  "per_stratum": [
+    {
+      "domain": "academic",
+      "cell": "known_real",
+      "population": 1361,
+      "n_sample": 83,
+      "n_judged": 83,
+      "n_fabricated": 0,
+      "n_unverifiable": 0,
+      "n_real": 83,
+      "n_missing": 0,
+      "fab_rate": 0.0
+    },
+    {
+      "domain": "academic",
+      "cell": "obscure_real",
+      "population": 82,
+      "n_sample": 5,
+      "n_judged": 5,
+      "n_fabricated": 1,
+      "n_unverifiable": 0,
+      "n_real": 4,
+      "n_missing": 0,
+      "fab_rate": 0.2
+    },
+    {
+      "domain": "academic",
+      "cell": "unanswerable",
+      "population": 25,
+      "n_sample": 5,
+      "n_judged": 5,
+      "n_fabricated": 0,
+      "n_unverifiable": 0,
+      "n_real": 5,
+      "n_missing": 0,
+      "fab_rate": 0.0
+    },
+    {
+      "domain": "legal",
+      "cell": "known_real",
+      "population": 183,
+      "n_sample": 10,
+      "n_judged": 10,
+      "n_fabricated": 0,
+      "n_unverifiable": 0,
+      "n_real": 10,
+      "n_missing": 0,
+      "fab_rate": 0.0
+    },
+    {
+      "domain": "legal",
+      "cell": "obscure_real",
+      "population": 162,
+      "n_sample": 9,
+      "n_judged": 9,
+      "n_fabricated": 2,
+      "n_unverifiable": 0,
+      "n_real": 7,
+      "n_missing": 0,
+      "fab_rate": 0.2222222222222222
+    },
+    {
+      "domain": "legal",
+      "cell": "unanswerable",
+      "population": 15,
+      "n_sample": 5,
+      "n_judged": 5,
+      "n_fabricated": 1,
+      "n_unverifiable": 0,
+      "n_real": 4,
+      "n_missing": 0,
+      "fab_rate": 0.2
+    },
+    {
+      "domain": "medical",
+      "cell": "known_real",
+      "population": 721,
+      "n_sample": 44,
+      "n_judged": 44,
+      "n_fabricated": 3,
+      "n_unverifiable": 1,
+      "n_real": 40,
+      "n_missing": 0,
+      "fab_rate": 0.06818181818181818
+    },
+    {
+      "domain": "medical",
+      "cell": "obscure_real",
+      "population": 338,
+      "n_sample": 20,
+      "n_judged": 20,
+      "n_fabricated": 1,
+      "n_unverifiable": 0,
+      "n_real": 19,
+      "n_missing": 0,
+      "fab_rate": 0.05
+    },
+    {
+      "domain": "medical",
+      "cell": "unanswerable",
+      "population": 332,
+      "n_sample": 19,
+      "n_judged": 19,
+      "n_fabricated": 1,
+      "n_unverifiable": 1,
+      "n_real": 17,
+      "n_missing": 0,
+      "fab_rate": 0.05263157894736842
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "exp": "e1",
+  "inputs": "data/analysis_inputs/phase_c_registered",
+  "n_rows": 42845,
+  "threshold": 0.1,
+  "tolerance": 0.02,
+  "rule": "profile CI required when the Wald lower bound <= threshold + tolerance (amendment #14)",
+  "any_escalation": false,
+  "contrasts": [
+    {
+      "contrast": "rise_marginal",
+      "estimate_pp": 0.453143946132248,
+      "ci_lo_pp": 0.288445383792696,
+      "ci_hi_pp": 0.6178425084718,
+      "se_pp": 0.0840314228417835,
+      "escalation_triggered": false
+    },
+    {
+      "contrast": "rise_academic",
+      "estimate_pp": 0.435752098512491,
+      "ci_lo_pp": 0.263477697432395,
+      "ci_hi_pp": 0.608026499592586,
+      "se_pp": 0.0878967177146998,
+      "escalation_triggered": false
+    },
+    {
+      "contrast": "rise_medical",
+      "estimate_pp": 0.532996343256336,
+      "ci_lo_pp": 0.361695549999264,
+      "ci_hi_pp": 0.704297136513408,
+      "se_pp": 0.0873999699016261,
+      "escalation_triggered": false
+    },
+    {
+      "contrast": "rise_legal",
+      "estimate_pp": 0.345333664933097,
+      "ci_lo_pp": 0.196265845984975,
+      "ci_hi_pp": 0.494401483881219,
+      "se_pp": 0.0760564072217397,
+      "escalation_triggered": false
+    }
+  ]
+}

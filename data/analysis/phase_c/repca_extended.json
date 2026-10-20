@@ -1,0 +1,82 @@
+{
+  "negligible_relative_sd_threshold": 0.001,
+  "input_dir": "data/analysis_inputs/phase_c_final",
+  "blocks": {
+    "e1_extended_re": [
+      {
+        "grouping_factor": "question_id",
+        "n_dimensions": 1,
+        "sdev": 0.607731,
+        "relative_sdev": 1,
+        "cumulative_variance": 1,
+        "n_unsupported_dimensions": 0,
+        "model_is_singular": true,
+        "re_sd_by_term": 0.607731,
+        "largest_re_term": "(Intercept)",
+        "smallest_re_term": "(Intercept)"
+      },
+      {
+        "grouping_factor": "model_id",
+        "n_dimensions": 3,
+        "sdev": [0.70918, 0.149774, 0],
+        "relative_sdev": [1, 0.211194, 0],
+        "cumulative_variance": [0.957302, 1, 1],
+        "n_unsupported_dimensions": 1,
+        "model_is_singular": true,
+        "re_sd_by_term": [0.693084, 0.063908, 0.202285],
+        "largest_re_term": "(Intercept)",
+        "smallest_re_term": "cellobscure_real"
+      },
+      {
+        "grouping_factor": "family",
+        "n_dimensions": 4,
+        "sdev": [0.562844, 0.149177, 9e-06, 0],
+        "relative_sdev": [1, 0.265041, 1.5e-05, 0],
+        "cumulative_variance": [0.934364, 1, 1, 1],
+        "n_unsupported_dimensions": 2,
+        "model_is_singular": true,
+        "re_sd_by_term": [0.315943, 0.357494, 0.274302, 0.190217],
+        "largest_re_term": "stage_ordinal",
+        "smallest_re_term": "cellunanswerable"
+      }
+    ],
+    "e2_extended_re": [
+      {
+        "grouping_factor": "question_id",
+        "n_dimensions": 1,
+        "sdev": 0.944836,
+        "relative_sdev": 1,
+        "cumulative_variance": 1,
+        "n_unsupported_dimensions": 0,
+        "model_is_singular": true,
+        "re_sd_by_term": 0.944836,
+        "largest_re_term": "(Intercept)",
+        "smallest_re_term": "(Intercept)"
+      },
+      {
+        "grouping_factor": "model_id",
+        "n_dimensions": 6,
+        "sdev": [1.480224, 0.621676, 0.242026, 0.089691, 5e-06, 0],
+        "relative_sdev": [1, 0.419988, 0.163507, 0.060593, 3e-06, 0],
+        "cumulative_variance": [0.828641, 0.974804, 0.996958, 1, 1, 1],
+        "n_unsupported_dimensions": 2,
+        "model_is_singular": true,
+        "re_sd_by_term": [0.39411, 0.94046, 1.21182, 0.219711, 0.140749, 0.260361],
+        "largest_re_term": "conditionabstention_permitted",
+        "smallest_re_term": "cellobscure_real"
+      },
+      {
+        "grouping_factor": "family",
+        "n_dimensions": 6,
+        "sdev": [0.874534, 0.444196, 2.2e-05, 1e-06, 0, 0],
+        "relative_sdev": [1, 0.507923, 2.5e-05, 1e-06, 0, 0],
+        "cumulative_variance": [0.794921, 1, 1, 1, 1, 1],
+        "n_unsupported_dimensions": 4,
+        "model_is_singular": true,
+        "re_sd_by_term": [0.294782, 0.558357, 0.518844, 0.289621, 0.343156, 0.304344],
+        "largest_re_term": "conditioncitations_expected",
+        "smallest_re_term": "conditionlength_matched"
+      }
+    ]
+  }
+}

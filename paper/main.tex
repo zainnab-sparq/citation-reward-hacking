@@ -1,0 +1,121 @@
+% Are Fake Citations a Form of Reward Hacking?
+% Manuscript skeleton. Structure follows PRE_REGISTRATION_OSF.md; every reported
+% number is a slot until the artifact it comes from is final.
+%
+% Build:  latexmk -pdf main.tex
+% Final:  set \draftmodefalse below, then rebuild. The build FAILS if any \slot
+%         remains, which is the point: no empty slot can ship.
+
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lmodern}      % scalable fonts; microtype's expansion needs them
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\graphicspath{{figures/}}
+\bibliographystyle{plainnat}
+
+% ---------------------------------------------------------------------------
+% Draft apparatus
+%
+% \slot{what}   an unfilled number or claim. Red in draft, hard error in final.
+% \prov{text}   a number that exists but was computed on partial data. Orange in
+%               draft, hard error in final. Every one must be recomputed at
+%               31,980 judged citations before submission.
+% \guide{text}  editorial note on what belongs in this section. Draft only.
+% ---------------------------------------------------------------------------
+% Draft is the default. The submission build is checked without editing this file:
+%   pdflatex "\def\finalbuild{}\input{main}"
+% which fails on the first remaining \slot or \prov.
+\newif\ifdraftmode
+\ifdefined\finalbuild \draftmodefalse \else \draftmodetrue \fi
+
+\ifdraftmode
+  \newcommand{\slot}[1]{\textcolor{red}{\textbf{[SLOT: #1]}}}
+  \newcommand{\prov}[1]{\textcolor{orange}{#1\,$^{\dagger}$}}
+  \newcommand{\guide}[1]{\par\smallskip{\small\itshape\color{gray}#1\par}\smallskip}
+\else
+  \newcommand{\slot}[1]{\GenericError{}{UNFILLED SLOT: #1}{}{}}
+  \newcommand{\prov}[1]{\GenericError{}{PROVISIONAL NUMBER STILL PRESENT: #1}{}{}}
+  \newcommand{\guide}[1]{}
+\fi
+
+\title{Are Fake Citations a Form of Reward Hacking?\\
+       A Pre-Registered Study of Post-Training and Citation Cues}
+\author{Zain Naboulsi}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\guide{Write this last. Roughly 150 to 200 words. The pre-registration commits
+the abstract to naming the actual domain scopes rather than the broad labels:
+US federal case law, OpenAlex-indexed computationally-adjacent scientific
+literature, and Cochrane-skewed medical literature. Amendment \#10 also
+pre-commits abstract wording to whichever delta bin the E2 contrast lands in,
+so the results must be in hand before a single sentence here is fixed.}
+Post-trained language models fabricate citations at high rates. We ask whether
+that is reward hacking: scoring well on a proxy for scholarship while doing worse
+on what it stands for. Four pre-registered experiments on 900 frozen
+questions spanning US federal case law, OpenAlex-indexed
+computationally-adjacent scientific literature and a Cochrane-skewed medical
+pool, across twelve open-weights checkpoints covering four post-training stages
+of three cascades, and a refit on fifteen after collecting three more registered
+checkpoints.
+
+The clearest result holds the weights fixed and changes only the prompt. Asking
+for citations raises fabrication sharply in post-trained checkpoints and not in
+base ones: a 47.8-point interaction on twelve checkpoints
+($p = 2 \times 10^{-34}$) and 41.5 points on fifteen ($p = 3 \times 10^{-31}$),
+in all three domains. The three original base models fabricate \emph{less} when
+asked for citations; the added Qwen2.5-72B base fabricates more, so the
+post-trained rise, not the base fall, is the finding. A length-matched control
+separates the citation cue from a general demand for a longer answer by 28.4
+points, so the cue is citation-specific, not verbosity.
+
+Post-training also raises fabrication across the board, 4.8\% to 56.7\%. Our
+registered prediction that it would rise preferentially where fabrication is most
+tempting did not hold. On twelve checkpoints the design had only 73\% power for
+the registered effect; on fifteen, at 83\%, the interaction is again null and its
+point estimate is slightly negative. A
+preference model trained only on surface citation features prefers post-trained
+output 86\% of the time; holding citation count fixed shows it rewards quantity.
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related}
+\input{sections/03_methods}
+\input{sections/04_results_e1_e2}
+\input{sections/05_results_e3_e4}
+\input{sections/06_instrument}
+\input{sections/07_discussion}
+\input{sections/08_limitations_ethics}
+\input{sections/09_reproducibility}
+
+% Draft builds list every entry so the unverified VERIFY placeholders stay visible.
+% The submission build cites only what the prose actually cites.
+\ifdraftmode\nocite{*}\fi
+\bibliography{refs}
+
+\appendix
+\input{appendix/A_deviations}
+\input{appendix/B_supplementary}
+
+\ifdraftmode
+\clearpage
+\section*{Draft key}
+\textcolor{red}{\textbf{[SLOT: x]}} is an unwritten number or claim.
+\textcolor{orange}{$\dagger$} marks a number computed on partial data that must
+be recomputed once all 31{,}980 citations are judged. The submission build
+(\texttt{\textbackslash draftmodefalse}) fails while either remains.
+\fi
+
+\end{document}

@@ -1,0 +1,24 @@
+{
+  "source": "primary-model fast path; must agree with the full artifact",
+  "input_dir": "data/analysis_inputs/phase_c_registered",
+  "n_observations": 42845,
+  "amendment10_contrast": {
+    "delta_pp": 0.126380112933376,
+    "ci_lo_pp": 0.107476013851429,
+    "ci_hi_pp": 0.145284212015324,
+    "bin": "citation_cue_supported",
+    "p_citations_expected": 0.572846653721529,
+    "p_length_matched": 0.446466540788152,
+    "p_neutral": 0.317741803234965,
+    "odds_ratio_ordering": {
+      "citations_expected_vs_neutral": 2.87957884101697,
+      "length_matched_vs_neutral": 1.73188657593134
+    },
+    "secondary_all_open_weights": {
+      "share_post_trained": 0.748325358851675,
+      "delta_pp": 0.0905929149436568,
+      "ci_lo_pp": 0.0761480003715231,
+      "ci_hi_pp": 0.10503782951579
+    }
+  }
+}

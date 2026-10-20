@@ -1,0 +1,214 @@
+{
+  "n_sampled": 500,
+  "n_rejudged": 500,
+  "n_missing": 0,
+  "by_era": {
+    "DEGRADED": {
+      "n": 250,
+      "transition_matrix": {
+        "FABRICATED->FABRICATED": 101,
+        "FABRICATED->REAL": 3,
+        "FABRICATED->UNVERIFIABLE": 8,
+        "REAL->FABRICATED": 2,
+        "REAL->REAL": 102,
+        "REAL->UNVERIFIABLE": 1,
+        "UNVERIFIABLE->FABRICATED": 14,
+        "UNVERIFIABLE->REAL": 14,
+        "UNVERIFIABLE->UNVERIFIABLE": 5
+      },
+      "flip_rate_by_condition": {
+        "abstention_permitted": {
+          "n": 63,
+          "n_flipped": 13,
+          "flip_rate": 0.20634920634920634,
+          "ci": [
+            0.1247531961549383,
+            0.32169814328613333
+          ]
+        },
+        "citations_expected": {
+          "n": 63,
+          "n_flipped": 11,
+          "flip_rate": 0.1746031746031746,
+          "ci": [
+            0.10039396579467888,
+            0.2862142752075897
+          ]
+        },
+        "length_matched": {
+          "n": 62,
+          "n_flipped": 10,
+          "flip_rate": 0.16129032258064516,
+          "ci": [
+            0.09004068870309084,
+            0.27206336013977434
+          ]
+        },
+        "neutral": {
+          "n": 62,
+          "n_flipped": 8,
+          "flip_rate": 0.12903225806451613,
+          "ci": [
+            0.06685878059283036,
+            0.23449327290173627
+          ]
+        }
+      },
+      "differentiality": {
+        "chi2": 1.3760294578266923,
+        "p_value": 0.7111630526910033,
+        "df": 3,
+        "n": 250,
+        "conditions": [
+          "abstention_permitted",
+          "citations_expected",
+          "length_matched",
+          "neutral"
+        ],
+        "differential": false
+      },
+      "reweighted_flip_rate": {
+        "rate": 0.1634463901689708,
+        "se": 0.02435893045999707,
+        "ci": [
+          0.11570376376546088,
+          0.21118901657248074
+        ],
+        "per_stratum": [
+          {
+            "condition": "abstention_permitted",
+            "n": 63,
+            "population": 862,
+            "n_flipped": 13,
+            "flip_rate": 0.20634920634920634
+          },
+          {
+            "condition": "citations_expected",
+            "n": 63,
+            "population": 2695,
+            "n_flipped": 11,
+            "flip_rate": 0.1746031746031746
+          },
+          {
+            "condition": "length_matched",
+            "n": 62,
+            "population": 2128,
+            "n_flipped": 10,
+            "flip_rate": 0.16129032258064516
+          },
+          {
+            "condition": "neutral",
+            "n": 62,
+            "population": 1815,
+            "n_flipped": 8,
+            "flip_rate": 0.12903225806451613
+          }
+        ]
+      }
+    },
+    "EARLY": {
+      "n": 250,
+      "transition_matrix": {
+        "FABRICATED->FABRICATED": 79,
+        "FABRICATED->REAL": 1,
+        "FABRICATED->UNVERIFIABLE": 3,
+        "REAL->FABRICATED": 3,
+        "REAL->REAL": 117,
+        "REAL->UNVERIFIABLE": 1,
+        "UNVERIFIABLE->FABRICATED": 29,
+        "UNVERIFIABLE->REAL": 2,
+        "UNVERIFIABLE->UNVERIFIABLE": 15
+      },
+      "flip_rate_by_condition": {
+        "abstention_permitted": {
+          "n": 63,
+          "n_flipped": 7,
+          "flip_rate": 0.1111111111111111,
+          "ci": [
+            0.054875486623837205,
+            0.2120465575008252
+          ]
+        },
+        "citations_expected": {
+          "n": 63,
+          "n_flipped": 15,
+          "flip_rate": 0.23809523809523808,
+          "ci": [
+            0.14993783678290612,
+            0.3563566010969686
+          ]
+        },
+        "length_matched": {
+          "n": 62,
+          "n_flipped": 7,
+          "flip_rate": 0.11290322580645161,
+          "ci": [
+            0.05577863529399971,
+            0.2151974205264177
+          ]
+        },
+        "neutral": {
+          "n": 62,
+          "n_flipped": 10,
+          "flip_rate": 0.16129032258064516,
+          "ci": [
+            0.09004068870309084,
+            0.27206336013977434
+          ]
+        }
+      },
+      "differentiality": {
+        "chi2": 5.076802737710856,
+        "p_value": 0.16625888567344757,
+        "df": 3,
+        "n": 250,
+        "conditions": [
+          "abstention_permitted",
+          "citations_expected",
+          "length_matched",
+          "neutral"
+        ],
+        "differential": false
+      },
+      "reweighted_flip_rate": {
+        "rate": 0.16912969945228007,
+        "se": 0.02526224937307725,
+        "ci": [
+          0.11961660051257911,
+          0.21864279839198103
+        ],
+        "per_stratum": [
+          {
+            "condition": "abstention_permitted",
+            "n": 63,
+            "population": 1937,
+            "n_flipped": 7,
+            "flip_rate": 0.1111111111111111
+          },
+          {
+            "condition": "citations_expected",
+            "n": 63,
+            "population": 5893,
+            "n_flipped": 15,
+            "flip_rate": 0.23809523809523808
+          },
+          {
+            "condition": "length_matched",
+            "n": 62,
+            "population": 4672,
+            "n_flipped": 7,
+            "flip_rate": 0.11290322580645161
+          },
+          {
+            "condition": "neutral",
+            "n": 62,
+            "population": 3998,
+            "n_flipped": 10,
+            "flip_rate": 0.16129032258064516
+          }
+        ]
+      }
+    }
+  },
+  "note": "Across-condition comparisons use UNWEIGHTED per-condition rates (strata compared to each other). Design weights apply only to the corpus-level reweighted rate. A null differentiality test bounds the evidence; it does not prove non-differentiality."
+}

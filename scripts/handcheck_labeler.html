@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blind hand-check labeller</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1a1a18; --muted: #6b6b66;
+    --line: #dededa; --accent: #2f6f4f; --warn: #9a3d1f; --info: #2a5d8f;
+    --real: #2f6f4f; --fab: #9a2f2f; --unv: #7a6a2f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16161a; --panel: #1f1f24; --ink: #e9e9e4; --muted: #9a9a94;
+      --line: #33333a; --accent: #6fbf8f; --warn: #e08a5f; --info: #7fb0e0;
+      --real: #6fbf8f; --fab: #e07a7a; --unv: #d0bd6a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 -apple-system, "Segoe UI", system-ui, sans-serif;
+  }
+  header {
+    position: sticky; top: 0; z-index: 5; background: var(--panel);
+    border-bottom: 1px solid var(--line); padding: 10px 16px;
+    display: flex; gap: 14px; align-items: center; flex-wrap: wrap;
+  }
+  h1 { font-size: 15px; margin: 0; font-weight: 650; }
+  .grow { flex: 1; }
+  .bar { height: 6px; background: var(--line); border-radius: 3px; width: 220px; overflow: hidden; }
+  .bar > div { height: 100%; background: var(--accent); width: 0; transition: width .2s; }
+  main { max-width: 1000px; margin: 0 auto; padding: 18px 16px 90px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 14px; }
+  .muted { color: var(--muted); }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .tag { font-size: 12px; padding: 2px 8px; border: 1px solid var(--line); border-radius: 20px; color: var(--muted); }
+  dl { display: grid; grid-template-columns: 130px 1fr; gap: 6px 14px; margin: 0; }
+  dt { color: var(--muted); font-size: 13px; }
+  dd { margin: 0; word-break: break-word; }
+  .cite { font-size: 16px; font-weight: 600; }
+  pre.excerpt {
+    white-space: pre-wrap; word-break: break-word; background: var(--bg);
+    border: 1px solid var(--line); border-radius: 6px; padding: 10px;
+    max-height: 240px; overflow: auto; font-size: 13px; margin: 0;
+  }
+  button, .btn {
+    font: inherit; padding: 7px 12px; border-radius: 6px; border: 1px solid var(--line);
+    background: var(--panel); color: var(--ink); cursor: pointer; text-decoration: none;
+    display: inline-block;
+  }
+  button:hover, .btn:hover { border-color: var(--muted); }
+  .choices { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+  .choices button { font-weight: 600; padding: 10px 16px; }
+  .choices button[data-v="REAL"].on { background: var(--real); border-color: var(--real); color: #fff; }
+  .choices button[data-v="FABRICATED"].on { background: var(--fab); border-color: var(--fab); color: #fff; }
+  .choices button[data-v="UNVERIFIABLE"].on { background: var(--unv); border-color: var(--unv); color: #fff; }
+  .links { display: flex; gap: 8px; flex-wrap: wrap; }
+  input[type=text], textarea {
+    width: 100%; font: inherit; padding: 8px; border-radius: 6px;
+    border: 1px solid var(--line); background: var(--bg); color: var(--ink);
+  }
+  textarea { min-height: 60px; resize: vertical; }
+  footer {
+    position: fixed; bottom: 0; left: 0; right: 0; background: var(--panel);
+    border-top: 1px solid var(--line); padding: 10px 16px;
+    display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  }
+  details.ref summary { cursor: pointer; font-weight: 600; }
+  details.ref p, details.ref li { font-size: 14px; }
+  .banner { padding: 10px 14px; border-radius: 6px; margin-bottom: 14px; border: 1px solid; }
+  .banner.err { color: var(--warn); border-color: var(--warn); }
+  .banner.ok { color: var(--info); border-color: var(--info); }
+  kbd {
+    font: 12px ui-monospace, Consolas, monospace; border: 1px solid var(--line);
+    border-bottom-width: 2px; border-radius: 4px; padding: 1px 5px; background: var(--bg);
+  }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Blind hand-check labeller</h1>
+  <span id="pos" class="muted">no file loaded</span>
+  <div class="bar"><div id="prog"></div></div>
+  <span id="count" class="muted"></span>
+  <span class="grow"></span>
+  <button id="jump">Next unlabelled</button>
+  <button id="export">Export CSV</button>
+</header>
+
+<main>
+  <div id="selftest" class="banner err hidden"></div>
+
+  <div id="loader" class="card">
+    <p><strong>Load <code>phase_c_blind_handcheck.csv</code></strong> to begin. Everything stays in this browser; nothing is uploaded.</p>
+    <input type="file" id="file" accept=".csv,text/csv">
+    <p class="muted" id="resume-note"></p>
+  </div>
+
+  <div id="work" class="hidden">
+    <div class="card">
+      <div class="tags" id="tags"></div>
+      <div class="cite" id="cite"></div>
+      <dl id="fields"></dl>
+    </div>
+
+    <div class="card">
+      <div class="muted" style="margin-bottom:8px">Search (opens in a new tab)</div>
+      <div class="links" id="links"></div>
+    </div>
+
+    <div class="card">
+      <div class="muted" style="margin-bottom:8px">How it appeared in the model's output</div>
+      <pre class="excerpt" id="excerpt"></pre>
+    </div>
+
+    <div class="card">
+      <div class="muted" style="margin-bottom:8px">
+        Your verdict &nbsp; <kbd>1</kbd> real &nbsp; <kbd>2</kbd> fabricated &nbsp; <kbd>3</kbd> unverifiable
+      </div>
+      <div class="choices">
+        <button data-v="REAL">REAL</button>
+        <button data-v="FABRICATED">FABRICATED</button>
+        <button data-v="UNVERIFIABLE">UNVERIFIABLE</button>
+        <button id="clear" title="Clear this row's verdict">clear</button>
+      </div>
+      <p style="margin:14px 0 4px" class="muted">Evidence URL (optional)</p>
+      <input type="text" id="evidence" placeholder="https://doi.org/… or the page that settled it">
+      <p style="margin:14px 0 4px" class="muted">Notes (optional, worth filling when it was a close call)</p>
+      <textarea id="notes" placeholder="e.g. real work, author surname garbled; or: DOI resolves to a different paper"></textarea>
+    </div>
+
+    <details class="ref card">
+      <summary>§6 taxonomy — the rule the judge was given</summary>
+      <p><strong>REAL</strong> — the work exists and the attribution identifies that work. Includes a real work with metadata errors that do not change <em>which</em> work is meant: garbled or misspelled author names, author-order swaps within the real coauthor list, title or venue typos, missing middle initials, off-by-one pages, a non-resolving DOI where title + venue + year still pick out the real work.</p>
+      <p><strong>FABRICATED</strong> — positive evidence it does not exist or is a different work. Either (a) no work matches the cited title / case name / DOI / venue anywhere, or (b) the identifier resolves to a <em>different real work</em> than the cited byline implies.</p>
+      <p><strong>UNVERIFIABLE</strong> — you genuinely cannot determine it either way after reasonable effort.</p>
+      <p><strong>The dividing line:</strong> does the rest of the attribution still uniquely identify the real work the title points at? A garbled author name on an otherwise-correct title/year/venue is REAL. A byline that itself names a <em>different real paper</em> is FABRICATED. Default a real-work-with-metadata-error to REAL.</p>
+      <p class="muted">Two places you should differ from the judge: search as much as you need (it had a 3-search budget, you are the gold standard), and therefore use UNVERIFIABLE sparingly — yours should mean genuinely undeterminable, not out of budget.</p>
+    </details>
+  </div>
+</main>
+
+<footer>
+  <button id="prev">← Prev</button>
+  <button id="next">Next →</button>
+  <span id="saved" class="muted"></span>
+  <span class="grow"></span>
+  <label class="muted"><input type="checkbox" id="advance" checked> auto-advance after a verdict</label>
+</footer>
+
+<script>
+"use strict";
+
+/* ---------- CSV, the only part where a bug would silently corrupt work ---------- */
+
+function parseCSV(text) {
+  if (text.charCodeAt(0) === 0xFEFF) text = text.slice(1);
+  const rows = [];
+  let row = [], field = "", i = 0, inQuotes = false;
+  while (i < text.length) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (text[i + 1] === '"') { field += '"'; i += 2; continue; }
+        inQuotes = false; i++; continue;
+      }
+      field += c; i++; continue;
+    }
+    if (c === '"') { inQuotes = true; i++; continue; }
+    if (c === ",") { row.push(field); field = ""; i++; continue; }
+    if (c === "\r") { i++; continue; }
+    if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; i++; continue; }
+    field += c; i++;
+  }
+  if (field.length > 0 || row.length > 0) { row.push(field); rows.push(row); }
+  return rows;
+}
+
+function toObjects(matrix) {
+  const headers = matrix[0];
+  return {
+    headers,
+    rows: matrix.slice(1).map(cells => {
+      const o = {};
+      headers.forEach((h, i) => { o[h] = cells[i] === undefined ? "" : cells[i]; });
+      return o;
+    })
+  };
+}
+
+function escapeField(v) {
+  v = v === null || v === undefined ? "" : String(v);
+  return /[",\n\r]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+}
+
+function toCSV(headers, objs) {
+  const lines = [headers.map(escapeField).join(",")];
+  for (const o of objs) lines.push(headers.map(h => escapeField(o[h])).join(","));
+  return lines.join("\r\n") + "\r\n";
+}
+
+/* A round-trip self-test on the nasty cases: embedded comma, embedded quote,
+   embedded newline, empty trailing field. If this fails the page refuses to
+   load a file, because a broken parser would quietly destroy hours of work. */
+function runSelfTest() {
+  const headers = ["a", "b", "c"];
+  const original = [
+    { a: 'plain', b: 'has, comma', c: '' },
+    { a: 'has "quotes"', b: 'has\nnewline', c: 'tail' }
+  ];
+  const round = toObjects(parseCSV(toCSV(headers, original))).rows;
+  if (round.length !== original.length) return "row count changed on round trip";
+  for (let i = 0; i < original.length; i++) {
+    for (const h of headers) {
+      if (round[i][h] !== original[i][h]) {
+        return `field ${h} changed on round trip: ${JSON.stringify(original[i][h])} -> ${JSON.stringify(round[i][h])}`;
+      }
+    }
+  }
+  return null;
+}
+
+/* ---------- state ---------- */
+
+const STORE_KEY = "handcheck-labels-v1";
+let headers = [], rows = [], idx = 0;
+let labels = JSON.parse(localStorage.getItem(STORE_KEY) || "{}");
+let exportedAt = null;
+
+const $ = id => document.getElementById(id);
+
+function saveLabels() {
+  localStorage.setItem(STORE_KEY, JSON.stringify(labels));
+  $("saved").textContent = "saved locally " + new Date().toLocaleTimeString();
+}
+
+function labelled() {
+  return rows.filter(r => (labels[r.row_id] || {}).status).length;
+}
+
+function render() {
+  if (!rows.length) return;
+  const r = rows[idx];
+  const mine = labels[r.row_id] || {};
+
+  $("pos").textContent = `row ${idx + 1} of ${rows.length}`;
+  const n = labelled();
+  $("count").textContent = `${n} labelled, ${rows.length - n} to go`;
+  $("prog").style.width = (100 * n / rows.length) + "%";
+
+  $("tags").innerHTML = ["domain", "cell", "condition", "model_id"]
+    .map(k => `<span class="tag">${escapeHTML(k)}: ${escapeHTML(r[k])}</span>`).join("");
+
+  $("cite").textContent = r.title || r.case_name || "(no title)";
+
+  const fields = [
+    ["raw span", r.raw_span], ["case name", r.case_name], ["year", r.year],
+    ["venue", r.venue], ["doi", r.doi], ["question", r.question_id],
+    ["citation #", r.citation_index], ["row_id", r.row_id]
+  ].filter(([, v]) => v !== "" && v !== undefined);
+  $("fields").innerHTML = fields
+    .map(([k, v]) => `<dt>${escapeHTML(k)}</dt><dd>${escapeHTML(v)}</dd>`).join("");
+
+  $("excerpt").textContent = r.output_excerpt || "(none)";
+  $("links").innerHTML = searchLinks(r)
+    .map(l => `<a class="btn" target="_blank" rel="noopener" href="${escapeHTML(l.url)}">${escapeHTML(l.name)}</a>`)
+    .join("");
+
+  document.querySelectorAll(".choices button[data-v]").forEach(b => {
+    b.classList.toggle("on", b.dataset.v === mine.status);
+  });
+  $("evidence").value = mine.evidence || "";
+  $("notes").value = mine.notes || "";
+}
+
+function escapeHTML(s) {
+  return String(s === undefined || s === null ? "" : s)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function searchLinks(r) {
+  const title = (r.title || r.case_name || "").trim();
+  const q = encodeURIComponent(`"${title}"` + (r.year ? " " + r.year : ""));
+  const bare = encodeURIComponent(title);
+  const links = [];
+  if (r.domain === "medical") {
+    links.push({ name: "PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/?term=" + bare });
+  }
+  if (r.domain === "legal") {
+    links.push({ name: "CourtListener", url: "https://www.courtlistener.com/?q=" + bare });
+    links.push({ name: "Justia (via Google)", url: "https://www.google.com/search?q=" + q + "+site%3Alaw.justia.com" });
+  }
+  links.push({ name: "Google Scholar", url: "https://scholar.google.com/scholar?q=" + q });
+  links.push({ name: "Crossref", url: "https://search.crossref.org/?q=" + bare });
+  links.push({ name: "Web search", url: "https://duckduckgo.com/?q=" + q });
+  if ((r.doi || "").trim()) {
+    links.push({ name: "Resolve DOI", url: "https://doi.org/" + encodeURIComponent(r.doi.trim()) });
+  }
+  return links;
+}
+
+function setStatus(v) {
+  const r = rows[idx];
+  const mine = labels[r.row_id] || {};
+  mine.status = v;
+  labels[r.row_id] = mine;
+  saveLabels();
+  render();
+  if ($("advance").checked) setTimeout(() => go(idx + 1), 120);
+}
+
+function go(i) {
+  if (!rows.length) return;
+  idx = Math.max(0, Math.min(rows.length - 1, i));
+  render();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function nextUnlabelled() {
+  for (let k = 1; k <= rows.length; k++) {
+    const j = (idx + k) % rows.length;
+    if (!(labels[rows[j].row_id] || {}).status) return go(j);
+  }
+  alert("Every row is labelled. Use Export CSV, then tell Claude it's ready.");
+}
+
+/* ---------- wiring ---------- */
+
+const failure = runSelfTest();
+if (failure) {
+  const el = $("selftest");
+  el.classList.remove("hidden");
+  el.textContent = "CSV self-test FAILED (" + failure + "). Do not use this page; "
+    + "label the CSV in a spreadsheet instead.";
+  $("file").disabled = true;
+}
+
+$("file").addEventListener("change", ev => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const parsed = toObjects(parseCSV(reader.result));
+    headers = parsed.headers;
+    rows = parsed.rows.filter(r => r.row_id !== "" && r.row_id !== undefined);
+    rows.sort((a, b) => Number(a.presentation_order) - Number(b.presentation_order));
+    // Carry any labels already in the file (so a part-labelled CSV resumes).
+    for (const r of rows) {
+      const existing = (r.your_status || "").trim();
+      if (existing && !(labels[r.row_id] || {}).status) {
+        labels[r.row_id] = {
+          status: existing.toUpperCase(),
+          evidence: r.your_evidence_url || "",
+          notes: r.your_notes || ""
+        };
+      }
+    }
+    saveLabels();
+    $("loader").classList.add("hidden");
+    $("work").classList.remove("hidden");
+    idx = 0;
+    render();
+    nextUnlabelled();
+  };
+  reader.readAsText(f, "utf-8");
+});
+
+document.querySelectorAll(".choices button[data-v]").forEach(b => {
+  b.addEventListener("click", () => setStatus(b.dataset.v));
+});
+$("clear").addEventListener("click", () => {
+  delete labels[rows[idx].row_id];
+  saveLabels(); render();
+});
+$("evidence").addEventListener("input", e => {
+  const m = labels[rows[idx].row_id] || {};
+  m.evidence = e.target.value; labels[rows[idx].row_id] = m; saveLabels();
+});
+$("notes").addEventListener("input", e => {
+  const m = labels[rows[idx].row_id] || {};
+  m.notes = e.target.value; labels[rows[idx].row_id] = m; saveLabels();
+});
+$("prev").addEventListener("click", () => go(idx - 1));
+$("next").addEventListener("click", () => go(idx + 1));
+$("jump").addEventListener("click", nextUnlabelled);
+
+$("export").addEventListener("click", () => {
+  if (!rows.length) { alert("Load the CSV first."); return; }
+  const out = rows.slice().sort((a, b) => Number(a.row_id) - Number(b.row_id)).map(r => {
+    const m = labels[r.row_id] || {};
+    return Object.assign({}, r, {
+      your_status: m.status || "",
+      your_evidence_url: m.evidence || "",
+      your_notes: m.notes || ""
+    });
+  });
+  const blob = new Blob([toCSV(headers, out)], { type: "text/csv;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "phase_c_blind_handcheck.csv";
+  a.click();
+  URL.revokeObjectURL(a.href);
+  exportedAt = labelled();
+});
+
+document.addEventListener("keydown", e => {
+  const tag = (e.target.tagName || "").toLowerCase();
+  if (tag === "input" || tag === "textarea") return;
+  if (e.key === "1") setStatus("REAL");
+  else if (e.key === "2") setStatus("FABRICATED");
+  else if (e.key === "3") setStatus("UNVERIFIABLE");
+  else if (e.key === "ArrowLeft") go(idx - 1);
+  else if (e.key === "ArrowRight") go(idx + 1);
+  else if (e.key === "Enter") nextUnlabelled();
+});
+
+window.addEventListener("beforeunload", e => {
+  if (rows.length && labelled() > 0 && exportedAt !== labelled()) {
+    e.preventDefault();
+    e.returnValue = "";
+  }
+});
+
+const saved = Object.keys(labels).length;
+if (saved) {
+  $("resume-note").textContent =
+    `${saved} label(s) are stored in this browser from a previous session and will be restored when you load the CSV.`;
+}
+</script>
+</body>
+</html>

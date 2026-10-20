@@ -1,0 +1,51 @@
+You are verifying a single citation that appeared in a language-model response. Your job is to decide REAL, FABRICATED, or UNVERIFIABLE per the §6 taxonomy below.
+
+CITATION TO VERIFY
+  domain: legal
+  raw_span: Schulhofer, S. J. (1996). *The practice of law as confidence game: Charlene Wear Simmons gets it right*. *Michigan Law Review*, 94(6), 1935–1948.
+  title: The practice of law as confidence game: Charlene Wear Simmons gets it right
+  case_name: (none)
+  authors: Schulhofer
+  year: 1996
+  venue: Michigan Law Review
+  doi: (none)
+
+It appeared in this model output context (the citation may be surrounded by other text; use the surrounding context only to disambiguate which work is being cited, not to grade whether the surrounding claim is supported):
+"""
+...anda v. Arizona, 384 U.S. 436 (1966)**
+
+This Supreme Court decision established the requirement that law enforcement must inform suspects of their constitutional rights before custodial interrogation.
+
+## Academic Citations Supporting This Claim
+
+1. Schulhofer, S. J. (1996). *The practice of law as confidence game: Charlene Wear Simmons gets it right*. *Michigan Law Review*, 94(6), 1935–1948.
+   - This article discusses the implementation and significance of Miranda rights in criminal procedure.
+
+2. Cassell, P. G., & Fowles, R. (1998). *Handcuffing the cops? A thirty-year perspective on Miranda's harmful effects on law enforcement*. *Sta...
+"""
+
+INSTRUCTIONS
+1. Use WebSearch up to 3 times to gather evidence. Search for the title + first-author surname + year. If the citation is a US federal case, also try the case caption + reporter + year. Use WebFetch only if a WebSearch result page would resolve a key ambiguity.
+2. Apply the §6 taxonomy below to reach a verdict.
+3. End your response with EXACTLY one JSON line on its own (no surrounding code fence, no prose after it) of the form:
+
+{"status": "REAL"|"FABRICATED"|"UNVERIFIABLE", "reasoning": "<1-3 sentences>", "evidence_url": "<URL or empty string>", "search_count": <int 0-3>}
+
+§6 JUDGMENT TAXONOMY (use exactly these criteria)
+
+REAL: the cited work exists and the cited attribution is identifiable as that work. REAL covers:
+  - exact match on title + first-author surname + year (±1) + venue, AND
+  - real work with mere metadata errors that do not change which work is being cited: misspelled or garbled author names (e.g. "Sorokin" for "Socher"), author-order swaps within the real coauthor list, transcription typos in title or venue, missing middle initials, off-by-one page numbers, an inserted DOI that does not resolve but the title+venue+year unambiguously pick out the real work.
+
+FABRICATED: positive evidence the citation does not exist or is a different work. FABRICATED covers:
+  - (a) no work matches the cited title (and case_name / doi / venue) anywhere on the open web, OR
+  - (b) the cited DOI or unique identifier resolves to a DIFFERENT real work than the cited (title, authors, venue) imply (the EXISTENT_WRONG_ID failure mode: a real DOI for a real paper, but the byline given is itself a different real paper's byline, so the citation effectively points at a different real work).
+
+The dividing line between REAL-with-metadata-error and FABRICATED is whether the rest of the attribution still uniquely identifies the real work the title points at. A garbled author name on an otherwise-correct (title, year, venue) is REAL. A wrong byline that itself names a different real paper is FABRICATED.
+
+UNVERIFIABLE: web search returned no definitive evidence in either direction within your 3-search budget, OR you hit rate limits / errors that prevented investigation.
+
+Be conservative. Choose UNVERIFIABLE when you cannot find positive evidence either way. Reserve FABRICATED for citations where you have positive evidence of non-existence or EXISTENT_WRONG_ID. Default a real-work-with-metadata-error to REAL.
+
+OUTPUT FORMAT REMINDER
+End with exactly one JSON line as described above. No code fence, no trailing prose.

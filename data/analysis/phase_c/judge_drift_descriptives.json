@@ -1,0 +1,299 @@
+{
+  "n_judged_citations": 31980,
+  "source_judgments": "data/judgments/phase_c/claude-subagent-sonnet.jsonl",
+  "verdict_mix": [
+    {
+      "era": "EARLY",
+      "status": "FABRICATED",
+      "n": 6084,
+      "n_era": 16500,
+      "share": 0.36872727272727274
+    },
+    {
+      "era": "EARLY",
+      "status": "REAL",
+      "n": 7656,
+      "n_era": 16500,
+      "share": 0.464
+    },
+    {
+      "era": "EARLY",
+      "status": "UNVERIFIABLE",
+      "n": 2760,
+      "n_era": 16500,
+      "share": 0.16727272727272727
+    },
+    {
+      "era": "DEGRADED",
+      "status": "FABRICATED",
+      "n": 3682,
+      "n_era": 7500,
+      "share": 0.49093333333333333
+    },
+    {
+      "era": "DEGRADED",
+      "status": "REAL",
+      "n": 2781,
+      "n_era": 7500,
+      "share": 0.3708
+    },
+    {
+      "era": "DEGRADED",
+      "status": "UNVERIFIABLE",
+      "n": 1037,
+      "n_era": 7500,
+      "share": 0.13826666666666668
+    },
+    {
+      "era": "RECOVERED",
+      "status": "FABRICATED",
+      "n": 3974,
+      "n_era": 7980,
+      "share": 0.49799498746867166
+    },
+    {
+      "era": "RECOVERED",
+      "status": "REAL",
+      "n": 3443,
+      "n_era": 7980,
+      "share": 0.43145363408521303
+    },
+    {
+      "era": "RECOVERED",
+      "status": "UNVERIFIABLE",
+      "n": 563,
+      "n_era": 7980,
+      "share": 0.07055137844611528
+    }
+  ],
+  "grounding": [
+    {
+      "era": "EARLY",
+      "n_judged": 16500,
+      "n_effort_recorded": 16500,
+      "n_missing_effort": 0,
+      "n_zero_effort": 269,
+      "zero_effort_share": 0.016303030303030302,
+      "mean_effort": 2.0276363636363635
+    },
+    {
+      "era": "DEGRADED",
+      "n_judged": 7500,
+      "n_effort_recorded": 7500,
+      "n_missing_effort": 0,
+      "n_zero_effort": 969,
+      "zero_effort_share": 0.1292,
+      "mean_effort": 1.6593333333333333
+    },
+    {
+      "era": "RECOVERED",
+      "n_judged": 7980,
+      "n_effort_recorded": 7980,
+      "n_missing_effort": 0,
+      "n_zero_effort": 90,
+      "zero_effort_share": 0.011278195488721804,
+      "mean_effort": 2.093734335839599
+    }
+  ],
+  "composition_gaps": [
+    {
+      "factor": "cell",
+      "max_gap_pp": 1.0537130819544167,
+      "worst_era": "RECOVERED",
+      "worst_level": "obscure_real"
+    },
+    {
+      "factor": "domain",
+      "max_gap_pp": 0.8587133875965733,
+      "worst_era": "RECOVERED",
+      "worst_level": "legal"
+    },
+    {
+      "factor": "condition",
+      "max_gap_pp": 0.7600850155407279,
+      "worst_era": "RECOVERED",
+      "worst_level": "neutral"
+    },
+    {
+      "factor": "stage_ordinal",
+      "max_gap_pp": 0.5882176360225131,
+      "worst_era": "DEGRADED",
+      "worst_level": "2"
+    },
+    {
+      "factor": "family",
+      "max_gap_pp": 1.303414634146339,
+      "worst_era": "DEGRADED",
+      "worst_level": "tulu3_70b"
+    }
+  ],
+  "real_share_by_cell": [
+    {
+      "cell": "known_real",
+      "era": "EARLY",
+      "n": 5031,
+      "n_real": 3331,
+      "real_share": 0.6620950109322202,
+      "n_fabricated": 1152,
+      "fab_share": 0.22898032200357782
+    },
+    {
+      "cell": "known_real",
+      "era": "DEGRADED",
+      "n": 2315,
+      "n_real": 1271,
+      "real_share": 0.5490280777537797,
+      "n_fabricated": 801,
+      "fab_share": 0.34600431965442763
+    },
+    {
+      "cell": "known_real",
+      "era": "RECOVERED",
+      "n": 2354,
+      "n_real": 1409,
+      "real_share": 0.5985556499575191,
+      "n_fabricated": 824,
+      "fab_share": 0.3500424808836024
+    },
+    {
+      "cell": "obscure_real",
+      "era": "EARLY",
+      "n": 5030,
+      "n_real": 2464,
+      "real_share": 0.48986083499005967,
+      "n_fabricated": 1272,
+      "fab_share": 0.25288270377733596
+    },
+    {
+      "cell": "obscure_real",
+      "era": "DEGRADED",
+      "n": 2224,
+      "n_real": 718,
+      "real_share": 0.322841726618705,
+      "n_fabricated": 1009,
+      "fab_share": 0.45368705035971224
+    },
+    {
+      "cell": "obscure_real",
+      "era": "RECOVERED",
+      "n": 2524,
+      "n_real": 1155,
+      "real_share": 0.45760697305863707,
+      "n_fabricated": 1072,
+      "fab_share": 0.4247226624405705
+    },
+    {
+      "cell": "unanswerable",
+      "era": "EARLY",
+      "n": 6439,
+      "n_real": 1861,
+      "real_share": 0.2890200341667961,
+      "n_fabricated": 3660,
+      "fab_share": 0.5684112439819847
+    },
+    {
+      "cell": "unanswerable",
+      "era": "DEGRADED",
+      "n": 2961,
+      "n_real": 792,
+      "real_share": 0.2674772036474164,
+      "n_fabricated": 1872,
+      "fab_share": 0.6322188449848024
+    },
+    {
+      "cell": "unanswerable",
+      "era": "RECOVERED",
+      "n": 3102,
+      "n_real": 879,
+      "real_share": 0.28336557059961315,
+      "n_fabricated": 2078,
+      "fab_share": 0.6698903932946486
+    }
+  ],
+  "fab_share_by_effort": [
+    {
+      "effort": 0,
+      "era": "EARLY",
+      "n": 269,
+      "n_fabricated": 5,
+      "fab_share": 0.01858736059479554
+    },
+    {
+      "effort": 0,
+      "era": "DEGRADED",
+      "n": 969,
+      "n_fabricated": 258,
+      "fab_share": 0.26625386996904027
+    },
+    {
+      "effort": 0,
+      "era": "RECOVERED",
+      "n": 90,
+      "n_fabricated": 0,
+      "fab_share": 0.0
+    },
+    {
+      "effort": 1,
+      "era": "EARLY",
+      "n": 6022,
+      "n_fabricated": 197,
+      "fab_share": 0.03271338425772169
+    },
+    {
+      "effort": 1,
+      "era": "DEGRADED",
+      "n": 3256,
+      "n_fabricated": 955,
+      "fab_share": 0.2933046683046683
+    },
+    {
+      "effort": 1,
+      "era": "RECOVERED",
+      "n": 2718,
+      "n_fabricated": 55,
+      "fab_share": 0.020235467255334805
+    },
+    {
+      "effort": 2,
+      "era": "EARLY",
+      "n": 3193,
+      "n_fabricated": 1797,
+      "fab_share": 0.5627936110241153
+    },
+    {
+      "effort": 2,
+      "era": "DEGRADED",
+      "n": 636,
+      "n_fabricated": 347,
+      "fab_share": 0.5455974842767296
+    },
+    {
+      "effort": 2,
+      "era": "RECOVERED",
+      "n": 1526,
+      "n_fabricated": 1055,
+      "fab_share": 0.6913499344692006
+    },
+    {
+      "effort": 3,
+      "era": "EARLY",
+      "n": 7016,
+      "n_fabricated": 4085,
+      "fab_share": 0.5822405929304447
+    },
+    {
+      "effort": 3,
+      "era": "DEGRADED",
+      "n": 2639,
+      "n_fabricated": 2122,
+      "fab_share": 0.804092459264873
+    },
+    {
+      "effort": 3,
+      "era": "RECOVERED",
+      "n": 3646,
+      "n_fabricated": 2864,
+      "fab_share": 0.7855183763027976
+    }
+  ]
+}

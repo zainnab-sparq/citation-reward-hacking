@@ -1,0 +1,343 @@
+% ARGUES: the measurement pipeline is sound and the analysis was fixed in advance.
+% DRAWS FROM: PRE_REGISTRATION_OSF.md §4, §5, §6, §8.
+% STATUS: drafted 2026-08-12. Counts through verification are final. Judge-side
+%         counts move until all 31,980 citations are judged.
+
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Question set}
+
+The question set has 900 items, 100 in each cell of a three-domain by
+three-cell design. It was frozen and hashed before any model was queried, and
+the hash is published in the pre-registration, so the set cannot have been
+adjusted after seeing how models performed.
+
+The three cells differ in what an honest answer looks like. \emph{Known-real}
+items ask for citations that exist and are well indexed, recruited half from a
+hyper-canonical pool and half from a moderately-known pool, so canonicality can
+be tested as a covariate instead of assumed irrelevant. \emph{Obscure-but-real}
+items ask for work that exists but sits in the under-cited tail, recruited at a
+citation count in $[2, 50)$. That band was calibrated to the empirical knowledge
+inflection; an arbitrary low threshold would have put the cell below the range
+where the distinction we need is meaningful.
+\emph{Unanswerable} items have no correct citation at all.
+
+The unanswerable cell carries a construction burden the other two do not,
+because an item is only unanswerable if the thing it asks about does not exist.
+Each candidate passed a two-step negative-existence proof: a Levenshtein-3 fuzzy
+title match against Crossref, OpenAlex, PubMed and CourtListener, rejecting on
+any partial match, followed by a SPECTER v1 semantic similarity check rejecting
+any candidate within cosine 0.85 of a top-5 title-search hit. Calibration on 30
+known near-duplicate pairs rejected 30 of 30, with the lowest known-duplicate
+cosine at 0.912. The same threshold rejects 3 of 6 related-but-different paper
+pairs, so the check over-rejects rather than under-rejects. For a
+negative-existence proof that is the safe direction, and it means the accepted
+unanswerable items are more conservatively novel than a strict same-paper
+detector would produce.
+
+Known-real and obscure-but-real items were restricted to pre-2023 publications,
+the intersection of the model training cutoffs. This filter was applied
+inconsistently at first: the legal known-real recruiter filtered on citation
+count without a year gate, leaving 45 opinions dated 2023 or later in a cell
+whose whole purpose is to hold capability constant. Post-cutoff cases in a
+capability-ceiling control introduce a recency confound. All 45 were replaced
+with same-tier pre-2023 opinions drawn by seeded draw from the same candidate
+pool, under the amendment procedure the pre-registration specifies for this
+case. The amended file is operative for every reported analysis, the original is
+retained unmodified with its own hash, and the two can be diffed.
+
+Domain scopes are narrower than the domain labels suggest, and we describe them
+narrowly throughout. \emph{Legal} means US federal case law: Supreme Court,
+Circuit Courts of Appeals, and reported district-court opinions. State courts
+are excluded because CourtListener's coverage of unreported state decisions is
+incomplete, which would put accidental collisions into the unanswerable cell.
+\emph{Academic} means literature indexed under a broad OpenAlex citation-graph
+concept, which in practice spans bioinformatics, materials science, psychology,
+statistics and core machine learning rather than machine learning alone.
+\emph{Medical} means a pool that is roughly 60\% Cochrane reviews, which
+over-represents oncology, cardiology, infectious disease and the
+systematic-review genre.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Composition of the frozen 900-question set. The design is balanced by
+construction: every domain contributes exactly 100 questions to every cell. The
+strata inside known-real are the pre-registered canonicality tiers, which exist
+so that recall accuracy can be checked against canonicality rather than assumed
+to be uniform. Both real cells are restricted to pre-2023 publications.}
+\label{tab:dataset}
+\begin{tabular}{@{}l l r l@{}}
+\toprule
+Cell & Domain & $n$ & Recruitment stratum \\
+\midrule
+Known-real       & Academic & 50  & OpenAlex, $>$9{,}999 citations (hyper-canonical) \\
+                 &          & 50  & OpenAlex, 1{,}000--5{,}000 citations (moderate) \\
+                 & Legal    & 50  & SCOTUS, $\geq$100 citing references \\
+                 &          & 50  & Federal Circuit, $\geq$50 citing references \\
+                 & Medical  & 60  & Cochrane Reviews, $>$49 citations \\
+                 &          & 40  & Non-Cochrane, $>$499 citations \\
+\midrule
+Obscure-but-real & Academic & 100 & OpenAlex, 2--49 citations \\
+                 & Legal    & 100 & Federal district court, 2--49 citing references \\
+                 & Medical  & 100 & OpenAlex, 2--49 citations \\
+\midrule
+Unanswerable     & Academic & 100 & Constructed; no real referent by design \\
+                 & Legal    & 100 & Constructed; no real referent by design \\
+                 & Medical  & 100 & Constructed; no real referent by design \\
+\midrule
+\textbf{Total}   &          & \textbf{900} & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Forty-five of the legal known-real questions in this table are the replacements
+described above rather than the originally drawn opinions.
+
+\subsection{Models}
+
+The primary tests use open-weights checkpoints, for a structural reason rather
+than a practical one. Testing whether post-training raises fabrication requires
+a base-model comparator, and closed-API models have none: within that
+population, whether a model is post-trained is collinear with which model it is.
+The open-weights cascade provides base, supervised-fine-tuned,
+preference-optimized and reinforcement-tuned checkpoints of the same base
+models, so \texttt{stage\_ordinal} varies within a family and the interaction is
+estimable.
+
+Every checkpoint is pinned to a commit SHA and every closed-API call to a dated
+snapshot. Where a snapshot was deprecated mid-experiment, both were run and
+reported as separate rows rather than substituted.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{The open-weights checkpoints. Three cascades, each carrying all four
+post-training stages of one base model, which is what makes
+\texttt{stage\_ordinal} vary within a family and the interaction estimable.
+Revisions are the pinned Hugging Face commits actually served.}
+\label{tab:models}
+\begin{tabular}{@{}l l r l l@{}}
+\toprule
+Family & Checkpoint & Ord. & Stage & Revision \\
+\midrule
+\texttt{tulu3\_8b}  & \texttt{meta-llama/Llama-3.1-8B}              & 0 & base     & \texttt{d04e592bb4f6} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-8B-SFT}      & 1 & SFT      & \texttt{f2a0b46b0cfd} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-8B-DPO}      & 2 & DPO      & \texttt{a7beb67e33ff} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-8B}          & 3 & RLVR     & \texttt{666943798adb} \\
+\midrule
+\texttt{tulu3\_70b} & \texttt{meta-llama/Llama-3.1-70B}             & 0 & base     & \texttt{349b2ddb53ce} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-70B-SFT}     & 1 & SFT      & \texttt{f8ef34145946} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-70B-DPO}     & 2 & DPO      & \texttt{2dab5183da92} \\
+                    & \texttt{allenai/Llama-3.1-Tulu-3-70B}         & 3 & RLVR     & \texttt{cfc1d855e534} \\
+\midrule
+\texttt{olmo2\_13b} & \texttt{allenai/OLMo-2-1124-13B}              & 0 & base     & \texttt{3fefddc1bf18} \\
+                    & \texttt{allenai/OLMo-2-1124-13B-SFT}          & 1 & SFT      & \texttt{b7ec47ed94f3} \\
+                    & \texttt{allenai/OLMo-2-1124-13B-DPO}          & 2 & DPO      & \texttt{97a7f33fc8b4} \\
+                    & \texttt{allenai/OLMo-2-1124-13B-Instruct}     & 3 & Instruct & \texttt{3a5c85baefbb} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ordinal 0 is the base checkpoint and \texttt{is\_post\_trained} is 0 there and 1
+everywhere else. Ordinal 3 is the final released model of each cascade, which is
+RLVR for the two Tülu-3 families and the Instruct release for OLMo-2; the
+registered coding treats both as the terminal stage. Two distinct base models
+are represented, Llama-3.1 and OLMo-2, and two post-training recipes, Tülu-3's
+and OLMo-2's, so the 8B and 70B Tülu-3 cascades share a recipe while differing
+in scale.
+
+\subsection{Generation and prompt conditions}
+
+Each model answered every question under four prompt conditions.
+\texttt{neutral} asks the question with no further instruction.
+\texttt{citations\_expected} asks for at least two academic citations in
+support. \texttt{abstention\_permitted} adds that uncertainty is preferred over
+a wrong citation and that saying so is better than guessing.
+\texttt{length\_matched} asks for a thorough multi-paragraph answer of
+comparable length to the \texttt{citations\_expected} prompt while mentioning
+neither citations nor sources.
+
+The fourth condition exists to answer an objection that would otherwise sink
+E2. A longer answer mechanically affords more citation slots, so a model asked
+for citations might fabricate more simply because it wrote more. The
+\texttt{citations\_expected} against \texttt{length\_matched} contrast separates
+the citation cue from the verbosity demand, and the pre-registration commits in
+advance to how each outcome is reported, including the case where the contrast
+runs against our hypothesis (Appendix~\ref{app:deviations}).
+
+Open-weights generations were produced at temperature 0, one per model,
+question and condition, giving 43{,}200 generations.
+
+\subsection{Citation extraction and verification}
+
+Citations were extracted from generation text by a snapshot-pinned model with
+forced tool use, yielding 40{,}840 citations, of which 25{,}530 generations
+carried at least one. Base models cite far less often than post-trained ones.
+That gap is itself a finding, and it also thins the base-model rows that the E1
+contrast depends on, so we report per-model citation counts alongside the
+fabrication rates.
+
+Each citation was then checked against Crossref, Semantic Scholar, OpenAlex,
+PubMed and CourtListener. Legal citations route differently and this matters:
+the academic indexes do not cover US case law, so an academic-index miss on a
+legal citation is uninformative. CourtListener is the authoritative existence
+check for that domain, and a legal citation it cannot match is recorded as
+unverifiable rather than fabricated. Without that rule, real but
+academically-unindexed federal opinions, which is what the legal
+obscure-but-real cell is made of, would be counted as fabrications by
+construction.
+
+Verification returned REAL for 8{,}860 citations (21.7\%), FABRICATED for
+17{,}504 (42.9\%) and UNVERIFIABLE for 14{,}476 (35.4\%). The Semantic Scholar
+API key was unavailable for these runs. The direction of that loss is
+one-sided: a missing source can only turn a real citation unverifiable or
+fabricated, never turn a fabricated one real, so it inflates apparent
+fabrication and the judge stage corrects it.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Pipeline yield. Each of the twelve checkpoints answered all 900
+questions under all four conditions, so every cell rests on exactly 3{,}600
+generations by construction and no cell is thinned by attrition. ``Citing'' is
+the share of generations producing at least one extractable citation.}
+\label{tab:t3}
+\begin{tabular}{@{}l l r r r r@{}}
+\toprule
+\multicolumn{6}{@{}l}{\emph{By checkpoint}} \\
+Family & Stage & Generations & Citing & Citations & Per gen. \\
+\midrule
+\texttt{tulu3\_8b}  & base     & 3{,}600 & 21.3\% & 951    & 0.264 \\
+                    & SFT      & 3{,}600 & 61.5\% & 3{,}197 & 0.888 \\
+                    & DPO      & 3{,}600 & 79.8\% & 4{,}947 & 1.374 \\
+                    & RLVR     & 3{,}600 & 80.3\% & 5{,}069 & 1.408 \\
+\texttt{tulu3\_70b} & base     & 3{,}600 & 18.7\% & 852    & 0.237 \\
+                    & SFT      & 3{,}600 & 66.6\% & 3{,}261 & 0.906 \\
+                    & DPO      & 3{,}600 & 84.1\% & 5{,}000 & 1.389 \\
+                    & RLVR     & 3{,}600 & 84.2\% & 4{,}997 & 1.388 \\
+\texttt{olmo2\_13b} & base     & 3{,}600 & 5.3\%  & 327    & 0.091 \\
+                    & SFT      & 3{,}600 & 54.9\% & 2{,}730 & 0.758 \\
+                    & DPO      & 3{,}600 & 76.1\% & 4{,}784 & 1.329 \\
+                    & Instruct & 3{,}600 & 76.3\% & 4{,}725 & 1.313 \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{By condition}} \\
+\multicolumn{2}{@{}l}{\texttt{neutral}}              & 10{,}800 & 67.7\% & 9{,}414  & 0.872 \\
+\multicolumn{2}{@{}l}{\texttt{citations\_expected}}  & 10{,}800 & 66.6\% & 15{,}954 & 1.477 \\
+\multicolumn{2}{@{}l}{\texttt{abstention\_permitted}}& 10{,}800 & 31.9\% & 4{,}950  & 0.458 \\
+\multicolumn{2}{@{}l}{\texttt{length\_matched}}      & 10{,}800 & 70.2\% & 10{,}522 & 0.974 \\
+\midrule
+\multicolumn{2}{@{}l}{\textbf{Total}}                & 43{,}200 & 59.1\% & 40{,}840 & 0.945 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Two features of Table~\ref{tab:t3} matter for reading the results. First, base
+checkpoints barely cite at all: 5.3\% of OLMo-2 base generations produce a
+citation, against 76\% for its Instruct release. The base column throughout this
+paper is therefore a floor set partly by non-compliance with the instruction, and
+not a demonstration that base models are more careful. Second,
+\texttt{citations\_expected} does not produce the most \emph{citing generations};
+\texttt{length\_matched} does, at 70.2\% against 66.6\%. What
+\texttt{citations\_expected} maximizes is citations \emph{per generation}, 1.48
+against 0.97. That distinction is what the length-matched control was built to
+exploit.
+
+\subsection{The judge}
+
+Verification alone is not accurate enough to carry the outcome variable. It
+agrees with blind human labels on 46\% of a hand-checked sample, because it
+cannot tell a citation that does not exist from one its sources do not reach,
+and because it cannot evaluate whether a real work supports the claim made of
+it.
+
+A judge stage resolves those cases. It is an LLM with web search and fetch, and
+it fires only on the 31{,}980 citations that verification called FABRICATED or
+UNVERIFIABLE. Citations that verification confirmed as real are not re-examined.
+The combine rule is stated here exactly because it is easy to paraphrase
+wrongly: a verifier REAL is accepted as is; a judge verdict of REAL or
+FABRICATED overrides a verifier FABRICATED or UNVERIFIABLE; and a judge verdict
+of UNVERIFIABLE falls back to the verifier label rather than rescuing it.
+
+The judge applies a dividing line that the taxonomy needs and that we state as a
+rule rather than leaving to case-by-case judgment. A real work cited with an
+incorrect year or venue is a metadata error and counts as real. A real title
+attached to a different real work's authors is not a metadata error, because the
+citation now identifies a work that does not exist, and it counts as fabricated.
+
+The step that accepts verifier REAL calls without review was validated on
+earlier data and fails on this corpus. It is corrected by an amendment and the
+correction is described in Appendix~\ref{app:deviations}, since it changes which
+citations are re-examined rather than how any of them is scored.
+
+\subsection{Statistical specification}
+
+Everything in this subsection was registered before the data existed.
+
+The unit of analysis is the generation, not the citation, so that responses
+which cite nothing stay in the model. A generation is coded \texttt{fabricated =
+1} if any of its citations is fabricated or misgrounded, and 0 if all of its
+citations verify \emph{or} it produced no citation at all. Coding abstention as
+0 is deliberate and pre-committed: abstention is honest non-fabrication, and the
+reward-hacking account specifically predicts that an honest model abstains on
+obscure and unanswerable items, so abstentions must enter the model rather than
+disappear from it. Generations that cite only unverifiable sources are excluded
+from the primary analysis, which is the one exclusion that conditions on
+something downstream of treatment, and Section~\ref{sec:results} reports the
+selection check that the pre-registration requires before that exclusion is
+interpreted.
+
+Both confirmatory models are mixed-effects logistic regressions fit with
+\texttt{lme4::glmer}, with crossed random intercepts for model nested in family
+and for question:
+
+\begin{verbatim}
+m_e1 <- glmer(fabricated ~ stage_ordinal * cell * domain
+                         + (1 | model_family/model_id) + (1 | question_id), ...)
+
+m_e2 <- glmer(fabricated ~ condition * is_post_trained * cell + domain
+                         + (1 | model_family/model_id) + (1 | question_id), ...)
+\end{verbatim}
+
+The random-effects structure is parsimony-primary by registration, with the
+design-justified maximal structure reported as a labeled sensitivity. This
+departs from the keep-it-maximal recommendation on purpose, and the reason is
+specific to this design: with few families carrying a usable stage contrast, a
+family-level random slope is estimated from too few grouping levels to be
+stable, and for a binomial model a design-justified slope can absorb the
+between-group variance that the fixed interaction would otherwise capture. The
+maximal model is therefore not uniformly conservative here, and powering on it
+would understate the registered test. Which model supplies the reported p-value
+was fixed in advance by an operative-model rule, not chosen after seeing both.
+
+Correction is Holm-Bonferroni within experiment family, not across the paper,
+and each family is enumerated in advance with $m = 5$. The E1 family is the
+\texttt{stage\_ordinal} main effect, its interactions with the obscure-real and
+unanswerable cells, and its three-way interactions with the medical and legal
+domains. The E2 family is the \texttt{citations\_expected} and
+\texttt{abstention\_permitted} effects, each of their interactions with
+\texttt{is\_post\_trained}, and the three-way interaction of
+\texttt{citations\_expected}, \texttt{is\_post\_trained} and the obscure-real
+cell. The strictest threshold any single test can face is therefore $\alpha/5 =
+0.01$, and the power analysis reports a-priori power at that floor as well as at
+$\alpha = 0.05$.
+
+Effect sizes are odds ratios with Wald confidence intervals on the target
+interaction terms. The registration also asked for parametric-bootstrap
+percentile intervals from 10,000 resamples; at a measured cost of about 19,200
+worker-hours we did not compute them, and amendment \#14
+(Appendix~\ref{app:deviations}) gives the measurement and the reasoning. Fabricated and misgrounded rates are reported
+separately as well as summed, because a result driven by citations that do not
+exist and one driven by real work cited for claims it does not support carry
+different interpretations, even though the confirmatory test sums them.
+
+Of the registered sensitivity analyses, two bear directly on the results below.
+One recodes unverifiable citations as fabricated. It excludes no generation at
+all, so it dissolves the missingness question instead of assuming an answer to
+it; the pre-registration specifies a trigger for elevating it to co-primary, and
+Appendix~\ref{app:deviations} records that we elevated it. The other treats the
+continuous and factor codings of \texttt{stage\_ordinal} as co-primary under an
+intersection-union rule, so the headline claim requires both to hold. An earlier
+draft reported whichever coding came out significant, which is two chances at
+the same test and inflates the family-wise error rate to roughly 9.75\%.
