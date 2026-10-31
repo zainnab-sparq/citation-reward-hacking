@@ -1,0 +1,14 @@
+{
+  "title": "Are Fake Citations a Form of Reward Hacking? A Pre-Registered Study of Post-Training and Citation Cues: code and data",
+  "upload_type": "software",
+  "description": "Code, analysis inputs and results for the pre-registered study of fabricated citations across base and post-trained language model checkpoints. Code is MIT licensed; data is CC BY 4.0 (see data/LICENSE.md). The full 900-question set is withheld to limit benchmark contamination. Many generations contain fabricated citations by design; do not use them as references.",
+  "creators": [
+    { "name": "Naboulsi, Zain" }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["reward hacking", "citation fabrication", "hallucination", "post-training", "pre-registration", "language models"],
+  "related_identifiers": [
+    { "identifier": "10.17605/OSF.IO/S53HY", "relation": "isSupplementTo", "scheme": "doi" }
+  ]
+}
