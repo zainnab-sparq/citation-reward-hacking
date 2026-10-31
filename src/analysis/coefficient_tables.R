@@ -101,6 +101,9 @@ emit_table <- function(rows, caption, label) {
     # Five columns of default padding cost 60pt, which is what pushes the
     # widest E2 term names past the text block. Scoped to this float.
     "\\setlength{\\tabcolsep}{2.5pt}",
+    # The longest E1 three-way term still overruns an A4 text block; shrink
+    # only when the table is wider than the line.
+    "\\begin{adjustbox}{max width=\\linewidth}",
     "\\begin{tabular}{lrrrr}",
     "\\toprule",
     "& \\multicolumn{2}{c}{Corrected} & \\multicolumn{2}{c}{Registered} \\\\",
@@ -110,6 +113,7 @@ emit_table <- function(rows, caption, label) {
     emit_table_body(rows),
     "\\bottomrule",
     "\\end{tabular}",
+    "\\end{adjustbox}",
     "\\end{table}")
 }
 

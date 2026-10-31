@@ -90,7 +90,13 @@ domains and survives under both analysis pipelines. Because the weights are fixe
 while the prompt changes, this is not a claim about what training did; it is a
 demonstration that the disposition is elicitable, and that whatever post-training
 installed, it responds to being asked for sources by producing more of them
-whether or not they exist.
+whether or not they exist. The obvious rival reading is instruction-following:
+post-trained models comply with explicit requests more readily, and a model that
+complies with "cite sources" without being able to check them will fabricate as
+a side effect, with no reward exploited at all. The length-matched control rules
+out verbosity, not compliance, and this design cannot separate the two. That
+separation needs an intervention on the reward itself, which is the natural next
+study.
 
 The fifteen-checkpoint refit (Section~\ref{sec:refit15}) keeps the interaction,
 41.5 points with Holm-adjusted $p = 3 \times 10^{-31}$, and keeps the post-trained

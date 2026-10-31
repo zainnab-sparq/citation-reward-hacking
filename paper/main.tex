@@ -6,18 +6,44 @@
 % Final:  set \draftmodefalse below, then rebuild. The build FAILS if any \slot
 %         remains, which is the point: no empty slot can ship.
 
-\documentclass[11pt]{article}
+\documentclass[11pt,a4paper]{article}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}      % scalable fonts; microtype's expansion needs them
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath,amssymb}
-\usepackage{booktabs}
 \usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{enumitem}
 \usepackage{xcolor}
-\usepackage{lmodern}      % scalable fonts; microtype's expansion needs them
-\usepackage[T1]{fontenc}
+\usepackage{caption}
+\usepackage{fontawesome5}
+\usepackage[most]{tcolorbox}
 \usepackage{microtype}
+\setlength{\emergencystretch}{3em}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black]{hyperref}
+\hypersetup{
+  pdftitle={Are Fake Citations a Form of Reward Hacking? A Pre-Registered Study of Post-Training and Citation Cues},
+  pdfauthor={Zain Naboulsi},
+  pdfsubject={Language models, reward hacking, citation fabrication},
+  pdfkeywords={reward hacking, citation fabrication, hallucination, post-training, pre-registration, language models}
+}
 \usepackage{natbib}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+% Long file names may break after an underscore, with no hyphen added,
+% so a reader copying one never picks up a stray "-".
+\makeatletter
+\DeclareRobustCommand{\_}{\ifmmode\nfss@text{\textunderscore}\else\textunderscore\allowbreak\fi}
+\makeatother
+\pdfstringdefDisableCommands{\def\_{\textunderscore}}
+
+% Brand colors, shared with the other papers in this series.
+\definecolor{sparqcoral}{HTML}{C94A2A}
+\definecolor{sparqcorallight}{HTML}{FFF5F2}
+\definecolor{sparqcoralborder}{HTML}{E8634A}
 
 \graphicspath{{figures/}}
 \bibliographystyle{plainnat}
@@ -47,15 +73,33 @@
   \newcommand{\guide}[1]{}
 \fi
 
-\title{Are Fake Citations a Form of Reward Hacking?\\
-       A Pre-Registered Study of Post-Training and Citation Cues}
-\author{Zain Naboulsi}
-\date{\today}
-
 \begin{document}
-\maketitle
 
-\begin{abstract}
+\begin{center}
+  {\LARGE\bfseries\color{sparqcoral}%
+    Are Fake Citations a Form of Reward Hacking?\\[0.3em]
+    A Pre-Registered Study of Post-Training and Citation Cues\par}
+  \vspace{0.6em}
+  {\large Zain Naboulsi}\\[0.3em]
+  Principal AI Competency Lead, Sparq\\[0.2em]
+  \texttt{zain.naboulsi@teamsparq.com}
+\end{center}
+
+\vspace{0.4em}
+
+\begin{tcolorbox}[
+  colback=sparqcorallight,
+  colframe=sparqcoralborder,
+  arc=3pt,
+  boxrule=1pt,
+  left=9pt, right=9pt, top=7pt, bottom=7pt,
+  title={\textbf{Abstract}},
+  fonttitle=\normalsize,
+  coltitle=white,
+  colbacktitle=sparqcoral,
+  attach boxed title to top left={yshift=-2mm, xshift=5mm},
+  boxed title style={arc=2pt, boxrule=0pt}
+]
 \guide{Write this last. Roughly 150 to 200 words. The pre-registration commits
 the abstract to naming the actual domain scopes rather than the broad labels:
 US federal case law, OpenAlex-indexed computationally-adjacent scientific
@@ -74,12 +118,14 @@ checkpoints.
 The clearest result holds the weights fixed and changes only the prompt. Asking
 for citations raises fabrication sharply in post-trained checkpoints and not in
 base ones: a 47.8-point interaction on twelve checkpoints
-($p = 2 \times 10^{-34}$) and 41.5 points on fifteen ($p = 3 \times 10^{-31}$),
+(Holm-adjusted $p = 2 \times 10^{-34}$) and 41.5 points on fifteen
+(Holm-adjusted $p = 3 \times 10^{-31}$),
 in all three domains. The three original base models fabricate \emph{less} when
 asked for citations; the added Qwen2.5-72B base fabricates more, so the
 post-trained rise, not the base fall, is the finding. A length-matched control
 separates the citation cue from a general demand for a longer answer by 28.4
-points, so the cue is citation-specific, not verbosity.
+points on the corrected pipeline and 12.6 on the registered one, so the cue is
+citation-specific, not verbosity.
 
 Post-training also raises fabrication across the board, 4.8\% to 56.7\%. Our
 registered prediction that it would rise preferentially where fabrication is most
@@ -88,7 +134,29 @@ the registered effect; on fifteen, at 83\%, the interaction is again null and it
 point estimate is slightly negative. A
 preference model trained only on surface citation features prefers post-trained
 output 86\% of the time; holding citation count fixed shows it rewards quantity.
-\end{abstract}
+
+\textbf{Our answer: possibly, but not proven.} Fake citations behave the way
+reward hacking predicts: post-trained models produce fabricated citations at far
+higher rates when asked for sources, and a naive evaluator that counts sources
+without checking them would prefer their output for citing more. But the targeted
+pattern we registered did not appear, and plain instruction-following could
+explain the same results. Proving that the reward causes fabrication needs an experiment
+that changes the reward during training, which this study does not do.
+
+\vspace{0.5em}
+\noindent\begin{minipage}[b]{0.82\linewidth}
+  \footnotesize\raggedright\mbox{\faGithub\ \url{https://github.com/zainnab-sparq/citation-reward-hacking}}
+\end{minipage}%
+\hfill
+\begin{minipage}[b]{0.16\linewidth}
+  \raggedleft
+  \includegraphics[height=1cm]{figures/sparq-logo.png}\\[-2pt]
+  {\small\textsf{\textbf{Sparq}}}
+\end{minipage}
+\end{tcolorbox}
+
+\vspace{0.4em}
+\noindent\textbf{Keywords:} reward hacking, citation fabrication, hallucination, post-training, pre-registration, language models
 
 \input{sections/01_introduction}
 \input{sections/02_related}
